@@ -167,10 +167,10 @@
       ],
       "name": "t:names.footer",
       "settings": {
-        "background_color": "#6dc8d8",
+        "background_color": "#9adbe8",
         "text_color": "#3d2b1a",
         "card_background_color": "#f0e8d0",
-        "logo": "shopify://shop_images/logo-brown_9456d4e9-522f-47fb-a369-63570d26f60e.png",
+        "logo": "shopify://shop_images/logo-brown.svg",
         "tagline": "",
         "food_list_heading": "Food list",
         "view_all_text": "View all",
