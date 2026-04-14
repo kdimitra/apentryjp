@@ -1,0 +1,647 @@
+{% assign ingredients      = product.metafields.custom.ingredients.value %}
+{% assign nutritional_info = product.metafields.custom.nutritional_information.value %}
+{% assign feeding_guide    = product.metafields.custom.feeding_guide.value %}
+
+<div class="product-accordion" id="product-accordion-{{ block.id }}">
+
+  <div class="accordion-item">
+    <button class="accordion-trigger" aria-expanded="true">
+      <span>{{ block.settings.features_label }}</span>
+      <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <div class="accordion-content is-open">
+      <div class="accordion-body">
+        {% if product.description != blank %}
+          {{ product.description }}
+        {% else %}
+          <p>{{ block.settings.features_fallback }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+
+  
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span>{{ block.settings.ingredients_label }}</span>
+        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        {% if ingredients != blank %}
+             <div class="accordion-body">{{ ingredients | newline_to_br }}</div>
+          {% endif %}
+      </div>
+      
+    </div>
+
+
+  
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span>{{ block.settings.nutritional_label }}</span>
+        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        {% if nutritional_info != blank %}
+        <div class="accordion-body">{{ nutritional_info | newline_to_br }}</div>
+        {% endif %}
+      </div>
+    </div>
+
+
+
+  
+    <div class="accordion-item">
+      <button class="accordion-trigger" aria-expanded="false">
+        <span>{{ block.settings.feeding_label }}</span>
+        <svg class="accordion-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="accordion-content">
+        {% if feeding_guide != blank %}
+        <div class="accordion-body">{{ feeding_guide | newline_to_br }}</div>
+          {% endif %}
+      </div>
+    </div>
+
+
+  
+    <!-- ── MEAL AMOUNT SIMULATOR ── -->
+<div class="sim-wrap" id="sim-{{ block.id }}">
+
+  <!-- Header bar -->
+  <div class="sim-header">
+    <span>{{ block.settings.simulator_title }}</span>
+  </div>
+
+  <!-- Inputs -->
+  <div class="sim-body">
+    <div class="sim-inputs">
+
+      <div class="sim-field">
+        <label class="sim-label" for="sim-weight-{{ block.id }}">
+          {{ block.settings.weight_label }}
+        </label>
+        <div class="sim-input-row">
+          <input
+            class="sim-input"
+            id="sim-weight-{{ block.id }}"
+            type="number"
+            min="0.1"
+            step="0.1"
+            value="12"
+            placeholder="12"
+          />
+          <span class="sim-unit">kg</span>
+        </div>
+      </div>
+
+      <div class="sim-field">
+        <label class="sim-label" for="sim-stage-{{ block.id }}">
+          {{ block.settings.stage_label }}
+        </label>
+        <div class="sim-select-wrap">
+          <select class="sim-select" id="sim-stage-{{ block.id }}">
+            <option value="puppy">{{ block.settings.stage_puppy }}</option>
+            <option value="adult">{{ block.settings.stage_adult }}</option>
+            <option value="senior">{{ block.settings.stage_senior }}</option>
+          </select>
+          <svg class="sim-select-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Calculate button -->
+    <button class="sim-btn" id="sim-btn-{{ block.id }}">
+      {{ block.settings.button_label }}
+    </button>
+
+    <!-- Divider -->
+    <hr class="sim-divider" />
+
+    <!-- Result -->
+    <div class="sim-result" id="sim-result-{{ block.id }}" aria-live="polite">
+      <div class="sim-result-col">
+        <p class="sim-result-period">{{ block.settings.result_daily }}</p>
+        <p class="sim-result-value" id="sim-daily-{{ block.id }}">—</p>
+      </div>
+      <div class="sim-result-divider"></div>
+      <div class="sim-result-col">
+        <p class="sim-result-period">{{ block.settings.result_weekly }}</p>
+        <p class="sim-result-value" id="sim-weekly-{{ block.id }}">—</p>
+      </div>
+      <div class="sim-result-divider"></div>
+      <div class="sim-result-col">
+        <p class="sim-result-period">{{ block.settings.result_monthly }}</p>
+        <p class="sim-result-value" id="sim-monthly-{{ block.id }}">—</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+</div>
+
+<style>
+  .product-accordion {
+    border-top: 1px solid #e0e0e0;
+    margin: 16px 0;
+    font-family: inherit;
+  }
+  .accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .accordion-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 18px 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    color: #2a2a2a;
+    text-align: left;
+    transition: color 0.25s ease;
+  }
+  .accordion-trigger:hover { color: #555; }
+  .accordion-icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    color: #2a2a2a;
+  }
+  .accordion-trigger[aria-expanded="true"] .accordion-icon {
+    transform: rotate(180deg);
+  }
+  .accordion-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .accordion-content.is-open {
+    grid-template-rows: 1fr;
+  }
+  .accordion-body {
+    overflow: hidden;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.85;
+    padding: 0 4px;
+  }
+  .accordion-content.is-open .accordion-body {
+    padding-bottom: 18px;
+  }
+  
+/* ── SIMULATOR WRAPPER ── */
+.sim-wrap {
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 8px 0 16px;
+  font-family: inherit;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+/* ── HEADER BAR ── */
+.sim-header {
+  background: #7dd3d8;
+  padding: 14px 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a2a2a;
+  letter-spacing: 0.03em;
+}
+
+/* ── BODY ── */
+.sim-body {
+  padding: 28px 24px 24px;
+  background: #ffffff;
+}
+
+/* ── INPUTS ROW ── */
+.sim-inputs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.sim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  min-width: 120px;
+}
+
+.sim-label {
+  font-size: 13px;
+  color: #444;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* Weight input with kg unit */
+.sim-input-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-input {
+  flex: 1;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #2a2a2a;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+  -moz-appearance: textfield;
+}
+.sim-input::-webkit-outer-spin-button,
+.sim-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+.sim-input:focus {
+  border-color: #7dd3d8;
+  box-shadow: 0 0 0 3px rgba(125, 211, 216, 0.18);
+}
+
+.sim-unit {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+/* Select dropdown */
+.sim-select-wrap {
+  position: relative;
+}
+.sim-select {
+  width: 100%;
+  border: 1.5px solid #d0d0d0;
+  border-radius: 8px;
+  padding: 10px 36px 10px 14px;
+  font-size: 15px;
+  color: #2a2a2a;
+  background: #fff;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  font-family: inherit;
+}
+.sim-select:focus {
+  border-color: #7dd3d8;
+  box-shadow: 0 0 0 3px rgba(125, 211, 216, 0.18);
+}
+.sim-select-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: #888;
+  pointer-events: none;
+}
+
+/* ── CALCULATE BUTTON ── */
+.sim-btn {
+  width: 100%;
+  background: #e8a831;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 14px rgba(232, 168, 49, 0.35);
+}
+.sim-btn:hover {
+  background: #d4961f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(232, 168, 49, 0.45);
+}
+.sim-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(232, 168, 49, 0.3);
+}
+
+/* ── DIVIDER ── */
+.sim-divider {
+  border: none;
+  border-top: 1px solid #e8e8e8;
+  margin: 20px 0;
+}
+
+/* ── RESULT AREA ── */
+.sim-result {
+  background: #fdf8ec;
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.sim-result.is-empty {
+  opacity: 0.45;
+}
+
+.sim-result-col {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sim-result-divider {
+  width: 1px;
+  height: 40px;
+  background: #d8d0be;
+  flex-shrink: 0;
+  margin: 0 8px;
+}
+
+.sim-result-period {
+  font-size: 12px;
+  color: #777;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.sim-result-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2a2a2a;
+  margin: 0;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .sim-body { padding: 20px 16px 18px; }
+  .sim-inputs { gap: 14px; }
+  .sim-result-value { font-size: 17px; }
+  .sim-result-period { font-size: 11px; }
+  .sim-header { font-size: 14px; padding: 12px 16px; }
+}
+</style>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT — Accordion + Simulator
+══════════════════════════════════════════ -->
+<script>
+(function () {
+
+  /* ── ACCORDION ── */
+  var accordion = document.getElementById('pia-{{ block.id }}');
+  if (accordion) {
+    accordion.querySelectorAll('.pia-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var isOpen  = this.getAttribute('aria-expanded') === 'true';
+        var content = this.nextElementSibling;
+
+        /* Close all */
+        accordion.querySelectorAll('.pia-trigger').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('is-open');
+        });
+
+        /* Open clicked if it was closed */
+        if (!isOpen) {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.add('is-open');
+        }
+      });
+    });
+  }
+
+  /* ── SIMULATOR ── */
+
+  /*
+    Feeding rate % of body weight per day by life stage:
+      puppy  → 4%
+      adult  → 2.5%
+      senior → 2%
+  */
+  var RATES = { puppy: 0.04, adult: 0.025, senior: 0.02 };
+
+  var weightInput  = document.getElementById('sim-weight-{{ block.id }}');
+  var stageSelect  = document.getElementById('sim-stage-{{ block.id }}');
+  var calcBtn      = document.getElementById('sim-btn-{{ block.id }}');
+  var resultBox    = document.getElementById('sim-result-{{ block.id }}');
+  var dailyEl      = document.getElementById('sim-daily-{{ block.id }}');
+  var weeklyEl     = document.getElementById('sim-weekly-{{ block.id }}');
+  var monthlyEl    = document.getElementById('sim-monthly-{{ block.id }}');
+
+  /* Start in empty/dimmed state */
+  if (resultBox) resultBox.classList.add('is-empty');
+
+  function formatGrams(g) {
+    if (g >= 1000) {
+      return (g / 1000).toFixed(2).replace(/\.?0+$/, '') + ' kg';
+    }
+    return Math.round(g) + ' g';
+  }
+
+  function calculate() {
+    var weight = parseFloat(weightInput.value);
+    var stage  = stageSelect.value;
+
+    if (!weight || weight <= 0 || !RATES[stage]) return;
+
+    var dailyG   = weight * 1000 * RATES[stage];
+    var weeklyG  = dailyG * 7;
+    var monthlyG = dailyG * 30;
+
+    dailyEl.textContent   = formatGrams(dailyG);
+    weeklyEl.textContent  = formatGrams(weeklyG);
+    monthlyEl.textContent = formatGrams(monthlyG);
+
+    /* Animate result in */
+    resultBox.classList.remove('is-empty');
+    resultBox.style.transform = 'translateY(6px)';
+    resultBox.style.opacity   = '0';
+    setTimeout(function () {
+      resultBox.style.transform = 'translateY(0)';
+      resultBox.style.opacity   = '1';
+    }, 20);
+  }
+
+  if (calcBtn) {
+    calcBtn.addEventListener('click', calculate);
+  }
+
+  /* Also calculate on Enter key in weight input */
+  if (weightInput) {
+    weightInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') calculate();
+    });
+  }
+
+})();
+</script>
+
+<script>
+  (function () {
+    var accordion = document.getElementById('product-accordion-{{ block.id }}');
+    if (!accordion) return;
+
+    accordion.querySelectorAll('.accordion-trigger').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var isOpen  = this.getAttribute('aria-expanded') === 'true';
+        var content = this.nextElementSibling;
+
+        // Close all
+        accordion.querySelectorAll('.accordion-trigger').forEach(function (b) {
+          b.setAttribute('aria-expanded', 'false');
+          b.nextElementSibling.classList.remove('is-open');
+        });
+
+        // Open clicked if it was closed
+        if (!isOpen) {
+          this.setAttribute('aria-expanded', 'true');
+          content.classList.add('is-open');
+        }
+      });
+    });
+  })();
+</script>
+
+
+{% schema %}
+{
+  "name": "Product Info Accordion",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Accordion Labels"
+    },
+    {
+      "type": "text",
+      "id": "features_label",
+      "label": "Product Features Label",
+      "default": "Product Features"
+    },
+    {
+      "type": "text",
+      "id": "features_fallback",
+      "label": "Features Fallback Text",
+      "default": "No description available."
+    },
+    {
+      "type": "text",
+      "id": "ingredients_label",
+      "label": "Ingredients Label",
+      "default": "Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "nutritional_label",
+      "label": "Nutritional Information Label",
+      "default": "Nutritional Information (per 100g)"
+    },
+    {
+      "type": "text",
+      "id": "feeding_label",
+      "label": "Feeding Guide Label",
+      "default": "Feeding Guide"
+    },
+    {
+      "type": "header",
+      "content": "Meal Simulator"
+    },
+    {
+      "type": "text",
+      "id": "simulator_title",
+      "label": "Simulator Title",
+      "default": "生食用 食事量シミュレーター"
+    },
+    {
+      "type": "text",
+      "id": "weight_label",
+      "label": "Weight Input Label",
+      "default": "愛犬の体重"
+    },
+    {
+      "type": "text",
+      "id": "stage_label",
+      "label": "Life Stage Label",
+      "default": "愛犬のライフステージ"
+    },
+    {
+      "type": "text",
+      "id": "stage_puppy",
+      "label": "Puppy Option",
+      "default": "若犬"
+    },
+    {
+      "type": "text",
+      "id": "stage_adult",
+      "label": "Adult Option",
+      "default": "成犬"
+    },
+    {
+      "type": "text",
+      "id": "stage_senior",
+      "label": "Senior Option",
+      "default": "シニア犬"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Calculate Button Text",
+      "default": "ご飯の量を確認する"
+    },
+    {
+      "type": "text",
+      "id": "result_daily",
+      "label": "Daily Result Label",
+      "default": "1日"
+    },
+    {
+      "type": "text",
+      "id": "result_weekly",
+      "label": "Weekly Result Label",
+      "default": "1週間"
+    },
+    {
+      "type": "text",
+      "id": "result_monthly",
+      "label": "Monthly Result Label",
+      "default": "1ヶ月"
+    }
+  ]
+}
+{% endschema %}

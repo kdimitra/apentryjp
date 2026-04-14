@@ -1,0 +1,1030 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "blocks": {
+        "heading": {
+          "type": "text",
+          "name": "Title",
+          "settings": {
+            "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "h2",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "page-content": {
+          "type": "page-content",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "heading",
+        "page-content"
+      ],
+      "disabled": true,
+      "settings": {
+        "content_direction": "column",
+        "gap": 32,
+        "color_scheme": "",
+        "padding-block-start": 40,
+        "padding-block-end": 80
+      }
+    },
+    "hero_mT6yYj": {
+      "type": "hero",
+      "blocks": {
+        "text_DQpmr8": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<h1>About</h1>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_nxDLFd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>アニーズパントリーについて</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 10,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_DQpmr8",
+        "text_nxDLFd"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/Mask_20group.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "section_dBXKNb": {
+      "type": "section",
+      "blocks": {
+        "image_WB7T4P": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-05_at_8.18.18_PM.png",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 22,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_ch4kWD": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 89,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 22,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_JbwRLn": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p><strong>Annie's Story</strong></p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_xNBfdW": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_4nqfA7": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h2><strong>ストーリー</strong></h2>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_XVLhzL": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_6mbWVQ": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<h5>「最高のごはんを届けたい」  その想いは、2頭の愛犬から始まった</h5>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_JMX934": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_eJk6Et": {
+              "type": "text",
+              "settings": {
+                "text": "<p>「現代の犬にとって必要な基本的な食事と運動の環境は、かつての、そして今も変わらぬオオカミのそれとまったく同じです」</p><p>アニーズパントリーでは、犬は大切な「家族」と考えています。 その始まりは、私たちがオーストラリアを訪れ、現地のトップブリーダーたちとの出会いでした。</p><p>犬との向き合い方、食事の考え方などを見聞きし、大きく感銘を受けました。栄養たっぷりのごはん、毎日の運動、そしてあたたかな愛情。この3つが、愛犬に大きな変化をもたらすと、この目で確かめてきたのです。</p><p>市販のフードを食べたがらなかった2頭の愛犬。 けれど、手作りのフレッシュな食事に出会ったとき、からだが変わり、心が変わり、しっぽを振って喜ぶようになったのです。</p><p>そんな体験こそが、アニーズパントリーの原点です。</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_JdnQhz": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_nLMUC7": {
+              "type": "button",
+              "settings": {
+                "label": "今すぐ購入",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_JbwRLn",
+            "spacer_xNBfdW",
+            "text_4nqfA7",
+            "spacer_XVLhzL",
+            "text_6mbWVQ",
+            "spacer_JMX934",
+            "text_eJk6Et",
+            "spacer_JdnQhz",
+            "button_nLMUC7"
+          ]
+        }
+      },
+      "block_order": [
+        "image_WB7T4P",
+        "group_ch4kWD"
+      ],
+      "name": "t:names.image_with_text",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "aboutus_commitment_VFVamr": {
+      "type": "aboutus-commitment",
+      "blocks": {
+        "commitment_item_xQpLBA": {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 01",
+            "title": "素材の力が生きる 生のお肉",
+            "description": "無加熱たから、お肉本来のうまみがたっぷり。\n\n豊富なタンパク質で、からだづくりをサポートします。",
+            "image": "shopify://shop_images/IMGP0757.jpg",
+            "reverse_layout": false,
+            "show_dog": true,
+            "dog_image": "shopify://shop_images/illust-dog-15.png"
+          }
+        },
+        "commitment_item_eMxizk": {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 02",
+            "title": "安心と信頼の 国内製造",
+            "description": "すべて日本国内の自社工場で製造・管理。 \n確かな品質で、家族みんなに安心を届けます。",
+            "image": "shopify://shop_images/Screenshot_202025-09-04_20at_2017.25.35.jpg",
+            "reverse_layout": true,
+            "show_dog": true,
+            "dog_image": "shopify://shop_images/illust-dog-16.png"
+          }
+        },
+        "commitment_item_yJKULk": {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 03",
+            "title": "必要なものだけ 無添加ごはん",
+            "description": "香料・着色料・保存料は一切不使用。素材本来のおいしさと安心をそのまま届けます。",
+            "image": "shopify://shop_images/IMGP0728.jpg",
+            "reverse_layout": false,
+            "show_dog": true,
+            "dog_image": "shopify://shop_images/illust-dog-17.png"
+          }
+        }
+      },
+      "block_order": [
+        "commitment_item_xQpLBA",
+        "commitment_item_eMxizk",
+        "commitment_item_yJKULk"
+      ],
+      "name": "Aboutus Commitment",
+      "settings": {
+        "eyebrow_text": "Annie's Commitment",
+        "section_heading": "アニーズパントリー３つのこだわり",
+        "bg_color": "#5bc8d0",
+        "card_color": "#faf7e6",
+        "badge_color": "#fdde3a"
+      }
+    },
+    "hero_6xjVt8": {
+      "type": "hero",
+      "name": "t:names.hero",
+      "settings": {
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/70282c36baa2edbff94c96e847e6fb8d6ddbd5b4-2560x1504_jpg.avif",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "full-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "section_eAcedc": {
+      "type": "section",
+      "blocks": {
+        "image_Xt4fNP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2026-04-11_at_2.09.09_PM.png",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 22,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_LVcWtc": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 89,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 22,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "spacer_Q3DpHn": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_77RTtg": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h4>見える安心で、 </h4><h4>正直なごはんを。</h4>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_Jjdgt3": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_bEBTPD": {
+              "type": "text",
+              "settings": {
+                "text": "<p>私たちは、信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。</p><p> 使うのは、高品質な肉と野菜。無添加のフレッシュドッグフードとして、素材の栄養とおいしさを大切にしています。</p><p>大量生産や長期冷凍は行わず、すべて少量ずつ丁寧に調理。 愛犬が毎日安心して食べられるごはんを作っています。</p><p>たった一皿のごはんにも、まっすぐ向き合う。</p><p>毎日食べるものだからこそ、何が入っているのかが分かる正直なドッグフードを。 余計なものは加えず、必要なものだけを、必要な分だけ届けます。</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_8PnVDE": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_RD7GtV": {
+              "type": "button",
+              "disabled": true,
+              "settings": {
+                "label": "今すぐ購入",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "spacer_Q3DpHn",
+            "text_77RTtg",
+            "spacer_Jjdgt3",
+            "text_bEBTPD",
+            "spacer_8PnVDE",
+            "button_RD7GtV"
+          ]
+        }
+      },
+      "block_order": [
+        "image_Xt4fNP",
+        "group_LVcWtc"
+      ],
+      "name": "t:names.image_with_text",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
+    "why_chooseus_YtYPy6": {
+      "type": "why-chooseus",
+      "blocks": {
+        "reason_card_p9acMR": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "ステップ 1",
+            "title": "保存方法",
+            "image": "shopify://shop_images/38820cd60160327e4e39d12e8dba80bdfea64e41-401x400_jpg.avif",
+            "image_alt": "",
+            "subtitle": "",
+            "body": "商品が届いたら すぐに冷凍庫で保存してください。"
+          }
+        },
+        "reason_card_fTCCmV": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "ステップ 2",
+            "title": "解凍方法",
+            "image": "shopify://shop_images/38820cd60160327e4e39d12e8dba80bdfea64e41-401x400_jpg.avif",
+            "image_alt": "",
+            "subtitle": "",
+            "body": "食べる前日の夜に冷蔵庫へ移して 解凍してください。"
+          }
+        },
+        "reason_card_pWzWDK": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "ステップ 3",
+            "title": "与え方",
+            "image": "shopify://shop_images/38820cd60160327e4e39d12e8dba80bdfea64e41-401x400_jpg.avif",
+            "image_alt": "",
+            "subtitle": "",
+            "body": "加熱せずに \nそのまま与えてください。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_card_p9acMR",
+        "reason_card_fTCCmV",
+        "reason_card_pWzWDK"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "eyebrow": "How To Feed",
+        "show_eyebrow_stars": true,
+        "heading": "フィーディングガイド",
+        "heading_tag": "h2",
+        "background_color": "#9adbe8",
+        "card_background_color": "#fefbec",
+        "heading_color": "#5e3826",
+        "badge_background_color": "#9adbe8",
+        "badge_text_color": "#ffffff",
+        "card_subtitle_color": "#5e3826",
+        "card_body_color": "#5e3826",
+        "content_max_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "show_left_dog": true,
+        "show_right_dog": true
+      }
+    },
+    "section_UHWCkb": {
+      "type": "section",
+      "blocks": {
+        "image_8gFk8n": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMGP0723.jpg",
+            "link": "",
+            "image_ratio": "adapt",
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 22,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "group_rtxdHP": {
+          "type": "group",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "custom",
+            "custom_width": 89,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 22,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "spacer_NNUbAy": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_FBtPBV": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h4>環境にやさしく。 </h4><h4>目にもたのしく。</h4>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_F7dKQi": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "text_HDEFB6": {
+              "type": "text",
+              "settings": {
+                "text": "<p>一般的なペットフードにはビニール包装が使われがちですが、アニーズパントリーでは、環境への配慮から紙製のカップや箱を採用しています。カラフルなイラストをあしらったデザインは、棚に並べても愛らしく、見るたびに心が弾むような楽しさを大切にしました。ご自宅用にはもちろん、ギフトにもぴったりのパッケージです。</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "spacer_LqG9fR": {
+              "type": "spacer",
+              "name": "t:names.spacer",
+              "settings": {
+                "size": "percent",
+                "percent_size": 100,
+                "pixel_size": 120,
+                "custom_mobile_size": false,
+                "size_mobile": "percent",
+                "percent_size_mobile": 100,
+                "pixel_size_mobile": 120
+              },
+              "blocks": {}
+            },
+            "button_Hyr3Qq": {
+              "type": "button",
+              "disabled": true,
+              "settings": {
+                "label": "今すぐ購入",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "spacer_NNUbAy",
+            "text_FBtPBV",
+            "spacer_F7dKQi",
+            "text_HDEFB6",
+            "spacer_LqG9fR",
+            "button_Hyr3Qq"
+          ]
+        }
+      },
+      "block_order": [
+        "image_8gFk8n",
+        "group_rtxdHP"
+      ],
+      "name": "t:names.image_with_text",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "hero_mT6yYj",
+    "section_dBXKNb",
+    "aboutus_commitment_VFVamr",
+    "hero_6xjVt8",
+    "section_eAcedc",
+    "why_chooseus_YtYPy6",
+    "section_UHWCkb"
+  ]
+}

@@ -1,0 +1,404 @@
+{% comment %}
+  Section: About - Image with Content Card
+  Save as: sections/about-image-card.liquid
+{% endcomment %}
+
+<section
+  class="about-image-card"
+  id="about-image-card-{{ section.id }}"
+  style="
+    --text-color: {{ section.settings.text_color }};
+    --card-bg: {{ section.settings.card_background_color }};
+    --eyebrow-color: {{ section.settings.eyebrow_color }};
+    --btn-bg: {{ section.settings.button_background_color }};
+    --btn-text: {{ section.settings.button_text_color }};
+    --section-height: {{ section.settings.section_height }}px;
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  {%- comment %} Background image {%- endcomment %}
+  <div class="about-image-card__bg">
+    {%- if section.settings.background_image != blank -%}
+      <img
+        src="{{ section.settings.background_image | image_url: width: 1800 }}"
+        srcset="
+          {{ section.settings.background_image | image_url: width: 600 }} 600w,
+          {{ section.settings.background_image | image_url: width: 900 }} 900w,
+          {{ section.settings.background_image | image_url: width: 1200 }} 1200w,
+          {{ section.settings.background_image | image_url: width: 1500 }} 1500w,
+          {{ section.settings.background_image | image_url: width: 1800 }} 1800w,
+          {{ section.settings.background_image | image_url: width: 2400 }} 2400w
+        "
+        sizes="100vw"
+        width="{{ section.settings.background_image.width }}"
+        height="{{ section.settings.background_image.height }}"
+        alt="{{ section.settings.background_image_alt | escape | default: '' }}"
+        loading="lazy"
+      >
+    {%- else -%}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg about-image-card__placeholder' }}
+    {%- endif -%}
+  </div>
+
+  {%- comment %} Content card {%- endcomment %}
+  <div class="about-image-card__inner">
+    <div class="about-image-card__card">
+
+      {%- comment %} Eyebrow {%- endcomment %}
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="about-image-card__eyebrow">
+          {%- if section.settings.show_paw_icon -%}
+            <span class="about-image-card__paw" aria-hidden="true">&#128062;</span>
+          {%- endif -%}
+          {{- section.settings.eyebrow | escape -}}
+        </p>
+      {%- endif -%}
+
+      {%- comment %} Heading {%- endcomment %}
+      {%- if section.settings.heading != blank -%}
+        <{{ section.settings.heading_tag }} class="about-image-card__heading">
+          {{- section.settings.heading | escape -}}
+        </{{ section.settings.heading_tag }}>
+      {%- endif -%}
+
+      {%- comment %} Body text {%- endcomment %}
+      {%- if section.settings.body != blank -%}
+        <div class="about-image-card__body">
+          {{ section.settings.body }}
+        </div>
+      {%- endif -%}
+
+      {%- comment %} Button {%- endcomment %}
+      {%- if section.settings.button_label != blank and section.settings.button_url != blank -%}
+        <div class="about-image-card__btn-wrap">
+          <a
+            href="{{ section.settings.button_url }}"
+            class="about-image-card__btn"
+            {%- if section.settings.button_open_new_tab %} target="_blank" rel="noopener noreferrer"{%- endif -%}
+          >
+            {{- section.settings.button_label | escape -}}
+            <span class="about-image-card__btn-arrow" aria-hidden="true"> &rsaquo;</span>
+          </a>
+        </div>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+<style>
+  #about-image-card-{{ section.id }} {
+    position: relative;
+    min-height: var(--section-height);
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  /* ── Background image ── */
+  #about-image-card-{{ section.id }} .about-image-card__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__bg img,
+  #about-image-card-{{ section.id }} .about-image-card__bg svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__placeholder {
+    background: #e8e0d5;
+  }
+
+  /* ── Inner layout ── */
+  #about-image-card-{{ section.id }} .about-image-card__inner {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: {{ section.settings.content_max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* ── Card ── */
+  #about-image-card-{{ section.id }} .about-image-card__card {
+    background-color: var(--card-bg);
+    border-radius: 24px;
+    padding: 48px 44px 52px;
+    width: 100%;
+    max-width: {{ section.settings.card_max_width }}px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  }
+
+  /* ── Eyebrow ── */
+  #about-image-card-{{ section.id }} .about-image-card__eyebrow {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--eyebrow-color);
+    margin: 0 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__paw {
+    font-size: 18px;
+    line-height: 1;
+  }
+
+  /* ── Heading ── */
+  #about-image-card-{{ section.id }} .about-image-card__heading {
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 400;
+    color: var(--text-color);
+    margin: 0 0 20px;
+    line-height: 1.3;
+  }
+
+  /* ── Body ── */
+  #about-image-card-{{ section.id }} .about-image-card__body {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.9;
+    margin: 0 0 32px;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__body p {
+    margin: 0;
+  }
+
+  /* ── Button ── */
+  #about-image-card-{{ section.id }} .about-image-card__btn-wrap {
+    margin-top: 4px;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__btn {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    font-size: 14px;
+    font-weight: 400;
+    padding: 10px 24px;
+    border-radius: 99px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__btn:hover {
+    opacity: 0.85;
+    transform: translateX(2px);
+  }
+
+  #about-image-card-{{ section.id }} .about-image-card__btn-arrow {
+    font-size: 18px;
+    line-height: 1;
+    margin-left: 4px;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 767px) {
+    #about-image-card-{{ section.id }} {
+      min-height: unset;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    #about-image-card-{{ section.id }} .about-image-card__inner {
+      justify-content: center;
+    }
+
+    #about-image-card-{{ section.id }} .about-image-card__card {
+      padding: 32px 24px 36px;
+      max-width: 100%;
+    }
+
+    #about-image-card-{{ section.id }} .about-image-card__bg img {
+      object-position: center;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "About - Image Card",
+  "tag": "section",
+  "class": "section-about-image-card",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "background_image_alt",
+      "label": "Background image alt text"
+    },
+    {
+      "type": "header",
+      "content": "Card Content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_paw_icon",
+      "label": "Show paw icon in eyebrow",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "About"
+    },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Everything about Annie's Pantry"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "Body text",
+      "default": "<p>We want to deliver the best meals. That idea started with living with two beloved dogs. The dogs, who wouldn't eat commercial food, encountered homemade meals, and their bodies began to change. That experience led us to meet top breeders in Australia, where we realized the simple truth: good nutrition, exercise, and love are what dogs truly need. That experience is the origin of Annie's Pantry.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View more"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_open_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Card background",
+      "default": "#fefbec"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#5e3826"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow color",
+      "default": "#9adbe8"
+    },
+    {
+      "type": "color",
+      "id": "button_background_color",
+      "label": "Button background",
+      "default": "#9adbe8"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#5e3826"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "section_height",
+      "label": "Min section height (px)",
+      "min": 400,
+      "max": 900,
+      "step": 20,
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "card_max_width",
+      "label": "Card max width (px)",
+      "min": 300,
+      "max": 700,
+      "step": 20,
+      "default": 460
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "Content max width (px)",
+      "min": 800,
+      "max": 1600,
+      "step": 40,
+      "default": 1200
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 60
+    }
+  ],
+  "presets": [
+    {
+      "name": "About - Image Card"
+    }
+  ]
+}
+{% endschema %}

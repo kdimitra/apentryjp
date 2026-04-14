@@ -1,0 +1,573 @@
+<section class="ac-section" id="aboutus-commitment">
+  <div class="ac-wrapper">
+
+    {{- '<!-- ── HEADER ── -->' -}}
+    <div class="ac-header js-ac-header">
+      <p class="ac-eyebrow">
+        <span class="ac-eyebrow__line"></span>
+        {{ section.settings.eyebrow_text }}
+        <span class="ac-eyebrow__line"></span>
+      </p>
+      <h2 class="ac-heading">{{ section.settings.section_heading }}</h2>
+    </div>
+
+    {{- '<!-- ── ITEMS ── -->' -}}
+    <div class="ac-list">
+      {% for block in section.blocks %}
+        {% assign rev = block.settings.reverse_layout %}
+        <div
+          class="ac-item{% if rev %} ac-item--rev{% endif %} js-ac-item"
+          style="--i:{{ forloop.index0 }}"
+          {{ block.shopify_attributes }}
+        >
+
+          {{- '<!-- LAYER 1: IMAGE -->' -}}
+          <div class="ac-img-wrap">
+            {% if block.settings.image != blank %}
+              <img
+                class="ac-img"
+                src="{{ block.settings.image | img_url: '1000x780', crop: 'center' }}"
+                alt="{{ block.settings.title | escape }}"
+                loading="lazy"
+              />
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'ac-img ac-img--ph' }}
+            {% endif %}
+          </div>
+
+          {{- '<!-- LAYER 2: TEXT CARD -->' -}}
+          <div class="ac-card">
+            <span class="ac-badge">{{ block.settings.badge_label }}</span>
+            <h3 class="ac-title">{{ block.settings.title }}</h3>
+            <p class="ac-desc">{{ block.settings.description }}</p>
+          </div>
+
+          {{- '<!-- LAYER 3: DOG -->' -}}
+          {% if block.settings.show_dog %}
+            <div class="ac-dog  dec-{{ forloop.index  }}">
+              {% if block.settings.dog_image != blank %}
+                <img
+                  class="ac-dog__img"
+                  src="{{ block.settings.dog_image | img_url: '400x400' }}"
+                  alt=""
+                  aria-hidden="true"
+                />
+              {% else %}
+                {%- comment -%} Samoyed-style SVG illustration {%- endcomment -%}
+                <svg class="ac-dog__svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <!-- Tail -->
+                  <path d="M162 105 Q198 72 186 50 Q177 36 165 52 Q178 62 162 105Z" fill="white"/>
+                  <!-- Body -->
+                  <ellipse cx="102" cy="128" rx="64" ry="46" fill="white"/>
+                  <!-- Fluffy chest fur -->
+                  <ellipse cx="94" cy="108" rx="36" ry="24" fill="white" opacity="0.75"/>
+                  <!-- Neck -->
+                  <ellipse cx="94" cy="90" rx="28" ry="24" fill="white"/>
+                  <!-- Head -->
+                  <ellipse cx="94" cy="62" rx="36" ry="32" fill="white"/>
+                  <!-- Ears -->
+                  <ellipse cx="66"  cy="40" rx="13" ry="18" fill="white" transform="rotate(-20 66 40)"/>
+                  <ellipse cx="122" cy="40" rx="13" ry="18" fill="white" transform="rotate(20 122 40)"/>
+                  <!-- Ear inner -->
+                  <ellipse cx="66"  cy="40" rx="7" ry="10" fill="#fcd5cc" transform="rotate(-20 66 40)" opacity="0.6"/>
+                  <ellipse cx="122" cy="40" rx="7" ry="10" fill="#fcd5cc" transform="rotate(20 122 40)" opacity="0.6"/>
+                  <!-- Eyes -->
+                  <circle cx="80"  cy="60" r="5.5" fill="#1e1e1e"/>
+                  <circle cx="108" cy="60" r="5.5" fill="#1e1e1e"/>
+                  <circle cx="81.5" cy="58.5" r="2" fill="white"/>
+                  <circle cx="109.5" cy="58.5" r="2" fill="white"/>
+                  <!-- Nose -->
+                  <ellipse cx="94" cy="72" rx="6" ry="4" fill="#1e1e1e"/>
+                  <!-- Smile -->
+                  <path d="M86 78 Q94 86 102 78" stroke="#1e1e1e" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                  <!-- Blush -->
+                  <ellipse cx="70" cy="70" rx="8" ry="4.5" fill="#ff9999" opacity="0.32"/>
+                  <ellipse cx="118" cy="70" rx="8" ry="4.5" fill="#ff9999" opacity="0.32"/>
+                  <!-- Legs -->
+                  <rect x="52"  y="158" width="18" height="30" rx="9" fill="white"/>
+                  <rect x="75"  y="162" width="18" height="28" rx="9" fill="white"/>
+                  <rect x="108" y="162" width="18" height="28" rx="9" fill="white"/>
+                  <rect x="132" y="158" width="18" height="30" rx="9" fill="white"/>
+                  <!-- Paws -->
+                  <ellipse cx="61"  cy="189" rx="10" ry="5" fill="white"/>
+                  <ellipse cx="84"  cy="191" rx="10" ry="5" fill="white"/>
+                  <ellipse cx="117" cy="191" rx="10" ry="5" fill="white"/>
+                  <ellipse cx="141" cy="189" rx="10" ry="5" fill="white"/>
+                </svg>
+              {% endif %}
+            </div>
+          {% endif %}
+
+        </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ============================================================
+   FONTS
+============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+/* ============================================================
+   SECTION
+============================================================ */
+.ac-section {
+  background: {{ section.settings.bg_color }};
+  padding: 72px 20px 120px;
+  overflow: hidden;
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', sans-serif;
+}
+
+.ac-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.ac-header {
+  text-align: center;
+  margin-bottom: 72px;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.ac-header.is-visible { opacity: 1; transform: translateY(0); }
+
+.ac-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  color: #3a3a3a;
+  margin-bottom: 14px;
+}
+.ac-eyebrow__line {
+  display: inline-block;
+  width: 26px; height: 1px;
+  background: #3a3a3a;
+}
+
+.ac-heading {
+  font-size: clamp(20px, 3vw, 32px);
+  font-weight: 700;
+  color: #2a2a2a;
+  letter-spacing: .05em;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   LIST
+============================================================ */
+.ac-list {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;    /* vertical space between items, accommodates dog overflow */
+}
+
+/* ============================================================
+   ITEM  — the three-layer overlapping assembly
+   ─────────────────────────────────────────────
+   We use a single flex row where each layer is positioned
+   so they overlap precisely as in the screenshot.
+
+   Flow: [IMAGE] → [CARD overlaps image by ~5px] → [DOG overlaps card bottom ~40%]
+   All three are siblings in the same flex container.
+   The ITEM itself gets a bottom-padding to accommodate the dog
+   hanging below the card.
+============================================================ */
+.ac-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;   /* align to top so we can control vertical offsets */
+
+  /* Scroll-in animation */
+  opacity: 0;
+  transform: translateY(52px);
+  transition:
+    opacity  .85s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * 160ms),
+    transform .85s cubic-bezier(.22,1,.36,1) calc(var(--i,0) * 160ms);
+}
+.ac-item.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Reversed: mirror the whole row */
+.ac-item--rev { flex-direction: row-reverse; }
+
+/* ============================================================
+   LAYER 1 — IMAGE
+   ─────────────────────────────────────────────
+   • Large rounded container (~40–45% of row width)
+   • Strong border-radius (40px)
+   • Pronounced box-shadow
+   • z-index: 1  (behind card)
+============================================================ */
+.ac-img-wrap {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 44%;
+  aspect-ratio: 4 / 3.2;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.18),
+    0  4px 12px rgba(0,0,0,.10);
+  transition:
+    transform  .6s cubic-bezier(.22,1,.36,1),
+    box-shadow .6s ease;
+}
+.ac-img-wrap:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow:
+    0 24px 56px rgba(0,0,0,.22),
+    0  6px 18px rgba(0,0,0,.12);
+}
+
+.ac-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0;           /* image itself is NOT rounded — container clips it */
+  transition: transform .7s ease;
+}
+.ac-img-wrap:hover .ac-img { transform: scale(1.06); }
+
+.ac-img--ph {
+  width: 100%; height: 100%;
+  background: #c8c8c8;
+  display: block;
+}
+
+/* ============================================================
+   LAYER 2 — TEXT CARD
+   ─────────────────────────────────────────────
+   • Overlaps image's RIGHT edge by ~5px (margin-left: -5px)
+   • Offset ~15px DOWN from image top (margin-top: 15px)
+   • Extends BELOW image bottom (taller combined height)
+   • z-index: 2  (in front of image's right edge)
+   • Soft box-shadow
+============================================================ */
+.ac-card {
+  position: relative;
+    flex: 1;
+    background: #fdf8ec;
+    border-radius: 26px;
+    padding: 44px 44px 120px 80px;
+    margin-left: -58px;
+    margin-top: 100px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, .08);
+    transition: transform .5s cubic-bezier(.22, 1, .36, 1), box-shadow .5s ease;
+}
+.ac-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 42px rgba(0,0,0,.13);
+}
+
+/* Reversed card: overlap image's LEFT edge */
+.ac-item--rev .ac-card {
+    margin-left: 0;
+    margin-right: -54px;
+    padding: 44px 80px 120px 47px;
+}
+
+/* ============================================================
+   BADGE / CHIP
+============================================================ */
+.ac-badge {
+  display: inline-block;
+  background: {{ section.settings.badge_color }};
+  color: #2a2a2a;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .07em;
+  padding: 6px 20px;
+  border-radius: 50px;
+  margin-bottom: 22px;
+  transition: transform .3s ease;
+}
+.ac-card:hover .ac-badge { transform: scale(1.07); }
+
+/* ============================================================
+   TITLE & DESC
+============================================================ */
+.ac-title {
+  font-size: clamp(17px, 2vw, 23px);
+  font-weight: 700;
+  color: #2a2a2a;
+  margin: 0 0 20px;
+  line-height: 1.65;
+  white-space: pre-line;
+}
+
+.ac-desc {
+  font-size: 14px;
+  color: #555;
+  line-height: 2;
+  margin: 0;
+}
+
+/* ============================================================
+   LAYER 3 — DOG ILLUSTRATION
+   ─────────────────────────────────────────────
+   • Sits to the RIGHT of the card (NOT inside it)
+   • 40% of dog body overlaps the BOTTOM of the card
+   • Positioned absolute relative to .ac-item
+   • z-index: 3  (above card)
+
+   Method: absolute, bottom aligned so dog feet sit ~20px below
+   card bottom, dog body rises into card overlap zone.
+============================================================ */
+.ac-dog {
+  position: absolute;
+  z-index: 3;
+  right: -10px;               /* slightly outside right edge of row */
+  /* Align dog so its upper 60% is below card bottom = 40% overlap up */
+  bottom: -80px;              /* feet extend 40px below item row */
+  pointer-events: none;
+  animation: acDogBob 4.2s ease-in-out infinite;
+  filter: drop-shadow(0 6px 14px rgba(0,0,0,.12));
+}
+
+/* Reversed: dog on LEFT side */
+.ac-item--rev .ac-dog {
+  right: auto;
+  left: 20px;
+  /* animation: acDogBobFlip 4.2s ease-in-out infinite; */
+}
+
+.ac-dog__svg,
+.ac-dog__img {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+
+@keyframes acDogBob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes acDogBobFlip {
+  0%, 100% { transform: scaleX(-1) translateY(0); }
+  50%       { transform: scaleX(-1) translateY(-12px); }
+}
+
+/* ============================================================
+   TABLET  ≤ 860px
+   Stack: image full-width on top, card overlaps image bottom,
+   dog sits bottom-right of card.
+============================================================ */
+@media (max-width: 860px) {
+  .ac-section  { padding: 56px 20px 96px; }
+  .ac-list     { gap: 80px; }
+
+  .ac-item,
+  .ac-item--rev {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .ac-img-wrap {
+    flex: unset;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 28px;
+    margin: 0;
+  }
+
+  /* card overlaps image bottom on tablet */
+  .ac-card,
+  .ac-item--rev .ac-card {
+    margin: -24px 0 0 0;
+    padding: 36px 28px 44px;
+    border-radius: 22px;
+  }
+
+  .ac-dog,
+  .ac-item--rev .ac-dog {
+    right: 12px;
+    left: auto;
+    bottom: -36px;
+    /* animation: acDogBob 4.2s ease-in-out infinite; */
+  }
+
+  .ac-dog__svg,
+  .ac-dog__img { width: 220px; }
+}
+
+.dec-1{
+right: 45px;
+}
+
+/* ============================================================
+   MOBILE  ≤ 480px
+============================================================ */
+@media (max-width: 480px) {
+  .ac-section  { padding: 44px 14px 80px; }
+  .ac-header   { margin-bottom: 44px; }
+  .ac-list     { gap: 68px; }
+
+  .ac-img-wrap {
+    aspect-ratio: 4 / 3;
+    border-radius: 22px;
+  }
+
+  .ac-card,
+  .ac-item--rev .ac-card {
+    margin: -18px 0 0 0;
+    padding: 28px 20px 36px;
+    border-radius: 18px;
+  }
+
+  .ac-title  { font-size: 16px; }
+  .ac-desc   { font-size: 13px; }
+
+  .ac-dog__svg,
+  .ac-dog__img { width: 90px; }
+
+  .ac-dog { right: 6px; bottom: -28px; }
+}
+</style>
+
+<script>
+(function () {
+  'use strict';
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.10, rootMargin: '0px 0px -24px 0px' });
+
+  document.querySelectorAll('.ac-header, .ac-item').forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Aboutus Commitment",
+  "tag": "section",
+  "class": "section-aboutus-commitment",
+  "settings": [
+    {
+      "type": "text",
+      "id": "eyebrow_text",
+      "label": "Eyebrow Label",
+      "default": "Annie's Commitment"
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section Heading",
+      "default": "アニーズパントリー３つのこだわり"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#5bc8d0"
+    },
+    {
+      "type": "color",
+      "id": "card_color",
+      "label": "Card Background Color",
+      "default": "#fdf8ec"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Badge Color",
+      "default": "#f5d43c"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "commitment_item",
+      "name": "Commitment Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "badge_label",
+          "label": "Badge Label",
+          "default": "Commitment 01"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "info": "Use \\n for a line break",
+          "default": "素材の力が生きる\n生のお肉"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "無加熱たから、お肉本来のうまみがたっぷり。\n豊富なタンパク質で、からだづくりをサポートします。"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse_layout",
+          "label": "Reverse Layout (Image on Right, Dog on Left)",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "show_dog",
+          "label": "Show Dog Illustration",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "dog_image",
+          "label": "Custom Dog Image (overrides built-in SVG)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Aboutus Commitment",
+      "blocks": [
+        {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 01",
+            "title": "素材の力が生きる\n生のお肉",
+            "description": "無加熱たから、お肉本来のうまみがたっぷり。\n豊富なタンパク質で、からだづくりをサポートします。",
+            "reverse_layout": false,
+            "show_dog": true
+          }
+        },
+        {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 02",
+            "title": "安心と信頼の\n国内製造",
+            "description": "すべては国内の自社工場で製造・管理。\n確かな品質で、家族みんなに安心をお届けます。",
+            "reverse_layout": true,
+            "show_dog": true
+          }
+        },
+        {
+          "type": "commitment_item",
+          "settings": {
+            "badge_label": "Commitment 03",
+            "title": "必要なものだけ\n無添加ごはん",
+            "description": "香料・着色料・添加物は一切不使用。\n素材本来のおいしさと安心をそのままお届けます。",
+            "reverse_layout": false,
+            "show_dog": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,363 @@
+{% comment %}
+  Section: Why Choose Us
+  Save as: sections/why-choose-us.liquid
+{% endcomment %}
+
+<section
+  class="why-choose-us"
+  id="why-choose-us-{{ section.id }}"
+  style="
+    --bg-color: {{ section.settings.background_color }};
+    --card-bg: {{ section.settings.card_background_color }};
+    --heading-color: {{ section.settings.heading_color }};
+    --badge-bg: {{ section.settings.badge_background_color }};
+    --badge-text: {{ section.settings.badge_text_color }};
+    --card-subtitle-color: {{ section.settings.card_subtitle_color }};
+    --card-body-color: {{ section.settings.card_body_color }};
+    --section-padding-top: {{ section.settings.padding_top }}px;
+    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
+  {%- if section.settings.show_left_dog and section.settings.left_dog_image != blank -%}
+    <div class="why-choose-us__dog why-choose-us__dog--top-left" aria-hidden="true">
+      <img src="{{ section.settings.left_dog_image | img_url: '350x' }}" alt="" width="250" loading="lazy">
+    </div>
+  {%- endif -%}
+
+  {%- if section.settings.show_right_dog and section.settings.right_dog_image != blank -%}
+    <div class="why-choose-us__dog why-choose-us__dog--bottom-right" aria-hidden="true">
+      <img src="{{ section.settings.right_dog_image | img_url: '350x' }}" alt="" width="250" loading="lazy">
+    </div>
+  {%- endif -%}
+
+  <div class="why-choose-us__inner">
+
+    <div class="why-choose-us__header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="why-choose-us__eyebrow">
+          {%- if section.settings.show_eyebrow_stars -%}<span aria-hidden="true">&#11088;</span>{%- endif -%}
+          {{- section.settings.eyebrow | escape -}}
+          {%- if section.settings.show_eyebrow_stars -%}<span aria-hidden="true">&#11088;</span>{%- endif -%}
+        </p>
+      {%- endif -%}
+      {%- if section.settings.heading != blank -%}
+        <{{ section.settings.heading_tag }} class="why-choose-us__heading">
+          {{- section.settings.heading | escape -}}
+        </{{ section.settings.heading_tag }}>
+      {%- endif -%}
+    </div>
+
+    {%- if section.blocks.size > 0 -%}
+      <div class="why-choose-us__grid" style="--columns: {{ section.blocks.size | at_most: 4 }};">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+          {%- when 'reason_card' -%}
+            <div
+              class="why-choose-us__card"
+              {{ block.shopify_attributes }}
+              style="animation-delay: {{ forloop.index0 | times: 0.12 }}s;"
+            >
+              <div class="why-choose-us__badge">
+                {%- if block.settings.badge_label != blank -%}
+                  {{- block.settings.badge_label | escape -}}
+                {%- else -%}
+                  Reason {{ forloop.index }}
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.title != blank -%}
+                <h3 class="why-choose-us__card-title">{{- block.settings.title | escape -}}</h3>
+              {%- endif -%}
+
+              <div class="why-choose-us__image-wrap">
+                {%- if block.settings.image != blank -%}
+                  <img
+                    src="{{ block.settings.image | img_url: '400x400', crop: 'center' }}"
+                    srcset="{{ block.settings.image | img_url: '200x200', crop: 'center' }} 200w, {{ block.settings.image | img_url: '400x400', crop: 'center' }} 400w"
+                    sizes="(max-width: 767px) 160px, 200px"
+                    alt="{{ block.settings.image_alt | escape | default: block.settings.title | escape }}"
+                    width="200" height="200" loading="lazy"
+                  >
+                {%- else -%}
+                  <div class="why-choose-us__image-placeholder">
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+                  </div>
+                {%- endif -%}
+              </div>
+
+              {%- if block.settings.subtitle != blank -%}
+                <p class="why-choose-us__card-subtitle">{{- block.settings.subtitle | escape -}}</p>
+              {%- endif -%}
+
+              {%- if block.settings.body != blank -%}
+                <p class="why-choose-us__card-body">{{- block.settings.body -}}</p>
+              {%- endif -%}
+            </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="why-choose-us__empty">
+        <p>Add reason cards in the theme editor.</p>
+      </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+  #why-choose-us-{{ section.id }} {
+    background-color: var(--bg-color);
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
+    position: relative;
+    overflow: hidden;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__inner {
+    max-width: {{ section.settings.content_max_width }}px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--heading-color);
+    margin: 0 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    opacity: 0.85;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__heading {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 400;
+    color: var(--heading-color);
+    margin: 0;
+    line-height: 1.2;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns), 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+  @media (max-width: 1023px) {
+    #why-choose-us-{{ section.id }} .why-choose-us__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 599px) {
+    #why-choose-us-{{ section.id }} .why-choose-us__grid {
+      grid-template-columns: 1fr;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__card {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    padding: 32px 28px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(24px);
+    animation: wcu-card-in 0.5s ease forwards;
+  }
+  @keyframes wcu-card-in {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__badge {
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 4px 14px;
+    border-radius: 99px;
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__card-title {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 400;
+    color: var(--heading-color);
+    margin: 0 0 24px;
+    line-height: 1.3;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__image-wrap {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 28px;
+    flex-shrink: 0;
+    background-color: rgba(0,0,0,0.04);
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__card:hover .why-choose-us__image-wrap img {
+    transform: scale(1.06);
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__card-subtitle {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--card-subtitle-color);
+    margin: 0 0 12px;
+    line-height: 1.4;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__card-body {
+    font-size: 13px;
+    color: var(--card-body-color);
+    line-height: 1.8;
+    margin: 0;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__dog {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__dog--top-left {
+    top: 0;
+    left: 0;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__dog--bottom-right {
+    bottom: 0;
+    right: 0;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__dog img {
+    display: block;
+    max-width: 220px;
+    width: 14vw;
+    min-width: 90px;
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__dog--bottom-right img {
+    transform: scaleX(1);
+  }
+  #why-choose-us-{{ section.id }} .why-choose-us__empty {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
+    color: var(--heading-color);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #why-choose-us-{{ section.id }} .why-choose-us__card {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Why Choose Us",
+  "tag": "section",
+  "class": "section-why-choose-us",
+  "settings": [
+    { "type": "header", "content": "Section Header" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "Why Choose Us" },
+    { "type": "checkbox", "id": "show_eyebrow_stars", "label": "Show star icons", "default": true },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Why Choose Us" },
+    {
+      "type": "select",
+      "id": "heading_tag",
+      "label": "Heading tag",
+      "options": [
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" }
+      ],
+      "default": "h2"
+    },
+    { "type": "header", "content": "Colors" },
+    { "type": "color", "id": "background_color", "label": "Section background", "default": "#9adbe8" },
+    { "type": "color", "id": "card_background_color", "label": "Card background", "default": "#fefbec" },
+    { "type": "color", "id": "heading_color", "label": "Heading color", "default": "#5e3826" },
+    { "type": "color", "id": "badge_background_color", "label": "Badge background", "default": "#9adbe8" },
+    { "type": "color", "id": "badge_text_color", "label": "Badge text color", "default": "#FFFFFF" },
+    { "type": "color", "id": "card_subtitle_color", "label": "Card subtitle color", "default": "#5e3826" },
+    { "type": "color", "id": "card_body_color", "label": "Card body color", "default": "#5e3826" },
+    { "type": "header", "content": "Layout" },
+    { "type": "range", "id": "content_max_width", "label": "Max width (px)", "min": 800, "max": 1600, "step": 40, "default": 1200 },
+    { "type": "range", "id": "padding_top", "label": "Padding top (px)", "min": 20, "max": 160, "step": 4, "default": 80 },
+    { "type": "range", "id": "padding_bottom", "label": "Padding bottom (px)", "min": 20, "max": 160, "step": 4, "default": 80 },
+    { "type": "header", "content": "Dog Illustrations" },
+    { "type": "checkbox", "id": "show_left_dog", "label": "Show top-left dog", "default": true },
+    { "type": "image_picker", "id": "left_dog_image", "label": "Top-left dog image" },
+    { "type": "checkbox", "id": "show_right_dog", "label": "Show bottom-right dog", "default": true },
+    { "type": "image_picker", "id": "right_dog_image", "label": "Bottom-right dog image" }
+  ],
+  "blocks": [
+    {
+      "type": "reason_card",
+      "name": "Reason Card",
+      "settings": [
+        { "type": "text", "id": "badge_label", "label": "Badge label", "placeholder": "Reason 1", "info": "Leave blank to auto-number" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Raw Meat" },
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_alt", "label": "Image alt text" },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "The power of fresh raw ingredients" },
+        { "type": "textarea", "id": "body", "label": "Body text", "default": "Because it is unheated, it is full of the original flavor of the meat, and its rich protein supports your body." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Choose Us",
+      "blocks": [
+        {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Reason 1",
+            "title": "Raw Meat",
+            "subtitle": "The power of fresh raw ingredients",
+            "body": "Because it is unheated, it is full of the original flavor of the meat, and its rich protein supports your body."
+          }
+        },
+        {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Reason 2",
+            "title": "Made in Japan",
+            "subtitle": "Safe and trusted domestic production",
+            "body": "All products are manufactured and managed at factories in Japan, delivering reliable quality and peace of mind to the whole family."
+          }
+        },
+        {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Reason 3",
+            "title": "No Additives",
+            "subtitle": "Only what is necessary, additive-free",
+            "body": "No fragrances, colorings, or preservatives are used. We deliver the natural taste and safety of the ingredients as they are."
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}
