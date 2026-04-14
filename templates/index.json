@@ -1764,7 +1764,13 @@
           ]
         }
       },
-      "custom_css": [],
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=submit]{background:#9ADBE8!important;border-radius:50px!important;border:none!important}",
+        ".quantity-selector{border-radius:50px!important;overflow:hidden!important}",
+        ".quantity-selector__button{background:#5E3826!important;color:#fff!important}",
+        ".quantity-selector__button:first-child{border-radius:50px 0 0 50px!important}",
+        ".quantity-selector__button:last-child{border-radius:0 50px 50px 0!important}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "lilpuptub",
