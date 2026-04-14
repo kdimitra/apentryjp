@@ -63,6 +63,30 @@
             "title": "Apentry Product 1",
             "url": ""
           }
+        },
+        "food_item_CY7Qcd": {
+          "type": "food_item",
+          "settings": {
+            "image": "shopify://shop_images/LPT_PORK.png",
+            "title": "Apentry Product 1",
+            "url": ""
+          }
+        },
+        "food_item_FceN3K": {
+          "type": "food_item",
+          "settings": {
+            "image": "shopify://shop_images/LPT_PORK.png",
+            "title": "Apentry Product 1",
+            "url": ""
+          }
+        },
+        "food_item_NxyeAr": {
+          "type": "food_item",
+          "settings": {
+            "image": "shopify://shop_images/LPT_PORK.png",
+            "title": "Apentry Product 1",
+            "url": ""
+          }
         }
       },
       "block_order": [
@@ -72,7 +96,10 @@
         "about_link_XnFpUG",
         "about_link_PAN67J",
         "about_link_bTyQ9i",
-        "food_item_FBJqhg"
+        "food_item_FBJqhg",
+        "food_item_CY7Qcd",
+        "food_item_FceN3K",
+        "food_item_NxyeAr"
       ],
       "name": "t:names.footer",
       "settings": {
