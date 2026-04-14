@@ -1354,6 +1354,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #fa6e50 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "bigpuptub",
@@ -1758,10 +1765,11 @@
         }
       },
       "custom_css": [
-        ".quantity{border-radius:50px!important;background:#fff!important}",
-        ".quantity__button[data-action=\"decrease\"]{background:#a89890!important;border-radius:50%!important;color:#fff!important}",
-        ".quantity__button[data-action=\"increase\"]{background:#5E3826!important;border-radius:50%!important;color:#fff!important}",
-        ".product-form__submit,.btn--add-to-cart,.card__btn{background:#FA6E50!important;border-radius:50px!important;border:none!important}"
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #fa6e50 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
       ],
       "name": "t:names.products_carousel",
       "settings": {
@@ -2230,6 +2238,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #9adbe8 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "set-food",
@@ -2633,6 +2648,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=submit]{background:#9ADBE8!important;border-radius:50px!important;border:none!important}",
+        ".quantity-selector{border-radius:50px!important;overflow:hidden!important}",
+        ".quantity-selector__button{background:#5E3826!important;color:#fff!important}",
+        ".quantity-selector__button:first-child{border-radius:50px 0 0 50px!important}",
+        ".quantity-selector__button:last-child{border-radius:0 50px 50px 0!important}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "frankenprey",
