@@ -31,14 +31,14 @@
         "service_link_fDtigG": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Shipping Policy",
             "url": ""
           }
         },
         "service_link_LJPBNQ": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Terms of service",
             "url": ""
           }
         },
