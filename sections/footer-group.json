@@ -89,6 +89,7 @@
         "instagram_url": "",
         "tiktok_url": "",
         "line_url": "",
+        "footer_image": "shopify://shop_images/FOOTER.png",
         "show_copyright": true,
         "copyright_text": "",
         "padding_top": 48,
