@@ -4156,7 +4156,7 @@
       "type": "divider",
       "name": "t:names.divider_section",
       "settings": {
-        "color_scheme": "scheme-f3aa335b-b4d9-4808-9e12-16a3651fbacd",
+        "color_scheme": "scheme-1",
         "section_width": "full-width",
         "thickness": 0.5,
         "corner_radius": "square",
