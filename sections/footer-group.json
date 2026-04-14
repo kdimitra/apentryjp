@@ -13,167 +13,87 @@
   "sections": {
     "footer_WnX4aJ": {
       "type": "footer",
-      "blocks": {
-        "food_1": {
-          "type": "food_item",
-          "settings": {
-            "title": "パップタブ (大)",
-            "url": "/collections/all"
-          },
-          "blocks": {}
-        },
-        "food_2": {
-          "type": "food_item",
-          "settings": {
-            "title": "パップタブ (小)",
-            "url": "/collections/all"
-          },
-          "blocks": {}
-        },
-        "food_3": {
-          "type": "food_item",
-          "settings": {
-            "title": "セットフード",
-            "url": "/collections/all"
-          },
-          "blocks": {}
-        },
-        "food_4": {
-          "type": "food_item",
-          "settings": {
-            "title": "フランケンソーセージ",
-            "url": "/collections/all"
-          },
-          "blocks": {}
-        },
-        "about_1": {
-          "type": "about_link",
-          "settings": {
-            "label": "About",
-            "url": "/pages/about"
-          },
-          "blocks": {}
-        },
-        "about_2": {
-          "type": "about_link",
-          "settings": {
-            "label": "Blog",
-            "url": "/blogs/news"
-          },
-          "blocks": {}
-        },
-        "about_3": {
-          "type": "about_link",
-          "settings": {
-            "label": "News",
-            "url": "/blogs/news"
-          },
-          "blocks": {}
-        },
-        "about_4": {
-          "type": "about_link",
-          "settings": {
-            "label": "FAQ",
-            "url": "/pages/faq"
-          },
-          "blocks": {}
-        },
-        "service_1": {
-          "type": "service_link",
-          "settings": {
-            "label": "Contact Us",
-            "url": "/pages/contact"
-          },
-          "blocks": {}
-        },
-        "service_2": {
-          "type": "service_link",
-          "settings": {
-            "label": "Privacy Policy",
-            "url": "/policies/privacy-policy"
-          },
-          "blocks": {}
-        },
-        "service_3": {
-          "type": "service_link",
-          "settings": {
-            "label": "Shipping Policy",
-            "url": "/policies/shipping-policy"
-          },
-          "blocks": {}
-        },
-        "service_4": {
-          "type": "service_link",
-          "settings": {
-            "label": "Terms of Service",
-            "url": "/policies/terms-of-service"
-          },
-          "blocks": {}
-        },
-        "service_5": {
-          "type": "service_link",
-          "settings": {
-            "label": "Refund Policy",
-            "url": "/policies/refund-policy"
-          },
-          "blocks": {}
-        },
-        "service_6": {
-          "type": "service_link",
-          "settings": {
-            "label": "Subscription Policy",
-            "url": "/policies/subscription-policy"
-          },
-          "blocks": {}
-        },
-        "service_7": {
-          "type": "service_link",
-          "settings": {
-            "label": "Legal Notice",
-            "url": "/pages/legal-notice"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "food_1",
-        "food_2",
-        "food_3",
-        "food_4",
-        "about_1",
-        "about_2",
-        "about_3",
-        "about_4",
-        "service_1",
-        "service_2",
-        "service_3",
-        "service_4",
-        "service_5",
-        "service_6",
-        "service_7"
-      ],
-      "name": "Footer",
+      "name": "t:names.footer",
       "settings": {
-        "background_color": "#6DC8D8",
+        "background_color": "#6dc8d8",
         "text_color": "#3d2b1a",
         "card_background_color": "#f0e8d0",
         "tagline": "Feeding since 2018",
         "food_list_heading": "Food list",
         "view_all_text": "View all",
-        "view_all_url": "/collections/all",
+        "view_all_url": "",
         "about_heading": "About us",
         "service_heading": "Customer service",
         "social_heading": "Follow us",
-        "instagram_url": "https://www.instagram.com/anniespantryjp/",
-        "tiktok_url": "https://www.tiktok.com/@anniespantrysg",
-        "line_url": "https://line.me/R/ti/p/@515tlvyu",
+        "instagram_url": "",
+        "tiktok_url": "",
+        "line_url": "",
         "show_copyright": true,
+        "copyright_text": "",
         "padding_top": 48,
         "padding_bottom": 64
       }
     },
+    "utilities": {
+      "type": "footer-utilities",
+      "blocks": {
+        "copyright": {
+          "type": "footer-copyright",
+          "settings": {
+            "show_powered_by": true,
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "footer_policy_list_i3GaPF": {
+          "type": "footer-policy-list",
+          "name": "t:names.policy_list",
+          "settings": {
+            "font_size": "0.75rem",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "social_links_Nyht3m": {
+          "type": "social-links",
+          "name": "t:names.social_media_links",
+          "settings": {
+            "facebook_url": "https://facebook.com",
+            "instagram_url": "https://instagram.com",
+            "youtube_url": "https://youtube.com",
+            "tiktok_url": "https://www.tiktok.com/",
+            "twitter_url": "https://x.com",
+            "threads_url": "",
+            "linkedin_url": "",
+            "bluesky_url": "",
+            "snapchat_url": "",
+            "pinterest_url": "",
+            "tumblr_url": "",
+            "vimeo_url": "",
+            "custom_url": ""
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "copyright",
+        "footer_policy_list_i3GaPF",
+        "social_links_Nyht3m"
+      ],
+      "disabled": true,
+      "settings": {
+        "section_width": "page-width",
+        "gap": 24,
+        "divider_thickness": 0,
+        "color_scheme": "scheme-2",
+        "padding-block-start": 20,
+        "padding-block-end": 20
+      }
+    }
   },
   "order": [
-    "footer_WnX4aJ"
+    "footer_WnX4aJ",
+    "utilities"
   ]
 }
