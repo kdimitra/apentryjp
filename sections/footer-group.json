@@ -13,6 +13,67 @@
   "sections": {
     "footer_WnX4aJ": {
       "type": "footer",
+      "blocks": {
+        "service_link_WwetJR": {
+          "type": "service_link",
+          "settings": {
+            "label": "Contact Us",
+            "url": ""
+          }
+        },
+        "service_link_HLaEPY": {
+          "type": "service_link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": ""
+          }
+        },
+        "service_link_fDtigG": {
+          "type": "service_link",
+          "settings": {
+            "label": "Contact Information",
+            "url": ""
+          }
+        },
+        "about_link_XnFpUG": {
+          "type": "about_link",
+          "settings": {
+            "label": "About",
+            "url": ""
+          }
+        },
+        "about_link_PAN67J": {
+          "type": "about_link",
+          "settings": {
+            "label": "Blogs",
+            "url": ""
+          }
+        },
+        "about_link_bTyQ9i": {
+          "type": "about_link",
+          "settings": {
+            "label": "News",
+            "url": ""
+          }
+        },
+        "food_item_FBJqhg": {
+          "type": "food_item",
+          "settings": {
+            "image": "shopify://shop_images/LPT_PORK.png",
+            "title": "Apentry Product 1",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "service_link_WwetJR",
+        "service_link_HLaEPY",
+        "service_link_fDtigG",
+        "about_link_XnFpUG",
+        "about_link_PAN67J",
+        "about_link_bTyQ9i",
+        "food_item_FBJqhg"
+      ],
       "name": "t:names.footer",
       "settings": {
         "background_color": "#6dc8d8",
