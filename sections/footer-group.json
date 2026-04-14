@@ -174,7 +174,7 @@
         "tagline": "",
         "food_list_heading": "Food list",
         "view_all_text": "View all",
-        "view_all_url": "",
+        "view_all_url": "shopify://collections",
         "about_heading": "About us",
         "service_heading": "Customer service",
         "social_heading": "Follow us",
