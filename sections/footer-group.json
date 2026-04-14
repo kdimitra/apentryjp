@@ -117,17 +117,17 @@
         "food_item_FceN3K": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/LPT_ROO_VALUESET.png",
+            "title": "セットフード",
+            "url": "shopify://collections/set-food"
           }
         },
         "food_item_NxyeAr": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/frankenprey_moolachick.png",
+            "title": "フランケンソーセージ",
+            "url": "shopify://collections/frankenprey"
           }
         }
       },
