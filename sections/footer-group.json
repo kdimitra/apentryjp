@@ -101,17 +101,17 @@
         "food_item_FBJqhg": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/BPT_LAMB.png",
+            "title": "パップタブ(大)",
+            "url": "shopify://collections/bigpuptub"
           }
         },
         "food_item_CY7Qcd": {
           "type": "food_item",
           "settings": {
             "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "title": "パップタブ(小)",
+            "url": "shopify://collections/lilpuptub"
           }
         },
         "food_item_FceN3K": {
