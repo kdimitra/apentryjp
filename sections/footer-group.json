@@ -14,215 +14,166 @@
     "footer_WnX4aJ": {
       "type": "footer",
       "blocks": {
-        "group_EJMKU9": {
-          "type": "group",
-          "name": "Menu links",
+        "food_1": {
+          "type": "food_item",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "title": "パップタブ (大)",
+            "url": "/collections/all"
           },
-          "blocks": {
-            "menu_k94JXn": {
-              "type": "menu",
-              "name": "t:names.menu",
-              "settings": {
-                "menu": "footer",
-                "heading": "Shop",
-                "menu_spacing": 4,
-                "show_as_accordion": false,
-                "accordion_icon": "caret",
-                "accordion_dividers": false,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "heading_preset": "h4",
-                "link_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "menu_CY8HUp": {
-              "type": "menu",
-              "name": "t:names.menu",
-              "settings": {
-                "menu": "",
-                "heading": "Ask",
-                "menu_spacing": 4,
-                "show_as_accordion": false,
-                "accordion_icon": "caret",
-                "accordion_dividers": false,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "heading_preset": "h4",
-                "link_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "menu_n8zrAw": {
-              "type": "menu",
-              "name": "t:names.menu",
-              "settings": {
-                "menu": "",
-                "heading": "Connect",
-                "menu_spacing": 4,
-                "show_as_accordion": false,
-                "accordion_icon": "caret",
-                "accordion_dividers": false,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "heading_preset": "h4",
-                "link_preset": "paragraph",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "menu_k94JXn",
-            "menu_CY8HUp",
-            "menu_n8zrAw"
-          ]
+          "blocks": {}
         },
-        "email_signup_t3aAfi": {
-          "type": "email-signup",
-          "name": "t:names.email_signup",
+        "food_2": {
+          "type": "food_item",
           "settings": {
-            "width": "fill",
-            "custom_width": 70,
-            "inherit_color_scheme": true,
-            "heading": "We send tasty emails",
-            "heading_preset": "h4",
-            "color_scheme": "",
-            "border_style": "underline",
-            "border_width": 1,
-            "border_radius": 100,
-            "input_type_preset": "paragraph",
-            "style_class": "button-unstyled",
-            "display_type": "arrow",
-            "label": "Sign Up",
-            "integrated_button": false,
-            "button_type_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "title": "パップタブ (小)",
+            "url": "/collections/all"
+          },
+          "blocks": {}
+        },
+        "food_3": {
+          "type": "food_item",
+          "settings": {
+            "title": "セットフード",
+            "url": "/collections/all"
+          },
+          "blocks": {}
+        },
+        "food_4": {
+          "type": "food_item",
+          "settings": {
+            "title": "フランケンソーセージ",
+            "url": "/collections/all"
+          },
+          "blocks": {}
+        },
+        "about_1": {
+          "type": "about_link",
+          "settings": {
+            "label": "About",
+            "url": "/pages/about"
+          },
+          "blocks": {}
+        },
+        "about_2": {
+          "type": "about_link",
+          "settings": {
+            "label": "Blog",
+            "url": "/blogs/news"
+          },
+          "blocks": {}
+        },
+        "about_3": {
+          "type": "about_link",
+          "settings": {
+            "label": "News",
+            "url": "/blogs/news"
+          },
+          "blocks": {}
+        },
+        "about_4": {
+          "type": "about_link",
+          "settings": {
+            "label": "FAQ",
+            "url": "/pages/faq"
+          },
+          "blocks": {}
+        },
+        "service_1": {
+          "type": "service_link",
+          "settings": {
+            "label": "Contact Us",
+            "url": "/pages/contact"
+          },
+          "blocks": {}
+        },
+        "service_2": {
+          "type": "service_link",
+          "settings": {
+            "label": "Privacy Policy",
+            "url": "/policies/privacy-policy"
+          },
+          "blocks": {}
+        },
+        "service_3": {
+          "type": "service_link",
+          "settings": {
+            "label": "Shipping Policy",
+            "url": "/policies/shipping-policy"
+          },
+          "blocks": {}
+        },
+        "service_4": {
+          "type": "service_link",
+          "settings": {
+            "label": "Terms of Service",
+            "url": "/policies/terms-of-service"
+          },
+          "blocks": {}
+        },
+        "service_5": {
+          "type": "service_link",
+          "settings": {
+            "label": "Refund Policy",
+            "url": "/policies/refund-policy"
+          },
+          "blocks": {}
+        },
+        "service_6": {
+          "type": "service_link",
+          "settings": {
+            "label": "Subscription Policy",
+            "url": "/policies/subscription-policy"
+          },
+          "blocks": {}
+        },
+        "service_7": {
+          "type": "service_link",
+          "settings": {
+            "label": "Legal Notice",
+            "url": "/pages/legal-notice"
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "group_EJMKU9",
-        "email_signup_t3aAfi"
+        "food_1",
+        "food_2",
+        "food_3",
+        "food_4",
+        "about_1",
+        "about_2",
+        "about_3",
+        "about_4",
+        "service_1",
+        "service_2",
+        "service_3",
+        "service_4",
+        "service_5",
+        "service_6",
+        "service_7"
       ],
-      "name": "t:names.footer",
+      "name": "Footer",
       "settings": {
-        "section_width": "page-width",
-        "gap": 12,
-        "color_scheme": "scheme-2",
-        "padding-block-start": 36,
-        "padding-block-end": 36
+        "background_color": "#6DC8D8",
+        "text_color": "#3d2b1a",
+        "card_background_color": "#f0e8d0",
+        "tagline": "Feeding since 2018",
+        "food_list_heading": "Food list",
+        "view_all_text": "View all",
+        "view_all_url": "/collections/all",
+        "about_heading": "About us",
+        "service_heading": "Customer service",
+        "social_heading": "Follow us",
+        "instagram_url": "https://www.instagram.com/anniespantryjp/",
+        "tiktok_url": "https://www.tiktok.com/@anniespantrysg",
+        "line_url": "https://line.me/R/ti/p/@515tlvyu",
+        "show_copyright": true,
+        "padding_top": 48,
+        "padding_bottom": 64
       }
     },
-    "utilities": {
-      "type": "footer-utilities",
-      "blocks": {
-        "copyright": {
-          "type": "footer-copyright",
-          "settings": {
-            "show_powered_by": true,
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "footer_policy_list_i3GaPF": {
-          "type": "footer-policy-list",
-          "name": "t:names.policy_list",
-          "settings": {
-            "font_size": "0.75rem",
-            "case": "none"
-          },
-          "blocks": {}
-        },
-        "social_links_Nyht3m": {
-          "type": "social-links",
-          "name": "t:names.social_media_links",
-          "settings": {
-            "facebook_url": "https://facebook.com",
-            "instagram_url": "https://instagram.com",
-            "youtube_url": "https://youtube.com",
-            "tiktok_url": "https://www.tiktok.com/",
-            "twitter_url": "https://x.com",
-            "threads_url": "",
-            "linkedin_url": "",
-            "bluesky_url": "",
-            "snapchat_url": "",
-            "pinterest_url": "",
-            "tumblr_url": "",
-            "vimeo_url": "",
-            "custom_url": ""
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "copyright",
-        "footer_policy_list_i3GaPF",
-        "social_links_Nyht3m"
-      ],
-      "settings": {
-        "section_width": "page-width",
-        "gap": 24,
-        "divider_thickness": 0,
-        "color_scheme": "scheme-2",
-        "padding-block-start": 20,
-        "padding-block-end": 20
-      }
-    }
   },
   "order": [
-    "footer_WnX4aJ",
-    "utilities"
+    "footer_WnX4aJ"
   ]
 }
