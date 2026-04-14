@@ -1059,6 +1059,16 @@
     height: var(--icon-size-md);
   }
 
+  /* ================================
+   * Gap between nav menu items and the icons (search / user / cart)
+   * on desktop & tablet — applies when both live in the right column
+   * ================================ */
+  @media screen and (min-width: 750px) {
+    .header__column--right .search-action {
+      margin-inline-start: 160px;
+    }
+  }
+
   .header:has(#Details-menu-drawer-container[open]) {
     contain: style;
   }
@@ -1356,6 +1366,12 @@
   .dropdown-localization:not(dropdown-localization-component) .language-selector {
     font-family: var(--menu-localization-font);
     font-size: var(--menu-localization-font-size);
+  }
+  .menu-list{
+    margin-right: 80px;
+  }
+  .menu-list__link, .menu-list__link:hover, .menu-list__link:focus, .menu-list .menu-list__list-item:where(:hover, :focus-within) .menu-list__link, .menu-list .menu-list__list-item[slot='overflow'] .menu-list__link[aria-expanded='true']{
+    color: #5e3826 !important;
   }
 {% endstylesheet %}
 
