@@ -481,8 +481,7 @@
 
     z-index: var(--layer-overlay);
 
-    &[transparent='not-sticky'][data-sticky-state='active'],
-    &:has(.menu-list__link:not([aria-haspopup]):hover) {
+    &[transparent='not-sticky'][data-sticky-state='active'] {
       --header-logo-display: unset;
       --header-logo-inverse-display: unset;
       --color-foreground: inherit;
@@ -492,6 +491,18 @@
       --color-border: inherit;
       --color-border-rgb: inherit;
       --closed-underlay-height: 100%;
+    }
+
+    /* Nav hover: switch logo/colors but keep header background transparent */
+    &:has(.menu-list__link:not([aria-haspopup]):hover) {
+      --header-logo-display: unset;
+      --header-logo-inverse-display: unset;
+      --color-foreground: inherit;
+      --color-foreground-rgb: inherit;
+      --color-background: inherit;
+      --color-background-rgb: inherit;
+      --color-border: inherit;
+      --color-border-rgb: inherit;
     }
 
     /** For transparent header, apply inherit to rows when menu is not hovered */
@@ -627,13 +638,13 @@
     transition: height var(--submenu-animation-speed) var(--ease-out-cubic);
   }
 
-  /* When top row has transparent background, make underlay inherit colors from header component */
+  /* When top row has transparent background, keep underlay top-row transparent on hover */
   [data-transparent-color-scheme='top']:hover,
   [data-transparent-color-scheme='top']:focus-within,
   [data-transparent-color-scheme='both']:hover,
   [data-transparent-color-scheme='both']:focus-within {
     :is(.header__underlay-open, .header__underlay-closed) {
-      --color-scheme-top-row: var(--color-background);
+      --color-scheme-top-row: transparent;
     }
   }
 
@@ -911,6 +922,7 @@
     justify-content: center;
     flex-shrink: 0;
     box-sizing: border-box;
+    overflow: hidden;
   }
 
   .search-action:hover,
@@ -919,6 +931,19 @@
   .search-action:active {
     background-color: #ffffff !important;
     box-shadow: none;
+  }
+
+  /* Inner button must fill the circle so no square corners bleed through */
+  .search-action .header-actions__action {
+    width: 100% !important;
+    height: 100% !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
   /* ================================
@@ -1000,6 +1025,28 @@
   .account-button {
     background-color: transparent;
     border: none;
+  }
+
+  /* ================================
+   * Always apply brand color #5e3826 to search, account, and cart icons
+   * ================================ */
+  .header-actions__action {
+    color: #5e3826 !important;
+  }
+
+  .header-actions__action:hover,
+  .header-actions__action:focus,
+  .header-actions__action:active {
+    color: #5e3826 !important;
+  }
+
+  .header__row {
+    --color-account-icon: #5e3826;
+  }
+
+  .account-button__icon,
+  .account-button__text {
+    color: #5e3826 !important;
   }
 
   .header-actions__action:not(.account-button) .svg-wrapper {
