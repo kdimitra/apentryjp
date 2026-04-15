@@ -3773,6 +3773,23 @@
         "padding-block-end": 0
       }
     },
+    "home_blog_YfEPn6": {
+      "type": "home-blog",
+      "name": "Home blog",
+      "settings": {
+        "eyebrow": "Blog",
+        "heading": "ブログ",
+        "intro_text": "愛犬の健康といいものを目指すアニーズパントリーのブログ。食事や健康、日々のケアから、お客様の声まで、さまざまな情報を発信しています。",
+        "cta_label": "View more",
+        "cta_url": "",
+        "blog": "フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
+        "posts_to_show": 3,
+        "image_ratio": "landscape",
+        "show_date": true,
+        "show_category": true,
+        "bg_color": "#faf7e6"
+      }
+    },
     "featured_blog_posts_XEfrTx": {
       "type": "featured-blog-posts",
       "blocks": {
@@ -4221,6 +4238,7 @@
     "section_wyif3z",
     "why_chooseus_VUkg6J",
     "section_PFD4cQ",
+    "home_blog_YfEPn6",
     "featured_blog_posts_XEfrTx",
     "slideshow_UzwwNm",
     "about_image_card_hMLiwr",
