@@ -4198,6 +4198,8 @@
         "decoration_image": "shopify://shop_images/16_-ItalianGreyhound.png",
         "blog": "news",
         "posts_to_show": 3,
+        "image_size": 192,
+        "image_ratio": "landscape",
         "bg_color": "#faf7e6"
       }
     }
