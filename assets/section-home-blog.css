@@ -1,0 +1,333 @@
+/* ─────────────────────────────────────────
+   Home Blog Section  ·  section-home-blog.css
+   Layout: cream bg · left intro col · right 3-col open card grid
+   Confirmed against apantry.jp /ブログ screenshot
+───────────────────────────────────────── */
+
+.section-home-blog {
+  /* Design tokens */
+  --hb-bg:              #F4F1EC;   /* warm cream section bg */
+  --hb-text-primary:    #1C1C1A;
+  --hb-text-secondary:  #6B6860;
+  --hb-text-accent:     #3D6B4F;
+  --hb-border:          #E2DDD6;
+  --hb-radius-img:      16px;
+  --hb-radius-tag:       4px;
+  --hb-radius-pill:   9999px;
+  --hb-icon-color:      #C4A96D;   /* warm gold — star eyebrow icon */
+
+  /* Typography */
+  --hb-font-display: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  --hb-font-body:    'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  --hb-font-latin:   'DM Sans', sans-serif;
+
+  background-color: var(--hb-bg);
+  padding-block: 96px;
+}
+
+/* ── Container ───────────────────────── */
+.hb-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ── Two-column wrapper ──────────────── */
+/* Left label col fixed · Right cards col fills remaining */
+.hb-inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─────────────────────────────────────
+   LEFT COLUMN — intro
+───────────────────────────────────── */
+.hb-label-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  position: sticky;
+  top: 80px;
+}
+
+/* ✦ Blog eyebrow */
+.hb-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--hb-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hb-text-primary);
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+.hb-eyebrow__icon {
+  color: var(--hb-icon-color);
+  font-size: 13px;
+  line-height: 1;
+}
+
+/* ブログ heading */
+.hb-heading {
+  font-family: var(--hb-font-display);
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--hb-text-primary);
+  margin: 0;
+}
+
+/* Intro paragraph */
+.hb-intro {
+  font-family: var(--hb-font-body);
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--hb-text-secondary);
+  margin: 0;
+  max-width: 260px;
+}
+
+/* "View more ›" pill CTA */
+.hb-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--hb-font-body);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hb-text-primary);
+  text-decoration: none;
+  border: 1.5px solid var(--hb-text-primary);
+  border-radius: var(--hb-radius-pill);
+  padding: 7px 18px;
+  margin-top: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.hb-viewall:hover {
+  background-color: var(--hb-text-primary);
+  color: #FAFAF7;
+}
+
+.hb-viewall:focus-visible {
+  outline: 2px solid var(--hb-text-accent);
+  outline-offset: 3px;
+}
+
+/* Decoration / dog illustration */
+.hb-decoration {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 160px;
+  align-self: flex-start;
+}
+
+.hb-decoration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─────────────────────────────────────
+   RIGHT COLUMN — 3-column card grid
+───────────────────────────────────── */
+.hb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Open card (no background, no border) ── */
+.hb-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.hb-card__link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hb-card__link:focus-visible {
+  outline: 2px solid var(--hb-text-accent);
+  outline-offset: 4px;
+  border-radius: var(--hb-radius-img);
+}
+
+/* Image — landscape, rounded, object-fit cover */
+.hb-card__image-wrap {
+  width: 100%;
+  aspect-ratio: var(--hb-img-ratio, 4 / 3);
+  border-radius: var(--hb-radius-img);
+  overflow: hidden;
+  background-color: #E8E3DA;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.hb-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.hb-card__link:hover .hb-card__image {
+  transform: scale(1.04);
+}
+
+/* Image placeholder */
+.hb-card__image-placeholder {
+  width: 100%;
+  aspect-ratio: var(--hb-img-ratio, 4 / 3);
+  border-radius: var(--hb-radius-img);
+  background-color: #E8E3DA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.hb-card__image-placeholder svg {
+  width: 32px;
+  height: 32px;
+  color: #C8C2B8;
+}
+
+/* Card body */
+.hb-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* Date */
+.hb-card__date {
+  font-family: var(--hb-font-latin);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--hb-text-secondary);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* Article title */
+.hb-card__title {
+  font-family: var(--hb-font-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--hb-text-primary);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: opacity 0.15s ease;
+}
+
+.hb-card__link:hover .hb-card__title {
+  opacity: 0.65;
+}
+
+/* Category tag */
+.hb-card__category {
+  font-family: var(--hb-font-body);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--hb-text-secondary);
+  margin: 4px 0 0;
+  letter-spacing: 0.03em;
+}
+
+/* ── Responsive: Tablet (768–1023px) ── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-home-blog {
+    padding-block: 72px;
+  }
+
+  .hb-container {
+    padding-inline: 32px;
+  }
+
+  .hb-inner {
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+  }
+
+  .hb-heading {
+    font-size: 30px;
+  }
+
+  .hb-label-col {
+    position: static;
+  }
+
+  .hb-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .hb-decoration {
+    display: none;
+  }
+}
+
+/* ── Responsive: Mobile (<768px) ─────── */
+@media (max-width: 767px) {
+  .section-home-blog {
+    padding-block: 56px;
+  }
+
+  .hb-container {
+    padding-inline: 20px;
+  }
+
+  /* Stack columns */
+  .hb-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Inline header row on mobile */
+  .hb-label-col {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .hb-eyebrow    { order: 1; width: 100%; }
+  .hb-heading    { order: 2; font-size: 28px; flex: 1; }
+  .hb-intro      { order: 4; width: 100%; max-width: 100%; }
+  .hb-viewall    { order: 3; margin-top: 0; }
+  .hb-decoration { display: none; }
+
+  /* 2-col card grid on mobile — no single column */
+  .hb-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .hb-card__title {
+    font-size: 13px;
+  }
+}
