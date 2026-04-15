@@ -1,0 +1,435 @@
+
+{%- doc -%}
+  Home Food Section
+  Two-column full-width layout: left text column with corner decorations,
+  right full-cover image column. Matches the home-food section on apantry.jp.
+{%- enddoc -%}
+
+<section
+  id="home-food-{{ section.id }}"
+  class="hf-section"
+  style="
+    --hf-left-bg:   {{ section.settings.left_bg_color }};
+    --hf-text:      {{ section.settings.text_color }};
+    --hf-card-bg:   {{ section.settings.card_bg_color }};
+    --hf-pt:        {{ section.settings.padding_top }}px;
+    --hf-pb:        {{ section.settings.padding_bottom }}px;
+  "
+>
+  {%- comment -%}━━━━━━━━ LEFT COLUMN ━━━━━━━━{%- endcomment -%}
+  <div class="hf-col hf-col--left">
+
+    {%- comment -%} Top-right corner decoration {%- endcomment -%}
+    {%- if section.settings.corner_top_right != blank -%}
+      <div class="hf-corner hf-corner--top-right">
+        <img
+          src="{{ section.settings.corner_top_right | image_url: width: 160 }}"
+          alt=""
+          width="{{ section.settings.corner_top_right.width | at_most: 160 }}"
+          height="auto"
+          loading="lazy"
+          aria-hidden="true"
+        >
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Bottom-left corner decoration {%- endcomment -%}
+    {%- if section.settings.corner_bottom_left != blank -%}
+      <div class="hf-corner hf-corner--bottom-left">
+        <img
+          src="{{ section.settings.corner_bottom_left | image_url: width: 200 }}"
+          alt=""
+          width="{{ section.settings.corner_bottom_left.width | at_most: 200 }}"
+          height="auto"
+          loading="lazy"
+          aria-hidden="true"
+        >
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Text content card {%- endcomment -%}
+    <div class="hf-content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="hf-content__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.title != blank -%}
+        <h2 class="hf-content__title">{{ section.settings.title }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.subtitle != blank -%}
+        <p class="hf-content__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <p class="hf-content__desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.button_label != blank and section.settings.button_url != blank -%}
+        <a href="{{ section.settings.button_url }}" class="hf-content__btn">
+          {{- section.settings.button_label -}}
+          <span class="hf-content__btn-arrow" aria-hidden="true">→</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+  </div>
+
+  {%- comment -%}━━━━━━━━ RIGHT COLUMN ━━━━━━━━{%- endcomment -%}
+  <div class="hf-col hf-col--right">
+    {%- if section.settings.main_image != blank -%}
+      <img
+        src="{{ section.settings.main_image | image_url: width: 1200 }}"
+        srcset="
+          {{ section.settings.main_image | image_url: width: 600 }} 600w,
+          {{ section.settings.main_image | image_url: width: 900 }} 900w,
+          {{ section.settings.main_image | image_url: width: 1200 }} 1200w
+        "
+        sizes="(max-width: 749px) 100vw, 50vw"
+        alt="{{ section.settings.main_image_alt | escape | default: shop.name }}"
+        class="hf-col__image"
+        loading="lazy"
+        width="{{ section.settings.main_image.width }}"
+        height="{{ section.settings.main_image.height }}"
+      >
+    {%- else -%}
+      <div class="hf-col__placeholder">
+        {{ 'image' | placeholder_svg_tag: 'hf-col__placeholder-svg' }}
+      </div>
+    {%- endif -%}
+  </div>
+
+</section>
+
+{% stylesheet %}
+/* ─────────────────────────────────────────
+   Home Food Section  ·  .hf-*
+───────────────────────────────────────── */
+
+.hf-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Left column ─────────────────────── */
+.hf-col--left {
+  position: relative;
+  background-color: var(--hf-left-bg, #f0e8d0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--hf-pt, 80px);
+  padding-bottom: var(--hf-pb, 80px);
+  padding-inline: clamp(32px, 6vw, 80px);
+  overflow: hidden;
+}
+
+/* ── Corner decorations ──────────────── */
+.hf-corner {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hf-corner--top-right {
+  top: 0;
+  right: 0;
+  width: clamp(80px, 12vw, 160px);
+}
+
+.hf-corner--bottom-left {
+  bottom: 0;
+  left: 0;
+  width: clamp(100px, 15vw, 200px);
+}
+
+.hf-corner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Text content card ───────────────── */
+.hf-content {
+  position: relative;
+  z-index: 2;
+  background-color: var(--hf-card-bg, transparent);
+  color: var(--hf-text, #5e3826);
+  max-width: 440px;
+  width: 100%;
+  padding: clamp(24px, 4vw, 48px);
+  border-radius: 16px;
+}
+
+.hf-content__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--hf-text, #5e3826);
+  opacity: 0.65;
+  margin: 0 0 0.75em;
+}
+
+.hf-content__title {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--hf-text, #5e3826);
+  margin: 0 0 0.6em;
+}
+
+.hf-content__subtitle {
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--hf-text, #5e3826);
+  margin: 0 0 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hf-content__desc {
+  font-size: clamp(0.875rem, 1.3vw, 1rem);
+  line-height: 1.7;
+  color: var(--hf-text, #5e3826);
+  opacity: 0.85;
+  margin: 0 0 1.75em;
+}
+
+.hf-content__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--hf-text, #5e3826);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease, gap 0.2s ease;
+}
+
+.hf-content__btn:hover {
+  opacity: 0.75;
+  gap: 0.75em;
+}
+
+.hf-content__btn-arrow {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.hf-content__btn:hover .hf-content__btn-arrow {
+  transform: translateX(3px);
+}
+
+/* ── Right column ────────────────────── */
+.hf-col--right {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+}
+
+.hf-col__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hf-col__placeholder {
+  position: absolute;
+  inset: 0;
+  background: #e0d8c8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hf-col__placeholder-svg {
+  width: 60%;
+  height: 60%;
+  opacity: 0.3;
+}
+
+/* ── Responsive ─────────────────────── */
+@media screen and (max-width: 749px) {
+  .hf-section {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: unset;
+  }
+
+  .hf-col--left {
+    order: 2;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    padding-inline: 24px;
+  }
+
+  .hf-col--right {
+    order: 1;
+    min-height: 300px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .hf-corner--top-right {
+    width: 80px;
+  }
+
+  .hf-corner--bottom-left {
+    width: 100px;
+  }
+
+  .hf-content {
+    padding: 24px 20px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 750px) and (max-width: 1024px) {
+  .hf-section {
+    min-height: 480px;
+  }
+
+  .hf-content {
+    padding: 32px 28px;
+    max-width: 380px;
+  }
+}
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Home Food Section",
+  "tag": "section",
+  "class": "hf-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout & Colors"
+    },
+    {
+      "type": "color",
+      "id": "left_bg_color",
+      "label": "Left column background",
+      "default": "#f0e8d0"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#5e3826"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Content card background",
+      "info": "Leave transparent to show column background",
+      "default": "#00000000"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "header",
+      "content": "Corner Decorations"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_top_right",
+      "label": "Top-right corner image"
+    },
+    {
+      "type": "image_picker",
+      "id": "corner_bottom_left",
+      "label": "Bottom-left corner image"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow (small label above title)",
+      "default": "Food"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Main title",
+      "default": "そのままの素材で、\nそのままの愛を。"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle (max 2 lines)",
+      "default": "余計なものは使わず、使うのは生の自然食材だけ。"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "からだにやさしいフレッシュフードです。大切なわんちゃんに、本物の素材を。"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label",
+      "default": "View all food"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "header",
+      "content": "Right Column Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main image (dog / product photo)"
+    },
+    {
+      "type": "text",
+      "id": "main_image_alt",
+      "label": "Image alt text",
+      "default": "Annie's Pantry dog food"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Food Section"
+    }
+  ]
+}
+{% endschema %}
