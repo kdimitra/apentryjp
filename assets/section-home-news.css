@@ -1,60 +1,22 @@
 /* ─────────────────────────────────────────
    Home News Section  ·  section-home-news.css
-   Follows: /new-section design guidelines
+   Layout: cream bg · left label col · right white card list
 ───────────────────────────────────────── */
 
-/* Design tokens — scoped to this section so they don't leak globally */
 .section-home-news {
-  /* Colors */
-  --color-background:      #FAFAF7;
-  --color-background-alt:  #F4F1EC;
-  --color-text-primary:    #1C1C1A;
-  --color-text-secondary:  #6B6860;
-  --color-accent:          #3D6B4F;
-  --color-accent-light:    #E8F0EB;
-  --color-border:          #E2DDD6;
+  /* Design tokens */
+  --hn-bg:              #F0EBD8;   /* warm cream section background */
+  --hn-card-bg:         #FFFFFF;   /* white cards */
+  --hn-text-primary:    #1C1C1A;
+  --hn-text-secondary:  #6B6860;
+  --hn-text-accent:     #3D6B4F;
+  --hn-radius-card:     16px;
+  --hn-radius-thumb:    10px;
+  --hn-thumb-w:         100px;
 
-  /* Radius */
-  --radius-sm:    4px;
-  --radius-md:    8px;
-  --radius-lg:   16px;
-
-  /* Spacing */
-  --space-1:   4px;
-  --space-2:   8px;
-  --space-3:  12px;
-  --space-4:  16px;
-  --space-5:  24px;
-  --space-6:  32px;
-  --space-7:  48px;
-  --space-8:  64px;
-  --space-9:  96px;
-
-  /* Typography */
-  --font-display: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
-  --font-body:    'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-  --font-latin:   'DM Sans', sans-serif;
-
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 15px;
-  --text-lg:   22px;
-  --text-xl:   30px;
-
-  --font-normal: 400;
-  --font-medium: 500;
-  --font-bold:   700;
-
-  --leading-tight:  1.2;
-  --leading-snug:   1.4;
-
-  --tracking-tight:  -0.02em;
-  --tracking-wide:    0.08em;
-  --tracking-wider:   0.15em;
-
-  /* Section layout */
-  padding-block: 96px;
-  padding-inline: 0;
+  background-color: var(--hn-bg);
+  padding-block: 80px;
+  position: relative;
 }
 
 /* ── Container ───────────────────────── */
@@ -65,214 +27,261 @@
   padding-inline: 40px;
 }
 
-/* ── Section header ──────────────────── */
-.hn-header {
+/* ── Two-column wrapper ──────────────── */
+.hn-inner {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─────────────────────────────────────
+   LEFT COLUMN
+───────────────────────────────────── */
+.hn-label-col {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: var(--space-5);
-  margin-bottom: var(--space-8);
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
 }
 
-.hn-header__text {
-  flex: 1;
-  min-width: 0;
-}
-
+/* Star + "News" eyebrow on one line */
 .hn-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-text-secondary);
-  margin: 0 0 var(--space-3);
-}
-
-.hn-heading {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: var(--font-bold);
-  letter-spacing: var(--tracking-tight);
-  line-height: var(--leading-tight);
-  color: var(--color-text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1C1C1A;
   margin: 0;
 }
 
+.hn-eyebrow__star {
+  font-size: 14px;
+  line-height: 1;
+  color: #C4A96D;   /* warm gold star */
+}
+
+/* Large ニュース heading */
+.hn-heading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--hn-text-primary);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* "View more >" pill button */
 .hn-viewall {
   display: inline-flex;
   align-items: center;
-  gap: var(--space-2);
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  letter-spacing: var(--tracking-wide);
-  color: var(--color-text-primary);
+  gap: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hn-text-primary);
   text-decoration: none;
+  border: 1.5px solid var(--hn-text-primary);
+  border-radius: 9999px;
+  padding: 7px 16px;
+  transition: background-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
-  flex-shrink: 0;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--color-text-primary);
-  transition: opacity 0.15s ease;
+  margin-top: 4px;
 }
 
 .hn-viewall:hover {
-  opacity: 0.6;
+  background-color: var(--hn-text-primary);
+  color: #FAFAF7;
 }
 
 .hn-viewall:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: var(--radius-sm);
+  outline: 2px solid var(--hn-text-accent);
+  outline-offset: 3px;
 }
 
-/* ── Article grid ────────────────────── */
-.hn-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+/* Dog illustration (optional) */
+.hn-decoration {
+  margin-top: auto;
+  padding-top: 32px;
+  width: 100%;
+  max-width: 140px;
+}
+
+.hn-decoration img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ─────────────────────────────────────
+   RIGHT COLUMN — card list
+───────────────────────────────────── */
+.hn-list {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-/* ── Article card ────────────────────── */
-.hn-card {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+}
+
+/* ── White card ──────────────────────── */
+.hn-card {
+  background-color: var(--hn-card-bg);
+  border-radius: var(--hn-radius-card);
+  overflow: hidden;
 }
 
 .hn-card__link {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  display: grid;
+  grid-template-columns: var(--hn-thumb-w) 1fr 32px;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 20px 20px 20px;
   text-decoration: none;
   color: inherit;
 }
 
 .hn-card__link:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 4px;
-  border-radius: var(--radius-lg);
+  outline: 2px solid var(--hn-text-accent);
+  outline-offset: 2px;
+  border-radius: var(--hn-radius-card);
 }
 
-/* Image wrapper */
-.hn-card__image-wrap {
-  aspect-ratio: 16 / 9;
+/* Thumbnail */
+.hn-card__thumb-wrap {
+  width: var(--hn-thumb-w);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--hn-radius-thumb);
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-background-alt);
-  margin-bottom: var(--space-4);
+  background-color: #F4F1EC;
   flex-shrink: 0;
 }
 
-.hn-card__image {
+.hn-card__thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform 0.45s ease;
+  transition: transform 0.35s ease;
 }
 
-.hn-card__link:hover .hn-card__image {
-  transform: scale(1.04);
+.hn-card__link:hover .hn-card__thumb {
+  transform: scale(1.05);
 }
 
-/* Placeholder when no image */
-.hn-card__placeholder-wrap {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background-color: var(--color-background-alt);
-  margin-bottom: var(--space-4);
+/* No-image placeholder */
+.hn-card__thumb-placeholder {
+  width: var(--hn-thumb-w);
+  aspect-ratio: 4 / 3;
+  border-radius: var(--hn-radius-thumb);
+  background-color: #F4F1EC;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
-.hn-card__placeholder-svg {
-  width: 48px;
-  height: 48px;
-  opacity: 0.2;
-  color: var(--color-text-secondary);
+.hn-card__thumb-placeholder svg {
+  width: 22px;
+  height: 22px;
+  color: #C8C2B8;
 }
 
-/* Card body */
-.hn-card__body {
-  flex: 1;
+/* Text block */
+.hn-card__text {
   display: flex;
   flex-direction: column;
-}
-
-/* Meta row: date + tag */
-.hn-card__meta {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-3);
-  flex-wrap: wrap;
-}
-
-.hn-card__date {
-  font-family: var(--font-latin);
-  font-size: var(--text-sm);
-  font-weight: var(--font-normal);
-  color: var(--color-text-secondary);
-  line-height: 1;
-}
-
-.hn-card__tag {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  font-weight: var(--font-medium);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  color: var(--color-accent);
-  background-color: var(--color-accent-light);
-  padding: 3px 8px;
-  border-radius: var(--radius-sm);
-  line-height: 1.6;
+  gap: 6px;
+  min-width: 0;
 }
 
 .hn-card__title {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  font-weight: var(--font-normal);
-  line-height: var(--leading-snug);
-  color: var(--color-text-primary);
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--hn-text-primary);
   margin: 0;
-  transition: opacity 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.hn-card__link:hover .hn-card__title {
-  opacity: 0.6;
+.hn-card__date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--hn-text-secondary);
+  margin: 0;
 }
 
-/* Divider between cards (mobile only — horizontal list) */
-.hn-card + .hn-card {
-  border-top: none;
+/* Arrow ">" */
+.hn-card__arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 9999px;
+  background-color: #F4F1EC;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
 }
 
-/* ── Responsive: Tablet (768–1023px) ── */
+.hn-card__arrow svg {
+  width: 12px;
+  height: 12px;
+  color: var(--hn-text-primary);
+  transition: transform 0.2s ease;
+}
+
+.hn-card__link:hover .hn-card__arrow {
+  background-color: #E2DDD6;
+}
+
+.hn-card__link:hover .hn-card__arrow svg {
+  transform: translateX(2px);
+}
+
+/* ── Responsive: Tablet ──────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .section-home-news {
-    padding-block: 72px;
+    padding-block: 64px;
   }
 
   .hn-container {
     padding-inline: 32px;
   }
 
-  .hn-heading {
-    font-size: 26px;
+  .hn-inner {
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
   }
 
-  .hn-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .hn-heading {
+    font-size: 28px;
+  }
+
+  .hn-card__link {
+    grid-template-columns: 88px 1fr 28px;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .hn-card__title {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 
-/* ── Responsive: Mobile (<768px) ─────── */
+/* ── Responsive: Mobile ──────────────── */
 @media (max-width: 767px) {
   .section-home-news {
     padding-block: 56px;
@@ -282,44 +291,59 @@
     padding-inline: 20px;
   }
 
-  .hn-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--space-4);
-    margin-bottom: var(--space-7);
+  .hn-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Mobile label row: eyebrow + heading inline, viewall right */
+  .hn-label-col {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .hn-eyebrow {
+    order: 1;
+    width: 100%;
   }
 
   .hn-heading {
-    font-size: 26px;
+    font-size: 28px;
+    order: 2;
   }
 
-  .hn-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .hn-viewall {
+    order: 3;
+    margin-top: 0;
   }
 
-  /* Horizontal card layout on mobile: image left, text right */
+  .hn-decoration {
+    display: none;
+  }
+
   .hn-card__link {
-    flex-direction: row;
-    gap: var(--space-4);
-    align-items: flex-start;
+    grid-template-columns: 80px 1fr 28px;
+    gap: 14px;
+    padding: 14px;
   }
 
-  .hn-card__image-wrap,
-  .hn-card__placeholder-wrap {
-    width: 120px;
-    aspect-ratio: 1 / 1;
-    flex-shrink: 0;
-    margin-bottom: 0;
+  .hn-card__thumb-wrap,
+  .hn-card__thumb-placeholder {
+    width: 80px;
   }
 
-  .hn-card__body {
-    flex: 1;
-    min-width: 0;
+  .hn-card__title {
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
-  .hn-card + .hn-card {
-    border-top: 1px solid var(--color-border);
-    padding-top: var(--space-6);
+  .hn-card {
+    border-radius: 12px;
   }
 }

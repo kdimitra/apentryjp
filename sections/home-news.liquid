@@ -1,14 +1,14 @@
 
-{%- doc -%}
+{%- comment -%}
   Home News Section
-  Displays recent articles from a selected blog in a 3-column grid.
-  Mobile: stacks to horizontal card rows. Matches ニュース section on apantry.jp.
-{%- enddoc -%}
+  Cream background · Left: star + "News" + ニュース heading + "View more" pill + dog illustration
+  Right: vertical list of white rounded cards — thumbnail left, title + date right, arrow far right
+{%- endcomment -%}
 
 {%- liquid
-  assign source_blog   = blogs[section.settings.blog]
-  assign posts_limit   = section.settings.posts_to_show
-  assign has_articles  = false
+  assign source_blog  = blogs[section.settings.blog]
+  assign posts_limit  = section.settings.posts_to_show
+  assign has_articles = false
   if source_blog != blank and source_blog.articles_count > 0
     assign has_articles = true
   endif
@@ -22,118 +22,134 @@
   style="background-color: {{ section.settings.bg_color }};"
 >
   <div class="hn-container">
+    <div class="hn-inner">
 
-    {%- comment -%}━━━━━━━━ Section header ━━━━━━━━{%- endcomment -%}
-    <div class="hn-header">
-      <div class="hn-header__text">
-        {%- if section.settings.eyebrow != blank -%}
-          <p class="hn-eyebrow">{{ section.settings.eyebrow }}</p>
-        {%- endif -%}
+      {%- comment -%}━━━━━━━━ LEFT: Label column ━━━━━━━━{%- endcomment -%}
+      <div class="hn-label-col">
+
+        {%- comment -%} ⭐ News eyebrow {%- endcomment -%}
+        <p class="hn-eyebrow">
+          <span class="hn-eyebrow__star" aria-hidden="true">✦</span>
+          {{- section.settings.eyebrow | default: 'News' -}}
+        </p>
+
+        {%- comment -%} ニュース heading {%- endcomment -%}
         {%- if section.settings.heading != blank -%}
           <h2 class="hn-heading">{{ section.settings.heading }}</h2>
         {%- endif -%}
+
+        {%- comment -%} View more pill button {%- endcomment -%}
+        {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+          <a href="{{ section.settings.cta_url }}" class="hn-viewall">
+            {{- section.settings.cta_label -}}
+            <span aria-hidden="true"> ›</span>
+          </a>
+        {%- endif -%}
+
+        {%- comment -%} Optional dog / decoration image {%- endcomment -%}
+        {%- if section.settings.decoration_image != blank -%}
+          <div class="hn-decoration">
+            {{- section.settings.decoration_image
+              | image_url: width: 280
+              | image_tag:
+                loading: 'lazy',
+                widths: '140, 200, 280',
+                sizes: '140px',
+                alt: ''
+            -}}
+          </div>
+        {%- endif -%}
+
       </div>
 
-      {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
-        <a href="{{ section.settings.cta_url }}" class="hn-viewall">
-          {{- section.settings.cta_label -}}
-          <span aria-hidden="true">→</span>
-        </a>
-      {%- endif -%}
-    </div>
+      {%- comment -%}━━━━━━━━ RIGHT: White card list ━━━━━━━━{%- endcomment -%}
+      <ul class="hn-list" role="list">
 
-    {%- comment -%}━━━━━━━━ Articles grid ━━━━━━━━{%- endcomment -%}
+        {%- if has_articles -%}
+          {%- for article in source_blog.articles limit: posts_limit -%}
+            <li class="hn-card">
+              <a href="{{ article.url }}" class="hn-card__link">
 
-    {%- if has_articles -%}
-      <ul class="hn-grid" role="list">
-        {%- for article in source_blog.articles limit: posts_limit -%}
-          <li class="hn-card">
-            <a href="{{ article.url }}" class="hn-card__link">
-
-              {%- comment -%} Image {%- endcomment -%}
-              {%- if section.settings.show_image -%}
+                {%- comment -%} Thumbnail {%- endcomment -%}
                 {%- if article.image != blank -%}
-                  <div class="hn-card__image-wrap">
+                  <div class="hn-card__thumb-wrap">
                     {{- article.image
-                      | image_url: width: 800
+                      | image_url: width: 240
                       | image_tag:
                         loading: 'lazy',
-                        widths: '400, 600, 800',
-                        sizes: '(max-width: 767px) 120px, (max-width: 1023px) calc(50vw - 48px), calc(33vw - 56px)',
-                        class: 'hn-card__image',
+                        widths: '120, 180, 240',
+                        sizes: '100px',
+                        class: 'hn-card__thumb',
                         alt: article.image.alt | default: article.title | escape
                     -}}
                   </div>
                 {%- else -%}
-                  <div class="hn-card__placeholder-wrap">
-                    <svg class="hn-card__placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <div class="hn-card__thumb-placeholder">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                       <circle cx="8.5" cy="8.5" r="1.5"/>
                       <polyline points="21 15 16 10 5 21"/>
                     </svg>
                   </div>
                 {%- endif -%}
-              {%- endif -%}
 
-              {%- comment -%} Body {%- endcomment -%}
-              <div class="hn-card__body">
-                <div class="hn-card__meta">
-                  {%- if section.settings.show_date -%}
-                    <time class="hn-card__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-                      {{- article.published_at | date: '%Y.%m.%d' -}}
-                    </time>
-                  {%- endif -%}
-
-                  {%- if section.settings.show_tags and article.tags.size > 0 -%}
-                    <span class="hn-card__tag">{{ article.tags | first }}</span>
-                  {%- endif -%}
+                {%- comment -%} Title + Date {%- endcomment -%}
+                <div class="hn-card__text">
+                  <h3 class="hn-card__title">{{ article.title | escape }}</h3>
+                  <p class="hn-card__date">
+                    Date : {{ article.published_at | date: '%Y.%m.%d' }}
+                  </p>
                 </div>
 
-                <h3 class="hn-card__title">{{ article.title | escape }}</h3>
-              </div>
+                {%- comment -%} Arrow circle {%- endcomment -%}
+                <div class="hn-card__arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
 
-            </a>
-          </li>
-        {%- endfor -%}
-      </ul>
+              </a>
+            </li>
+          {%- endfor -%}
 
-    {%- else -%}
+        {%- else -%}
 
-      {%- comment -%} Editor placeholder when no blog is selected ─────────── {%- endcomment -%}
-      <ul class="hn-grid" role="list">
-        {%- for i in (1..posts_limit) -%}
-          <li class="hn-card">
-            <div class="hn-card__link">
+          {%- comment -%} Editor placeholders {%- endcomment -%}
+          {%- assign ph_titles = 'ゴールデンウィーク休業のお知らせ（2026年）,年末年始休業のお知らせ（2025年）,新商品のご案内：春のフレッシュフード' | split: ',' -%}
+          {%- assign ph_dates  = '2026.04.07,2025.12.01,2025.11.15' | split: ',' -%}
 
-              {%- if section.settings.show_image -%}
-                <div class="hn-card__placeholder-wrap">
-                  <svg class="hn-card__placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          {%- for i in (1..posts_limit) -%}
+            {%- assign idx = forloop.index0 -%}
+            <li class="hn-card">
+              <div class="hn-card__link">
+
+                <div class="hn-card__thumb-placeholder">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <polyline points="21 15 16 10 5 21"/>
                   </svg>
                 </div>
-              {%- endif -%}
 
-              <div class="hn-card__body">
-                <div class="hn-card__meta">
-                  {%- if section.settings.show_date -%}
-                    <span class="hn-card__date">2026.04.01</span>
-                  {%- endif -%}
-                  {%- if section.settings.show_tags -%}
-                    <span class="hn-card__tag">お知らせ</span>
-                  {%- endif -%}
+                <div class="hn-card__text">
+                  <h3 class="hn-card__title">{{ ph_titles[idx] }}</h3>
+                  <p class="hn-card__date">Date : {{ ph_dates[idx] }}</p>
                 </div>
-                <h3 class="hn-card__title">お知らせのタイトルがここに表示されます。</h3>
+
+                <div class="hn-card__arrow" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"/>
+                  </svg>
+                </div>
+
               </div>
+            </li>
+          {%- endfor -%}
 
-            </div>
-          </li>
-        {%- endfor -%}
+        {%- endif -%}
+
       </ul>
-
-    {%- endif -%}
-
+    </div>
   </div>
 </section>
 
@@ -144,13 +160,13 @@
   "settings": [
     {
       "type": "header",
-      "content": "Section header"
+      "content": "Left column"
     },
     {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow label",
-      "default": "NEWS"
+      "default": "News"
     },
     {
       "type": "text",
@@ -161,13 +177,18 @@
     {
       "type": "text",
       "id": "cta_label",
-      "label": "View all label",
-      "default": "すべて見る"
+      "label": "Button label",
+      "default": "View more"
     },
     {
       "type": "url",
       "id": "cta_url",
-      "label": "View all link"
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "decoration_image",
+      "label": "Decoration image (e.g. dog illustration)"
     },
     {
       "type": "header",
@@ -182,32 +203,10 @@
       "type": "range",
       "id": "posts_to_show",
       "label": "Number of articles",
-      "min": 2,
-      "max": 6,
+      "min": 1,
+      "max": 5,
       "step": 1,
-      "default": 3
-    },
-    {
-      "type": "header",
-      "content": "Card options"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_image",
-      "label": "Show article image",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_date",
-      "label": "Show publish date",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_tags",
-      "label": "Show first tag as category",
-      "default": true
+      "default": 2
     },
     {
       "type": "header",
@@ -217,7 +216,7 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background color",
-      "default": "#FAFAF7"
+      "default": "#F0EBD8"
     }
   ],
   "presets": [
