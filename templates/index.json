@@ -1354,6 +1354,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #ffbe82 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "bigpuptub",
@@ -1757,6 +1764,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #ffbeaf !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "lilpuptub",
@@ -2224,6 +2238,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #9adbe8 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "set-food",
@@ -2627,6 +2648,13 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-card .btn,.product-card button[type=\"submit\"] {background: #9adbe8 !important; border-radius: 50px !important; border: none !important;}",
+        ".quantity-selector {border-radius: 50px !important; overflow: hidden !important;}",
+        ".quantity-selector__button {background: #5e3826 !important; color: #fff !important;}",
+        ".quantity-selector__button:first-child {border-radius: 50px 0 0 50px !important;}",
+        ".quantity-selector__button:last-child {border-radius: 0 50px 50px 0 !important;}"
+      ],
       "name": "t:names.products_carousel",
       "settings": {
         "collection": "frankenprey",
@@ -4109,12 +4137,12 @@
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "center",
         "vertical_alignment_flex_direction_column": "center",
-        "gap": 16,
+        "gap": 13,
         "section_width": "page-width",
-        "section_height": "large",
+        "section_height": "full-screen",
         "section_height_custom": 50,
-        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
-        "toggle_overlay": true,
+        "color_scheme": "scheme-f3aa335b-b4d9-4808-9e12-16a3651fbacd",
+        "toggle_overlay": false,
         "overlay_color": "#00000026",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
@@ -4122,6 +4150,20 @@
         "reflection_opacity": 75,
         "padding-block-start": 40,
         "padding-block-end": 40
+      }
+    },
+    "divider_prXAPp": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "section_width": "full-width",
+        "thickness": 0.5,
+        "corner_radius": "square",
+        "width_percent": 5,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
       }
     }
   },
@@ -4144,6 +4186,7 @@
     "featured_blog_posts_XEfrTx",
     "slideshow_UzwwNm",
     "about_image_card_hMLiwr",
-    "hero_4nHfi3"
+    "hero_4nHfi3",
+    "divider_prXAPp"
   ]
 }

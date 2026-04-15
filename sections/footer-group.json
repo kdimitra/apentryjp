@@ -11,6 +11,20 @@
   "type": "footer",
   "name": "Footer",
   "sections": {
+    "divider_WxpwKt": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "",
+        "section_width": "page-width",
+        "thickness": 0.5,
+        "corner_radius": "square",
+        "width_percent": 5,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "footer_WnX4aJ": {
       "type": "footer",
       "blocks": {
@@ -31,46 +45,39 @@
         "service_link_fDtigG": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Shipping Policy",
             "url": ""
           }
         },
         "service_link_LJPBNQ": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Terms of service",
             "url": ""
           }
         },
         "service_link_XF7cDT": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Refund Policy",
             "url": ""
           }
         },
         "service_link_iWCJDW": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Subscription Policy",
             "url": ""
           }
         },
         "service_link_D3BThf": {
           "type": "service_link",
           "settings": {
-            "label": "Contact Information",
+            "label": "Legal Notice",
             "url": ""
           }
         },
         "service_link_XcMw7U": {
-          "type": "service_link",
-          "settings": {
-            "label": "Contact Information",
-            "url": ""
-          }
-        },
-        "service_link_rtEzai": {
           "type": "service_link",
           "settings": {
             "label": "Contact Information",
@@ -87,7 +94,7 @@
         "about_link_PAN67J": {
           "type": "about_link",
           "settings": {
-            "label": "Blogs",
+            "label": "Blog",
             "url": ""
           }
         },
@@ -98,50 +105,43 @@
             "url": ""
           }
         },
-        "about_link_V9UrJD": {
-          "type": "about_link",
-          "settings": {
-            "label": "News",
-            "url": ""
-          }
-        },
         "about_link_YrWggL": {
           "type": "about_link",
           "settings": {
-            "label": "News",
+            "label": "FAQs",
             "url": ""
           }
         },
         "food_item_FBJqhg": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/BPT_LAMB.png",
+            "title": "パップタブ(大)",
+            "url": "shopify://collections/bigpuptub"
           }
         },
         "food_item_CY7Qcd": {
           "type": "food_item",
           "settings": {
             "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "title": "パップタブ(小)",
+            "url": "shopify://collections/lilpuptub"
           }
         },
         "food_item_FceN3K": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/LPT_ROO_VALUESET.png",
+            "title": "セットフード",
+            "url": "shopify://collections/set-food"
           }
         },
         "food_item_NxyeAr": {
           "type": "food_item",
           "settings": {
-            "image": "shopify://shop_images/LPT_PORK.png",
-            "title": "Apentry Product 1",
-            "url": ""
+            "image": "shopify://shop_images/frankenprey_moolachick.png",
+            "title": "フランケンソーセージ",
+            "url": "shopify://collections/frankenprey"
           }
         }
       },
@@ -154,11 +154,9 @@
         "service_link_iWCJDW",
         "service_link_D3BThf",
         "service_link_XcMw7U",
-        "service_link_rtEzai",
         "about_link_XnFpUG",
         "about_link_PAN67J",
         "about_link_bTyQ9i",
-        "about_link_V9UrJD",
         "about_link_YrWggL",
         "food_item_FBJqhg",
         "food_item_CY7Qcd",
@@ -167,14 +165,14 @@
       ],
       "name": "t:names.footer",
       "settings": {
-        "background_color": "#6dc8d8",
+        "background_color": "#9adbe8",
         "text_color": "#3d2b1a",
         "card_background_color": "#f0e8d0",
-        "logo": "shopify://shop_images/logo-brown_9456d4e9-522f-47fb-a369-63570d26f60e.png",
-        "tagline": "Feeding since 2018",
+        "logo": "shopify://shop_images/logo-brown.svg",
+        "tagline": "",
         "food_list_heading": "Food list",
         "view_all_text": "View all",
-        "view_all_url": "",
+        "view_all_url": "shopify://collections",
         "about_heading": "About us",
         "service_heading": "Customer service",
         "social_heading": "Follow us",
@@ -247,6 +245,7 @@
     }
   },
   "order": [
+    "divider_WxpwKt",
     "footer_WnX4aJ",
     "utilities"
   ]
