@@ -137,13 +137,10 @@
 
         {%- else -%}
 
-          {%- comment -%} Editor placeholders when no blog is assigned {%- endcomment -%}
-          {%- assign ph_titles = '犬のアレルギーは食べ物が原因?犬が避けるべき食材と対策を解説,初めての方におすすめ。パップタブの選び方・使い方完全ガイド,アニーズパントリーはどんなフード専門家による愛犬レビュー' | split: ',' -%}
-          {%- assign ph_dates  = '2026.04.07,2026.03.22,2026.03.01' | split: ',' -%}
-          {%- assign ph_cats   = 'ライフスタイル,商品ガイド,Annie''s Diary' | split: ',' -%}
+          {%- comment -%} Static placeholders shown in editor when no blog is assigned {%- endcomment -%}
+          {%- assign placeholder_count = posts_limit | at_most: 3 -%}
 
-          {%- for i in (1..posts_limit) -%}
-            {%- assign idx = forloop.index0 -%}
+          {%- for i in (1..placeholder_count) -%}
             <li class="hb-card">
               <div class="hb-card__link">
                 <div class="hb-card__image-placeholder">
@@ -155,11 +152,17 @@
                 </div>
                 <div class="hb-card__body">
                   {%- if section.settings.show_date -%}
-                    <span class="hb-card__date">{{ ph_dates[idx] }}</span>
+                    <span class="hb-card__date">2026.04.07</span>
                   {%- endif -%}
-                  <h3 class="hb-card__title">{{ ph_titles[idx] }}</h3>
-                  {%- if section.settings.show_category -%}
-                    <p class="hb-card__category">{{ ph_cats[idx] }}</p>
+                  {%- if i == 1 -%}
+                    <h3 class="hb-card__title">犬のアレルギーは食べ物が原因？犬が避けるべき食材と対策を解説</h3>
+                    {%- if section.settings.show_category -%}<p class="hb-card__category">ライフスタイル</p>{%- endif -%}
+                  {%- elsif i == 2 -%}
+                    <h3 class="hb-card__title">初めての方におすすめ。パップタブの選び方・使い方完全ガイド</h3>
+                    {%- if section.settings.show_category -%}<p class="hb-card__category">商品ガイド</p>{%- endif -%}
+                  {%- else -%}
+                    <h3 class="hb-card__title">アニーズパントリーはどんなフード専門家による愛犬レビュー</h3>
+                    {%- if section.settings.show_category -%}<p class="hb-card__category">Annies Diary</p>{%- endif -%}
                   {%- endif -%}
                 </div>
               </div>
