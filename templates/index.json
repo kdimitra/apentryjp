@@ -504,6 +504,27 @@
         "padding-block-end": 0
       }
     },
+    "home_food_NfaBDc": {
+      "type": "home-food",
+      "name": "Home Food Section",
+      "settings": {
+        "left_bg_color": "#f0e8d0",
+        "text_color": "#5e3826",
+        "card_bg_color": "#00000000",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "corner_top_right": "shopify://shop_images/illust-dog-01.svg",
+        "corner_bottom_left": "shopify://shop_images/illust-dog-02.svg",
+        "eyebrow": "Food",
+        "title": "そのままの素材で、そのままの愛を。",
+        "subtitle": "余計なものは使わず、使うのは生の自然食材だけ。",
+        "description": "からだにやさしいフレッシュフードです。大切なわんちゃんに、本物の素材を。",
+        "button_label": "View all food",
+        "button_url": "",
+        "main_image": "shopify://shop_images/Screenshot_2026-04-05_at_2.40.46_PM.png",
+        "main_image_alt": "Annie's Pantry dog food"
+      }
+    },
     "product_list_RB6qCn": {
       "type": "product-list",
       "blocks": {
@@ -4170,6 +4191,7 @@
   "order": [
     "hero_RkimKJ",
     "slideshow_FaEzQF",
+    "home_food_NfaBDc",
     "product_list_RB6qCn",
     "section_ATbjpL",
     "section_dMfBwk",
