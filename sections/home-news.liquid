@@ -1,0 +1,229 @@
+
+{%- doc -%}
+  Home News Section
+  Displays recent articles from a selected blog in a 3-column grid.
+  Mobile: stacks to horizontal card rows. Matches ニュース section on apantry.jp.
+{%- enddoc -%}
+
+{%- liquid
+  assign source_blog   = blogs[section.settings.blog]
+  assign posts_limit   = section.settings.posts_to_show
+  assign has_articles  = false
+  if source_blog != blank and source_blog.articles_count > 0
+    assign has_articles = true
+  endif
+-%}
+
+{{ 'section-home-news.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="section-home-news"
+  id="home-news-{{ section.id }}"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="hn-container">
+
+    {%- comment -%}━━━━━━━━ Section header ━━━━━━━━{%- endcomment -%}
+    <div class="hn-header">
+      <div class="hn-header__text">
+        {%- if section.settings.eyebrow != blank -%}
+          <p class="hn-eyebrow">{{ section.settings.eyebrow }}</p>
+        {%- endif -%}
+        {%- if section.settings.heading != blank -%}
+          <h2 class="hn-heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+      </div>
+
+      {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
+        <a href="{{ section.settings.cta_url }}" class="hn-viewall">
+          {{- section.settings.cta_label -}}
+          <span aria-hidden="true">→</span>
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%}━━━━━━━━ Articles grid ━━━━━━━━{%- endcomment -%}
+
+    {%- if has_articles -%}
+      <ul class="hn-grid" role="list">
+        {%- for article in source_blog.articles limit: posts_limit -%}
+          <li class="hn-card">
+            <a href="{{ article.url }}" class="hn-card__link">
+
+              {%- comment -%} Image {%- endcomment -%}
+              {%- if section.settings.show_image -%}
+                {%- if article.image != blank -%}
+                  <div class="hn-card__image-wrap">
+                    {{- article.image
+                      | image_url: width: 800
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '400, 600, 800',
+                        sizes: '(max-width: 767px) 120px, (max-width: 1023px) calc(50vw - 48px), calc(33vw - 56px)',
+                        class: 'hn-card__image',
+                        alt: article.image.alt | default: article.title | escape
+                    -}}
+                  </div>
+                {%- else -%}
+                  <div class="hn-card__placeholder-wrap">
+                    <svg class="hn-card__placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                      <circle cx="8.5" cy="8.5" r="1.5"/>
+                      <polyline points="21 15 16 10 5 21"/>
+                    </svg>
+                  </div>
+                {%- endif -%}
+              {%- endif -%}
+
+              {%- comment -%} Body {%- endcomment -%}
+              <div class="hn-card__body">
+                <div class="hn-card__meta">
+                  {%- if section.settings.show_date -%}
+                    <time class="hn-card__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                      {{- article.published_at | date: '%Y.%m.%d' -}}
+                    </time>
+                  {%- endif -%}
+
+                  {%- if section.settings.show_tags and article.tags.size > 0 -%}
+                    <span class="hn-card__tag">{{ article.tags | first }}</span>
+                  {%- endif -%}
+                </div>
+
+                <h3 class="hn-card__title">{{ article.title | escape }}</h3>
+              </div>
+
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+    {%- else -%}
+
+      {%- comment -%} Editor placeholder when no blog is selected ─────────── {%- endcomment -%}
+      <ul class="hn-grid" role="list">
+        {%- for i in (1..posts_limit) -%}
+          <li class="hn-card">
+            <div class="hn-card__link">
+
+              {%- if section.settings.show_image -%}
+                <div class="hn-card__placeholder-wrap">
+                  <svg class="hn-card__placeholder-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+              {%- endif -%}
+
+              <div class="hn-card__body">
+                <div class="hn-card__meta">
+                  {%- if section.settings.show_date -%}
+                    <span class="hn-card__date">2026.04.01</span>
+                  {%- endif -%}
+                  {%- if section.settings.show_tags -%}
+                    <span class="hn-card__tag">お知らせ</span>
+                  {%- endif -%}
+                </div>
+                <h3 class="hn-card__title">お知らせのタイトルがここに表示されます。</h3>
+              </div>
+
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
+
+    {%- endif -%}
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home news",
+  "class": "home-news-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "NEWS"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section heading",
+      "default": "ニュース"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "View all label",
+      "default": "すべて見る"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "View all link"
+    },
+    {
+      "type": "header",
+      "content": "Blog source"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    },
+    {
+      "type": "range",
+      "id": "posts_to_show",
+      "label": "Number of articles",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "Card options"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_image",
+      "label": "Show article image",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_date",
+      "label": "Show publish date",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "label": "Show first tag as category",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#FAFAF7"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home news"
+    }
+  ]
+}
+{% endschema %}
