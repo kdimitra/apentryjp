@@ -508,9 +508,9 @@
       "type": "home-food",
       "name": "Home Food Section",
       "settings": {
-        "left_bg_color": "#f0e8d0",
+        "left_bg_color": "#ffc5b6",
         "text_color": "#5e3826",
-        "card_bg_color": "#00000000",
+        "card_bg_color": "#faf7e6",
         "padding_top": 80,
         "padding_bottom": 80,
         "corner_top_right": "shopify://shop_images/illust-dog-01.svg",
