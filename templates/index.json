@@ -4186,6 +4186,22 @@
         "padding-block-start": 16,
         "padding-block-end": 16
       }
+    },
+    "home_news_9riTjf": {
+      "type": "home-news",
+      "name": "Home news",
+      "settings": {
+        "eyebrow": "NEWS",
+        "heading": "ニュース",
+        "cta_label": "すべて見る",
+        "cta_url": "",
+        "blog": "",
+        "posts_to_show": 3,
+        "show_image": true,
+        "show_date": false,
+        "show_tags": true,
+        "bg_color": "#FAFAF7"
+      }
     }
   },
   "order": [
@@ -4209,6 +4225,7 @@
     "slideshow_UzwwNm",
     "about_image_card_hMLiwr",
     "hero_4nHfi3",
-    "divider_prXAPp"
+    "divider_prXAPp",
+    "home_news_9riTjf"
   ]
 }
