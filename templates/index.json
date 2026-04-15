@@ -508,11 +508,11 @@
       "type": "home-food",
       "name": "Home Food Section",
       "settings": {
-        "left_bg_color": "#f0e8d0",
+        "left_bg_color": "#ffc5b6",
         "text_color": "#5e3826",
-        "card_bg_color": "#00000000",
-        "padding_top": 80,
-        "padding_bottom": 80,
+        "card_bg_color": "#faf7e6",
+        "padding_top": 152,
+        "padding_bottom": 160,
         "corner_top_right": "shopify://shop_images/illust-dog-01.svg",
         "corner_bottom_left": "shopify://shop_images/illust-dog-02.svg",
         "eyebrow": "Food",
@@ -520,7 +520,7 @@
         "subtitle": "余計なものは使わず、使うのは生の自然食材だけ。",
         "description": "からだにやさしいフレッシュフードです。大切なわんちゃんに、本物の素材を。",
         "button_label": "View all food",
-        "button_url": "",
+        "button_url": "shopify://blogs/フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
         "main_image": "shopify://shop_images/Screenshot_2026-04-05_at_2.40.46_PM.png",
         "main_image_alt": "Annie's Pantry dog food"
       }
