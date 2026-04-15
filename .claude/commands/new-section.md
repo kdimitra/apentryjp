@@ -541,7 +541,123 @@ apantry.jp uses **no decorative box-shadows**. Depth is created through color co
 
 ---
 
-### 3.6 Announcement Bar
+### 3.6 News / Blog List Section ✅ BUILT & CONFIRMED
+
+**Files:** `sections/home-news.liquid` + `assets/section-home-news.css`
+
+**Layout:** Two-column split — label column left (fixed ~200px), white card list right. Confirmed against actual apantry.jp screenshot.
+
+**Visual anatomy:**
+- Section background: warm cream `#F0EBD8` (not the default `--color-background`)
+- Left column: `✦` star glyph + "News" eyebrow · large display heading · pill "View more" button · optional decoration image (dog illustration)
+- Right column: vertical stack of **white rounded cards** (bg `#FFFFFF`, `border-radius: 16px`)
+- Each card: `[thumbnail 192×192] [title + "Date : YYYY.MM.DD"] [› circle arrow]`
+- Thumbnail defaults to **square 1:1 at 192px** — user-controllable via range + select schema settings
+
+**Key patterns confirmed by this build:**
+
+```liquid
+{%- comment -%}
+  Use {%- comment -%} NOT {%- doc -%} in section files.
+  {%- doc -%} is only valid inside snippets and blocks — it throws an error in sections.
+{%- endcomment -%}
+
+{%- liquid
+  {# Convert schema select value → CSS aspect-ratio fraction string #}
+  case section.settings.image_ratio
+    when 'square'    | assign thumb_ratio = '1 / 1'
+    when 'landscape' | assign thumb_ratio = '4 / 3'
+    when 'portrait'  | assign thumb_ratio = '3 / 4'
+    when 'wide'      | assign thumb_ratio = '16 / 9'
+  endcase
+-%}
+
+{# Pass CSS variables via inline style — the cleanest way to pass schema values to CSS #}
+<section
+  class="section-home-news"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    --hn-thumb-w: {{ section.settings.image_size }}px;
+    --hn-thumb-ratio: {{ thumb_ratio }};
+  "
+>
+```
+
+**Image size control pattern (reuse for any thumbnail-sized image):**
+```json
+{
+  "type": "range",
+  "id": "image_size",
+  "label": "Thumbnail width (px)",
+  "min": 80, "max": 280, "step": 8, "default": 192
+},
+{
+  "type": "select",
+  "id": "image_ratio",
+  "label": "Aspect ratio",
+  "options": [
+    { "value": "square",    "label": "Square (1:1)" },
+    { "value": "landscape", "label": "Landscape (4:3)" },
+    { "value": "portrait",  "label": "Portrait (3:4)" },
+    { "value": "wide",      "label": "Wide (16:9)" }
+  ],
+  "default": "square"
+}
+```
+
+**Responsive thumbnail override in CSS (the variable only applies to desktop):**
+```css
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hn-card { --hn-thumb-w: 88px; }
+}
+/* Mobile */
+@media (max-width: 767px) {
+  .hn-card { --hn-thumb-w: 80px; }
+}
+```
+
+**Pill "View more" button (confirmed apantry.jp style):**
+```css
+.btn-pill {
+  border: 1.5px solid currentColor;
+  border-radius: 9999px;
+  padding: 7px 16px;
+  font-size: 12px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.btn-pill:hover {
+  background-color: var(--color-text-primary);
+  color: #FAFAF7;
+}
+```
+
+**Circle arrow indicator (confirmed apantry.jp style):**
+```html
+<div class="card__arrow">
+  <svg><!-- chevron-right --></svg>
+</div>
+```
+```css
+.card__arrow {
+  width: 28px; height: 28px;
+  border-radius: 9999px;
+  background-color: var(--color-background-alt);
+  display: flex; align-items: center; justify-content: center;
+}
+```
+
+**Eyebrow with decorative icon:**
+```html
+<p class="hn-eyebrow">
+  <span aria-hidden="true">✦</span>  <!-- warm gold: #C4A96D -->
+  News
+</p>
+```
+
+---
+
+### 3.7 Announcement Bar
 
 **File:** `sections/announcement-bar.liquid`
 
@@ -932,11 +1048,83 @@ When Claude Code creates a new section, verify all of the following before finis
 - [ ] Japanese default text used for `text` settings (matching site language)
 - [ ] All images use `image_url` + `image_tag` with `widths` and `sizes`
 - [ ] Above-fold images use `loading: 'eager'`, all others use `loading: 'lazy'`
-- [ ] Translation keys added to `locales/en.default.json` and `locales/ja.default.json`
-- [ ] CSS uses only variables from this file's design tokens
-- [ ] Responsive styles included for mobile (< 768px) breakpoint
-- [ ] `shopify theme check sections/[name].liquid` passes with zero errors
+- [ ] CSS uses only variables from this file's design tokens — no hardcoded hex values
+- [ ] CSS variables driven from schema are passed via inline `style` on the section element
+- [ ] Responsive styles included for tablet (768–1023px) AND mobile (< 768px)
+- [ ] All interactive elements have `:focus-visible` styles
+- [ ] **NOT using `{%- doc -%}` in section files** — use `{%- comment -%}` instead
+- [ ] Placeholder content shown in editor when no data source is connected
 
 ---
 
-*Last updated: April 2026 — based on apantry.jp design audit*
+## 8. Confirmed apantry.jp UI Patterns
+
+These patterns were confirmed by iterating against actual screenshots. Use them exactly.
+
+### 8.1 Two-column label + content layout
+
+Used for: News, collections, any section where a heading "anchors" a content list.
+
+```
+[200px label col] [1fr content col]
+  ✦ Eyebrow          [content rows]
+  大見出し
+  [View more >]
+  [decoration img]
+```
+
+- Label column: `position: sticky; top: 64px` on desktop so it stays visible while scrolling long lists
+- On mobile: stack — label row spans full width, content below
+
+### 8.2 White card on cream background
+
+The standard content card in apantry.jp:
+- Section bg: `#F0EBD8` (warm cream — warmer than `--color-background-alt`)
+- Card bg: `#FFFFFF`
+- Card radius: `16px`
+- No box-shadow — white on cream provides sufficient contrast
+- Internal padding: `20px`
+
+### 8.3 Date format
+
+Always use `Date : YYYY.MM.DD` format for article/news dates — including the "Date : " prefix with a space on each side of the colon.
+
+```liquid
+Date : {{ article.published_at | date: '%Y.%m.%d' }}
+```
+
+### 8.4 Passing schema values as CSS variables
+
+The correct way to make schema settings (range sliders, selects) control CSS layout:
+
+```liquid
+{%- liquid
+  case section.settings.image_ratio
+    when 'square'    | assign ratio_str = '1 / 1'
+    when 'landscape' | assign ratio_str = '4 / 3'
+  endcase
+-%}
+
+<section style="--thumb-w: {{ section.settings.image_size }}px; --thumb-ratio: {{ ratio_str }};">
+```
+
+Then in CSS use `var(--thumb-w)` and `var(--thumb-ratio)` — never compute layout values in Liquid.
+
+### 8.5 Responsive CSS variable override
+
+When a CSS variable controls desktop sizing but should be smaller on mobile, override the variable on the component (not the root):
+
+```css
+/* Desktop: uses schema-driven variable */
+.card { --thumb-w: 192px; }   /* set via inline style */
+
+/* Tablet: fixed smaller size — ignore schema value */
+@media (max-width: 1023px) { .card { --thumb-w: 88px; } }
+
+/* Mobile: fixed smallest size */
+@media (max-width: 767px)  { .card { --thumb-w: 80px; } }
+```
+
+---
+
+*Last updated: April 2026 — based on apantry.jp design audit + home-news section build*

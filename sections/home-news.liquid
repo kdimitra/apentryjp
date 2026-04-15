@@ -16,10 +16,29 @@
 
 {{ 'section-home-news.css' | asset_url | stylesheet_tag }}
 
+{%- liquid
+  case section.settings.image_ratio
+    when 'square'
+      assign thumb_ratio = '1 / 1'
+    when 'landscape'
+      assign thumb_ratio = '4 / 3'
+    when 'portrait'
+      assign thumb_ratio = '3 / 4'
+    when 'wide'
+      assign thumb_ratio = '16 / 9'
+    else
+      assign thumb_ratio = '1 / 1'
+  endcase
+-%}
+
 <section
   class="section-home-news"
   id="home-news-{{ section.id }}"
-  style="background-color: {{ section.settings.bg_color }};"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    --hn-thumb-w: {{ section.settings.image_size }}px;
+    --hn-thumb-ratio: {{ thumb_ratio }};
+  "
 >
   <div class="hn-container">
     <div class="hn-inner">
@@ -207,6 +226,32 @@
       "max": 5,
       "step": 1,
       "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Image size (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "image_size",
+      "label": "Thumbnail width (px)",
+      "min": 80,
+      "max": 280,
+      "step": 8,
+      "unit": "px",
+      "default": 192
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Thumbnail aspect ratio",
+      "options": [
+        { "value": "square",    "label": "Square (1:1) — 192×192" },
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "portrait",  "label": "Portrait (3:4)" },
+        { "value": "wide",      "label": "Wide (16:9)" }
+      ],
+      "default": "square"
     },
     {
       "type": "header",
