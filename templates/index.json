@@ -826,10 +826,26 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "button_Jtzzj3": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "今すぐ購入",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "text_DDMEnV"
+            "text_DDMEnV",
+            "button_Jtzzj3"
           ]
         },
         "static-carousel-content": {
