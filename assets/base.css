@@ -4261,4 +4261,7 @@ div[ref="quantitySelectorWrapper"]{
   color:#fff !important;
 }
 
+.group-block-content a[ref='productTitleLink'] div {
+  margin-right: auto !important;
+}
 
