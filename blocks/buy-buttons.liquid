@@ -2,6 +2,32 @@
 {% liquid
   assign block_settings = block.settings
   assign product = closest.product
+
+  assign bb_atc_radius = 'inherit'
+  if block_settings.pill_button
+    assign bb_atc_radius = '3.40282e38px'
+  endif
+
+  case block_settings.horizontal_alignment
+    when 'center'
+      assign bb_justify = 'center'
+    when 'right'
+      assign bb_justify = 'flex-end'
+    when 'space-between'
+      assign bb_justify = 'space-between'
+    else
+      assign bb_justify = 'flex-start'
+  endcase
+
+  case block_settings.vertical_alignment
+    when 'center'
+      assign bb_align = 'center'
+    when 'end'
+      assign bb_align = 'flex-end'
+    else
+      assign bb_align = 'flex-start'
+  endcase
+
   if request.visual_preview_mode and product == blank
     assign product = collections.all.products.first
   endif
@@ -69,7 +95,13 @@
         {%- endif -%}
         <div
           class="product-form-buttons spacing-style{% if block_settings.stacking %} product-form-buttons--stacked{% endif %}"
-          style="{% render 'spacing-style', settings: block_settings %}"
+          style="
+            {% render 'spacing-style', settings: block_settings %}
+            --bb-atc-radius: {{ bb_atc_radius }};
+            --bb-justify: {{ bb_justify }};
+            --bb-align: {{ bb_align }};
+            --bb-elements-gap: {{ block_settings.elements_gap }}px;
+          "
           ref="productFormButtons"
         >
           {%- unless block_settings.gift_card_form and product.gift_card? -%}
@@ -396,6 +428,57 @@
     {
       "type": "paragraph",
       "content": "t:content.gift_card_form_description"
+    },
+    {
+      "type": "header",
+      "content": "Button Style"
+    },
+    {
+      "type": "checkbox",
+      "id": "pill_button",
+      "label": "Pill-shaped Add to Cart button",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Layout & Alignment"
+    },
+    {
+      "type": "select",
+      "id": "horizontal_alignment",
+      "label": "Horizontal alignment",
+      "options": [
+        { "value": "left",          "label": "Left" },
+        { "value": "center",        "label": "Center" },
+        { "value": "right",         "label": "Right" },
+        { "value": "space-between", "label": "Space between" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        { "value": "start",  "label": "Top" },
+        { "value": "center", "label": "Center" },
+        { "value": "end",    "label": "Bottom" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "elements_gap",
+      "label": "Gap between elements",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "default": 8
     },
     {
       "type": "header",
