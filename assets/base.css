@@ -4235,9 +4235,9 @@ product-recommendations:has([data-has-recommendations='false']) {
 .quantity-selector__button:last-child {
   border-radius: 0 50px 50px 0 !important;
 }
-div[ref="priceContainer"] {
+/* div[ref="priceContainer"] {
   text-align: center !important;
-}
+} */
 
 a[ref='productTitleLink'] div {
   width:auto !important;
