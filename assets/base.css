@@ -4253,11 +4253,12 @@ a[ref='productTitleLink'] div p[role='heading']{
   color:#fff !important;
 }
 
-div.quantity-selector-wrapper {
-  margin: auto !important;
-}
 
 main[data-template="product"] div.quantity-selector-wrapper {
   margin-right: auto !important;
+}
+
+main:not([data-template="product"]) div.quantity-selector-wrapper {
+  margin: auto !important;
 }
 
