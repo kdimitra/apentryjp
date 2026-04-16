@@ -31,7 +31,7 @@
             "media_fit": "cover",
             "media_radius": 0,
             "extend_media": true,
-            "zoom": true,
+            "zoom": false,
             "video_loop": false,
             "hide_variants": false,
             "padding-block-start": 0,
@@ -76,7 +76,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h2",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -244,7 +244,7 @@
         "limit_details_width": false,
         "gap": 8,
         "enable_sticky_add_to_cart": true,
-        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "color_scheme": "scheme-2",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
