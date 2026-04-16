@@ -1,0 +1,86 @@
+/* ─────────────────────────────────────────
+   Featured Collection: Carousel v2
+   section-carousel-v2.css
+   Scoped to .section-carousel-v2
+   Adds: center alignment · reduced ATC padding · font-size control · circular quantity buttons
+───────────────────────────────────────── */
+
+/* ── Center-align product card content ── */
+.section-carousel-v2 .product-card {
+  text-align: center;
+}
+
+.section-carousel-v2 .product-card__info {
+  align-items: center;
+}
+
+/* Product title */
+.section-carousel-v2 .product-title,
+.section-carousel-v2 .product-card__title {
+  text-align: center;
+}
+
+/* Price */
+.section-carousel-v2 .price__container,
+.section-carousel-v2 .price {
+  justify-content: center;
+  text-align: center;
+}
+
+/* Add-to-cart button */
+.section-carousel-v2 .add-to-cart-component,
+.section-carousel-v2 add-to-cart-component {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.section-carousel-v2 .button.add-to-cart-button,
+.section-carousel-v2 .add-to-cart-button {
+  padding-block: 8px;
+  padding-inline: 20px;
+  font-size: var(--cv2-atc-font-size, 14px);
+}
+
+/* Quantity selector */
+.section-carousel-v2 .quantity-selector-wrapper {
+  justify-content: center;
+}
+
+.section-carousel-v2 quantity-selector-component,
+.section-carousel-v2 .quantity-selector {
+  justify-content: center;
+}
+
+/* ── Circular brown +/- quantity buttons ── */
+.section-carousel-v2 .quantity-minus,
+.section-carousel-v2 .quantity-plus {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #5E3826;
+  color: #FFFFFF;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease;
+}
+
+.section-carousel-v2 .quantity-minus:hover,
+.section-carousel-v2 .quantity-plus:hover {
+  background-color: #4A2C1E;
+}
+
+.section-carousel-v2 .quantity-minus svg,
+.section-carousel-v2 .quantity-plus svg {
+  width: 12px;
+  height: 12px;
+  color: #FFFFFF;
+  stroke: #FFFFFF;
+  fill: none;
+  display: block;
+}
