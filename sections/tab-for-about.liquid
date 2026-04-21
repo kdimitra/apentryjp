@@ -1,0 +1,189 @@
+
+{%- comment -%}
+  Tab For About Section
+  Layout: cream bg · inner rounded card · 3-col pill tab grid
+  On click: smooth-scrolls to the target section ID on the page
+  Active state: driven by IntersectionObserver as user scrolls
+{%- endcomment -%}
+
+{{ 'section-tab-for-about.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="section-tab-for-about"
+  id="tab-for-about-{{ section.id }}"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    --ta-inner-bg:     {{ section.settings.inner_bg_color }};
+    --ta-tab-bg:       {{ section.settings.tab_bg_color }};
+    --ta-tab-bg-hover: {{ section.settings.tab_bg_color | color_darken: 10 }};
+    --ta-tab-bg-active:{{ section.settings.tab_bg_color | color_darken: 22 }};
+    --ta-tab-text:     {{ section.settings.tab_text_color }};
+    --ta-gap:          {{ section.settings.tab_gap }}px;
+  "
+>
+  <div class="ta-container">
+    <div class="ta-inner">
+
+      {%- if section.blocks.size > 0 -%}
+        <ul class="ta-grid" role="list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'tab_item' -%}
+              <li class="ta-item" {{ block.shopify_attributes }}>
+                <a
+                  href="#{{ block.settings.target_section_id }}"
+                  class="ta-tab"
+                  data-target="{{ block.settings.target_section_id }}"
+                  aria-label="{{ block.settings.label | escape }}"
+                >
+                  <span class="ta-tab__label">{{ block.settings.label }}</span>
+                  <svg class="ta-tab__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="6 9 12 15 18 9"/>
+                  </svg>
+                </a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+
+      {%- else -%}
+        {%- comment -%} Editor placeholders when no blocks are added yet {%- endcomment -%}
+        <ul class="ta-grid" role="list">
+          {%- assign placeholder_labels = 'ストーリー,アニーズパントリー3つのこだわり,透明性の高いごはん,フィーディングガイド,環境にやさしいパッケージ,ブログ記事' | split: ',' -%}
+          {%- for label in placeholder_labels -%}
+            <li class="ta-item">
+              <span class="ta-tab">
+                <span class="ta-tab__label">{{ label }}</span>
+                <svg class="ta-tab__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="6 9 12 15 18 9"/>
+                </svg>
+              </span>
+            </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'section-tab-for-about.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Tab for About",
+  "class": "tab-for-about-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#F0EBD8"
+    },
+    {
+      "type": "color",
+      "id": "inner_bg_color",
+      "label": "Inner card background",
+      "default": "#EDE6D8"
+    },
+    {
+      "type": "color",
+      "id": "tab_bg_color",
+      "label": "Tab background",
+      "default": "#8DCAD8"
+    },
+    {
+      "type": "color",
+      "id": "tab_text_color",
+      "label": "Tab text color",
+      "default": "#2A4A54"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "tab_gap",
+      "label": "Gap between tabs",
+      "min": 6,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "default": 12
+    }
+  ],
+  "blocks": [
+    {
+      "type": "tab_item",
+      "name": "Tab item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Tab label",
+          "default": "ストーリー"
+        },
+        {
+          "type": "text",
+          "id": "target_section_id",
+          "label": "Target section ID",
+          "info": "Enter the HTML id of the section to scroll to (without the # symbol). E.g. story-section"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tab for About",
+      "blocks": [
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "ストーリー",
+            "target_section_id": "story-section"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "アニーズパントリー3つのこだわり",
+            "target_section_id": "commitment-section"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "透明性の高いごはん",
+            "target_section_id": "transparency-section"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "フィーディングガイド",
+            "target_section_id": "feeding-guide-section"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "環境にやさしいパッケージ",
+            "target_section_id": "packaging-section"
+          }
+        },
+        {
+          "type": "tab_item",
+          "settings": {
+            "label": "ブログ記事",
+            "target_section_id": "blog-section"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

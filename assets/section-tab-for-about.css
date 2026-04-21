@@ -1,0 +1,168 @@
+/* ─────────────────────────────────────────
+   Tab For About  ·  section-tab-for-about.css
+   Layout: cream outer bg · inner card container · 3-col pill tab grid
+   Confirmed against apantry.jp About page tab screenshot
+───────────────────────────────────────── */
+
+.section-tab-for-about {
+  --ta-bg:           #F0EBD8;
+  --ta-inner-bg:     #EDE6D8;
+  --ta-tab-bg:       #8DCAD8;
+  --ta-tab-bg-hover: #75B8C8;
+  --ta-tab-bg-active:#5EA6B8;
+  --ta-tab-text:     #2A4A54;
+  --ta-radius-inner: 20px;
+  --ta-radius-tab:   9999px;
+  --ta-gap:          12px;
+
+  background-color: var(--ta-bg);
+  padding-block: 48px;
+}
+
+/* ── Container ───────────────────────── */
+.ta-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ── Inner card wrapper ──────────────── */
+.ta-inner {
+  background-color: var(--ta-inner-bg);
+  border-radius: var(--ta-radius-inner);
+  padding: 28px 32px;
+}
+
+/* ── 3-column tab grid ───────────────── */
+.ta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--ta-gap);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Single tab item ─────────────────── */
+.ta-item {
+  display: flex;
+}
+
+.ta-tab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  background-color: var(--ta-tab-bg);
+  color: var(--ta-tab-text);
+  border-radius: var(--ta-radius-tab);
+  padding: 14px 20px;
+  text-decoration: none;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  text-align: left;
+}
+
+.ta-tab:hover {
+  background-color: var(--ta-tab-bg-hover);
+}
+
+.ta-tab:focus-visible {
+  outline: 2px solid var(--ta-tab-text);
+  outline-offset: 3px;
+}
+
+/* Active tab */
+.ta-tab.is-active {
+  background-color: var(--ta-tab-bg-active);
+  border-color: var(--ta-tab-text);
+  color: #FFFFFF;
+}
+
+.ta-tab.is-active .ta-tab__icon {
+  color: #FFFFFF;
+}
+
+/* Label text */
+.ta-tab__label {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Chevron icon */
+.ta-tab__icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: var(--ta-tab-text);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.ta-tab:hover .ta-tab__icon {
+  transform: translateY(2px);
+}
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-tab-for-about {
+    padding-block: 40px;
+  }
+
+  .ta-container {
+    padding-inline: 32px;
+  }
+
+  .ta-inner {
+    padding: 24px;
+  }
+
+  .ta-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ta-tab {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-tab-for-about {
+    padding-block: 24px;
+  }
+
+  .ta-container {
+    padding-inline: 16px;
+  }
+
+  .ta-inner {
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .ta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .ta-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ta-tab {
+    font-size: 12px;
+    padding: 11px 14px;
+    white-space: normal;
+  }
+}
