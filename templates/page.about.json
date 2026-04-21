@@ -164,7 +164,7 @@
           "type": "tab_item",
           "settings": {
             "label": "アニーズパントリー3つのこだわり",
-            "target_section_id": "commitment-section"
+            "target_section_id": "AnniesCommitment"
           }
         },
         "tab_item_GAnPRX": {
