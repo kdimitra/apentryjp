@@ -185,7 +185,7 @@
           "type": "tab_item",
           "settings": {
             "label": "環境にやさしいパッケージ",
-            "target_section_id": "feeding-guide-section"
+            "target_section_id": "feeding-guide-section1"
           }
         },
         "tab_item_jek46C": {
@@ -674,7 +674,7 @@
       ],
       "name": "How to feed",
       "settings": {
-        "section_id": "how-to-feed",
+        "section_id": "feeding-guide-section",
         "dog_illustration": "shopify://shop_images/illust-dog-18.png",
         "dog_illustration_width": 210,
         "eyebrow": "How To Feed",
