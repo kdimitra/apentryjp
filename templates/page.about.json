@@ -1082,6 +1082,30 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "annies_about_L4K646": {
+      "type": "annies-about",
+      "name": "Annie about",
+      "settings": {
+        "section_id": "annies-about-us",
+        "eyebrow": "About",
+        "eyebrow_icon_left": "🐾",
+        "eyebrow_icon_right": "🐾",
+        "page_heading": "透明性の高いごはん",
+        "image_position": "left",
+        "main_image": "shopify://shop_images/IMGP0723.jpg",
+        "show_secondary_image": true,
+        "secondary_image": "shopify://shop_images/IMGP0757.jpg",
+        "subheading": "見える安心で、正直なごはんを。",
+        "body_text": "<p>私たちは、信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。</p><p>使のは、高品質な肉と野菜。無添加のフレッシュドッグフードとして、素材の栄養とおいしさを大切にしています。</p><p>大量生産や長期冷凍は行わず、すべて少量ずつ丁寧に調理。愛犬が毎日安心して食べられるごはんを作っています。</p><p>たった一皿のごはんにも、まっすぐ向き合う。</p><p>毎日食べるものだからこそ、何が入っているのかが分かる正直なドッグフードを。余計なものは加えず、必要なものだけを、必要な分だけ届けます。</p>",
+        "bg_color": "#F5F0E4",
+        "main_image_bg_color": "#B8DDE6",
+        "secondary_image_bg_color": "#FFFFFF",
+        "eyebrow_color": "#5A9BAA",
+        "page_heading_color": "#2C2420",
+        "subheading_color": "#2C2420",
+        "body_text_color": "#5A4A3A"
+      }
     }
   },
   "order": [
@@ -1093,6 +1117,7 @@
     "hero_6xjVt8",
     "section_eAcedc",
     "why_chooseus_YtYPy6",
-    "section_UHWCkb"
+    "section_UHWCkb",
+    "annies_about_L4K646"
   ]
 }
