@@ -1,0 +1,312 @@
+
+{%- comment -%}
+  About Design Section
+  Layout: cream bg · centered eyebrow · configurable heading alignment
+          two-column (image left · subheading + body right)
+  Confirmed against apantry.jp About page "About Design" screenshot.
+{%- endcomment -%}
+
+{{ 'section-about-design.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  case section.settings.image_ratio
+    when 'square'
+      assign img_ratio = '1 / 1'
+    when 'landscape'
+      assign img_ratio = '4 / 3'
+    when 'portrait'
+      assign img_ratio = '3 / 4'
+    when 'wide'
+      assign img_ratio = '16 / 9'
+    else
+      assign img_ratio = '4 / 3'
+  endcase
+-%}
+
+<section
+  class="section-about-design"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}about-design-{{ section.id }}{% endif %}"
+  style="
+    background-color:         {{ section.settings.bg_color }};
+    --ad-eyebrow-color:       {{ section.settings.eyebrow_color }};
+    --ad-eyebrow-icon:        {{ section.settings.eyebrow_icon_color }};
+    --ad-page-heading-color:  {{ section.settings.page_heading_color }};
+    --ad-subheading-color:    {{ section.settings.subheading_color }};
+    --ad-body-color:          {{ section.settings.body_text_color }};
+    --ad-img-ratio:           {{ img_ratio }};
+    --ad-image-radius:        {{ section.settings.image_radius }}px;
+    padding-block-start:      {{ section.settings.padding_top }}px;
+    padding-block-end:        {{ section.settings.padding_bottom }}px;
+  "
+>
+  <div class="ad-container">
+
+    {%- comment -%}━━━━━━━━ PAGE HEADER ━━━━━━━━{%- endcomment -%}
+    <div class="ad-page-header">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="ad-eyebrow">
+          {%- if section.settings.eyebrow_icon_left != blank -%}
+            <span class="ad-eyebrow__icon" aria-hidden="true" style="color:{{ section.settings.eyebrow_icon_color }};">
+              {{- section.settings.eyebrow_icon_left -}}
+            </span>
+          {%- endif -%}
+          {{- section.settings.eyebrow -}}
+          {%- if section.settings.eyebrow_icon_right != blank -%}
+            <span class="ad-eyebrow__icon" aria-hidden="true" style="color:{{ section.settings.eyebrow_icon_color }};">
+              {{- section.settings.eyebrow_icon_right -}}
+            </span>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.page_heading != blank -%}
+        <h2 class="ad-page-heading ad-page-heading--{{ section.settings.heading_alignment }}">
+          {{ section.settings.page_heading }}
+        </h2>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%}━━━━━━━━ BODY ━━━━━━━━{%- endcomment -%}
+    <div class="ad-body{% if section.settings.image_position == 'right' %} ad-body--image-right{% endif %}">
+
+      {%- comment -%}── Image ──{%- endcomment -%}
+      <div class="ad-image-wrap">
+        {%- if section.settings.image != blank -%}
+          {{- section.settings.image
+            | image_url: width: 1000
+            | image_tag:
+              loading: 'lazy',
+              widths: '500, 750, 1000',
+              sizes: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(50vw - 52px), calc((1200px - 80px) / 2)',
+              alt: section.settings.image.alt | default: section.settings.page_heading | escape
+          -}}
+        {%- else -%}
+          <div class="ad-image-placeholder">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%}── Text ──{%- endcomment -%}
+      <div class="ad-text ad-text--{{ section.settings.text_alignment }}">
+
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="ad-subheading">{{ section.settings.subheading }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.body_text != blank -%}
+          <div class="ad-body-text">{{ section.settings.body_text }}</div>
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About design",
+  "class": "about-design-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. No spaces or # (e.g. packaging-section)."
+    },
+    {
+      "type": "header",
+      "content": "Eyebrow"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "About Design"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_icon_left",
+      "label": "Left icon",
+      "default": "🐾",
+      "info": "Text characters (✦ ★ ✿) respect the icon color setting. Emoji colors are fixed by the OS and cannot be changed."
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_icon_right",
+      "label": "Right icon",
+      "default": "🐾"
+    },
+    {
+      "type": "header",
+      "content": "Page Heading"
+    },
+    {
+      "type": "text",
+      "id": "page_heading",
+      "label": "Heading text",
+      "default": "環境にやさしいパッケージ"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image column position",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        { "value": "landscape", "label": "Landscape (4:3)" },
+        { "value": "square",    "label": "Square (1:1)" },
+        { "value": "portrait",  "label": "Portrait (3:4)" },
+        { "value": "wide",      "label": "Wide (16:9)" }
+      ],
+      "default": "landscape"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image corner radius",
+      "min": 0,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "環境にやさしく。\n目にもたのしく。"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>一般的なペットフードにはビニール包装が使われがちですが、アニーズパントリーでは、環境への配慮から紙製のカップや箱を採用しています。カラフルなイラストをあしらったデザインは、棚に並べても愛らしく、見るたびに心が弾むような楽しさを大切にしました。ご自宅用にはもちろん、ギフトにもぴったりのパッケージです。</p>"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#F5F0E4"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow text color",
+      "default": "#5A4232"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_icon_color",
+      "label": "Eyebrow icon color",
+      "info": "Applies to text characters only. Emoji colors cannot be changed.",
+      "default": "#87CEDC"
+    },
+    {
+      "type": "color",
+      "id": "page_heading_color",
+      "label": "Page heading color",
+      "default": "#2C2420"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Sub-heading color",
+      "default": "#2C2420"
+    },
+    {
+      "type": "color",
+      "id": "body_text_color",
+      "label": "Body text color",
+      "default": "#6B6860"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About design"
+    }
+  ]
+}
+{% endschema %}

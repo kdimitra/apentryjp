@@ -1,0 +1,222 @@
+/* ─────────────────────────────────────────
+   About Design Section  ·  section-about-design.css
+   Layout: cream bg · centered eyebrow · left-aligned heading
+           two-column (image | subheading + body)
+───────────────────────────────────────── */
+
+.section-about-design {
+  --ad-bg:               #F5F0E4;
+  --ad-eyebrow-color:    #5A4232;
+  --ad-eyebrow-icon:     #87CEDC;
+  --ad-page-heading-color: #2C2420;
+  --ad-subheading-color: #2C2420;
+  --ad-body-color:       #6B6860;
+  --ad-image-radius:     24px;
+
+  background-color: var(--ad-bg);
+  padding-block: 72px 96px;
+}
+
+/* ── Container ───────────────────────── */
+.ad-container {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ─────────────────────────────────────
+   PAGE HEADER — eyebrow + heading
+───────────────────────────────────── */
+.ad-page-header {
+  margin-bottom: 56px;
+}
+
+.ad-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--ad-eyebrow-color);
+  margin: 0 0 16px;
+}
+
+.ad-eyebrow__icon {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.ad-page-heading {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ad-page-heading-color);
+  margin: 0;
+}
+
+.ad-page-heading--center { text-align: center; }
+.ad-page-heading--left   { text-align: left; }
+.ad-page-heading--right  { text-align: right; }
+
+/* ─────────────────────────────────────
+   TWO-COLUMN BODY
+───────────────────────────────────── */
+.ad-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+.ad-body--image-right {
+  direction: rtl;
+}
+
+.ad-body--image-right > * {
+  direction: ltr;
+}
+
+/* ── Image column ────────────────────── */
+.ad-image-wrap {
+  width: 100%;
+  aspect-ratio: var(--ad-img-ratio, 4 / 3);
+  border-radius: var(--ad-image-radius);
+  overflow: hidden;
+  background-color: var(--ad-bg);
+}
+
+.ad-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.ad-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E8E3DA;
+}
+
+.ad-image-placeholder svg {
+  width: 36px;
+  height: 36px;
+  color: #C8C2B8;
+}
+
+/* ── Text column ─────────────────────── */
+.ad-text {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.ad-subheading {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--ad-subheading-color);
+  margin: 0;
+}
+
+.ad-body-text {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2.0;
+  color: var(--ad-body-color);
+  margin: 0;
+}
+
+.ad-body-text p {
+  margin: 0 0 1.3em;
+}
+
+.ad-body-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Text alignment variants ─────────── */
+.ad-text--left   { align-items: flex-start; text-align: left; }
+.ad-text--center { align-items: center;     text-align: center; }
+.ad-text--right  { align-items: flex-end;   text-align: right; }
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-about-design {
+    padding-block: 56px 72px;
+  }
+
+  .ad-container {
+    padding-inline: 32px;
+  }
+
+  .ad-page-header {
+    margin-bottom: 40px;
+  }
+
+  .ad-page-heading {
+    font-size: 30px;
+  }
+
+  .ad-body {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .ad-subheading {
+    font-size: 24px;
+  }
+
+  .ad-body-text {
+    font-size: 14px;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-about-design {
+    padding-block: 40px 56px;
+  }
+
+  .ad-container {
+    padding-inline: 20px;
+  }
+
+  .ad-page-header {
+    margin-bottom: 32px;
+  }
+
+  .ad-page-heading {
+    font-size: 24px;
+  }
+
+  .ad-body {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .ad-body--image-right {
+    direction: ltr;
+  }
+
+  .ad-subheading {
+    font-size: 22px;
+  }
+
+  .ad-body-text {
+    font-size: 14px;
+  }
+}
