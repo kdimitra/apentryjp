@@ -612,6 +612,98 @@
         "body_text_color": "#5a4a3a"
       }
     },
+    "how_to_feed_XLrPV8": {
+      "type": "how-to-feed",
+      "blocks": {
+        "step_card_qMEzpi": {
+          "type": "step_card",
+          "settings": {
+            "image": "shopify://shop_images/29be88ee7deb56dd347d830c2524c1ce7ef25ce6-1150x850_png.avif",
+            "step_label": "ステップ1",
+            "heading": "保存方法",
+            "body": "商品が届いたら\nすぐに冷凍庫で保存してください。"
+          }
+        },
+        "step_card_gL6NL6": {
+          "type": "step_card",
+          "settings": {
+            "image": "shopify://shop_images/b728e4646c99114b1f3a453d8cb92793fa5d751d-5000x3750_jpg.avif",
+            "step_label": "ステップ2",
+            "heading": "解凍方法",
+            "body": "食べる前日の夜に冷蔵庫へ移して\n解凍してください。"
+          }
+        },
+        "step_card_VDxWCD": {
+          "type": "step_card",
+          "settings": {
+            "image": "shopify://shop_images/3e827ffc475c2b13b113b8528c8e0966c3d8249a-5000x3333_jpg.avif",
+            "step_label": "ステップ3",
+            "heading": "与え方",
+            "body": "加熱せずに\nそのまま与えてください。"
+          }
+        },
+        "dosage_row_NV36Wc": {
+          "type": "dosage_row",
+          "settings": {
+            "label": "子犬・活発な成犬",
+            "value": "体重の3〜5%"
+          }
+        },
+        "dosage_row_96qPtq": {
+          "type": "dosage_row",
+          "settings": {
+            "label": "成犬・妊娠中・シニア犬",
+            "value": "体重の2〜4%"
+          }
+        },
+        "dosage_row_PRWBEE": {
+          "type": "dosage_row",
+          "settings": {
+            "label": "妊娠後期・授乳中",
+            "value": "体重の3〜6%"
+          }
+        }
+      },
+      "block_order": [
+        "step_card_qMEzpi",
+        "step_card_gL6NL6",
+        "step_card_VDxWCD",
+        "dosage_row_NV36Wc",
+        "dosage_row_96qPtq",
+        "dosage_row_PRWBEE"
+      ],
+      "name": "How to feed",
+      "settings": {
+        "section_id": "how-to-feed",
+        "dog_illustration": "shopify://shop_images/illust-dog-18.png",
+        "dog_illustration_width": 190,
+        "eyebrow": "How To Feed",
+        "eyebrow_icon_left": "🐾",
+        "eyebrow_icon_right": "🐾",
+        "heading": "フィーディングガイド",
+        "check_badge": "Check",
+        "check_heading": "与える量の目安",
+        "check_desc": "体重・犬種・活動量に応じて右側の記載内容を目安に調整してください。",
+        "show_simulator": true,
+        "sim_badge": "Simulation",
+        "sim_heading": "生食用 食事量シミュレーター",
+        "sim_desc": "体重・ライフステージに応じた適切な食事量をシミュレーターで簡単に算出できます。食事量の目安としてご活用ください。",
+        "sim_weight_label": "愛犬の体重",
+        "sim_stage_label": "愛犬のライフステージ",
+        "sim_button_label": "ご飯の量を確認する",
+        "bg_color": "#82C9D5",
+        "card_bg_color": "#FAF6EE",
+        "cell_bg_color": "#F0EBE0",
+        "step_badge_bg_color": "#87CEDC",
+        "step_badge_text_color": "#2C5A64",
+        "dark_badge_bg_color": "#3D2B1F",
+        "heading_color": "#2C2420",
+        "body_color": "#6B5A4E",
+        "eyebrow_color": "#000000",
+        "eyebrow_icon_color": "#d4924a",
+        "button_bg_color": "#D4924A"
+      }
+    },
     "section_UHWCkb": {
       "type": "section",
       "blocks": {
@@ -826,94 +918,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 40,
         "padding-block-end": 40
-      }
-    },
-    "how_to_feed_XLrPV8": {
-      "type": "how-to-feed",
-      "blocks": {
-        "step_card_qMEzpi": {
-          "type": "step_card",
-          "settings": {
-            "step_label": "ステップ1",
-            "heading": "保存方法",
-            "body": "商品が届いたら\nすぐに冷凍庫で保存してください。"
-          }
-        },
-        "step_card_gL6NL6": {
-          "type": "step_card",
-          "settings": {
-            "step_label": "ステップ2",
-            "heading": "解凍方法",
-            "body": "食べる前日の夜に冷蔵庫へ移して\n解凍してください。"
-          }
-        },
-        "step_card_VDxWCD": {
-          "type": "step_card",
-          "settings": {
-            "step_label": "ステップ3",
-            "heading": "与え方",
-            "body": "加熱せずに\nそのまま与えてください。"
-          }
-        },
-        "dosage_row_NV36Wc": {
-          "type": "dosage_row",
-          "settings": {
-            "label": "子犬・活発な成犬",
-            "value": "体重の3〜5%"
-          }
-        },
-        "dosage_row_96qPtq": {
-          "type": "dosage_row",
-          "settings": {
-            "label": "成犬・妊娠中・シニア犬",
-            "value": "体重の2〜4%"
-          }
-        },
-        "dosage_row_PRWBEE": {
-          "type": "dosage_row",
-          "settings": {
-            "label": "妊娠後期・授乳中",
-            "value": "体重の3〜6%"
-          }
-        }
-      },
-      "block_order": [
-        "step_card_qMEzpi",
-        "step_card_gL6NL6",
-        "step_card_VDxWCD",
-        "dosage_row_NV36Wc",
-        "dosage_row_96qPtq",
-        "dosage_row_PRWBEE"
-      ],
-      "name": "How to feed",
-      "settings": {
-        "section_id": "",
-        "dog_illustration_width": 220,
-        "eyebrow": "How To Feed",
-        "eyebrow_icon_left": "✦",
-        "eyebrow_icon_right": "✦",
-        "heading": "フィーディングガイド",
-        "check_badge": "Check",
-        "check_heading": "与える量の目安",
-        "check_desc": "体重・犬種・活動量に応じて右側の記載内容を目安に調整してください。",
-        "show_simulator": true,
-        "sim_badge": "Simulation",
-        "sim_heading": "生食用 食事量シミュレーター",
-        "sim_desc": "体重・ライフステージに応じた適切な食事量をシミュレーターで簡単に算出できます。食事量の目安としてご活用ください。",
-        "sim_weight_label": "愛犬の体重",
-        "sim_stage_label": "愛犬のライフステージ",
-        "sim_button_label": "ご飯の量を確認する",
-        "bg_color": "#82C9D5",
-        "card_bg_color": "#FAF6EE",
-        "cell_bg_color": "#F0EBE0",
-        "step_badge_bg_color": "#87CEDC",
-        "step_badge_text_color": "#2C5A64",
-        "dark_badge_bg_color": "#3D2B1F",
-        "heading_color": "#2C2420",
-        "body_color": "#6B5A4E",
-        "eyebrow_color": "#5A4232",
-        "eyebrow_icon_color": "#D4924A",
-        "button_bg_color": "#D4924A"
       }
     }
   },
