@@ -416,6 +416,7 @@
       "block_order": [
         "group_iWXpre"
       ],
+      "disabled": true,
       "name": "Collection list",
       "settings": {
         "layout_type": "grid",
