@@ -1,4 +1,4 @@
-<section class="ac-section" id="aboutus-commitment">
+<section class="ac-section" id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}aboutus-commitment{% endif %}">
   <div class="ac-wrapper">
 
     {{- '<!-- ── HEADER ── -->' -}}
@@ -452,6 +452,16 @@ right: 45px;
   "tag": "section",
   "class": "section-aboutus-commitment",
   "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. Enter a unique ID without spaces or # (e.g. commitment-section)."
+    },
     {
       "type": "text",
       "id": "eyebrow_text",

@@ -5,7 +5,7 @@
 
 <section
   class="about-image-card"
-  id="about-image-card-{{ section.id }}"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}about-image-card-{{ section.id }}{% endif %}"
   style="
     --text-color: {{ section.settings.text_color }};
     --card-bg: {{ section.settings.card_background_color }};
@@ -237,6 +237,16 @@
   "tag": "section",
   "class": "section-about-image-card",
   "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. Enter a unique ID without spaces or # (e.g. story-section)."
+    },
     {
       "type": "header",
       "content": "Background Image"

@@ -451,7 +451,7 @@
 {% endcapture %}
 
 <div
-  id="Hero-{{ section.id }}"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}Hero-{{ section.id }}{% endif %}"
   class="hero color-{{ section.settings.color_scheme }}{% if section.blocks.size == 0 and section.settings.section_height == 'auto' %} hero--no-blocks-auto-height{% endif %}{% if section.settings.stack_media_on_mobile %} hero--stack-mobile{% endif %}"
   style="
     --hero-border-style: {{ section.settings.border }};
@@ -781,6 +781,16 @@
     "groups": ["header"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. Enter a unique ID without spaces or # (e.g. hero-section)."
+    },
     {
       "type": "header",
       "content": "t:content.media_1"

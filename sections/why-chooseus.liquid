@@ -5,7 +5,7 @@
 
 <section
   class="why-choose-us"
-  id="why-choose-us-{{ section.id }}"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}why-choose-us-{{ section.id }}{% endif %}"
   style="
     --bg-color: {{ section.settings.background_color }};
     --card-bg: {{ section.settings.card_background_color }};
@@ -277,6 +277,13 @@
   "tag": "section",
   "class": "section-why-choose-us",
   "settings": [
+    { "type": "header", "content": "Section ID" },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. Enter a unique ID without spaces or # (e.g. why-choose-us-section)."
+    },
     { "type": "header", "content": "Section Header" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow text", "default": "Why Choose Us" },
     { "type": "checkbox", "id": "show_eyebrow_stars", "label": "Show star icons", "default": true },
