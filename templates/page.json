@@ -6,7 +6,8 @@
  * or related systems. Please exercise caution as any changes
  * made to this file may be overwritten.
  * ------------------------------------------------------------
- */{
+ */
+{
   "sections": {
     "main": {
       "type": "main-page",
@@ -16,27 +17,192 @@
           "name": "Title",
           "settings": {
             "text": "<h1>{{ closest.page.title }}</h1>",
+            "width": "100%",
+            "max_width": "normal",
+            "alignment": "left",
             "type_preset": "h2",
-            "width": "100%"
-          }
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
         "page-content": {
           "type": "page-content",
-          "settings": {}
+          "settings": {},
+          "blocks": {}
         }
       },
       "block_order": [
         "heading",
         "page-content"
       ],
+      "disabled": true,
       "settings": {
+        "content_direction": "column",
         "gap": 32,
+        "color_scheme": "",
         "padding-block-start": 40,
         "padding-block-end": 80
+      }
+    },
+    "faq_section_ppYcU3": {
+      "type": "faq-section",
+      "blocks": {
+        "faq_item_377abG": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。そのため、アニーズパントリーでは、違う種類の製品をローテーションで与えるのをお勧めします。（ただし、アレルギーをもつ食材は避けてください。）"
+          }
+        },
+        "faq_item_Ag6Ndp": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "解凍後、食べきれません。どうしたらいいですか？",
+            "answer": "解凍後は冷蔵保存で2〜3日以内にお召し上がりください。それ以上保存する場合は再冷凍をお勧めします。"
+          }
+        },
+        "faq_item_FNP7F3": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のお届け日時は変更できますか？",
+            "answer": "はい、マイページよりお届け日時の変更が可能です。変更は次回お届けの3日前までにお手続きください。"
+          }
+        },
+        "faq_item_zwfjBD": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のメニューやパック数は変更できますか？",
+            "answer": "はい、マイページよりご変更いただけます。変更は次回お届けの3日前までにお手続きください。"
+          }
+        },
+        "faq_item_TXpyWN": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "初めて注文するにはどうすればいいですか？",
+            "answer": "商品ページからご希望の商品をカートに追加し、チェックアウトへお進みください。初回のお客様はアカウント登録をお勧めします。"
+          }
+        },
+        "faq_item_FwtHY6": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "どの商品から始めればいいですか？",
+            "answer": "まずはスターターセットがおすすめです。複数のフレーバーをお試しいただけます。"
+          }
+        },
+        "faq_item_CrVpMA": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "原材料はどこから仕入れていますか？",
+            "answer": "信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。"
+          }
+        },
+        "faq_item_7kk8WU": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "保存方法を教えてください。",
+            "answer": "お届け後はすぐに冷凍庫で保存してください。食べる前日の夜に冷蔵庫へ移して解凍し、加熱せずにそのまま与えてください。"
+          }
+        },
+        "faq_item_kKdhaL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入はいつでも解約できますか？",
+            "answer": "はい、次回お届けの3日前までにお手続きいただければ、いつでも解約できます。"
+          }
+        },
+        "faq_item_V6zXXX": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "支払い方法は何が使えますか？",
+            "answer": "クレジットカード（VISA・Mastercard・JCB・AMEX）、コンビニ払い、銀行振込に対応しています。"
+          }
+        },
+        "faq_item_KpqGLM": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "住所変更はどこからできますか？",
+            "answer": "マイページ → アカウント設定 → 配送先住所よりご変更いただけます。"
+          }
+        },
+        "faq_item_R7Tapm": {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "退会したい場合はどうすればいいですか？",
+            "answer": "マイページの退会フォームよりお手続きいただくか、カスタマーサポートまでご連絡ください。"
+          }
+        },
+        "faq_item_tp8PkN": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "請求書の発行はできますか？",
+            "answer": "はい、マイページの注文履歴から領収書のダウンロードが可能です。"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_377abG",
+        "faq_item_Ag6Ndp",
+        "faq_item_FNP7F3",
+        "faq_item_zwfjBD",
+        "faq_item_TXpyWN",
+        "faq_item_FwtHY6",
+        "faq_item_CrVpMA",
+        "faq_item_7kk8WU",
+        "faq_item_kKdhaL",
+        "faq_item_V6zXXX",
+        "faq_item_KpqGLM",
+        "faq_item_R7Tapm",
+        "faq_item_tp8PkN"
+      ],
+      "name": "FAQ",
+      "settings": {
+        "section_id": "",
+        "brand_heading": "FAQ",
+        "category_icon": "🐾",
+        "padding_top": 72,
+        "padding_bottom": 96,
+        "bg_color": "#F5F0E4",
+        "brand_heading_color": "#2C1A0E",
+        "tab_active_bg": "#3D2B1F",
+        "tab_active_text": "#FFFFFF",
+        "tab_idle_text": "#3D2B1F",
+        "tab_border_color": "#D8D2C8",
+        "heading_color": "#2C1A0E",
+        "icon_color": "#87CEDC",
+        "question_color": "#2C1A0E",
+        "answer_color": "#5A4A3A",
+        "item_open_border_color": "#5B9BB0"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "faq_section_ppYcU3"
   ]
 }
