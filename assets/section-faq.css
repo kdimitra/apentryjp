@@ -1,0 +1,299 @@
+/* ─────────────────────────────────────────
+   FAQ Section  ·  section-faq.css
+   Layout: cream bg · left (large FAQ + pill category tabs) · right (heading + accordion)
+───────────────────────────────────────── */
+
+.section-faq {
+  --faq-bg:              #F5F0E4;
+  --faq-brand-color:     #2C1A0E;
+  --faq-tab-active-bg:   #3D2B1F;
+  --faq-tab-active-text: #FFFFFF;
+  --faq-tab-idle-text:   #3D2B1F;
+  --faq-tab-border:      #D8D2C8;
+  --faq-heading-color:   #2C1A0E;
+  --faq-icon-color:      #87CEDC;
+  --faq-q-color:         #2C1A0E;
+  --faq-a-color:         #5A4A3A;
+  --faq-item-border:     #E2DDD6;
+  --faq-item-open-border:#5B9BB0;
+  --faq-minus-bg:        #3D2B1F;
+  --faq-minus-color:     #FFFFFF;
+  --faq-plus-border:     #C8C2B8;
+  --faq-plus-color:      #3D2B1F;
+
+  background-color: var(--faq-bg);
+  padding-block: 72px 96px;
+}
+
+/* ── Container ───────────────────────── */
+.faq-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* ─────────────────────────────────────
+   LEFT — Brand heading + category tabs
+───────────────────────────────────── */
+.faq-left {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Large "FAQ" brand text */
+.faq-brand-heading {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--faq-brand-color);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+/* Category tab list */
+.faq-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-tab {
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: center;
+  cursor: pointer;
+  border: 1.5px solid var(--faq-tab-border);
+  background-color: transparent;
+  color: var(--faq-tab-idle-text);
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.faq-tab:hover:not(.is-active) {
+  border-color: var(--faq-tab-active-bg);
+}
+
+.faq-tab.is-active {
+  background-color: var(--faq-tab-active-bg);
+  color: var(--faq-tab-active-text);
+  border-color: var(--faq-tab-active-bg);
+}
+
+.faq-tab:focus-visible {
+  outline: 2px solid var(--faq-tab-active-bg);
+  outline-offset: 2px;
+}
+
+/* ─────────────────────────────────────
+   RIGHT — Category heading + accordion
+───────────────────────────────────── */
+.faq-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Category heading */
+.faq-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.faq-category-icon {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--faq-icon-color);
+}
+
+.faq-category-title {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--faq-heading-color);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── Accordion items ─────────────────── */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Individual FAQ item */
+.faq-item {
+  border: 1.5px solid var(--faq-item-border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  background-color: #FDFAF5;
+}
+
+.faq-item.is-open {
+  border-color: var(--faq-item-open-border);
+}
+
+/* Question row */
+.faq-item__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq-item__q-text {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--faq-q-color);
+  line-height: 1.55;
+  flex: 1;
+  min-width: 0;
+}
+
+/* Toggle circle button */
+.faq-item__toggle {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+  border: 1.5px solid var(--faq-plus-border);
+  background-color: transparent;
+  color: var(--faq-plus-color);
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 300;
+  pointer-events: none;
+  user-select: none;
+}
+
+.faq-item.is-open .faq-item__toggle {
+  background-color: var(--faq-minus-bg);
+  border-color: var(--faq-minus-bg);
+  color: var(--faq-minus-color);
+}
+
+/* Answer */
+.faq-item__answer {
+  display: none;
+  padding: 0 24px 20px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: var(--faq-a-color);
+}
+
+.faq-item.is-open .faq-item__answer {
+  display: block;
+}
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-faq {
+    padding-block: 56px 72px;
+  }
+
+  .faq-container {
+    padding-inline: 32px;
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+  }
+
+  .faq-brand-heading {
+    font-size: 52px;
+  }
+
+  .faq-left {
+    position: static;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-faq {
+    padding-block: 40px 56px;
+  }
+
+  .faq-container {
+    padding-inline: 20px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .faq-left {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .faq-brand-heading {
+    font-size: 48px;
+    flex-shrink: 0;
+  }
+
+  .faq-tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+  }
+
+  .faq-tab {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .faq-category-title {
+    font-size: 20px;
+  }
+
+  .faq-item__q-text {
+    font-size: 14px;
+  }
+
+  .faq-item__question {
+    padding: 16px 18px;
+  }
+
+  .faq-item__answer {
+    padding: 0 18px 16px;
+    font-size: 13px;
+  }
+}

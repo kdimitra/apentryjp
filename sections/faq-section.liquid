@@ -1,0 +1,378 @@
+
+{%- comment -%}
+  FAQ Section
+  Layout: cream bg · left col (large FAQ text + pill category tabs) · right col (heading + accordion)
+  Blocks: faq_item — each block has category, question, answer
+  JS: groups blocks by category → builds tabs → filters accordion → toggles open/close
+{%- endcomment -%}
+
+{{ 'section-faq.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Build JSON data from blocks for JS consumption {%- endcomment -%}
+{%- capture faq_json -%}
+[
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'faq_item' -%}
+      {
+        "category": {{ block.settings.category | default: 'よくある質問' | json }},
+        "question":  {{ block.settings.question | json }},
+        "answer":    {{ block.settings.answer | json }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endif -%}
+  {%- endfor -%}
+]
+{%- endcapture -%}
+
+<section
+  class="section-faq"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}faq-section-{{ section.id }}{% endif %}"
+  data-category-icon="{{ section.settings.category_icon | escape }}"
+  style="
+    background-color:        {{ section.settings.bg_color }};
+    padding-block-start:     {{ section.settings.padding_top }}px;
+    padding-block-end:       {{ section.settings.padding_bottom }}px;
+    --faq-brand-color:       {{ section.settings.brand_heading_color }};
+    --faq-tab-active-bg:     {{ section.settings.tab_active_bg }};
+    --faq-tab-active-text:   {{ section.settings.tab_active_text }};
+    --faq-tab-idle-text:     {{ section.settings.tab_idle_text }};
+    --faq-tab-border:        {{ section.settings.tab_border_color }};
+    --faq-heading-color:     {{ section.settings.heading_color }};
+    --faq-icon-color:        {{ section.settings.icon_color }};
+    --faq-q-color:           {{ section.settings.question_color }};
+    --faq-a-color:           {{ section.settings.answer_color }};
+    --faq-item-open-border:  {{ section.settings.item_open_border_color }};
+    --faq-minus-bg:          {{ section.settings.tab_active_bg }};
+  "
+>
+  <div class="faq-container">
+
+    {%- comment -%}━━━━━━━━ LEFT ━━━━━━━━{%- endcomment -%}
+    <div class="faq-left">
+
+      {%- if section.settings.brand_heading != blank -%}
+        <div class="faq-brand-heading" aria-hidden="true">
+          {{ section.settings.brand_heading }}
+        </div>
+      {%- endif -%}
+
+      {%- comment -%} Tabs are injected by JS — rendered as empty list on server {%- endcomment -%}
+      <ul class="faq-tabs" role="list" aria-label="FAQ カテゴリ"></ul>
+
+    </div>
+
+    {%- comment -%}━━━━━━━━ RIGHT ━━━━━━━━{%- endcomment -%}
+    <div class="faq-right">
+
+      <div class="faq-category-heading">
+        <span class="faq-category-icon" aria-hidden="true">{{ section.settings.category_icon }}</span>
+        <h2 class="faq-category-title"></h2>
+      </div>
+
+      <div class="faq-accordion" role="list"></div>
+
+    </div>
+
+  </div>
+
+  {%- comment -%} JSON payload consumed by section-faq.js {%- endcomment -%}
+  <script type="application/json" class="faq-data">
+    {{ faq_json }}
+  </script>
+
+  {%- comment -%} Noscript fallback — render all items statically {%- endcomment -%}
+  <noscript>
+    <div class="faq-container" style="grid-template-columns:1fr;">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'faq_item' -%}
+          <details style="border:1.5px solid #E2DDD6;border-radius:14px;padding:20px 24px;margin-bottom:12px;background:#FDFAF5;">
+            <summary style="font-weight:500;font-size:15px;cursor:pointer;">{{ block.settings.question }}</summary>
+            <p style="margin-top:12px;font-size:14px;line-height:1.9;color:#5A4A3A;">{{ block.settings.answer }}</p>
+          </details>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </noscript>
+
+</section>
+
+<script src="{{ 'section-faq.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "FAQ",
+  "class": "faq-section-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "For tab navigation targeting. No spaces or # (e.g. faq-section)."
+    },
+    {
+      "type": "header",
+      "content": "Left Column"
+    },
+    {
+      "type": "text",
+      "id": "brand_heading",
+      "label": "Brand heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "header",
+      "content": "Right Column"
+    },
+    {
+      "type": "text",
+      "id": "category_icon",
+      "label": "Category icon",
+      "default": "🐾",
+      "info": "Displayed left of the active category heading. Use emoji or text character."
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 72
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 96
+    },
+    {
+      "type": "header",
+      "content": "Colors — Section"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background",
+      "default": "#F5F0E4"
+    },
+    {
+      "type": "color",
+      "id": "brand_heading_color",
+      "label": "\"FAQ\" brand text",
+      "default": "#2C1A0E"
+    },
+    {
+      "type": "header",
+      "content": "Colors — Tabs"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_bg",
+      "label": "Active tab background",
+      "default": "#3D2B1F"
+    },
+    {
+      "type": "color",
+      "id": "tab_active_text",
+      "label": "Active tab text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "tab_idle_text",
+      "label": "Idle tab text",
+      "default": "#3D2B1F"
+    },
+    {
+      "type": "color",
+      "id": "tab_border_color",
+      "label": "Idle tab border",
+      "default": "#D8D2C8"
+    },
+    {
+      "type": "header",
+      "content": "Colors — Accordion"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Category heading",
+      "default": "#2C1A0E"
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Category icon color",
+      "default": "#87CEDC"
+    },
+    {
+      "type": "color",
+      "id": "question_color",
+      "label": "Question text",
+      "default": "#2C1A0E"
+    },
+    {
+      "type": "color",
+      "id": "answer_color",
+      "label": "Answer text",
+      "default": "#5A4A3A"
+    },
+    {
+      "type": "color",
+      "id": "item_open_border_color",
+      "label": "Open item border",
+      "default": "#5B9BB0"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "FAQ item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "category",
+          "label": "Category",
+          "default": "よくある質問",
+          "info": "Items sharing the same category text appear together under one tab. Spelling must match exactly."
+        },
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "おすすめのメニューはなんですか？"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ",
+      "blocks": [
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。そのため、アニーズパントリーでは、違う種類の製品をローテーションで与えるのをお勧めします。（ただし、アレルギーをもつ食材は避けてください。）"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "解凍後、食べきれません。どうしたらいいですか？",
+            "answer": "解凍後は冷蔵保存で2〜3日以内にお召し上がりください。それ以上保存する場合は再冷凍をお勧めします。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のお届け日時は変更できますか？",
+            "answer": "はい、マイページよりお届け日時の変更が可能です。変更は次回お届けの3日前までにお手続きください。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のメニューやパック数は変更できますか？",
+            "answer": "はい、マイページよりご変更いただけます。変更は次回お届けの3日前までにお手続きください。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "初めて注文するにはどうすればいいですか？",
+            "answer": "商品ページからご希望の商品をカートに追加し、チェックアウトへお進みください。初回のお客様はアカウント登録をお勧めします。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "どの商品から始めればいいですか？",
+            "answer": "まずはスターターセットがおすすめです。複数のフレーバーをお試しいただけます。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "原材料はどこから仕入れていますか？",
+            "answer": "信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "保存方法を教えてください。",
+            "answer": "お届け後はすぐに冷凍庫で保存してください。食べる前日の夜に冷蔵庫へ移して解凍し、加熱せずにそのまま与えてください。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入はいつでも解約できますか？",
+            "answer": "はい、次回お届けの3日前までにお手続きいただければ、いつでも解約できます。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "支払い方法は何が使えますか？",
+            "answer": "クレジットカード（VISA・Mastercard・JCB・AMEX）、コンビニ払い、銀行振込に対応しています。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "住所変更はどこからできますか？",
+            "answer": "マイページ → アカウント設定 → 配送先住所よりご変更いただけます。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "退会したい場合はどうすればいいですか？",
+            "answer": "マイページの退会フォームよりお手続きいただくか、カスタマーサポートまでご連絡ください。"
+          }
+        },
+        {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "請求書の発行はできますか？",
+            "answer": "はい、マイページの注文履歴から領収書のダウンロードが可能です。"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
