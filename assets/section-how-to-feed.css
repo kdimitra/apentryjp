@@ -1,0 +1,527 @@
+/* ─────────────────────────────────────────
+   How To Feed Section  ·  section-how-to-feed.css
+   Layout: sky-blue full bg · dog illust top-left · centered header
+           3-col step cards · check dosage card · simulator card
+───────────────────────────────────────── */
+
+.section-how-to-feed {
+  --htf-bg:              #82C9D5;
+  --htf-card-bg:         #FAF6EE;
+  --htf-cell-bg:         #F0EBE0;
+  --htf-step-badge-bg:   #87CEDC;
+  --htf-step-badge-text: #2C5A64;
+  --htf-dark-badge-bg:   #3D2B1F;
+  --htf-dark-badge-text: #FAFAF7;
+  --htf-heading-color:   #2C2420;
+  --htf-body-color:      #6B5A4E;
+  --htf-eyebrow-color:   #5A4232;
+  --htf-eyebrow-icon:    #D4924A;
+  --htf-button-bg:       #D4924A;
+  --htf-button-text:     #FFFFFF;
+  --htf-input-border:    #E2DDD6;
+  --htf-paw-color:       #87CEDC;
+
+  background-color: var(--htf-bg);
+  padding-block: 56px 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Container ───────────────────────── */
+.htf-container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ─────────────────────────────────────
+   HEADER — dog illustration + title
+───────────────────────────────────── */
+.htf-header {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 140px;
+  margin-bottom: 48px;
+}
+
+/* Dog illustration — top-left */
+.htf-dog-wrap {
+  position: absolute;
+  top: -56px;   /* bleeds above section padding */
+  left: -40px;  /* aligns to container edge */
+  width: var(--htf-dog-width, 220px);
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.htf-dog-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Text block — centered in the remaining space */
+.htf-header-text {
+  width: 100%;
+  text-align: center;
+  padding-left: var(--htf-dog-width, 220px);
+}
+
+.htf-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--htf-eyebrow-color);
+  margin: 0 0 10px;
+}
+
+.htf-eyebrow__icon {
+  color: var(--htf-eyebrow-icon);
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+.htf-eyebrow__icon svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  display: block;
+}
+
+.htf-heading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--htf-heading-color);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────
+   STEP CARDS — 3-column grid
+───────────────────────────────────── */
+.htf-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.htf-step-card {
+  background-color: var(--htf-card-bg);
+  border-radius: 20px;
+  padding: 32px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Circular image */
+.htf-step-image-wrap {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--htf-cell-bg);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.htf-step-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.htf-step-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htf-step-image-placeholder svg {
+  width: 28px;
+  height: 28px;
+  color: #C8C2B8;
+}
+
+/* Step badge pill */
+.htf-step-badge {
+  display: inline-block;
+  background-color: var(--htf-step-badge-bg);
+  color: var(--htf-step-badge-text);
+  border-radius: 9999px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 16px;
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.htf-step-title {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--htf-heading-color);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.htf-step-body {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--htf-body-color);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────
+   DARK BADGE — used in Check + Simulator
+───────────────────────────────────── */
+.htf-dark-badge {
+  display: inline-block;
+  background-color: var(--htf-dark-badge-bg);
+  color: var(--htf-dark-badge-text);
+  border-radius: 9999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 14px;
+  margin-bottom: 14px;
+  letter-spacing: 0.04em;
+}
+
+/* ─────────────────────────────────────
+   CHECK DOSAGE CARD
+───────────────────────────────────── */
+.htf-check {
+  background-color: var(--htf-card-bg);
+  border-radius: 20px;
+  padding: 40px 44px;
+  margin-bottom: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.htf-check-heading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--htf-heading-color);
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.htf-check-desc {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--htf-body-color);
+  margin: 0;
+}
+
+/* Dosage table rows */
+.htf-dosage-table {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.htf-dosage-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 8px;
+}
+
+.htf-dosage-cell {
+  background-color: var(--htf-cell-bg);
+  border-radius: 10px;
+  padding: 13px 16px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--htf-heading-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.htf-dosage-cell__icon {
+  font-size: 14px;
+  flex-shrink: 0;
+  color: var(--htf-paw-color);
+}
+
+/* ─────────────────────────────────────
+   SIMULATOR CARD
+───────────────────────────────────── */
+.htf-simulator {
+  background-color: var(--htf-card-bg);
+  border-radius: 20px;
+  padding: 40px 44px;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.htf-sim-heading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--htf-heading-color);
+  margin: 0 0 12px;
+  line-height: 1.35;
+}
+
+.htf-sim-desc {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--htf-body-color);
+  margin: 0;
+}
+
+/* Form */
+.htf-sim-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.htf-sim-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.htf-sim-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.htf-sim-label {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 12px;
+  color: var(--htf-body-color);
+  letter-spacing: 0.02em;
+}
+
+.htf-sim-input,
+.htf-sim-select {
+  width: 100%;
+  border: 1.5px solid var(--htf-input-border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: var(--htf-heading-color);
+  background-color: #FFFFFF;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.htf-sim-select-wrap {
+  position: relative;
+}
+
+.htf-sim-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--htf-body-color);
+  pointer-events: none;
+}
+
+.htf-sim-input:focus,
+.htf-sim-select:focus {
+  border-color: var(--htf-dark-badge-bg);
+}
+
+.htf-sim-button {
+  width: 100%;
+  background-color: var(--htf-button-bg);
+  color: var(--htf-button-text);
+  border: none;
+  border-radius: 9999px;
+  padding: 14px 20px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.htf-sim-button:hover {
+  background-color: #C07E38;
+}
+
+.htf-sim-button:focus-visible {
+  outline: 2px solid var(--htf-dark-badge-bg);
+  outline-offset: 3px;
+}
+
+/* Result output */
+.htf-sim-result {
+  margin-top: 2px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  color: var(--htf-heading-color);
+  min-height: 20px;
+  text-align: center;
+}
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-how-to-feed {
+    padding-block: 48px 64px;
+  }
+
+  .htf-container {
+    padding-inline: 32px;
+  }
+
+  .htf-dog-wrap {
+    width: 160px;
+    left: -32px;
+  }
+
+  .htf-header-text {
+    padding-left: 160px;
+  }
+
+  .htf-heading {
+    font-size: 30px;
+  }
+
+  .htf-steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .htf-step-card {
+    padding: 24px 16px 20px;
+  }
+
+  .htf-step-image-wrap {
+    width: 100px;
+    height: 100px;
+  }
+
+  .htf-check,
+  .htf-simulator {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 32px;
+  }
+
+  .htf-sim-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-how-to-feed {
+    padding-block: 32px 56px;
+  }
+
+  .htf-container {
+    padding-inline: 20px;
+  }
+
+  .htf-header {
+    min-height: 110px;
+    margin-bottom: 32px;
+  }
+
+  .htf-dog-wrap {
+    width: 120px;
+    left: -20px;
+    top: -32px;
+  }
+
+  .htf-header-text {
+    padding-left: 110px;
+    text-align: left;
+  }
+
+  .htf-heading {
+    font-size: 24px;
+  }
+
+  .htf-eyebrow {
+    font-size: 11px;
+  }
+
+  .htf-steps {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .htf-step-card {
+    flex-direction: row;
+    text-align: left;
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .htf-step-image-wrap {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .htf-step-card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .htf-step-title {
+    font-size: 18px;
+  }
+
+  .htf-check,
+  .htf-simulator {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+  }
+
+  .htf-check-heading {
+    font-size: 22px;
+  }
+
+  .htf-sim-heading {
+    font-size: 20px;
+  }
+
+  .htf-sim-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+}
