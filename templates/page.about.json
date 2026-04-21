@@ -693,7 +693,7 @@
         "sim_button_label": "ご飯の量を確認する",
         "bg_color": "#82C9D5",
         "card_bg_color": "#fefbec",
-        "cell_bg_color": "#fefbec",
+        "cell_bg_color": "#f3eedc",
         "step_badge_bg_color": "#87CEDC",
         "step_badge_text_color": "#2C5A64",
         "dark_badge_bg_color": "#3D2B1F",
