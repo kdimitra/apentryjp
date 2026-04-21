@@ -48,11 +48,19 @@
       {%- else -%}
         {%- comment -%} Editor placeholders when no blocks are added yet {%- endcomment -%}
         <ul class="ta-grid" role="list">
-          {%- assign placeholder_labels = 'ストーリー,アニーズパントリー3つのこだわり,透明性の高いごはん,フィーディングガイド,環境にやさしいパッケージ,ブログ記事' | split: ',' -%}
-          {%- for label in placeholder_labels -%}
+          {%- assign ph_count = 6 -%}
+          {%- for i in (1..ph_count) -%}
             <li class="ta-item">
               <span class="ta-tab">
-                <span class="ta-tab__label">{{ label }}</span>
+                <span class="ta-tab__label">
+                  {%- if i == 1 -%}ストーリー
+                  {%- elsif i == 2 -%}アニーズパントリー3つのこだわり
+                  {%- elsif i == 3 -%}透明性の高いごはん
+                  {%- elsif i == 4 -%}フィーディングガイド
+                  {%- elsif i == 5 -%}環境にやさしいパッケージ
+                  {%- else -%}ブログ記事
+                  {%- endif -%}
+                </span>
                 <svg class="ta-tab__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                   <polyline points="6 9 12 15 18 9"/>
                 </svg>
