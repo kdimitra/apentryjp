@@ -1,0 +1,245 @@
+/* ─────────────────────────────────────────
+   Annie's About Section  ·  section-annies-about.css
+   Layout: cream bg · centered header · left overlapping images · right rich text
+───────────────────────────────────────── */
+
+.section-annies-about {
+  --aa-bg:              #F5F0E4;
+  --aa-main-img-bg:     #B8DDE6;
+  --aa-secondary-img-bg:#FFFFFF;
+  --aa-eyebrow-color:   #5A9BAA;
+  --aa-page-heading-color: #2C2420;
+  --aa-subheading-color:#2C2420;
+  --aa-body-color:      #5A4A3A;
+  --aa-radius-main:     24px;
+  --aa-radius-secondary:16px;
+
+  background-color: var(--aa-bg);
+  padding-block: 64px 96px;
+}
+
+/* ── Container ───────────────────────── */
+.aa-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ── Page header (eyebrow + main heading) ── */
+.aa-page-header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.aa-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--aa-eyebrow-color);
+  letter-spacing: 0.06em;
+  margin: 0 0 20px;
+}
+
+.aa-page-heading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--aa-page-heading-color);
+  margin: 0;
+}
+
+/* ── Two-column body ─────────────────── */
+.aa-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.aa-body--image-right {
+  direction: rtl;
+}
+
+.aa-body--image-right > * {
+  direction: ltr;
+}
+
+/* ─────────────────────────────────────
+   LEFT: Stacked / overlapping images
+───────────────────────────────────── */
+.aa-images {
+  position: relative;
+  /* Extra bottom padding so secondary image overlap doesn't clip */
+  padding-bottom: 80px;
+}
+
+/* Main large image */
+.aa-image-main-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--aa-radius-main);
+  background-color: var(--aa-main-img-bg);
+  overflow: hidden;
+}
+
+.aa-image-main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Secondary small image — overlaps bottom-left */
+.aa-image-secondary-wrap {
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  width: 46%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--aa-radius-secondary);
+  background-color: var(--aa-secondary-img-bg);
+  overflow: hidden;
+  border: 4px solid var(--aa-bg);
+}
+
+.aa-image-secondary {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Placeholders when no image is set */
+.aa-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: inherit;
+}
+
+.aa-image-placeholder svg {
+  width: 36px;
+  height: 36px;
+  color: #C8C2B8;
+}
+
+/* ─────────────────────────────────────
+   RIGHT: Text content
+───────────────────────────────────── */
+.aa-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.aa-subheading {
+  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--aa-subheading-color);
+  margin: 0;
+}
+
+.aa-body-text {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 2.0;
+  color: var(--aa-body-color);
+  margin: 0;
+}
+
+.aa-body-text p {
+  margin: 0 0 1.4em;
+}
+
+.aa-body-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-annies-about {
+    padding-block: 48px 72px;
+  }
+
+  .aa-container {
+    padding-inline: 32px;
+  }
+
+  .aa-page-heading {
+    font-size: 32px;
+  }
+
+  .aa-body {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .aa-subheading {
+    font-size: 24px;
+  }
+
+  .aa-image-secondary-wrap {
+    left: -10px;
+    width: 42%;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-annies-about {
+    padding-block: 40px 56px;
+  }
+
+  .aa-container {
+    padding-inline: 20px;
+  }
+
+  .aa-page-header {
+    margin-bottom: 36px;
+  }
+
+  .aa-page-heading {
+    font-size: 26px;
+  }
+
+  .aa-body {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .aa-body--image-right {
+    direction: ltr;
+  }
+
+  .aa-images {
+    padding-bottom: 60px;
+  }
+
+  .aa-image-secondary-wrap {
+    left: -10px;
+    width: 40%;
+    bottom: 0;
+  }
+
+  .aa-subheading {
+    font-size: 22px;
+  }
+
+  .aa-body-text {
+    font-size: 14px;
+  }
+}

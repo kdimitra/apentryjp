@@ -1,0 +1,263 @@
+
+{%- comment -%}
+  Annie's About Section
+  Layout: cream bg · centered eyebrow + large heading · two-column (overlapping images left, rich text right)
+  Confirmed against apantry.jp About page screenshot.
+{%- endcomment -%}
+
+{{ 'section-annies-about.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="section-annies-about"
+  id="{% if section.settings.section_id != blank %}{{ section.settings.section_id | handleize }}{% else %}annies-about-{{ section.id }}{% endif %}"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    --aa-main-img-bg:      {{ section.settings.main_image_bg_color }};
+    --aa-secondary-img-bg: {{ section.settings.secondary_image_bg_color }};
+    --aa-eyebrow-color:    {{ section.settings.eyebrow_color }};
+    --aa-page-heading-color: {{ section.settings.page_heading_color }};
+    --aa-subheading-color: {{ section.settings.subheading_color }};
+    --aa-body-color:       {{ section.settings.body_text_color }};
+  "
+>
+  <div class="aa-container">
+
+    {%- comment -%}━━━━━━━━ PAGE HEADER ━━━━━━━━{%- endcomment -%}
+    <div class="aa-page-header">
+
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="aa-eyebrow">
+          {%- if section.settings.eyebrow_icon_left != blank -%}
+            <span aria-hidden="true">{{ section.settings.eyebrow_icon_left }}</span>
+          {%- endif -%}
+          {{- section.settings.eyebrow -}}
+          {%- if section.settings.eyebrow_icon_right != blank -%}
+            <span aria-hidden="true">{{ section.settings.eyebrow_icon_right }}</span>
+          {%- endif -%}
+        </p>
+      {%- endif -%}
+
+      {%- if section.settings.page_heading != blank -%}
+        <h2 class="aa-page-heading">{{ section.settings.page_heading }}</h2>
+      {%- endif -%}
+
+    </div>
+
+    {%- comment -%}━━━━━━━━ BODY: Images + Text ━━━━━━━━{%- endcomment -%}
+    <div class="aa-body{% if section.settings.image_position == 'right' %} aa-body--image-right{% endif %}">
+
+      {%- comment -%}── Images column ──{%- endcomment -%}
+      <div class="aa-images">
+
+        {%- comment -%} Main large image {%- endcomment -%}
+        <div class="aa-image-main-wrap">
+          {%- if section.settings.main_image != blank -%}
+            {{- section.settings.main_image
+              | image_url: width: 900
+              | image_tag:
+                loading: 'lazy',
+                widths: '450, 700, 900',
+                sizes: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(50vw - 52px), calc((1280px - 80px) / 2)',
+                class: 'aa-image-main',
+                alt: section.settings.main_image.alt | default: section.settings.page_heading | escape
+            -}}
+          {%- else -%}
+            <div class="aa-image-placeholder">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <circle cx="8.5" cy="8.5" r="1.5"/>
+                <polyline points="21 15 16 10 5 21"/>
+              </svg>
+            </div>
+          {%- endif -%}
+        </div>
+
+        {%- comment -%} Secondary overlapping image {%- endcomment -%}
+        {%- if section.settings.show_secondary_image -%}
+          <div class="aa-image-secondary-wrap">
+            {%- if section.settings.secondary_image != blank -%}
+              {{- section.settings.secondary_image
+                | image_url: width: 500
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '200, 350, 500',
+                  sizes: '(max-width: 767px) 40vw, 25vw',
+                  class: 'aa-image-secondary',
+                  alt: section.settings.secondary_image.alt | default: '' | escape
+              -}}
+            {%- else -%}
+              <div class="aa-image-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <circle cx="8.5" cy="8.5" r="1.5"/>
+                  <polyline points="21 15 16 10 5 21"/>
+                </svg>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+      </div>
+
+      {%- comment -%}── Text column ──{%- endcomment -%}
+      <div class="aa-text">
+
+        {%- if section.settings.subheading != blank -%}
+          <h3 class="aa-subheading">{{ section.settings.subheading }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.body_text != blank -%}
+          <div class="aa-body-text">{{ section.settings.body_text }}</div>
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Annie about",
+  "class": "annies-about-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section ID"
+    },
+    {
+      "type": "text",
+      "id": "section_id",
+      "label": "Section ID",
+      "info": "Used for tab navigation scroll targeting. Enter a unique ID without spaces or # (e.g. transparency-section)."
+    },
+    {
+      "type": "header",
+      "content": "Page Header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "About"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_icon_left",
+      "label": "Eyebrow left icon",
+      "default": "🐾",
+      "info": "Emoji or character displayed to the left of the eyebrow text"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow_icon_right",
+      "label": "Eyebrow right icon",
+      "default": "🐾",
+      "info": "Emoji or character displayed to the right of the eyebrow text"
+    },
+    {
+      "type": "text",
+      "id": "page_heading",
+      "label": "Page heading",
+      "default": "透明性の高いごはん"
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image column position",
+      "options": [
+        { "value": "left",  "label": "Left" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_secondary_image",
+      "label": "Show secondary image",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "secondary_image",
+      "label": "Secondary image (overlapping)"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Sub-heading",
+      "default": "見える安心で、\n正直なごはんを。"
+    },
+    {
+      "type": "richtext",
+      "id": "body_text",
+      "label": "Body text",
+      "default": "<p>私たちは、信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。</p><p>使のは、高品質な肉と野菜。無添加のフレッシュドッグフードとして、素材の栄養とおいしさを大切にしています。</p><p>大量生産や長期冷凍は行わず、すべて少量ずつ丁寧に調理。愛犬が毎日安心して食べられるごはんを作っています。</p><p>たった一皿のごはんにも、まっすぐ向き合う。</p><p>毎日食べるものだからこそ、何が入っているのかが分かる正直なドッグフードを。余計なものは加えず、必要なものだけを、必要な分だけ届けます。</p>"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#F5F0E4"
+    },
+    {
+      "type": "color",
+      "id": "main_image_bg_color",
+      "label": "Main image background",
+      "default": "#B8DDE6"
+    },
+    {
+      "type": "color",
+      "id": "secondary_image_bg_color",
+      "label": "Secondary image background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "eyebrow_color",
+      "label": "Eyebrow text color",
+      "default": "#5A9BAA"
+    },
+    {
+      "type": "color",
+      "id": "page_heading_color",
+      "label": "Page heading color",
+      "default": "#2C2420"
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Sub-heading color",
+      "default": "#2C2420"
+    },
+    {
+      "type": "color",
+      "id": "body_text_color",
+      "label": "Body text color",
+      "default": "#5A4A3A"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Annie about"
+    }
+  ]
+}
+{% endschema %}
