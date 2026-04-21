@@ -1015,11 +1015,75 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "tab_for_about_M4mQEk": {
+      "type": "tab-for-about",
+      "blocks": {
+        "tab_item_j86WXU": {
+          "type": "tab_item",
+          "settings": {
+            "label": "ストーリー",
+            "target_section_id": "story-section"
+          }
+        },
+        "tab_item_JDrJJV": {
+          "type": "tab_item",
+          "settings": {
+            "label": "アニーズパントリー3つのこだわり",
+            "target_section_id": "commitment-section"
+          }
+        },
+        "tab_item_GAnPRX": {
+          "type": "tab_item",
+          "settings": {
+            "label": "透明性の高いごはん",
+            "target_section_id": "transparency-section"
+          }
+        },
+        "tab_item_mctHzM": {
+          "type": "tab_item",
+          "settings": {
+            "label": "フィーディングガイド",
+            "target_section_id": "feeding-guide-section"
+          }
+        },
+        "tab_item_G8YWrk": {
+          "type": "tab_item",
+          "settings": {
+            "label": "環境にやさしいパッケージ",
+            "target_section_id": "packaging-section"
+          }
+        },
+        "tab_item_jek46C": {
+          "type": "tab_item",
+          "settings": {
+            "label": "ブログ記事",
+            "target_section_id": "blog-section"
+          }
+        }
+      },
+      "block_order": [
+        "tab_item_j86WXU",
+        "tab_item_JDrJJV",
+        "tab_item_GAnPRX",
+        "tab_item_mctHzM",
+        "tab_item_G8YWrk",
+        "tab_item_jek46C"
+      ],
+      "name": "Tab for About",
+      "settings": {
+        "bg_color": "#F0EBD8",
+        "inner_bg_color": "#EDE6D8",
+        "tab_bg_color": "#8DCAD8",
+        "tab_text_color": "#2A4A54",
+        "tab_gap": 12
+      }
     }
   },
   "order": [
     "main",
     "hero_mT6yYj",
+    "tab_for_about_M4mQEk",
     "section_dBXKNb",
     "aboutus_commitment_VFVamr",
     "hero_6xjVt8",
