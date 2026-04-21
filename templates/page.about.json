@@ -691,17 +691,44 @@
         "sim_weight_label": "愛犬の体重",
         "sim_stage_label": "愛犬のライフステージ",
         "sim_button_label": "ご飯の量を確認する",
-        "bg_color": "#82C9D5",
+        "bg_color": "#82c9d5",
         "card_bg_color": "#fefbec",
         "cell_bg_color": "#f3eedc",
-        "step_badge_bg_color": "#87CEDC",
-        "step_badge_text_color": "#2C5A64",
-        "dark_badge_bg_color": "#3D2B1F",
-        "heading_color": "#2C2420",
-        "body_color": "#6B5A4E",
+        "step_badge_bg_color": "#87cedc",
+        "step_badge_text_color": "#2c5a64",
+        "dark_badge_bg_color": "#3d2b1f",
+        "heading_color": "#2c2420",
+        "body_color": "#6b5a4e",
         "eyebrow_color": "#000000",
         "eyebrow_icon_color": "#e8d5c7",
-        "button_bg_color": "#D4924A"
+        "button_bg_color": "#d4924a"
+      }
+    },
+    "about_design_chV49L": {
+      "type": "about-design",
+      "name": "About design",
+      "settings": {
+        "section_id": "about-design",
+        "eyebrow": "About Design",
+        "eyebrow_icon_left": "🐾",
+        "eyebrow_icon_right": "🐾",
+        "page_heading": "環境にやさしいパッケージ",
+        "heading_alignment": "center",
+        "image": "shopify://shop_images/4460efbc7699f0ffaba8d4c82411501521fcefaf-2560x1504_png.avif",
+        "image_position": "left",
+        "image_ratio": "landscape",
+        "image_radius": 24,
+        "subheading": "環境にやさしく。目にもたのしく。",
+        "body_text": "<p>一般的なペットフードにはビニール包装が使われがちですが、アニーズパントリーでは、環境への配慮から紙製のカップや箱を採用しています。カラフルなイラストをあしらったデザインは、棚に並べても愛らしく、見るたびに心が弾むような楽しさを大切にしました。ご自宅用にはもちろん、ギフトにもぴったりのパッケージです。</p>",
+        "text_alignment": "left",
+        "padding_top": 72,
+        "padding_bottom": 96,
+        "bg_color": "#F5F0E4",
+        "eyebrow_color": "#5A4232",
+        "eyebrow_icon_color": "#87CEDC",
+        "page_heading_color": "#2C2420",
+        "subheading_color": "#2C2420",
+        "body_text_color": "#6B6860"
       }
     },
     "section_UHWCkb": {
@@ -930,6 +957,7 @@
     "hero_6xjVt8",
     "annies_about_L4K646",
     "how_to_feed_XLrPV8",
+    "about_design_chV49L",
     "section_UHWCkb"
   ]
 }
