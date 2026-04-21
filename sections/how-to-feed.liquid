@@ -51,13 +51,13 @@
         {%- if section.settings.eyebrow != blank -%}
           <p class="htf-eyebrow">
             {%- if section.settings.eyebrow_icon_left != blank -%}
-              <span class="htf-eyebrow__icon" aria-hidden="true">
+              <span class="htf-eyebrow__icon" aria-hidden="true" style="color:{{ section.settings.eyebrow_icon_color }};">
                 {{- section.settings.eyebrow_icon_left -}}
               </span>
             {%- endif -%}
             {{- section.settings.eyebrow -}}
             {%- if section.settings.eyebrow_icon_right != blank -%}
-              <span class="htf-eyebrow__icon" aria-hidden="true">
+              <span class="htf-eyebrow__icon" aria-hidden="true" style="color:{{ section.settings.eyebrow_icon_color }};">
                 {{- section.settings.eyebrow_icon_right -}}
               </span>
             {%- endif -%}
@@ -279,14 +279,14 @@
       "id": "eyebrow_icon_left",
       "label": "Eyebrow left icon (SVG or character)",
       "default": "✦",
-      "info": "Paste an SVG tag or type any character/emoji (e.g. ✦ ★ 🐾). Displayed left of the eyebrow text."
+      "info": "Type a text character (e.g. ✦ ★ ✿) or paste SVG code. Note: emoji (🐾 etc.) have fixed colors set by the OS and cannot be recolored — use text characters if you want the icon color setting to apply."
     },
     {
       "type": "textarea",
       "id": "eyebrow_icon_right",
       "label": "Eyebrow right icon (SVG or character)",
       "default": "✦",
-      "info": "Paste an SVG tag or type any character/emoji. Displayed right of the eyebrow text."
+      "info": "Type a text character (e.g. ✦ ★ ✿) or paste SVG code. Emoji colors are fixed by the OS and cannot be changed via the color setting."
     },
     {
       "type": "text",

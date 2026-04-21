@@ -96,7 +96,7 @@
 }
 
 .htf-heading {
-  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 38px;
   font-weight: 700;
   line-height: 1.2;
@@ -111,14 +111,14 @@
 .htf-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 24px;
+  gap: 24px;
+  margin-bottom: 40px;
 }
 
 .htf-step-card {
   background-color: var(--htf-card-bg);
-  border-radius: 20px;
-  padding: 32px 24px 28px;
+  border-radius: 24px;
+  padding: 44px 32px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,12 +127,12 @@
 
 /* Circular image */
 .htf-step-image-wrap {
-  width: 130px;
-  height: 130px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   overflow: hidden;
   background-color: var(--htf-cell-bg);
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   flex-shrink: 0;
 }
 
@@ -172,7 +172,7 @@
 }
 
 .htf-step-title {
-  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: var(--htf-heading-color);
@@ -209,17 +209,17 @@
 ───────────────────────────────────── */
 .htf-check {
   background-color: var(--htf-card-bg);
-  border-radius: 20px;
-  padding: 40px 44px;
-  margin-bottom: 24px;
+  border-radius: 24px;
+  padding: 52px 56px;
+  margin-bottom: 40px;
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 56px;
+  gap: 64px;
   align-items: start;
 }
 
 .htf-check-heading {
-  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 26px;
   font-weight: 700;
   color: var(--htf-heading-color);
@@ -272,16 +272,16 @@
 ───────────────────────────────────── */
 .htf-simulator {
   background-color: var(--htf-card-bg);
-  border-radius: 20px;
-  padding: 40px 44px;
+  border-radius: 24px;
+  padding: 52px 56px;
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 56px;
+  gap: 64px;
   align-items: center;
 }
 
 .htf-sim-heading {
-  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 24px;
   font-weight: 700;
   color: var(--htf-heading-color);
