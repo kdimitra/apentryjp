@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    Review Rating Section  ·  section-review-rating.css
-   Layout: cream bg · left col (eyebrow + heading + score + bars + CTA)
-           right col (review cards — vertical stack, scrollable)
+   Layout: cream bg · left col (sticky — eyebrow + heading + score + bars + CTA)
+           right col (horizontal scroll carousel of review cards)
 ───────────────────────────────────────── */
 
 .section-rr {
@@ -21,20 +21,22 @@
   --rr-card-body-color:    #5A4A3A;
   --rr-card-date-color:    #6B6860;
   --rr-card-link-color:    #2C1A0E;
+  --rr-cards-per-view:     2;
+  --rr-card-gap:           16px;
 
   background-color: #EDE8D6;
   padding-block: 80px 96px;
 }
 
-/* ── Container ─────────────────────────── */
+/* ── Outer container ───────────────────── */
 .rr-container {
   width: 100%;
   max-width: 1280px;
   margin-inline: auto;
   padding-inline: 40px;
   display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 80px;
+  grid-template-columns: 340px 1fr;
+  gap: 72px;
   align-items: start;
 }
 
@@ -47,7 +49,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0;
 }
 
 /* Eyebrow */
@@ -60,7 +61,7 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--rr-eyebrow-text-color);
-  margin: 0 0 16px;
+  margin: 0 0 14px;
 }
 
 .rr-eyebrow__icon {
@@ -72,30 +73,36 @@
 /* Heading */
 .rr-heading {
   font-family: 'gt-ultra', sans-serif;
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--rr-heading-color);
-  margin: 0 0 36px;
+  margin: 0 0 32px;
 }
 
-/* Overall rating row */
+/* ── Overall rating ── */
 .rr-overall {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 20px;
 }
 
 .rr-overall__score {
   font-family: 'DM Sans', sans-serif;
-  font-size: 52px;
+  font-size: 56px;
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--rr-score-color);
+  flex-shrink: 0;
+}
+
+.rr-overall__right {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .rr-overall__stars {
@@ -106,11 +113,10 @@
 
 .rr-overall__count {
   font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
   color: var(--rr-count-color);
   line-height: 1.4;
-  margin-left: 4px;
 }
 
 /* Stars */
@@ -119,6 +125,7 @@
   height: 20px;
   fill: var(--rr-star-empty-color);
   flex-shrink: 0;
+  display: block;
 }
 
 .rr-star--filled {
@@ -130,20 +137,20 @@
   height: 15px;
 }
 
-/* Rating breakdown bars */
+/* ── Rating breakdown bars ── */
 .rr-bars {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 9px;
   width: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .rr-bar-row {
   display: grid;
-  grid-template-columns: 36px 1fr 20px;
+  grid-template-columns: 36px 1fr 18px;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .rr-bar-row__label {
@@ -158,7 +165,7 @@
 }
 
 .rr-bar-row__track {
-  height: 6px;
+  height: 5px;
   border-radius: 9999px;
   background-color: var(--rr-bar-empty);
   overflow: hidden;
@@ -168,7 +175,6 @@
   height: 100%;
   border-radius: 9999px;
   background-color: var(--rr-bar-fill);
-  transition: width 0.4s ease;
 }
 
 .rr-bar-row__count {
@@ -180,7 +186,7 @@
   line-height: 1;
 }
 
-/* Write review button */
+/* ── Write review button ── */
 .rr-write-btn {
   display: inline-flex;
   align-items: center;
@@ -211,31 +217,57 @@
 }
 
 /* ─────────────────────────────────────
-   RIGHT COLUMN — Review Cards
+   RIGHT COLUMN — Horizontal scroll carousel
 ───────────────────────────────────── */
 .rr-right {
   display: flex;
   flex-direction: column;
+  gap: 16px;
+  min-width: 0;
 }
 
+/* Scrollable track */
 .rr-cards {
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  gap: var(--rr-card-gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+  /* Negative margin trick so cards bleed slightly if needed */
+  cursor: grab;
 }
 
-/* Individual review card */
+.rr-cards::-webkit-scrollbar {
+  display: none;
+}
+
+.rr-cards.is-grabbing {
+  cursor: grabbing;
+  user-select: none;
+}
+
+/* Each card: fixed width derived from container width / cards-per-view */
 .rr-card {
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  /* Width = (100% minus total gaps) / cards_per_view */
+  width: calc(
+    (100% - (var(--rr-cards-per-view) - 1) * var(--rr-card-gap)) / var(--rr-cards-per-view)
+  );
   background-color: var(--rr-card-bg);
   border-radius: 20px;
-  padding: 28px 32px 24px;
+  padding: 28px 28px 24px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  box-sizing: border-box;
 }
 
 .rr-card--placeholder {
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 /* Card header: stars + date */
@@ -263,7 +295,7 @@
 /* Card title */
 .rr-card__title {
   font-family: 'gt-ultra', sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.45;
   color: var(--rr-card-title-color);
@@ -273,11 +305,12 @@
 /* Card body */
 .rr-card__body {
   font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 400;
   line-height: 1.85;
   color: var(--rr-card-body-color);
   margin: 0;
+  flex: 1;
 }
 
 /* Read more link */
@@ -289,13 +322,36 @@
   color: var(--rr-card-link-color);
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-color: currentColor;
   transition: opacity 0.15s ease;
   cursor: pointer;
 }
 
 .rr-card__link:hover {
   opacity: 0.6;
+}
+
+/* ── Scroll indicator dots ──────────── */
+.rr-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.rr-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--rr-bar-empty);
+  transition: background-color 0.2s ease, width 0.2s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.rr-dot.is-active {
+  background-color: var(--rr-bar-fill);
+  width: 18px;
 }
 
 /* ── Responsive: Tablet ──────────────── */
@@ -313,8 +369,8 @@
   .rr-left {
     position: static;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 40px;
+    grid-template-columns: auto 1fr;
+    gap: 0 48px;
     align-items: start;
   }
 
@@ -324,15 +380,11 @@
 
   .rr-heading {
     grid-column: 1 / -1;
-    font-size: 34px;
+    font-size: 32px;
     margin-bottom: 24px;
   }
 
   .rr-overall {
-    align-self: start;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
     margin-bottom: 0;
   }
 
@@ -343,12 +395,12 @@
   .rr-write-btn {
     grid-column: 1 / -1;
     margin-top: 24px;
+    max-width: 240px;
   }
 
+  /* Show 1.5 cards on tablet so scroll is discoverable */
   .rr-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    --rr-cards-per-view: 1.4;
   }
 }
 
@@ -369,17 +421,22 @@
   }
 
   .rr-heading {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 24px;
   }
 
   .rr-overall__score {
-    font-size: 42px;
+    font-size: 44px;
   }
 
   .rr-write-btn {
     max-width: 100%;
     width: 100%;
+  }
+
+  /* Show 1 card + peek of next on mobile */
+  .rr-cards {
+    --rr-cards-per-view: 1.1;
   }
 
   .rr-card {
@@ -388,9 +445,5 @@
 
   .rr-card__title {
     font-size: 15px;
-  }
-
-  .rr-card__body {
-    font-size: 13px;
   }
 }
