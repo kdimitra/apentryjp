@@ -1,0 +1,396 @@
+/* ─────────────────────────────────────────
+   Review Rating Section  ·  section-review-rating.css
+   Layout: cream bg · left col (eyebrow + heading + score + bars + CTA)
+           right col (review cards — vertical stack, scrollable)
+───────────────────────────────────────── */
+
+.section-rr {
+  --rr-eyebrow-icon-color: #87CEDC;
+  --rr-eyebrow-text-color: #87CEDC;
+  --rr-heading-color:      #2C1A0E;
+  --rr-score-color:        #2C1A0E;
+  --rr-count-color:        #6B6860;
+  --rr-star-color:         #E8B84B;
+  --rr-star-empty-color:   #D8D2C8;
+  --rr-bar-fill:           #3D2B1F;
+  --rr-bar-empty:          #D8D2C8;
+  --rr-btn-bg:             #F5C430;
+  --rr-btn-text:           #2C1A0E;
+  --rr-card-bg:            #FFFFFF;
+  --rr-card-title-color:   #2C1A0E;
+  --rr-card-body-color:    #5A4A3A;
+  --rr-card-date-color:    #6B6860;
+  --rr-card-link-color:    #2C1A0E;
+
+  background-color: #EDE8D6;
+  padding-block: 80px 96px;
+}
+
+/* ── Container ─────────────────────────── */
+.rr-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ─────────────────────────────────────
+   LEFT COLUMN
+───────────────────────────────────── */
+.rr-left {
+  position: sticky;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+/* Eyebrow */
+.rr-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--rr-eyebrow-text-color);
+  margin: 0 0 16px;
+}
+
+.rr-eyebrow__icon {
+  font-size: 14px;
+  line-height: 1;
+  color: var(--rr-eyebrow-icon-color);
+}
+
+/* Heading */
+.rr-heading {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--rr-heading-color);
+  margin: 0 0 36px;
+}
+
+/* Overall rating row */
+.rr-overall {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.rr-overall__score {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--rr-score-color);
+}
+
+.rr-overall__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rr-overall__count {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--rr-count-color);
+  line-height: 1.4;
+  margin-left: 4px;
+}
+
+/* Stars */
+.rr-star {
+  width: 20px;
+  height: 20px;
+  fill: var(--rr-star-empty-color);
+  flex-shrink: 0;
+}
+
+.rr-star--filled {
+  fill: var(--rr-star-color);
+}
+
+.rr-star--sm {
+  width: 15px;
+  height: 15px;
+}
+
+/* Rating breakdown bars */
+.rr-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.rr-bar-row {
+  display: grid;
+  grid-template-columns: 36px 1fr 20px;
+  align-items: center;
+  gap: 10px;
+}
+
+.rr-bar-row__label {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rr-score-color);
+  line-height: 1;
+}
+
+.rr-bar-row__track {
+  height: 6px;
+  border-radius: 9999px;
+  background-color: var(--rr-bar-empty);
+  overflow: hidden;
+}
+
+.rr-bar-row__fill {
+  height: 100%;
+  border-radius: 9999px;
+  background-color: var(--rr-bar-fill);
+  transition: width 0.4s ease;
+}
+
+.rr-bar-row__count {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--rr-count-color);
+  text-align: right;
+  line-height: 1;
+}
+
+/* Write review button */
+.rr-write-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 0;
+  width: 100%;
+  max-width: 260px;
+  background-color: var(--rr-btn-bg);
+  color: var(--rr-btn-text);
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border-radius: 9999px;
+  border: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.rr-write-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.rr-write-btn:focus-visible {
+  outline: 2px solid var(--rr-btn-bg);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────
+   RIGHT COLUMN — Review Cards
+───────────────────────────────────── */
+.rr-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.rr-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Individual review card */
+.rr-card {
+  background-color: var(--rr-card-bg);
+  border-radius: 20px;
+  padding: 28px 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rr-card--placeholder {
+  opacity: 0.6;
+}
+
+/* Card header: stars + date */
+.rr-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rr-card__stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.rr-card__date {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--rr-card-date-color);
+  white-space: nowrap;
+}
+
+/* Card title */
+.rr-card__title {
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--rr-card-title-color);
+  margin: 0;
+}
+
+/* Card body */
+.rr-card__body {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.85;
+  color: var(--rr-card-body-color);
+  margin: 0;
+}
+
+/* Read more link */
+.rr-card__link {
+  display: inline-block;
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rr-card-link-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: currentColor;
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+}
+
+.rr-card__link:hover {
+  opacity: 0.6;
+}
+
+/* ── Responsive: Tablet ──────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .section-rr {
+    padding-block: 64px 72px;
+  }
+
+  .rr-container {
+    padding-inline: 32px;
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .rr-left {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+    align-items: start;
+  }
+
+  .rr-eyebrow {
+    grid-column: 1 / -1;
+  }
+
+  .rr-heading {
+    grid-column: 1 / -1;
+    font-size: 34px;
+    margin-bottom: 24px;
+  }
+
+  .rr-overall {
+    align-self: start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .rr-bars {
+    margin-bottom: 0;
+  }
+
+  .rr-write-btn {
+    grid-column: 1 / -1;
+    margin-top: 24px;
+  }
+
+  .rr-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ── Responsive: Mobile ──────────────── */
+@media (max-width: 767px) {
+  .section-rr {
+    padding-block: 48px 56px;
+  }
+
+  .rr-container {
+    padding-inline: 20px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .rr-left {
+    position: static;
+  }
+
+  .rr-heading {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  .rr-overall__score {
+    font-size: 42px;
+  }
+
+  .rr-write-btn {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .rr-card {
+    padding: 20px 20px 18px;
+  }
+
+  .rr-card__title {
+    font-size: 15px;
+  }
+
+  .rr-card__body {
+    font-size: 13px;
+  }
+}
