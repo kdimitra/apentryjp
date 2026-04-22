@@ -499,11 +499,66 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "review_rating_cQ9QXR": {
+      "type": "review-rating",
+      "blocks": {
+        "review_card_mVQTzK": {
+          "type": "review_card",
+          "settings": {
+            "star_rating": 5,
+            "date_text": "6ヶ月前",
+            "title": "うさぎたちが大好きです！",
+            "body": "APを2年間食べ続けてきましたが、この新しいプロテインが発売された時はすごく興奮しました。うちの犬たちは食事の時間になると、",
+            "read_more_label": "続きを読む",
+            "read_more_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "review_card_mVQTzK"
+      ],
+      "name": "Review rating",
+      "settings": {
+        "section_id": "",
+        "eyebrow_icon": "🐾",
+        "eyebrow": "Review",
+        "heading": "お客様の声",
+        "overall_rating": 5,
+        "review_count_suffix": "件のレビューに基づく",
+        "count_5": 1,
+        "count_4": 0,
+        "count_3": 0,
+        "count_2": 0,
+        "count_1": 0,
+        "btn_label": "レビューを書く",
+        "btn_url": "",
+        "padding_top": 80,
+        "padding_bottom": 96,
+        "bg_color": "#EDE8D6",
+        "eyebrow_icon_color": "#87CEDC",
+        "eyebrow_text_color": "#87CEDC",
+        "heading_color": "#2C1A0E",
+        "score_color": "#2C1A0E",
+        "count_color": "#6B6860",
+        "star_color": "#E8B84B",
+        "star_empty_color": "#D8D2C8",
+        "bar_fill_color": "#3D2B1F",
+        "bar_empty_color": "#D8D2C8",
+        "btn_bg_color": "#F5C430",
+        "btn_text_color": "#2C1A0E",
+        "card_bg_color": "#FFFFFF",
+        "card_title_color": "#2C1A0E",
+        "card_body_color": "#5A4A3A",
+        "card_date_color": "#6B6860",
+        "card_link_color": "#2C1A0E"
+      }
     }
   },
   "order": [
     "main",
     "annies_natural_blend_AB8rXE",
+    "review_rating_cQ9QXR",
     "product_list_QphnqA"
   ]
 }
