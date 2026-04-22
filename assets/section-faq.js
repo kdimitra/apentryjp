@@ -12,60 +12,41 @@
       return;
     }
 
-    var tabsContainer    = section.querySelector('.faq-tabs');
-    var accordion        = section.querySelector('.faq-accordion');
-    var categoryTitle    = section.querySelector('.faq-category-title');
-    var categoryIcon     = section.querySelector('.faq-category-icon');
-    var sectionIcon      = section.dataset.categoryIcon || '🐾';
+    var tabsContainer = section.querySelector('.faq-tabs');
+    var accordion     = section.querySelector('.faq-accordion');
+    var categoryTitle = section.querySelector('.faq-category-title');
+    var categoryIcon  = section.querySelector('.faq-category-icon');
+    var sectionIcon   = section.dataset.categoryIcon || '🐾';
 
     if (!tabsContainer || !accordion || !categoryTitle) return;
 
     /* ── 1. Extract unique ordered categories ── */
-    var seen = [];
+    var categories = [];
     items.forEach(function (item) {
-      if (item.category && seen.indexOf(item.category) === -1) {
-        seen.push(item.category);
+      if (item.category && categories.indexOf(item.category) === -1) {
+        categories.push(item.category);
       }
     });
-    var categories = seen;
 
     if (categories.length === 0) return;
 
-    /* ── 2. Build tab buttons ── */
-    tabsContainer.innerHTML = '';
-    categories.forEach(function (cat, idx) {
-      var btn = document.createElement('button');
-      btn.className = 'faq-tab' + (idx === 0 ? ' is-active' : '');
-      btn.type = 'button';
-      btn.textContent = cat;
-      btn.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
-      btn.addEventListener('click', function () {
-        activateCategory(cat, btn);
-      });
-      tabsContainer.appendChild(btn);
-    });
+    /* ── 2. Build ALL category groups in the accordion ── */
+    accordion.innerHTML = '';
+    var groupMap = {};
 
-    /* ── 3. Render accordion for a category ── */
-    function activateCategory(cat, activeBtn) {
-      /* Update tabs */
-      tabsContainer.querySelectorAll('.faq-tab').forEach(function (b) {
-        var active = b === activeBtn;
-        b.classList.toggle('is-active', active);
-        b.setAttribute('aria-pressed', active ? 'true' : 'false');
-      });
+    categories.forEach(function (cat) {
+      var group = document.createElement('div');
+      group.className = 'faq-group';
+      group.dataset.category = cat;
 
-      /* Update right heading */
-      categoryTitle.textContent = cat;
-      if (categoryIcon) categoryIcon.textContent = sectionIcon;
+      var groupHeading = document.createElement('p');
+      groupHeading.className = 'faq-group__heading';
+      groupHeading.textContent = cat;
+      group.appendChild(groupHeading);
 
-      /* Filter items for this category */
-      var filtered = items.filter(function (item) {
-        return item.category === cat;
-      });
+      var catItems = items.filter(function (item) { return item.category === cat; });
 
-      /* Build accordion */
-      accordion.innerHTML = '';
-      filtered.forEach(function (item, idx) {
+      catItems.forEach(function (item, idx) {
         var el = document.createElement('div');
         el.className = 'faq-item' + (idx === 0 ? ' is-open' : '');
 
@@ -99,13 +80,80 @@
 
         el.appendChild(btn);
         el.appendChild(answer);
-        accordion.appendChild(el);
+        group.appendChild(el);
       });
-    }
 
-    /* ── 4. Activate first category on load ── */
-    var firstBtn = tabsContainer.querySelector('.faq-tab');
-    if (firstBtn) activateCategory(categories[0], firstBtn);
+      accordion.appendChild(group);
+      groupMap[cat] = group;
+    });
+
+    /* ── 3. Build tab buttons ── */
+    tabsContainer.innerHTML = '';
+    categories.forEach(function (cat, idx) {
+      var btn = document.createElement('button');
+      btn.className = 'faq-tab' + (idx === 0 ? ' is-active' : '');
+      btn.type = 'button';
+      btn.textContent = cat;
+      btn.setAttribute('aria-pressed', idx === 0 ? 'true' : 'false');
+
+      btn.addEventListener('click', function () {
+        /* Update active tab */
+        tabsContainer.querySelectorAll('.faq-tab').forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+
+        /* Update heading */
+        categoryTitle.textContent = cat;
+        if (categoryIcon) categoryIcon.textContent = sectionIcon;
+
+        /* Smooth scroll to the group */
+        var target = groupMap[cat];
+        if (target) {
+          var headerOffset = getHeaderHeight();
+          var top = target.getBoundingClientRect().top + window.scrollY - headerOffset - 24;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+
+      tabsContainer.appendChild(btn);
+    });
+
+    /* ── 4. Set initial heading to first category ── */
+    categoryTitle.textContent = categories[0];
+    if (categoryIcon) categoryIcon.textContent = sectionIcon;
+
+    /* ── 5. IntersectionObserver — sync active tab with scroll position ── */
+    var observerOptions = {
+      root: null,
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var cat = entry.target.dataset.category;
+          tabsContainer.querySelectorAll('.faq-tab').forEach(function (b) {
+            var active = b.textContent === cat;
+            b.classList.toggle('is-active', active);
+            b.setAttribute('aria-pressed', active ? 'true' : 'false');
+          });
+          categoryTitle.textContent = cat;
+          if (categoryIcon) categoryIcon.textContent = sectionIcon;
+        }
+      });
+    }, observerOptions);
+
+    Object.values(groupMap).forEach(function (group) {
+      observer.observe(group);
+    });
+  }
+
+  function getHeaderHeight() {
+    var header = document.querySelector('header, .header, #shopify-section-header');
+    return header ? header.offsetHeight : 80;
   }
 
   function init() {
