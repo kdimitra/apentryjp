@@ -175,7 +175,7 @@
                 "show_pickup_availability": false,
                 "gift_card_form": false,
                 "pill_button": true,
-                "horizontal_alignment": "center",
+                "horizontal_alignment": "left",
                 "vertical_alignment": "start",
                 "elements_gap": 26,
                 "padding-block-start": 15,
