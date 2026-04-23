@@ -60,12 +60,15 @@
           {{- '<!-- LAYER 1: IMAGE -->' -}}
           <div class="ac-img-wrap">
             {% if block.settings.image != blank %}
-              <img
-                class="ac-img"
-                src="{{ block.settings.image | img_url: '1000x780', crop: 'center' }}"
-                alt="{{ block.settings.title | escape }}"
-                loading="lazy"
-              />
+              {{- block.settings.image
+                | image_url: width: 1000
+                | image_tag:
+                  class: 'ac-img',
+                  loading: 'lazy',
+                  widths: '500, 780, 1000',
+                  sizes: '(max-width: 860px) 100vw, 44vw',
+                  alt: block.settings.title | escape
+              -}}
             {% else %}
               {{ 'product-1' | placeholder_svg_tag: 'ac-img ac-img--ph' }}
             {% endif %}
@@ -75,19 +78,23 @@
           <div class="ac-card">
             <span class="ac-badge">{{ block.settings.badge_label }}</span>
             <h3 class="ac-title">{{ block.settings.title }}</h3>
-            <p class="ac-desc">{{ block.settings.description }}</p>
+            <div class="ac-desc">{{ block.settings.description }}</div>
           </div>
 
           {{- '<!-- LAYER 3: DOG -->' -}}
           {% if block.settings.show_dog %}
             <div class="ac-dog  dec-{{ forloop.index  }}">
               {% if block.settings.dog_image != blank %}
-                <img
-                  class="ac-dog__img"
-                  src="{{ block.settings.dog_image | img_url: '400x400' }}"
-                  alt=""
-                  aria-hidden="true"
-                />
+                {{- block.settings.dog_image
+                  | image_url: width: 400
+                  | image_tag:
+                    class: 'ac-dog__img',
+                    loading: 'lazy',
+                    alt: '',
+                    aria-hidden: 'true',
+                    width: 220,
+                    height: 220
+                -}}
               {% else %}
                 {%- comment -%} Samoyed-style SVG illustration {%- endcomment -%}
                 <svg class="ac-dog__svg" viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -355,6 +362,25 @@
   margin: 0;
 }
 
+.ac-desc p {
+  margin: 0 0 0.75em;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+.ac-desc p:last-child {
+  margin-bottom: 0;
+}
+
+.ac-desc br {
+  display: block;
+}
+
+.ac-desc strong { font-weight: 700; }
+.ac-desc em     { font-style: italic; }
+.ac-desc a      { color: inherit; text-decoration: underline; }
+
 /* ============================================================
    LAYER 3 — DOG ILLUSTRATION
    ─────────────────────────────────────────────
@@ -568,10 +594,10 @@ right: 45px;
           "default": "素材の力が生きる\n生のお肉"
         },
         {
-          "type": "textarea",
+          "type": "richtext",
           "id": "description",
           "label": "Description",
-          "default": "無加熱たから、お肉本来のうまみがたっぷり。\n豊富なタンパク質で、からだづくりをサポートします。"
+          "default": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br>豊富なタンパク質で、からだづくりをサポートします。</p>"
         },
         {
           "type": "image_picker",
@@ -607,7 +633,7 @@ right: 45px;
           "settings": {
             "badge_label": "Commitment 01",
             "title": "素材の力が生きる\n生のお肉",
-            "description": "無加熱たから、お肉本来のうまみがたっぷり。\n豊富なタンパク質で、からだづくりをサポートします。",
+            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br>豊富なタンパク質で、からだづくりをサポートします。</p>",
             "reverse_layout": false,
             "show_dog": true
           }
@@ -617,7 +643,7 @@ right: 45px;
           "settings": {
             "badge_label": "Commitment 02",
             "title": "安心と信頼の\n国内製造",
-            "description": "すべては国内の自社工場で製造・管理。\n確かな品質で、家族みんなに安心をお届けます。",
+            "description": "<p>すべては国内の自社工場で製造・管理。<br>確かな品質で、家族みんなに安心をお届けます。</p>",
             "reverse_layout": true,
             "show_dog": true
           }
@@ -627,7 +653,7 @@ right: 45px;
           "settings": {
             "badge_label": "Commitment 03",
             "title": "必要なものだけ\n無添加ごはん",
-            "description": "香料・着色料・添加物は一切不使用。\n素材本来のおいしさと安心をそのままお届けます。",
+            "description": "<p>香料・着色料・添加物は一切不使用。<br>素材本来のおいしさと安心をそのままお届けます。</p>",
             "reverse_layout": false,
             "show_dog": true
           }
