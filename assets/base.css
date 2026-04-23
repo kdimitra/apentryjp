@@ -4254,11 +4254,11 @@ a[ref='productTitleLink'] div p[role='heading']{
 }
 
 
-main[data-template="product"] div.quantity-selector-wrapper {
+/* main[data-template="product"] div.quantity-selector-wrapper {
   margin-right: auto !important;
 }
 
 main:not([data-template="product"]) div.quantity-selector-wrapper {
   margin: auto !important;
-}
+} */
 
