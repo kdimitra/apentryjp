@@ -181,9 +181,15 @@
     display: flex;
     align-items: center;
     flex-shrink: 0;
+    width: 18px;
+    height: 18px;
   }
-  #why-choose-us-{{ section.id }} .why-choose-us__eyebrow-icon svg {
+  #why-choose-us-{{ section.id }} .why-choose-us__eyebrow-icon svg,
+  #why-choose-us-{{ section.id }} .why-choose-us__eyebrow-icon img {
     display: block;
+    width: 18px !important;
+    height: 18px !important;
+    object-fit: contain;
     color: var(--heading-color);
   }
   #why-choose-us-{{ section.id }} .why-choose-us__heading {
