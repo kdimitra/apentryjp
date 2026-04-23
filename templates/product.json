@@ -256,7 +256,46 @@
     },
     "annies_natural_blend_AB8rXE": {
       "type": "annies-natural-blend",
-      "disabled": true,
+      "blocks": {
+        "blend_card_GAqfD9": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
+            "title": "わかめ",
+            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+          }
+        },
+        "blend_card_bNMJY4": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
+            "title": "わかめ",
+            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+          }
+        },
+        "blend_card_HFytpt": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
+            "title": "わかめ",
+            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+          }
+        },
+        "blend_card_iYz4YX": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
+            "title": "わかめ",
+            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "blend_card_GAqfD9",
+        "blend_card_bNMJY4",
+        "blend_card_HFytpt",
+        "blend_card_iYz4YX"
+      ],
       "name": "Annie's Natural Blend",
       "settings": {
         "eyebrow_text": "Annie's Natural Blend",
