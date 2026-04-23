@@ -3928,6 +3928,8 @@
         "section_id": "",
         "eyebrow": "Why Choose Us",
         "show_eyebrow_stars": true,
+        "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
+        "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
         "heading": "選ばれる理由",
         "heading_tag": "h2",
         "background_color": "#9adbe8",
