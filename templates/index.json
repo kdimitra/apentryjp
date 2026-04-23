@@ -2898,7 +2898,7 @@
                 "show_pickup_availability": true,
                 "gift_card_form": true,
                 "pill_button": false,
-                "horizontal_alignment": "left",
+                "horizontal_alignment": "center",
                 "vertical_alignment": "center",
                 "elements_gap": 8,
                 "padding-block-start": 0,
