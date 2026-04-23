@@ -505,7 +505,7 @@
           "settings": {
             "badge_label": "Commitment 01",
             "title": "素材の力が生きる 生のお肉",
-            "description": "無加熱たから、お肉本来のうまみがたっぷり。\n\n豊富なタンパク質で、からだづくりをサポートします。",
+            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br/>豊富なタンパク質で、<br/>からだづくりをサポートします。</p>",
             "image": "shopify://shop_images/IMGP0757.jpg",
             "reverse_layout": false,
             "show_dog": true,
@@ -517,7 +517,7 @@
           "settings": {
             "badge_label": "Commitment 02",
             "title": "安心と信頼の 国内製造",
-            "description": "すべて日本国内の自社工場で製造・管理。 \n確かな品質で、家族みんなに安心を届けます。",
+            "description": "<p>すべて日本国内の自社工場で製造・管理。 \n確かな品質で、家族みんなに安心を届けます。</p>",
             "image": "shopify://shop_images/Screenshot_202025-09-04_20at_2017.25.35.jpg",
             "reverse_layout": true,
             "show_dog": true,
@@ -529,7 +529,7 @@
           "settings": {
             "badge_label": "Commitment 03",
             "title": "必要なものだけ 無添加ごはん",
-            "description": "香料・着色料・保存料は一切不使用。素材本来のおいしさと安心をそのまま届けます。",
+            "description": "<p>香料・着色料・保存料は一切不使用。素材本来のおいしさと安心をそのまま届けます。</p>",
             "image": "shopify://shop_images/IMGP0728.jpg",
             "reverse_layout": false,
             "show_dog": true,
