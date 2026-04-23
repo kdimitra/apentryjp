@@ -502,29 +502,14 @@
     },
     "review_rating_cQ9QXR": {
       "type": "review-rating",
-      "blocks": {
-        "review_card_mVQTzK": {
-          "type": "review_card",
-          "settings": {
-            "star_rating": 5,
-            "date_text": "6ヶ月前",
-            "title": "うさぎたちが大好きです！",
-            "body": "APを2年間食べ続けてきましたが、この新しいプロテインが発売された時はすごく興奮しました。うちの犬たちは食事の時間になると、",
-            "read_more_label": "続きを読む",
-            "read_more_url": ""
-          }
-        }
-      },
-      "block_order": [
-        "review_card_mVQTzK"
-      ],
+      "blocks": {},
+      "block_order": [],
       "name": "Review rating",
       "settings": {
         "section_id": "",
         "eyebrow_icon": "🐾",
         "eyebrow": "Review",
         "heading": "お客様の声",
-        "overall_rating": 5,
         "review_count_suffix": "件のレビューに基づく",
         "count_5": 1,
         "count_4": 0,

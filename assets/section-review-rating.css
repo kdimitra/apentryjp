@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    Review Rating Section  ·  section-review-rating.css
    Layout: cream bg · left col (sticky — eyebrow + heading + score + bars + CTA)
-           right col (horizontal scroll carousel of review cards)
+           right col (Okendo widget overridden to horizontal scroll carousel)
 ───────────────────────────────────────── */
 
 .section-rr {
@@ -51,7 +51,6 @@
   align-items: flex-start;
 }
 
-/* Eyebrow */
 .rr-eyebrow {
   display: flex;
   align-items: center;
@@ -70,7 +69,6 @@
   color: var(--rr-eyebrow-icon-color);
 }
 
-/* Heading */
 .rr-heading {
   font-family: 'gt-ultra', sans-serif;
   font-size: 40px;
@@ -81,7 +79,7 @@
   margin: 0 0 32px;
 }
 
-/* ── Overall rating ── */
+/* Overall rating */
 .rr-overall {
   display: flex;
   align-items: center;
@@ -137,7 +135,7 @@
   height: 15px;
 }
 
-/* ── Rating breakdown bars ── */
+/* Rating breakdown bars */
 .rr-bars {
   display: flex;
   flex-direction: column;
@@ -186,7 +184,7 @@
   line-height: 1;
 }
 
-/* ── Write review button ── */
+/* Write review button */
 .rr-write-btn {
   display: inline-flex;
   align-items: center;
@@ -217,7 +215,7 @@
 }
 
 /* ─────────────────────────────────────
-   RIGHT COLUMN — Horizontal scroll carousel
+   RIGHT COLUMN wrapper
 ───────────────────────────────────── */
 .rr-right {
   display: flex;
@@ -226,111 +224,184 @@
   min-width: 0;
 }
 
-/* Scrollable track */
-.rr-cards {
-  display: flex;
-  gap: var(--rr-card-gap);
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 4px;
-  /* Negative margin trick so cards bleed slightly if needed */
-  cursor: grab;
+/* Editor placeholder */
+.rr-placeholder {
+  background-color: var(--rr-card-bg);
+  border-radius: 20px;
+  padding: 40px 32px;
 }
 
-.rr-cards::-webkit-scrollbar {
+.rr-placeholder__text {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--rr-card-body-color);
+  margin: 0;
+}
+
+/* ─────────────────────────────────────
+   Okendo widget overrides
+   Forces Okendo's review list into a
+   horizontal scroll carousel matching
+   the section's visual design.
+   Okendo renders into .oke-w-reviews-list
+   with individual .oke-review items.
+───────────────────────────────────── */
+
+/* Wrapper div we control */
+.rr-okendo-wrapper {
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────
+   Okendo widget CSS overrides
+   Covers both Okendo v1 (.oke-*) and v2 ([data-oke-*]) class conventions.
+   Hides Okendo's default header/pagination; forces reviews list to
+   horizontal flex scroll matching section design.
+───────────────────────────────────── */
+
+/* Hide Okendo's summary header — we render our own aggregate in the left col */
+.rr-okendo-wrapper .oke-w-reviews-controls,
+.rr-okendo-wrapper .oke-w-reviews-header,
+.rr-okendo-wrapper .oke-w-header,
+.rr-okendo-wrapper .oke-reviews-summary,
+.rr-okendo-wrapper .oke-w-reviews-summary,
+.rr-okendo-wrapper .oke-sr,
+.rr-okendo-wrapper .oke-sr-summary,
+.rr-okendo-wrapper [data-oke-reviews-summary],
+.rr-okendo-wrapper [data-oke-widget="reviews-summary"] {
+  display: none !important;
+}
+
+/* Hide Okendo's pagination / load-more — horizontal scroll replaces it */
+.rr-okendo-wrapper .oke-w-pagination,
+.rr-okendo-wrapper .oke-w-reviews-pagination,
+.rr-okendo-wrapper .oke-w-loadmore,
+.rr-okendo-wrapper [data-oke-reviews-pagination],
+.rr-okendo-wrapper .oke-pagination {
+  display: none !important;
+}
+
+/* ── Reviews list → horizontal scroll track ── */
+.rr-okendo-wrapper .oke-w-reviews-list,
+.rr-okendo-wrapper .oke-reviews-list,
+.rr-okendo-wrapper .oke-reviews,
+.rr-okendo-wrapper [data-oke-reviews-list],
+.rr-okendo-wrapper [data-oke-reviews-container] {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: var(--rr-card-gap) !important;
+  overflow-x: auto !important;
+  scroll-snap-type: x mandatory !important;
+  scroll-behavior: smooth !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  padding-bottom: 4px !important;
+  cursor: grab;
+  grid-template-columns: unset !important;
+  align-items: stretch !important;
+}
+
+.rr-okendo-wrapper .oke-w-reviews-list::-webkit-scrollbar,
+.rr-okendo-wrapper .oke-reviews-list::-webkit-scrollbar,
+.rr-okendo-wrapper .oke-reviews::-webkit-scrollbar {
   display: none;
 }
 
-.rr-cards.is-grabbing {
+.rr-okendo-wrapper .oke-w-reviews-list.is-grabbing,
+.rr-okendo-wrapper .oke-reviews-list.is-grabbing,
+.rr-okendo-wrapper .oke-reviews.is-grabbing {
   cursor: grabbing;
   user-select: none;
 }
 
-/* Each card: fixed width derived from container width / cards-per-view */
-.rr-card {
-  flex-shrink: 0;
-  scroll-snap-align: start;
-  /* Width = (100% minus total gaps) / cards_per_view */
+/* ── Individual review card ── */
+.rr-okendo-wrapper .oke-review,
+.rr-okendo-wrapper .oke-w-review,
+.rr-okendo-wrapper [data-oke-review] {
+  flex-shrink: 0 !important;
+  scroll-snap-align: start !important;
   width: calc(
     (100% - (var(--rr-cards-per-view) - 1) * var(--rr-card-gap)) / var(--rr-cards-per-view)
-  );
-  background-color: var(--rr-card-bg);
-  border-radius: 20px;
-  padding: 28px 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-sizing: border-box;
+  ) !important;
+  box-sizing: border-box !important;
+  background-color: var(--rr-card-bg) !important;
+  border-radius: 20px !important;
+  padding: 24px 24px 20px !important;
+  border: none !important;
+  box-shadow: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
 }
 
-.rr-card--placeholder {
-  opacity: 0.5;
+/* ── Stars inside each card ── */
+.rr-okendo-wrapper .oke-star-rating .oke-star,
+.rr-okendo-wrapper .oke-w-review-attribution-rating .oke-star,
+.rr-okendo-wrapper [data-oke-star],
+.rr-okendo-wrapper .oke-stars-filled {
+  color: var(--rr-star-color) !important;
+  fill: var(--rr-star-color) !important;
 }
 
-/* Card header: stars + date */
-.rr-card__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+.rr-okendo-wrapper .oke-stars-empty,
+.rr-okendo-wrapper .oke-star:not(.oke-stars-filled) {
+  color: var(--rr-star-empty-color) !important;
+  fill: var(--rr-star-empty-color) !important;
 }
 
-.rr-card__stars {
-  display: flex;
-  align-items: center;
-  gap: 3px;
+/* ── Review title ── */
+.rr-okendo-wrapper .oke-review-title,
+.rr-okendo-wrapper .oke-w-review-title,
+.rr-okendo-wrapper [data-oke-review-title] {
+  font-family: 'gt-ultra', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 1.45 !important;
+  color: var(--rr-card-title-color) !important;
+  margin: 0 !important;
 }
 
-.rr-card__date {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: var(--rr-card-date-color);
-  white-space: nowrap;
+/* ── Review body ── */
+.rr-okendo-wrapper .oke-review-body,
+.rr-okendo-wrapper .oke-w-review-body,
+.rr-okendo-wrapper [data-oke-review-body],
+.rr-okendo-wrapper .oke-review-body p,
+.rr-okendo-wrapper .oke-w-review-body p {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
+  line-height: 1.85 !important;
+  color: var(--rr-card-body-color) !important;
+  margin: 0 !important;
 }
 
-/* Card title */
-.rr-card__title {
-  font-family: 'gt-ultra', sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 1.45;
-  color: var(--rr-card-title-color);
-  margin: 0;
+/* ── Date / reviewer info ── */
+.rr-okendo-wrapper .oke-review-dateline,
+.rr-okendo-wrapper .oke-w-review-dateline,
+.rr-okendo-wrapper .oke-review-author,
+.rr-okendo-wrapper .oke-w-review-author,
+.rr-okendo-wrapper [data-oke-review-date],
+.rr-okendo-wrapper [data-oke-review-author] {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 12px !important;
+  color: var(--rr-card-date-color) !important;
 }
 
-/* Card body */
-.rr-card__body {
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 1.85;
-  color: var(--rr-card-body-color);
-  margin: 0;
-  flex: 1;
+/* ── Helpful / read-more links ── */
+.rr-okendo-wrapper .oke-review-helpful,
+.rr-okendo-wrapper .oke-w-review-helpful,
+.rr-okendo-wrapper .oke-review-helpful a,
+.rr-okendo-wrapper a {
+  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif !important;
+  font-size: 13px !important;
+  color: var(--rr-card-link-color) !important;
+  text-underline-offset: 2px !important;
 }
 
-/* Read more link */
-.rr-card__link {
-  display: inline-block;
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--rr-card-link-color);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  transition: opacity 0.15s ease;
-  cursor: pointer;
-}
-
-.rr-card__link:hover {
-  opacity: 0.6;
-}
-
-/* ── Scroll indicator dots ──────────── */
+/* Scroll indicator dots */
 .rr-dots {
   display: flex;
   align-items: center;
@@ -374,23 +445,10 @@
     align-items: start;
   }
 
-  .rr-eyebrow {
-    grid-column: 1 / -1;
-  }
-
-  .rr-heading {
-    grid-column: 1 / -1;
-    font-size: 32px;
-    margin-bottom: 24px;
-  }
-
-  .rr-overall {
-    margin-bottom: 0;
-  }
-
-  .rr-bars {
-    margin-bottom: 0;
-  }
+  .rr-eyebrow { grid-column: 1 / -1; }
+  .rr-heading { grid-column: 1 / -1; font-size: 32px; margin-bottom: 24px; }
+  .rr-overall { margin-bottom: 0; }
+  .rr-bars    { margin-bottom: 0; }
 
   .rr-write-btn {
     grid-column: 1 / -1;
@@ -398,9 +456,10 @@
     max-width: 240px;
   }
 
-  /* Show 1.5 cards on tablet so scroll is discoverable */
-  .rr-cards {
-    --rr-cards-per-view: 1.4;
+  /* 1.5 cards visible on tablet */
+  .rr-okendo-wrapper .oke-review,
+  .rr-okendo-wrapper .oke-w-review {
+    width: calc((100% - var(--rr-card-gap)) / 1.4) !important;
   }
 }
 
@@ -434,16 +493,9 @@
     width: 100%;
   }
 
-  /* Show 1 card + peek of next on mobile */
-  .rr-cards {
-    --rr-cards-per-view: 1.1;
-  }
-
-  .rr-card {
-    padding: 20px 20px 18px;
-  }
-
-  .rr-card__title {
-    font-size: 15px;
+  /* ~1 card + peek on mobile */
+  .rr-okendo-wrapper .oke-review,
+  .rr-okendo-wrapper .oke-w-review {
+    width: calc(100% - 24px) !important;
   }
 }
