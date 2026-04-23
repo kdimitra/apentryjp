@@ -82,17 +82,20 @@
 }
 
 .htf-eyebrow__icon {
-  color: var(--htf-eyebrow-icon);
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   line-height: 1;
 }
 
-.htf-eyebrow__icon svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
+.htf-eyebrow__icon svg,
+.htf-eyebrow__icon img {
   display: block;
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  fill: currentColor;
+  color: var(--htf-eyebrow-icon);
 }
 
 .htf-heading {

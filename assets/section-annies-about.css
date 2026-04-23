@@ -36,12 +36,27 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: var(--aa-eyebrow-color);
   letter-spacing: 0.06em;
   margin: 0 0 20px;
+}
+
+.aa-eyebrow__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.aa-eyebrow__icon svg,
+.aa-eyebrow__icon img {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  color: var(--aa-eyebrow-color);
 }
 
 .aa-page-heading {

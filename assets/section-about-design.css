@@ -48,7 +48,17 @@
 .ad-eyebrow__icon {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   line-height: 1;
+}
+
+.ad-eyebrow__icon svg,
+.ad-eyebrow__icon img {
+  display: block;
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  color: var(--ad-eyebrow-icon);
 }
 
 .ad-page-heading {
