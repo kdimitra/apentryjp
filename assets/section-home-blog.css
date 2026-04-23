@@ -17,8 +17,8 @@
   --hb-icon-color:      #C4A96D;   /* warm gold — star eyebrow icon */
 
   /* Typography */
-  --hb-font-display: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
-  --hb-font-body:    'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  --hb-font-display: 'gt-ultra', sans-serif;
+  --hb-font-body:    'gt-ultra', sans-serif;
   --hb-font-latin:   'DM Sans', sans-serif;
 
   background-color: var(--hb-bg);
@@ -68,9 +68,18 @@
 }
 
 .hb-eyebrow__icon {
-  color: var(--hb-icon-color);
-  font-size: 13px;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   line-height: 1;
+}
+
+.hb-eyebrow__icon img,
+.hb-eyebrow__icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: #87CEDC;
 }
 
 /* ブログ heading */
@@ -317,6 +326,7 @@
 
   .hb-eyebrow    { order: 1; width: 100%; }
   .hb-heading    { order: 2; font-size: 28px; flex: 1; }
+
   .hb-intro      { order: 4; width: 100%; max-width: 100%; }
   .hb-viewall    { order: 3; margin-top: 0; }
   .hb-decoration { display: none; }

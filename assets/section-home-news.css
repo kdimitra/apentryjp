@@ -51,22 +51,31 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: #1C1C1A;
   margin: 0;
 }
 
-.hn-eyebrow__star {
-  font-size: 14px;
+.hn-eyebrow__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
   line-height: 1;
-  color: #C4A96D;   /* warm gold star */
+}
+
+.hn-eyebrow__icon img,
+.hn-eyebrow__icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: #87CEDC;
 }
 
 /* Large ニュース heading */
 .hn-heading {
-  font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 36px;
   font-weight: 700;
   line-height: 1.2;
@@ -319,6 +328,7 @@
     font-size: 28px;
     order: 2;
   }
+
 
   .hn-viewall {
     order: 3;
