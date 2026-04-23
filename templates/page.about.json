@@ -505,7 +505,7 @@
           "settings": {
             "badge_label": "Commitment 01",
             "title": "素材の力が生きる 生のお肉",
-            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br/>豊富なタンパク質で、<br/>からだづくりをサポートします。</p>",
+            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br/>豊富なタンパク質で、からだづくりをサポートします。</p>",
             "image": "shopify://shop_images/IMGP0757.jpg",
             "reverse_layout": false,
             "show_dog": true,
@@ -517,7 +517,7 @@
           "settings": {
             "badge_label": "Commitment 02",
             "title": "安心と信頼の 国内製造",
-            "description": "<p>すべて日本国内の自社工場で製造・管理。 \n確かな品質で、家族みんなに安心を届けます。</p>",
+            "description": "<p>すべて日本国内の自社工場で製造・管理。<br/>確かな品質で、家族みんなに安心を届けます。</p>",
             "image": "shopify://shop_images/Screenshot_202025-09-04_20at_2017.25.35.jpg",
             "reverse_layout": true,
             "show_dog": true,
