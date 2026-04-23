@@ -1,19 +1,22 @@
 
-{%- doc -%}
+{%- comment -%}
   Home Food Section
   Two-column full-width layout: left text column with corner decorations,
   right full-cover image column. Matches the home-food section on apantry.jp.
-{%- enddoc -%}
+{%- endcomment -%}
 
 <section
   id="home-food-{{ section.id }}"
   class="hf-section"
   style="
-    --hf-left-bg:   {{ section.settings.left_bg_color }};
-    --hf-text:      {{ section.settings.text_color }};
-    --hf-card-bg:   {{ section.settings.card_bg_color }};
-    --hf-pt:        {{ section.settings.padding_top }}px;
-    --hf-pb:        {{ section.settings.padding_bottom }}px;
+    --hf-left-bg:        {{ section.settings.left_bg_color }};
+    --hf-text:           {{ section.settings.text_color }};
+    --hf-card-bg:        {{ section.settings.card_bg_color }};
+    --hf-pt:             {{ section.settings.padding_top }}px;
+    --hf-pb:             {{ section.settings.padding_bottom }}px;
+    --hf-title-size:     {{ section.settings.title_font_size }}px;
+    --hf-subtitle-size:  {{ section.settings.subtitle_font_size }}px;
+    --hf-desc-size:      {{ section.settings.desc_font_size }}px;
   "
 >
   {%- comment -%}━━━━━━━━ LEFT COLUMN ━━━━━━━━{%- endcomment -%}
@@ -50,7 +53,25 @@
     {%- comment -%} Text content card {%- endcomment -%}
     <div class="hf-content">
       {%- if section.settings.eyebrow != blank -%}
-        <p class="hf-content__eyebrow">{{ section.settings.eyebrow }}</p>
+        <p class="hf-content__eyebrow">
+          <span class="hf-content__eyebrow-icon" aria-hidden="true">
+            {%- if section.settings.eyebrow_icon != blank -%}
+              {{- section.settings.eyebrow_icon
+                | image_url: width: 32
+                | image_tag: loading: 'lazy', alt: ''
+              -}}
+            {%- else -%}
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
+                <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
+                <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
+                <circle cx="12" cy="10" r="3"/>
+                <circle cx="20" cy="10" r="3"/>
+              </svg>
+            {%- endif -%}
+          </span>
+          {{- section.settings.eyebrow -}}
+        </p>
       {%- endif -%}
 
       {%- if section.settings.title != blank -%}
@@ -165,7 +186,11 @@
 }
 
 .hf-content__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.75rem;
+  font-family: 'gt-ultra', sans-serif;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -174,8 +199,24 @@
   margin: 0 0 0.75em;
 }
 
+.hf-content__eyebrow-icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.hf-content__eyebrow-icon img,
+.hf-content__eyebrow-icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  color: var(--hf-text, #5e3826);
+}
+
 .hf-content__title {
-  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-size: var(--hf-title-size, 40px);
+  font-family: 'gt-ultra', sans-serif;
   font-weight: 700;
   line-height: 1.2;
   color: var(--hf-text, #5e3826);
@@ -183,7 +224,8 @@
 }
 
 .hf-content__subtitle {
-  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  font-size: var(--hf-subtitle-size, 18px);
+  font-family: 'gt-ultra', sans-serif;
   font-weight: 500;
   line-height: 1.5;
   color: var(--hf-text, #5e3826);
@@ -195,7 +237,8 @@
 }
 
 .hf-content__desc {
-  font-size: clamp(0.875rem, 1.3vw, 1rem);
+  font-size: var(--hf-desc-size, 14px);
+  font-family: 'gt-ultra', sans-serif;
   line-height: 1.7;
   color: var(--hf-text, #5e3826);
   opacity: 0.85;
@@ -376,10 +419,46 @@
       "content": "Text Content"
     },
     {
+      "type": "image_picker",
+      "id": "eyebrow_icon",
+      "label": "Eyebrow paw icon",
+      "info": "Upload a PNG or SVG paw icon. Leave blank to use the built-in default paw."
+    },
+    {
       "type": "text",
       "id": "eyebrow",
       "label": "Eyebrow (small label above title)",
       "default": "Food"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Main title font size",
+      "min": 20,
+      "max": 72,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle font size",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "unit": "px",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "desc_font_size",
+      "label": "Description font size",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
     },
     {
       "type": "text",

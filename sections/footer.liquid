@@ -518,8 +518,117 @@
   color: inherit;
   text-decoration: underline;
 }
-footer{
+
+footer {
   background: #faf7e6;
+}
+
+/* ── MOBILE (<750px) ─────────────────────────────────── */
+@media screen and (max-width: 749px) {
+
+  /* Reduce the large pill-shaped top radius for mobile */
+  .ap-footer {
+    border-radius: 40px 40px 0 0;
+  }
+
+  /* Tighter horizontal padding on mobile */
+  .ap-footer__inner {
+    padding-inline: 20px;
+  }
+
+  /* TOP: stack brand above food section */
+  .ap-footer__top {
+    gap: 28px;
+    margin-bottom: 32px;
+  }
+
+  /* Logo smaller on mobile */
+  .ap-footer__logo {
+    max-width: 140px;
+  }
+
+  /* Food header: heading + view-all wrap cleanly */
+  .ap-footer__food-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .ap-footer__food-title {
+    font-size: 1rem;
+  }
+
+  /* Food grid: 1 column on narrow screens, 2 columns from 480px */
+  .ap-footer__food-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  @media screen and (min-width: 480px) {
+    .ap-footer__food-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* Food cards: tighter padding, smaller image */
+  .ap-footer__food-card {
+    padding: 12px 14px;
+    gap: 10px;
+    border-radius: 12px;
+  }
+
+  .ap-footer__food-img {
+    width: 44px;
+    height: 44px;
+  }
+
+  .ap-footer__food-name {
+    font-size: 0.8rem;
+  }
+
+  .ap-footer__card-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+  }
+
+  /* DIVIDER */
+  .ap-footer__divider {
+    margin-bottom: 28px;
+  }
+
+  /* BOTTOM: 2-col nav top row, social + decoration full width below */
+  .ap-footer__bottom {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 16px;
+  }
+
+  /* Social links column spans full width on mobile */
+  .ap-footer__nav-col:last-of-type {
+    grid-column: 1 / -1;
+  }
+
+  /* Social list: horizontal row on mobile */
+  .ap-footer__social-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  /* Nav headings slightly smaller */
+  .ap-footer__nav-heading {
+    font-size: 0.8rem;
+  }
+
+  .ap-footer__nav-link,
+  .ap-footer__social-link {
+    font-size: 0.8rem;
+  }
+
+  /* COPYRIGHT */
+  .ap-footer__copyright {
+    margin-top: 28px;
+    font-size: 0.75rem;
+  }
 }
 {% endstylesheet %}
 
