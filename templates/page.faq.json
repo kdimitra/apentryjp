@@ -11,6 +11,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -149,17 +150,17 @@
         "category_icon": "🐾",
         "padding_top": 72,
         "padding_bottom": 96,
-        "bg_color": "#F5F0E4",
-        "brand_heading_color": "#2C1A0E",
-        "tab_active_bg": "#3D2B1F",
-        "tab_active_text": "#FFFFFF",
-        "tab_idle_text": "#3D2B1F",
-        "tab_border_color": "#D8D2C8",
-        "heading_color": "#2C1A0E",
-        "icon_color": "#87CEDC",
-        "question_color": "#2C1A0E",
-        "answer_color": "#5A4A3A",
-        "item_open_border_color": "#5B9BB0"
+        "bg_color": "#f5f0e4",
+        "brand_heading_color": "#2c1a0e",
+        "tab_active_bg": "#3d2b1f",
+        "tab_active_text": "#ffffff",
+        "tab_idle_text": "#3d2b1f",
+        "tab_border_color": "#d8d2c8",
+        "heading_color": "#2c1a0e",
+        "icon_color": "#87cedc",
+        "question_color": "#2c1a0e",
+        "answer_color": "#5a4a3a",
+        "item_open_border_color": "#5b9bb0"
       }
     }
   },
