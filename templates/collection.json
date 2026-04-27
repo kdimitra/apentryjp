@@ -685,7 +685,7 @@
         "icon_right": "shopify://shop_images/svg-foot.svg",
         "padding_y": 32,
         "padding_x": 40,
-        "bg_color": "#e6e6e6",
+        "bg_color": "#ffffff",
         "text_color": "#5a4232"
       }
     },
