@@ -678,7 +678,7 @@
       "name": "Header ribbon",
       "settings": {
         "section_id": "",
-        "eyebrow": "Food List",
+        "eyebrow": "Item List",
         "text_align": "center",
         "show_icons": true,
         "icon_left": "shopify://shop_images/svg-foot.svg",
