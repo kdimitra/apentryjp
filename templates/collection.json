@@ -579,19 +579,67 @@
         "section_heading": "パップタブについて",
         "body_image": "shopify://shop_images/20260520_blog.png",
         "image_position": "left",
-        "image_bg_color": "#B8DDE6",
+        "image_bg_color": "#b8dde6",
         "body_subheading": "With the same ingredients, with the same love.",
         "body_text": "<p>We use only raw, natural ingredients, without adding anything unnecessary.</p><p>This is a gentle, raw, fresh food for your pet.</p><p>We made it with your beloved family member in mind.</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
-        "bg_color": "#87CEDC",
+        "bg_color": "#87cedc",
+        "heading_color": "#2c2420",
+        "body_color": "#3a2e28",
+        "eyebrow_color": "#5a4232",
+        "card_bg_color": "#fef8ec",
+        "badge_bg_color": "#87cedc",
+        "badge_text_color": "#2c5a64"
+      }
+    },
+    "collection_point_YrmerE": {
+      "type": "collection-point",
+      "blocks": {
+        "point_hWkC8C": {
+          "type": "point",
+          "settings": {
+            "label": "その1",
+            "heading": "犬本来の食事。それは生のままの自然食。",
+            "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれる生肉食です。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
+            "image": "shopify://shop_images/20260520_blog.png"
+          }
+        },
+        "point_6TpAJh": {
+          "type": "point",
+          "settings": {
+            "label": "その2",
+            "heading": "新鮮な素材だけを、そのままに。",
+            "description": "<p>アニーズパントリーでは、信頼できる生産者から新鮮な食材だけを仕入れています。余計な加工や添加物を加えず、素材本来の栄養とおいしさをそのままお届けします。</p>",
+            "image": "shopify://shop_images/20260520_blog.png"
+          }
+        },
+        "point_EQnPFY": {
+          "type": "point",
+          "settings": {
+            "label": "その3",
+            "heading": "毎日食べるものだから、正直でありたい。",
+            "description": "<p>何が入っているかが分かる、透明性の高いフード。愛犬が毎日安心して食べられるごはんを、真摯に作り続けます。</p>",
+            "image": "shopify://shop_images/20260520_blog.png"
+          }
+        }
+      },
+      "block_order": [
+        "point_hWkC8C",
+        "point_6TpAJh",
+        "point_EQnPFY"
+      ],
+      "name": "Collection point",
+      "settings": {
+        "section_id": "",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "bg_color": "#F5F0E4",
+        "label_color": "#87CEDC",
         "heading_color": "#2C2420",
-        "body_color": "#3A2E28",
-        "eyebrow_color": "#5A4232",
-        "card_bg_color": "#FEF8EC",
-        "badge_bg_color": "#87CEDC",
-        "badge_text_color": "#2C5A64"
+        "body_color": "#5A4A3A",
+        "divider_color": "#E2DDD6"
       }
     }
   },
@@ -599,6 +647,7 @@
     "collection_hero",
     "product_list_czNEcA",
     "main",
-    "about_pap_tab_yJcK9V"
+    "about_pap_tab_yJcK9V",
+    "collection_point_YrmerE"
   ]
 }
