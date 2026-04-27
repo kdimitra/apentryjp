@@ -23,6 +23,45 @@
   "
 >
 
+  {%- if section.settings.eyebrow != blank or section.settings.section_heading != blank -%}
+    <div class="cp-header">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="cp-eyebrow">
+          <span class="cp-eyebrow__icon" aria-hidden="true">
+            {%- if section.settings.eyebrow_icon_left != blank -%}
+              {{- section.settings.eyebrow_icon_left | image_url: width: 36 | image_tag: loading: 'lazy', alt: '' -}}
+            {%- else -%}
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
+                <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
+                <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
+                <circle cx="12" cy="10" r="3"/>
+                <circle cx="20" cy="10" r="3"/>
+              </svg>
+            {%- endif -%}
+          </span>
+          {{- section.settings.eyebrow | escape -}}
+          <span class="cp-eyebrow__icon" aria-hidden="true">
+            {%- if section.settings.eyebrow_icon_right != blank -%}
+              {{- section.settings.eyebrow_icon_right | image_url: width: 36 | image_tag: loading: 'lazy', alt: '' -}}
+            {%- else -%}
+              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
+                <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
+                <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
+                <circle cx="12" cy="10" r="3"/>
+                <circle cx="20" cy="10" r="3"/>
+              </svg>
+            {%- endif -%}
+          </span>
+        </p>
+      {%- endif -%}
+      {%- if section.settings.section_heading != blank -%}
+        <h2 class="cp-section-heading">{{ section.settings.section_heading }}</h2>
+      {%- endif -%}
+    </div>
+  {%- endif -%}
+
   {%- for block in section.blocks -%}
     {%- if block.type == 'point' -%}
       {%- assign is_even = forloop.index | modulo: 2 -%}
@@ -113,6 +152,34 @@
       "id": "section_id",
       "label": "Section ID",
       "info": "Used for scroll targeting. No spaces or # (e.g. collection-point-section)."
+    },
+    {
+      "type": "header",
+      "content": "Section header"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow label",
+      "default": "Collection Point"
+    },
+    {
+      "type": "image_picker",
+      "id": "eyebrow_icon_left",
+      "label": "Left paw icon (SVG/PNG)",
+      "info": "Leave blank to use the built-in default paw SVG."
+    },
+    {
+      "type": "image_picker",
+      "id": "eyebrow_icon_right",
+      "label": "Right paw icon (SVG/PNG)",
+      "info": "Leave blank to use the built-in default paw SVG."
+    },
+    {
+      "type": "text",
+      "id": "section_heading",
+      "label": "Section heading",
+      "default": "なぜ、アニーズパントリーなのか。"
     },
     {
       "type": "header",
