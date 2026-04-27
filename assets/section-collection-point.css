@@ -71,6 +71,15 @@
   gap: 64px;
 }
 
+.cp-block--even .cp-block__inner {
+  grid-template-columns: 60fr 40fr !important;
+}
+
+.cp-block {
+  margin-bottom: 4rem;
+}
+
+
 /* Odd blocks: text left (default) — image is second child */
 .cp-block .cp-block__text  { order: 1; }
 .cp-block .cp-block__image { order: 2; }
