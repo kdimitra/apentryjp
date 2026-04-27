@@ -633,13 +633,17 @@
       "name": "Collection point",
       "settings": {
         "section_id": "",
+        "eyebrow": "Point",
+        "eyebrow_icon_left": "shopify://shop_images/svg-foot.svg",
+        "eyebrow_icon_right": "shopify://shop_images/svg-foot.svg",
+        "section_heading": "ズパントリーなのか。",
         "padding_top": 80,
         "padding_bottom": 80,
-        "bg_color": "#F5F0E4",
-        "label_color": "#87CEDC",
-        "heading_color": "#2C2420",
-        "body_color": "#5A4A3A",
-        "divider_color": "#E2DDD6"
+        "bg_color": "#f5f0e4",
+        "label_color": "#87cedc",
+        "heading_color": "#2c2420",
+        "body_color": "#5a4a3a",
+        "divider_color": "#e2ddd6"
       }
     }
   },
