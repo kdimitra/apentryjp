@@ -685,7 +685,7 @@
         "icon_right": "shopify://shop_images/svg-foot.svg",
         "padding_y": 20,
         "padding_x": 0,
-        "bg_color": "#ffffff",
+        "bg_color": "#faf7e6",
         "text_color": "#5a4232"
       }
     },
@@ -905,7 +905,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
