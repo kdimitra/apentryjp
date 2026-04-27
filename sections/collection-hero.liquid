@@ -1,0 +1,205 @@
+
+{%- comment -%}
+  Collection Hero Section
+  Full-width hero banner for collection pages.
+  - Background: collection image (auto) or custom override image
+  - Title: dynamic collection.title
+  - Subtitle: section setting (falls back to collection metafield subtitle)
+  - Description: section setting (falls back to collection.description)
+{%- endcomment -%}
+
+{{ 'section-collection-hero.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign bg_image = section.settings.bg_image_override
+  if bg_image == blank and collection.image != blank
+    assign bg_image = collection.image
+  endif
+
+  assign subtitle = section.settings.subtitle
+  if subtitle == blank
+    assign subtitle = collection.metafields.descriptors.subtitle.value
+  endif
+
+  assign description = section.settings.description
+  if description == blank and collection.description != blank
+    assign description = collection.description
+  endif
+-%}
+
+<section
+  class="ch-section"
+  id="collection-hero-{{ section.id }}"
+  style="
+    --ch-height:         {{ section.settings.hero_height }}px;
+    --ch-overlay-color:  {{ section.settings.overlay_color }};
+    --ch-overlay-opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};
+    --ch-text-align:     {{ section.settings.text_alignment }};
+    --ch-title-size:     {{ section.settings.title_font_size }}px;
+    --ch-subtitle-size:  {{ section.settings.subtitle_font_size }}px;
+    --ch-desc-size:      {{ section.settings.desc_font_size }}px;
+  "
+>
+
+  {%- comment -%} Background image {%- endcomment -%}
+  <div class="ch-bg" aria-hidden="true">
+    {%- if bg_image != blank -%}
+      {{- bg_image
+        | image_url: width: 2400
+        | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          widths: '800, 1200, 1600, 2000, 2400',
+          sizes: '100vw',
+          class: 'ch-bg__img',
+          alt: ''
+      -}}
+    {%- else -%}
+      <div class="ch-bg__placeholder"></div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Overlay {%- endcomment -%}
+  <div class="ch-overlay" aria-hidden="true"></div>
+
+  {%- comment -%} Text content {%- endcomment -%}
+  <div class="ch-content">
+    <div class="ch-content__inner">
+
+      <h1 class="ch-title">{{ collection.title }}</h1>
+
+      {%- if subtitle != blank -%}
+        <p class="ch-subtitle">{{ subtitle | escape }}</p>
+      {%- endif -%}
+
+      {%- if description != blank -%}
+        <p class="ch-desc">{{ description | strip_html | escape }}</p>
+      {%- endif -%}
+
+    </div>
+  </div>
+
+</section>
+
+{% schema %}
+{
+  "name": "Collection hero",
+  "class": "collection-hero-wrapper",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Hero image"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_override",
+      "label": "Custom background image",
+      "info": "Leave blank to use the collection's own image automatically."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "hero_height",
+      "label": "Hero height",
+      "min": 300,
+      "max": 800,
+      "step": 20,
+      "unit": "px",
+      "default": 480
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        { "value": "left",   "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right",  "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Overlay"
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "Overlay color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "default": 30
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "info": "Leave blank to use the collection's subtitle metafield (descriptors.subtitle) if set."
+    },
+    {
+      "type": "header",
+      "content": "Description"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "info": "Leave blank to use the collection's description automatically."
+    },
+    {
+      "type": "header",
+      "content": "Font sizes"
+    },
+    {
+      "type": "range",
+      "id": "title_font_size",
+      "label": "Title font size",
+      "min": 28,
+      "max": 96,
+      "step": 2,
+      "unit": "px",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "subtitle_font_size",
+      "label": "Subtitle font size",
+      "min": 12,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "desc_font_size",
+      "label": "Description font size",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection hero"
+    }
+  ]
+}
+{% endschema %}

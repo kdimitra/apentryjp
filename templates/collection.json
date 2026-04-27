@@ -9,6 +9,18 @@
  */
 {
   "sections": {
+    "collection_hero": {
+      "type": "collection-hero",
+      "settings": {
+        "hero_height": 480,
+        "text_alignment": "center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 30,
+        "title_font_size": 64,
+        "subtitle_font_size": 22,
+        "desc_font_size": 14
+      }
+    },
     "section_PdpeaA": {
       "type": "section",
       "blocks": {
@@ -506,6 +518,7 @@
     }
   },
   "order": [
+    "collection_hero",
     "section_PdpeaA",
     "main"
   ]
