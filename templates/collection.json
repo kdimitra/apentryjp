@@ -673,6 +673,22 @@
         "padding_bottom": 60
       }
     },
+    "header_ribbon_Yw8rpg": {
+      "type": "header-ribbon",
+      "name": "Header ribbon",
+      "settings": {
+        "section_id": "",
+        "eyebrow": "Food List",
+        "text_align": "center",
+        "show_icons": true,
+        "icon_left": "shopify://shop_images/svg-foot.svg",
+        "icon_right": "shopify://shop_images/svg-foot.svg",
+        "padding_y": 32,
+        "padding_x": 40,
+        "bg_color": "#e6e6e6",
+        "text_color": "#5a4232"
+      }
+    },
     "product_list_jzLraK": {
       "type": "product-list",
       "blocks": {
@@ -902,6 +918,7 @@
     "about_pap_tab_yJcK9V",
     "collection_point_YrmerE",
     "about_image_card_nYfntW",
+    "header_ribbon_Yw8rpg",
     "product_list_jzLraK"
   ]
 }
