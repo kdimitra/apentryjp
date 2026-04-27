@@ -1,0 +1,68 @@
+/* ─────────────────────────────────────────
+   Header Ribbon  ·  section-header-ribbon.css
+───────────────────────────────────────── */
+
+.hr-section {
+  width: 100%;
+}
+
+.hr-inner {
+  display: flex;
+  align-items: center;
+  justify-content: var(--hr-align, center);
+  padding-block: var(--hr-padding-y, 32px);
+  padding-inline: var(--hr-padding-x, 40px);
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+/* ── Eyebrow ──────────────────────────── */
+.hr-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--hr-text-color, #5A4232);
+  margin: 0;
+}
+
+.hr-eyebrow__icon {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.hr-eyebrow__icon svg,
+.hr-eyebrow__icon img {
+  display: block;
+  width: 20px !important;
+  height: 20px !important;
+  object-fit: contain;
+  color: var(--hr-text-color, #5A4232);
+}
+
+/* ─────────────────────────────────────
+   TABLET  ≤ 1023px
+───────────────────────────────────────*/
+@media (max-width: 1023px) {
+  .hr-inner {
+    padding-inline: 40px;
+  }
+}
+
+/* ─────────────────────────────────────
+   MOBILE  ≤ 767px
+───────────────────────────────────────*/
+@media (max-width: 767px) {
+  .hr-inner {
+    padding-inline: 20px;
+    justify-content: center;
+  }
+
+  .hr-eyebrow {
+    font-size: 13px;
+  }
+}
