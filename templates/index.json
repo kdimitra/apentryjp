@@ -522,7 +522,7 @@
         "subtitle_font_size": 18,
         "desc_font_size": 18,
         "title": "<p>そのままの素材で、そのままの愛を。</p>",
-        "subtitle": "<p></p>",
+        "subtitle": "",
         "description": "余計なものは使わず、 \n使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。",
         "button_label": "View all food",
         "button_url": "shopify://blogs/フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
@@ -1306,7 +1306,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4>そのままの素材で、 </h4><h4>そのままの愛を。</h4>",
+                "text": "<h4>🐾  そのままの素材で、 </h4><h4>そのままの愛を。</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1562,7 +1562,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4>パップタブ (大)</h4>",
+                "text": "<h4>🐾   パップタブ (大)</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1712,7 +1712,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4>パップタブ (小)</h4>",
+                "text": "<h4>🐾  パップタブ (小)</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
