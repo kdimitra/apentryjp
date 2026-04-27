@@ -645,6 +645,33 @@
         "body_color": "#5a4a3a",
         "divider_color": "#e2ddd6"
       }
+    },
+    "about_image_card_nYfntW": {
+      "type": "about-image-card",
+      "name": "About - Image Card",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/f77d71b53736b17b0cc0665fefab96db06f2b27c-5000x3333_jpg.avif",
+        "background_image_alt": "",
+        "show_paw_icon": true,
+        "eyebrow": "Set Food",
+        "heading_tag": "h2",
+        "heading": "Everything about Annie's Pantry",
+        "body": "<p>We want to deliver the best meals. That idea started with living with two beloved dogs. The dogs, who wouldn't eat commercial food, encountered homemade meals, and their bodies began to change. That experience led us to meet top breeders in Australia, where we realized the simple truth: good nutrition, exercise, and love are what dogs truly need. That experience is the origin of Annie's Pantry.</p>",
+        "button_label": "View more",
+        "button_url": "",
+        "button_open_new_tab": false,
+        "card_background_color": "#fefbec",
+        "text_color": "#5e3826",
+        "eyebrow_color": "#9adbe8",
+        "button_background_color": "#9adbe8",
+        "button_text_color": "#5e3826",
+        "section_height": 600,
+        "card_max_width": 460,
+        "content_max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
     }
   },
   "order": [
@@ -652,6 +679,7 @@
     "product_list_czNEcA",
     "main",
     "about_pap_tab_yJcK9V",
-    "collection_point_YrmerE"
+    "collection_point_YrmerE",
+    "about_image_card_nYfntW"
   ]
 }
