@@ -315,10 +315,68 @@
         "padding-block-start": 0,
         "padding-block-end": 1
       }
+    },
+    "about_pap_tab_yJcK9V": {
+      "type": "about-pap-tab",
+      "blocks": {
+        "feature_card_fQrV9p": {
+          "type": "feature_card",
+          "settings": {
+            "badge_label": "Feature 1",
+            "title": "Raw meat that lets the natural flavor of the ingredients shine through.",
+            "description": "<p>Because it's uncooked, it retains the full flavor of the meat. The abundant protein supports healthy body building.</p>"
+          }
+        },
+        "feature_card_8yDAMJ": {
+          "type": "feature_card",
+          "settings": {
+            "badge_label": "Feature 2",
+            "title": "Domestic manufacturing for peace of mind and reliability",
+            "description": "<p>All products are manufactured and managed at factories in Japan. We deliver peace of mind to your whole family with our reliable quality.</p>"
+          }
+        },
+        "feature_card_n6dGbV": {
+          "type": "feature_card",
+          "settings": {
+            "badge_label": "Feature 3",
+            "title": "Additive-free meals containing only the essentials.",
+            "description": "<p>No artificial flavors, colors, or preservatives are used. We deliver the natural deliciousness and peace of mind of the ingredients as they are.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "feature_card_fQrV9p",
+        "feature_card_8yDAMJ",
+        "feature_card_n6dGbV"
+      ],
+      "name": "About Pap Tab",
+      "settings": {
+        "section_id": "",
+        "eyebrow": "About",
+        "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
+        "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
+        "section_heading": "パップタブについて",
+        "body_image": "shopify://shop_images/20260520_blog.png",
+        "image_position": "left",
+        "image_bg_color": "#B8DDE6",
+        "body_subheading": "With the same ingredients, with the same love.",
+        "body_text": "<p>We use only raw, natural ingredients, without adding anything unnecessary.</p><p>This is a gentle, raw, fresh food for your pet.</p><p>We made it with your beloved family member in mind.</p>",
+        "show_dog": true,
+        "padding_top": 72,
+        "padding_bottom": 96,
+        "bg_color": "#87CEDC",
+        "heading_color": "#2C2420",
+        "body_color": "#3A2E28",
+        "eyebrow_color": "#5A4232",
+        "card_bg_color": "#FEF8EC",
+        "badge_bg_color": "#87CEDC",
+        "badge_text_color": "#2C5A64"
+      }
     }
   },
   "order": [
     "collection_hero",
-    "main"
+    "main",
+    "about_pap_tab_yJcK9V"
   ]
 }
