@@ -16,7 +16,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/18a9601d00d6d3ec4f68d430e2e61c134522cd1c-2560x1504.png",
+            "image_1": "shopify://shop_images/abc.avif",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
