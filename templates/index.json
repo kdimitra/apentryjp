@@ -310,6 +310,9 @@
         "slide_XRPGKw",
         "slide_qD4UHN"
       ],
+      "custom_css": [
+        ".slideshow-section .button-secondary {border-radius:15px;}"
+      ],
       "name": "t:names.slideshow_full_frame",
       "settings": {
         "display_mode": "full_frame",
