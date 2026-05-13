@@ -241,15 +241,18 @@
           ]
         }
       },
+      "custom_css": [
+        ".product-information {background-color: #faf7e6;}"
+      ],
       "name": "Product information section",
       "settings": {
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
-        "equal_columns": false,
+        "equal_columns": true,
         "limit_details_width": false,
-        "gap": 8,
+        "gap": 4,
         "enable_sticky_add_to_cart": true,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
