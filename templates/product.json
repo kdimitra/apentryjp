@@ -298,6 +298,7 @@
       ],
       "name": "Annie's Natural Blend",
       "settings": {
+        "section_id": "",
         "eyebrow_text": "Annie's Natural Blend",
         "section_heading": "栄養豊富な原材料入りタブ",
         "bg_color": "#faf7e6"
