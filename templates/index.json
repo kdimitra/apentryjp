@@ -165,7 +165,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4>自然と、食卓と、愛犬と。</h4>",
+                "text": "<h3>そのままの素材で、そのままの愛を。</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
