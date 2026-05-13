@@ -1281,7 +1281,7 @@
               "settings": {
                 "text": "<p>余計なものは使わず、使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。</p>",
                 "width": "fit-content",
-                "max_width": "narrow",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -1474,7 +1474,7 @@
               "settings": {
                 "text": "<p>高品質で新鮮な食材を使用した、人気の生食フレッシュドッグフード（800g）。<br/>毎日の主食や多頭飼いにもおすすめの大容量サイズで、愛犬の健康的な食事をしっかりサポートします。<br/>AAFCO基準を満たした安心・安全なドッグフードです。</p>",
                 "width": "fit-content",
-                "max_width": "narrow",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
@@ -1625,8 +1625,8 @@
               "type": "text",
               "settings": {
                 "text": "<p>高品質で新鮮な食材を使った、人気の生食フレッシュドッグフード（310g）。<br/>小型犬や少量を試したい方におすすめのサイズで、毎日の食事を手軽に健康サポートします。<br/>AAFCO基準を満たした安心・安全なドッグフードで、愛犬の栄養バランスをしっかりサポートします。</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
+                "width": "100%",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
