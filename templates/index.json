@@ -4358,20 +4358,6 @@
         "padding-block-end": 40
       }
     },
-    "divider_prXAPp": {
-      "type": "divider",
-      "name": "t:names.divider_section",
-      "settings": {
-        "color_scheme": "scheme-1",
-        "section_width": "full-width",
-        "thickness": 0.5,
-        "corner_radius": "square",
-        "width_percent": 5,
-        "alignment_horizontal": "center",
-        "padding-block-start": 16,
-        "padding-block-end": 16
-      }
-    },
     "home_news_9riTjf": {
       "type": "home-news",
       "name": "Home news",
@@ -4412,7 +4398,6 @@
     "slideshow_UzwwNm",
     "about_image_card_hMLiwr",
     "hero_4nHfi3",
-    "divider_prXAPp",
     "home_news_9riTjf"
   ]
 }
