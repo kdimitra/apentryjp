@@ -1521,6 +1521,9 @@
         "image_xG3A9K",
         "group_YtqMfN"
       ],
+      "custom_css": [
+        "@media screen and (max-width: 768px) {.section-content-wrapper {flex-direction: column; } .section-content-wrapper .image-block {order: 2; } .section-content-wrapper .group-block {order: 1; }}"
+      ],
       "name": "t:names.image_with_text",
       "settings": {
         "content_direction": "row",
