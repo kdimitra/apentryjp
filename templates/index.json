@@ -212,31 +212,6 @@
               },
               "blocks": {}
             },
-            "text_HqeREH": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Real food, made with love.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 3,
-                "padding-block-end": 12,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "button_xRkYTQ": {
               "type": "button",
               "settings": {
@@ -255,7 +230,6 @@
           "block_order": [
             "text_ty6zCp",
             "text_eXTkkN",
-            "text_HqeREH",
             "button_xRkYTQ"
           ]
         },
@@ -310,31 +284,6 @@
               },
               "blocks": {}
             },
-            "text_eTVdGz": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Real food, made with love.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 3,
-                "padding-block-end": 12,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "text_mLgxYG": {
               "type": "text",
               "settings": {
@@ -377,7 +326,6 @@
           },
           "block_order": [
             "text_yE7fPJ",
-            "text_eTVdGz",
             "text_mLgxYG",
             "button_3DGXK8"
           ]
