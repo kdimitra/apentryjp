@@ -116,6 +116,7 @@
                 style="{% render 'submenu-font-styles', settings: block_settings %}"
               >
                 {%- if menu_content_type == 'food_grid' -%}
+                  <div class="mega-menu section section--full-width-margin section--{{ section.settings.section_width }}">
                   <div
                     class="food-mega__panel"
                     style="background-color: {{ block_settings.food_mega_bg | default: '#87CEDC' }};"
@@ -163,6 +164,7 @@
                         </li>
                       {%- endfor -%}
                     </ul>
+                  </div>
                   </div>
                 {%- else -%}
                   {% assign list_id = 'MegaMenuList-' | append: forloop.index %}
@@ -247,8 +249,7 @@
   .food-mega__panel {
     padding: 28px 32px 32px;
     border-radius: 20px;
-    margin: 12px 24px 24px;
-    min-width: 540px;
+    margin: 0 auto 8px;
     max-width: 720px;
   }
 
