@@ -503,11 +503,26 @@ p:empty {
 .menu-drawer__chevron {
   display: inline-flex;
   align-items: center;
-  transition: transform 0.25s ease;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
+/* Rotate chevron when details is open (works inside accordion-custom wrapper) */
 details[open] > summary .menu-drawer__chevron {
   transform: rotate(180deg);
+}
+
+/* Chevron sits inline, just after the menu label text */
+.menu-drawer__menu-item.menu-drawer__menu-item--mainlist:has(.menu-drawer__chevron) {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: auto;
+}
+
+/* Smooth height animation for child lists inside accordion-custom */
+accordion-custom details .menu-drawer__menu--childlist {
+  interpolate-size: allow-keywords;
 }
 
 /* Hide desktop header menu at ≤747px */
