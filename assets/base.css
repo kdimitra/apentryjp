@@ -499,6 +499,17 @@ p:empty {
   }
 }
 
+/* Mobile drawer: chevron-down icon rotates when submenu is open */
+.menu-drawer__chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.25s ease;
+}
+
+details[open] > summary .menu-drawer__chevron {
+  transform: rotate(180deg);
+}
+
 /* Hide desktop header menu at ≤747px */
 @media screen and (max-width: 747px) {
   /* stylelint-disable-next-line declaration-no-important */

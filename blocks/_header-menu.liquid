@@ -248,7 +248,7 @@
   /* ── Food Grid Mega Menu ─────────────────────────────── */
   .food-mega__panel {
     padding: 28px 32px 32px;
-    border-radius: 20px;
+    border-radius: 0;
     margin: 0;
     max-width: 760px;
     width: 100%;
@@ -307,9 +307,11 @@
     padding: 12px 14px 12px 12px;
     text-decoration: none;
     transition: opacity 0.2s ease;
+    box-shadow: none !important;
 
     &:hover {
       opacity: 0.85;
+      box-shadow: none !important;
     }
   }
 
@@ -383,7 +385,7 @@
       clip-path: none;
       top: 100%;
       left: auto;
-      right: -40px;
+      right: -215px;
       width: 760px;
       padding-inline: 0;
       background-color: transparent !important;
