@@ -215,7 +215,7 @@
             "button_xRkYTQ": {
               "type": "button",
               "settings": {
-                "label": "Shop all",
+                "label": "Shop Now",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -312,7 +312,7 @@
             "button_3DGXK8": {
               "type": "button",
               "settings": {
-                "label": "Shop all",
+                "label": "Shop Now",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
@@ -410,7 +410,7 @@
             "button_yGWEje": {
               "type": "button",
               "settings": {
-                "label": "Shop all",
+                "label": "Shop Now",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
