@@ -249,8 +249,10 @@
   .food-mega__panel {
     padding: 28px 32px 32px;
     border-radius: 20px;
-    margin: 0 auto 8px;
-    max-width: 720px;
+    margin: 0;
+    max-width: 760px;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .food-mega__header {
@@ -371,6 +373,43 @@
 
     .food-mega__grid {
       grid-template-columns: 1fr;
+    }
+  }
+  /* Desktop hover: food grid — clean floating panel, no white backdrop */
+  @media screen and (min-width: 750px) {
+    .menu-list__list-item:hover > .menu-list__submenu:has(.food-mega__panel) {
+      visibility: visible;
+      --submenu-content-opacity: 1;
+      clip-path: none;
+      top: 100%;
+      left: auto;
+      right: -40px;
+      width: 760px;
+      padding-inline: 0;
+      background-color: transparent !important;
+    }
+
+    /* Neutralise color-scheme background on the submenu wrapper */
+    .menu-list__submenu:has(.food-mega__panel) {
+      background-color: transparent !important;
+    }
+
+    .menu-list__list-item:hover > .menu-list__submenu:has(.food-mega__panel) .menu-list__submenu-inner {
+      transform: none;
+      opacity: 1;
+      padding-inline: 0;
+      padding-block-start: 8px;
+      padding-block-end: 8px;
+      background-color: transparent;
+    }
+
+    /* Suppress the full-width underlay expansion behind the food mega panel */
+    header-component:has(.menu-list__list-item:hover .food-mega__panel) .header__underlay-open {
+      height: 0 !important;
+    }
+
+    header-component:has(.menu-list__list-item:hover .food-mega__panel) .header__underlay-open::after {
+      box-shadow: none !important;
     }
   }
   /* ── End Food Grid Mega Menu ──────────────────────────── */
