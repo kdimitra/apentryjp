@@ -499,6 +499,14 @@ p:empty {
   }
 }
 
+/* Hide desktop header menu at ≤747px */
+@media screen and (max-width: 747px) {
+  /* stylelint-disable-next-line declaration-no-important */
+  #header-component .header-menu { display: none !important; }
+  /* stylelint-disable-next-line declaration-no-important */
+  #header-component .dropdown-localization { display: none !important; }
+}
+
 .hide-when-empty:empty {
   /* stylelint-disable-next-line declaration-no-important */
   display: none !important;
