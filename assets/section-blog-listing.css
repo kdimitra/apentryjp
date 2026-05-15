@@ -1,7 +1,7 @@
 /* ─────────────────────────────────────────
    Blog Listing Section  ·  section-blog-listing.css
    Layout: warm-cream bg · left intro col (4) · right 3-col card grid (8)
-   Animation: staggered fade-up via IntersectionObserver + .bl-animate-card--visible
+   Pagination scoped to right col only.
 ───────────────────────────────────────── */
 
 /* ── Design tokens ─────────────────────── */
@@ -33,6 +33,13 @@
   grid-template-columns: 1fr 2fr;
   gap: 72px;
   align-items: start;
+}
+
+/* Right column wraps both the grid and pagination */
+.bl-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
 }
 
 /* ─────────────────────────────────────
@@ -231,10 +238,102 @@
 }
 
 /* ─────────────────────────────────────
+   PAGINATION
+   Scoped inside .bl-right-col — spans
+   only the 8-column right section.
+   Design: [‹ Prev]  [1] [2] …  [Next ›]
+───────────────────────────────────── */
+.bl-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 8px;
+}
+
+/* Prev / Next pill buttons */
+.bl-pagination__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--bl-font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bl-text-primary);
+  text-decoration: none;
+  border: 1.5px solid var(--bl-text-primary);
+  border-radius: var(--bl-radius-pill);
+  padding: 9px 20px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+}
+
+.bl-pagination__nav-btn:hover {
+  background-color: var(--bl-text-primary);
+  color: #FAFAF7;
+}
+
+.bl-pagination__nav-btn:hover svg {
+  stroke: #FAFAF7;
+}
+
+.bl-pagination__nav-btn--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* Page number circles */
+.bl-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bl-pagination__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-family: var(--bl-font-latin);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--bl-text-primary);
+  text-decoration: none;
+  background-color: rgb(61 43 31 / 0.08);
+  transition: background-color 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+
+a.bl-pagination__page:hover {
+  background-color: rgb(61 43 31 / 0.18);
+}
+
+/* Active page — dark filled circle */
+.bl-pagination__page--active {
+  background-color: var(--bl-text-primary);
+  color: #FAFAF7;
+  cursor: default;
+}
+
+/* Ellipsis gap */
+.bl-pagination__gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: var(--bl-font-latin);
+  font-size: 13px;
+  color: var(--bl-text-secondary);
+}
+
+/* ─────────────────────────────────────
    STAGGERED FADE-UP ANIMATION
-   Initial state: invisible + shifted down 40px
-   JS adds .bl-animate-card--visible with
-   staggered delay via --bl-card-index
 ───────────────────────────────────── */
 .bl-animate-card {
   opacity: 0;
@@ -249,7 +348,6 @@
   transform: translateY(0);
 }
 
-/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .bl-animate-card {
     opacity: 1;
@@ -275,12 +373,16 @@
 
   .bl-heading { font-size: 44px; }
 
+  .bl-right-col { gap: 36px; }
+
   .bl-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 18px;
   }
 
   .bl-decoration { display: none; }
+
+  .bl-pagination { padding-block: 4px; }
 }
 
 /* ─────────────────────────────────────
@@ -310,6 +412,8 @@
   .bl-intro    { order: 3; width: 100%; max-width: 100%; }
   .bl-decoration { display: none; }
 
+  .bl-right-col { gap: 32px; }
+
   .bl-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 14px;
@@ -319,5 +423,18 @@
 
   .bl-animate-card {
     transition-delay: calc(var(--bl-card-index, 0) * 0.08s);
+  }
+
+  /* Compact pagination on mobile */
+  .bl-pagination__nav-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .bl-pagination__page,
+  .bl-pagination__gap {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
   }
 }

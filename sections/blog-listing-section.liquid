@@ -3,6 +3,7 @@
   Blog Listing Section
   Layout: warm-cream bg · left intro col (4) · right 3-col open card grid (8)
   Animation: staggered fade-up via IntersectionObserver
+  Pagination: scoped to right (8-width) column only
 {%- endcomment -%}
 
 {%- liquid
@@ -15,7 +16,7 @@
 
   case section.settings.image_ratio
     when 'portrait'
-      assign img_ratio = '3 / 4'
+      assign img_ratio = '3 / 4.6'
     when 'wide'
       assign img_ratio = '16 / 9'
     else
@@ -65,27 +66,115 @@
 
       </div>
 
-      {%- comment -%}━━ RIGHT: Blog card grid (8) ━━{%- endcomment -%}
-      <ul class="bl-grid bl-animate-container" role="list">
+      {%- comment -%}━━ RIGHT: Blog card grid + pagination (8) ━━{%- endcomment -%}
+      <div class="bl-right-col">
 
         {%- if has_articles -%}
-          {%- for article in source_blog.articles limit: posts_limit -%}
-            <li class="bl-card bl-animate-card" style="--bl-card-index: {{ forloop.index0 }};">
-              <a href="{{ article.url }}" class="bl-card__link">
+          {%- paginate source_blog.articles by posts_limit -%}
 
-                {%- if article.image != blank -%}
-                  <div class="bl-card__image-wrap">
-                    {{- article.image
-                      | image_url: width: 800
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '400, 600, 800',
-                        sizes: '(max-width: 749px) calc(50vw - 24px), (max-width: 1023px) calc(50vw - 56px), calc((100vw - 360px - 80px) / 3)',
-                        class: 'bl-card__image',
-                        alt: article.image.alt | default: article.title | escape
-                    -}}
-                  </div>
+            <ul class="bl-grid bl-animate-container" role="list">
+              {%- for article in paginate.collection -%}
+                <li class="bl-card bl-animate-card" style="--bl-card-index: {{ forloop.index0 }};">
+                  <a href="{{ article.url }}" class="bl-card__link">
+
+                    {%- if article.image != blank -%}
+                      <div class="bl-card__image-wrap">
+                        {{- article.image
+                          | image_url: width: 800
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '400, 600, 800',
+                            sizes: '(max-width: 749px) calc(50vw - 24px), (max-width: 1023px) calc(50vw - 56px), calc((100vw - 360px - 80px) / 3)',
+                            class: 'bl-card__image',
+                            alt: article.image.alt | default: article.title | escape
+                        -}}
+                      </div>
+                    {%- else -%}
+                      <div class="bl-card__image-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                          <rect x="3" y="3" width="18" height="18" rx="2"/>
+                          <circle cx="8.5" cy="8.5" r="1.5"/>
+                          <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                      </div>
+                    {%- endif -%}
+
+                    <div class="bl-card__body">
+                      {%- if section.settings.show_date -%}
+                        <time class="bl-card__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                          {{- article.published_at | date: '%Y.%m.%d' -}}
+                        </time>
+                      {%- endif -%}
+                      <h3 class="bl-card__title">{{ article.title | escape }}</h3>
+                      {%- if section.settings.show_category and article.tags.size > 0 -%}
+                        <p class="bl-card__category">{{ article.tags | first }}</p>
+                      {%- endif -%}
+                    </div>
+
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- comment -%} Pagination — scoped to right column ━━ {%- endcomment -%}
+            {%- if paginate.pages > 1 -%}
+              <nav class="bl-pagination" aria-label="{{ 'accessibility.pagination' | t | default: 'Pagination' }}">
+
+                {%- comment -%} Prev button ━━ {%- endcomment -%}
+                {%- if paginate.previous -%}
+                  <a href="{{ paginate.previous.url }}" class="bl-pagination__nav-btn" aria-label="Previous page">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="10 2 4 8 10 14"/></svg>
+                    Prev
+                  </a>
                 {%- else -%}
+                  <span class="bl-pagination__nav-btn bl-pagination__nav-btn--disabled" aria-disabled="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="10 2 4 8 10 14"/></svg>
+                    Prev
+                  </span>
+                {%- endif -%}
+
+                {%- comment -%} Page numbers ━━ {%- endcomment -%}
+                <div class="bl-pagination__pages" role="list">
+                  {%- for part in paginate.parts -%}
+                    {%- if part.is_link -%}
+                      <a href="{{ part.url }}" class="bl-pagination__page" role="listitem" aria-label="Page {{ part.title }}">
+                        {{- part.title -}}
+                      </a>
+                    {%- elsif part.title == '…' -%}
+                      <span class="bl-pagination__gap" role="listitem" aria-hidden="true">&hellip;</span>
+                    {%- else -%}
+                      <span class="bl-pagination__page bl-pagination__page--active" role="listitem" aria-current="page" aria-label="Page {{ part.title }}, current">
+                        {{- part.title -}}
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+
+                {%- comment -%} Next button ━━ {%- endcomment -%}
+                {%- if paginate.next -%}
+                  <a href="{{ paginate.next.url }}" class="bl-pagination__nav-btn" aria-label="Next page">
+                    Next
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="6 2 12 8 6 14"/></svg>
+                  </a>
+                {%- else -%}
+                  <span class="bl-pagination__nav-btn bl-pagination__nav-btn--disabled" aria-disabled="true">
+                    Next
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="6 2 12 8 6 14"/></svg>
+                  </span>
+                {%- endif -%}
+
+              </nav>
+            {%- endif -%}
+
+          {%- endpaginate -%}
+
+        {%- else -%}
+
+          {%- comment -%} Editor placeholders (no blog assigned) ━━ {%- endcomment -%}
+          <ul class="bl-grid bl-animate-container" role="list">
+            {%- for i in (1..3) -%}
+              <li class="bl-card bl-animate-card" style="--bl-card-index: {{ forloop.index0 }};">
+                <div class="bl-card__link">
                   <div class="bl-card__image-placeholder">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="2"/>
@@ -93,56 +182,46 @@
                       <polyline points="21 15 16 10 5 21"/>
                     </svg>
                   </div>
-                {%- endif -%}
-
-                <div class="bl-card__body">
-                  {%- if section.settings.show_date -%}
-                    <time class="bl-card__date" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-                      {{- article.published_at | date: '%Y.%m.%d' -}}
-                    </time>
-                  {%- endif -%}
-                  <h3 class="bl-card__title">{{ article.title | escape }}</h3>
-                  {%- if section.settings.show_category and article.tags.size > 0 -%}
-                    <p class="bl-card__category">{{ article.tags | first }}</p>
-                  {%- endif -%}
+                  <div class="bl-card__body">
+                    {%- if section.settings.show_date -%}
+                      <span class="bl-card__date">2026.05.07</span>
+                    {%- endif -%}
+                    {%- if i == 1 -%}
+                      <h3 class="bl-card__title">ドッグフードの種類を比較：ドライ・ウェット・フレッシュの違いと選び方</h3>
+                      {%- if section.settings.show_category -%}<p class="bl-card__category">健康 &amp; 栄養</p>{%- endif -%}
+                    {%- elsif i == 2 -%}
+                      <h3 class="bl-card__title">「パップタブで変わったうちの子の毎日｜実際の愛用者にインタビュー」</h3>
+                      {%- if section.settings.show_category -%}<p class="bl-card__category">ライフスタイル</p>{%- endif -%}
+                    {%- else -%}
+                      <h3 class="bl-card__title">フードを変えても治らない?犬の皮膚トラブルの本当の原因と正しい対策</h3>
+                      {%- if section.settings.show_category -%}<p class="bl-card__category">健康 &amp; 栄養</p>{%- endif -%}
+                    {%- endif -%}
+                  </div>
                 </div>
+              </li>
+            {%- endfor -%}
+          </ul>
 
-              </a>
-            </li>
-          {%- endfor -%}
+          {%- comment -%} Static pagination preview in editor ━━ {%- endcomment -%}
+          <nav class="bl-pagination" aria-hidden="true">
+            <span class="bl-pagination__nav-btn bl-pagination__nav-btn--disabled">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><polyline points="10 2 4 8 10 14"/></svg>
+              Prev
+            </span>
+            <div class="bl-pagination__pages">
+              <span class="bl-pagination__page bl-pagination__page--active">1</span>
+              <a href="#" class="bl-pagination__page">2</a>
+            </div>
+            <span class="bl-pagination__nav-btn">
+              Next
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><polyline points="6 2 12 8 6 14"/></svg>
+            </span>
+          </nav>
 
-        {%- else -%}
-          {%- for i in (1..3) -%}
-            <li class="bl-card bl-animate-card" style="--bl-card-index: {{ forloop.index0 }};">
-              <div class="bl-card__link">
-                <div class="bl-card__image-placeholder">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                </div>
-                <div class="bl-card__body">
-                  {%- if section.settings.show_date -%}
-                    <span class="bl-card__date">2026.05.07</span>
-                  {%- endif -%}
-                  {%- if i == 1 -%}
-                    <h3 class="bl-card__title">ドッグフードの種類を比較：ドライ・ウェット・フレッシュの違いと選び方</h3>
-                    {%- if section.settings.show_category -%}<p class="bl-card__category">健康 &amp; 栄養</p>{%- endif -%}
-                  {%- elsif i == 2 -%}
-                    <h3 class="bl-card__title">「パップタブで変わったうちの子の毎日｜実際の愛用者にインタビュー」</h3>
-                    {%- if section.settings.show_category -%}<p class="bl-card__category">ライフスタイル</p>{%- endif -%}
-                  {%- else -%}
-                    <h3 class="bl-card__title">フードを変えても治らない?犬の皮膚トラブルの本当の原因と正しい対策</h3>
-                    {%- if section.settings.show_category -%}<p class="bl-card__category">健康 &amp; 栄養</p>{%- endif -%}
-                  {%- endif -%}
-                </div>
-              </div>
-            </li>
-          {%- endfor -%}
         {%- endif -%}
 
-      </ul>
+      </div>{%- comment -%} .bl-right-col {%- endcomment -%}
+
     </div>
   </div>
 </section>
@@ -224,7 +303,7 @@
     {
       "type": "range",
       "id": "posts_to_show",
-      "label": "Number of posts",
+      "label": "Posts per page",
       "min": 3,
       "max": 9,
       "step": 3,
@@ -240,7 +319,7 @@
       "label": "Image aspect ratio",
       "options": [
         { "value": "landscape", "label": "Landscape (4:3)" },
-        { "value": "portrait",  "label": "Portrait (3:4)" },
+        { "value": "portrait",  "label": "Portrait (3:4 +15%)" },
         { "value": "wide",      "label": "Wide (16:9)" }
       ],
       "default": "landscape"
