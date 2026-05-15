@@ -48,6 +48,7 @@
         "heading",
         "page-content"
       ],
+      "disabled": true,
       "settings": {
         "content_direction": "column",
         "gap": 32,
@@ -55,9 +56,27 @@
         "padding-block-start": 40,
         "padding-block-end": 80
       }
+    },
+    "blog_listing_section_VQ9gKF": {
+      "type": "blog-listing-section",
+      "name": "Blog listing",
+      "settings": {
+        "heading": "Blog",
+        "intro_text": "しつけや食事、健康管理から心温まるエピソードまで、愛犬家のための情報を幅広くお届けします。",
+        "cta_label": "View more",
+        "cta_url": "shopify://blogs/フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
+        "decoration_image": "shopify://shop_images/3c77a1c1e5384c41c5e69df75312a78951fd8d87-350x261.avif",
+        "blog": "フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
+        "posts_to_show": 9,
+        "image_ratio": "wide",
+        "show_date": true,
+        "show_category": true,
+        "bg_color": "#faf7e6"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "blog_listing_section_VQ9gKF"
   ]
 }
