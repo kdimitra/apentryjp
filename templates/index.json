@@ -4242,15 +4242,23 @@
       "type": "home-news",
       "name": "Home news",
       "settings": {
+        "full_width": false,
         "eyebrow": "NEWS",
+        "eyebrow_font_size": 13,
+        "show_paw_icon": true,
         "heading": "ニュース",
         "cta_label": "View All",
         "cta_url": "shopify://blogs/フードを変えても治らない-犬の皮膚トラブルの本当の原因と正しい対策",
+        "show_decoration": true,
         "decoration_image": "shopify://shop_images/16_-ItalianGreyhound.png",
+        "decoration_margin_top": 32,
+        "decoration_width": 160,
         "blog": "news",
         "posts_to_show": 2,
+        "show_pagination": false,
         "image_size": 192,
         "image_ratio": "landscape",
+        "font_color": "#5a3729",
         "bg_color": "#faf7e6"
       }
     }
