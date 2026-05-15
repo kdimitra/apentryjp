@@ -75,10 +75,11 @@
         "decoration_width": 208,
         "blog": "news",
         "posts_to_show": 4,
+        "show_pagination": true,
         "image_size": 248,
         "image_ratio": "landscape",
         "font_color": "#5a3729",
-        "bg_color": "#f0ebd8"
+        "bg_color": "#faf7e6"
       }
     }
   },
