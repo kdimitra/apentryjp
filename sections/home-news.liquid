@@ -49,6 +49,7 @@
     --hn-font-color: {{ font_color }};
     --hn-eyebrow-size: {{ section.settings.eyebrow_font_size }}px;
     --hn-deco-margin-top: {{ section.settings.decoration_margin_top }}px;
+    --hn-deco-width: {{ section.settings.decoration_width }}px;
   "
 >
   <div class="{{ container_class }}">
@@ -92,12 +93,13 @@
 
         {%- if section.settings.decoration_image != blank and section.settings.show_decoration -%}
           <div class="hn-decoration">
+            {%- assign deco_sizes = section.settings.decoration_width | append: 'px' -%}
             {{- section.settings.decoration_image
-              | image_url: width: 280
+              | image_url: width: 400
               | image_tag:
                 loading: 'lazy',
-                widths: '140, 200, 280',
-                sizes: '140px',
+                widths: '160, 240, 320, 400',
+                sizes: deco_sizes,
                 alt: ''
             -}}
           </div>
@@ -217,7 +219,7 @@
       "id": "eyebrow_font_size",
       "label": "Eyebrow font size",
       "min": 10,
-      "max": 32,
+      "max": 72,
       "step": 1,
       "unit": "px",
       "default": 13
@@ -275,6 +277,16 @@
       "step": 4,
       "unit": "px",
       "default": 32
+    },
+    {
+      "type": "range",
+      "id": "decoration_width",
+      "label": "Decoration image width",
+      "min": 80,
+      "max": 400,
+      "step": 8,
+      "unit": "px",
+      "default": 160
     },
     {
       "type": "header",

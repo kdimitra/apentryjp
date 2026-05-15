@@ -17,6 +17,7 @@
   --hn-thumb-ratio:     1 / 1;   /* overridden per-section via inline style */
   --hn-eyebrow-size:    13px;    /* overridden per-section via inline style */
   --hn-deco-margin-top: 32px;    /* overridden per-section via inline style */
+  --hn-deco-width:      160px;   /* overridden per-section via inline style */
 
   background-color: var(--hn-bg);
   padding-block: 80px;
@@ -124,7 +125,7 @@
 .hn-decoration {
   margin-top: var(--hn-deco-margin-top, 32px);
   width: 100%;
-  max-width: 140px;
+  max-width: var(--hn-deco-width, 160px);
 }
 
 .hn-decoration img {
