@@ -1,8 +1,10 @@
 
 {%- comment -%}
   Home News Section
-  Cream background · Left: star + "News" + ニュース heading + "View more" pill + dog illustration
-  Right: vertical list of white rounded cards — thumbnail left, title + date right, arrow far right
+  Supports both home and news-listing layouts.
+  Left col (4) · Right col (8) — white card list
+  Controls: full-width toggle, eyebrow font size, paw icon show/hide,
+            decoration image visibility + margin-top, font color.
 {%- endcomment -%}
 
 {%- liquid
@@ -12,11 +14,7 @@
   if source_blog != blank and source_blog.articles_count > 0
     assign has_articles = true
   endif
--%}
 
-{{ 'section-home-news.css' | asset_url | stylesheet_tag }}
-
-{%- liquid
   case section.settings.image_ratio
     when 'square'
       assign thumb_ratio = '1 / 1'
@@ -29,7 +27,17 @@
     else
       assign thumb_ratio = '1 / 1'
   endcase
+
+  assign font_color = section.settings.font_color | default: '#5A3729'
+
+  if section.settings.full_width
+    assign container_class = 'hn-container hn-container--full'
+  else
+    assign container_class = 'hn-container'
+  endif
 -%}
+
+{{ 'section-home-news.css' | asset_url | stylesheet_tag }}
 
 <section
   class="section-home-news"
@@ -38,41 +46,43 @@
     background-color: {{ section.settings.bg_color }};
     --hn-thumb-w: {{ section.settings.image_size }}px;
     --hn-thumb-ratio: {{ thumb_ratio }};
+    --hn-font-color: {{ font_color }};
+    --hn-eyebrow-size: {{ section.settings.eyebrow_font_size }}px;
+    --hn-deco-margin-top: {{ section.settings.decoration_margin_top }}px;
   "
 >
-  <div class="hn-container">
+  <div class="{{ container_class }}">
     <div class="hn-inner">
 
-      {%- comment -%}━━━━━━━━ LEFT: Label column ━━━━━━━━{%- endcomment -%}
+      {%- comment -%}━━ LEFT: Label column (4) ━━{%- endcomment -%}
       <div class="hn-label-col">
 
-        {%- comment -%} Paw icon + "News" eyebrow {%- endcomment -%}
         <p class="hn-eyebrow">
-          <span class="hn-eyebrow__icon" aria-hidden="true">
-            {%- if section.settings.heading_icon != blank -%}
-              {{- section.settings.heading_icon
-                | image_url: width: 32
-                | image_tag: loading: 'lazy', alt: ''
-              -}}
-            {%- else -%}
-              <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
-                <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
-                <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
-                <circle cx="12" cy="10" r="3"/>
-                <circle cx="20" cy="10" r="3"/>
-              </svg>
-            {%- endif -%}
-          </span>
+          {%- if section.settings.show_paw_icon -%}
+            <span class="hn-eyebrow__icon" aria-hidden="true">
+              {%- if section.settings.heading_icon != blank -%}
+                {{- section.settings.heading_icon
+                  | image_url: width: 32
+                  | image_tag: loading: 'lazy', alt: ''
+                -}}
+              {%- else -%}
+                <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
+                  <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
+                  <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
+                  <circle cx="12" cy="10" r="3"/>
+                  <circle cx="20" cy="10" r="3"/>
+                </svg>
+              {%- endif -%}
+            </span>
+          {%- endif -%}
           {{- section.settings.eyebrow | default: 'News' -}}
         </p>
 
-        {%- comment -%} ニュース heading {%- endcomment -%}
         {%- if section.settings.heading != blank -%}
           <h2 class="hn-heading">{{ section.settings.heading }}</h2>
         {%- endif -%}
 
-        {%- comment -%} View more pill button {%- endcomment -%}
         {%- if section.settings.cta_label != blank and section.settings.cta_url != blank -%}
           <a href="{{ section.settings.cta_url }}" class="hn-viewall">
             {{- section.settings.cta_label -}}
@@ -80,8 +90,7 @@
           </a>
         {%- endif -%}
 
-        {%- comment -%} Optional dog / decoration image {%- endcomment -%}
-        {%- if section.settings.decoration_image != blank -%}
+        {%- if section.settings.decoration_image != blank and section.settings.show_decoration -%}
           <div class="hn-decoration">
             {{- section.settings.decoration_image
               | image_url: width: 280
@@ -96,7 +105,7 @@
 
       </div>
 
-      {%- comment -%}━━━━━━━━ RIGHT: White card list ━━━━━━━━{%- endcomment -%}
+      {%- comment -%}━━ RIGHT: White card list (8) ━━{%- endcomment -%}
       <ul class="hn-list" role="list">
 
         {%- if has_articles -%}
@@ -104,7 +113,6 @@
             <li class="hn-card">
               <a href="{{ article.url }}" class="hn-card__link">
 
-                {%- comment -%} Thumbnail {%- endcomment -%}
                 {%- if article.image != blank -%}
                   <div class="hn-card__thumb-wrap">
                     {{- article.image
@@ -127,15 +135,11 @@
                   </div>
                 {%- endif -%}
 
-                {%- comment -%} Title + Date {%- endcomment -%}
                 <div class="hn-card__text">
                   <h3 class="hn-card__title">{{ article.title | escape }}</h3>
-                  <p class="hn-card__date">
-                    Date : {{ article.published_at | date: '%Y.%m.%d' }}
-                  </p>
+                  <p class="hn-card__date">Date : {{ article.published_at | date: '%Y.%m.%d' }}</p>
                 </div>
 
-                {%- comment -%} Arrow circle {%- endcomment -%}
                 <div class="hn-card__arrow" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"/>
@@ -148,7 +152,6 @@
 
         {%- else -%}
 
-          {%- comment -%} Editor placeholders {%- endcomment -%}
           {%- assign ph_titles = 'ゴールデンウィーク休業のお知らせ（2026年）,年末年始休業のお知らせ（2025年）,新商品のご案内：春のフレッシュフード' | split: ',' -%}
           {%- assign ph_dates  = '2026.04.07,2025.12.01,2025.11.15' | split: ',' -%}
 
@@ -156,7 +159,6 @@
             {%- assign idx = forloop.index0 -%}
             <li class="hn-card">
               <div class="hn-card__link">
-
                 <div class="hn-card__thumb-placeholder">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                     <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -164,18 +166,15 @@
                     <polyline points="21 15 16 10 5 21"/>
                   </svg>
                 </div>
-
                 <div class="hn-card__text">
                   <h3 class="hn-card__title">{{ ph_titles[idx] }}</h3>
                   <p class="hn-card__date">Date : {{ ph_dates[idx] }}</p>
                 </div>
-
                 <div class="hn-card__arrow" aria-hidden="true">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="9 18 15 12 9 6"/>
                   </svg>
                 </div>
-
               </div>
             </li>
           {%- endfor -%}
@@ -194,6 +193,17 @@
   "settings": [
     {
       "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width (edge to edge)",
+      "default": false,
+      "info": "When enabled, the section stretches to the full viewport width."
+    },
+    {
+      "type": "header",
       "content": "Left column"
     },
     {
@@ -201,6 +211,28 @@
       "id": "eyebrow",
       "label": "Eyebrow label",
       "default": "News"
+    },
+    {
+      "type": "range",
+      "id": "eyebrow_font_size",
+      "label": "Eyebrow font size",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "checkbox",
+      "id": "show_paw_icon",
+      "label": "Show paw icon beside eyebrow",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "heading_icon",
+      "label": "Custom paw icon",
+      "info": "Upload a PNG or SVG. Leave blank to use the built-in default paw."
     },
     {
       "type": "text",
@@ -220,15 +252,29 @@
       "label": "Button link"
     },
     {
-      "type": "image_picker",
-      "id": "heading_icon",
-      "label": "Heading paw icon",
-      "info": "Upload a PNG or SVG paw icon shown to the left of the heading. Leave blank to use the built-in default paw."
+      "type": "header",
+      "content": "Decoration image"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_decoration",
+      "label": "Show decoration image",
+      "default": true
     },
     {
       "type": "image_picker",
       "id": "decoration_image",
       "label": "Decoration image (e.g. dog illustration)"
+    },
+    {
+      "type": "range",
+      "id": "decoration_margin_top",
+      "label": "Decoration margin from top",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "default": 32
     },
     {
       "type": "header",
@@ -250,7 +296,7 @@
     },
     {
       "type": "header",
-      "content": "Image size (desktop)"
+      "content": "Thumbnail"
     },
     {
       "type": "range",
@@ -267,7 +313,7 @@
       "id": "image_ratio",
       "label": "Thumbnail aspect ratio",
       "options": [
-        { "value": "square",    "label": "Square (1:1) — 192×192" },
+        { "value": "square",    "label": "Square (1:1)" },
         { "value": "landscape", "label": "Landscape (4:3)" },
         { "value": "portrait",  "label": "Portrait (3:4)" },
         { "value": "wide",      "label": "Wide (16:9)" }
@@ -280,15 +326,19 @@
     },
     {
       "type": "color",
+      "id": "font_color",
+      "label": "Text / heading color",
+      "default": "#5A3729"
+    },
+    {
+      "type": "color",
       "id": "bg_color",
       "label": "Background color",
       "default": "#F0EBD8"
     }
   ],
   "presets": [
-    {
-      "name": "Home news"
-    }
+    { "name": "Home news" }
   ]
 }
 {% endschema %}
