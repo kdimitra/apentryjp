@@ -265,6 +265,103 @@
   transform: translateX(2px);
 }
 
+/* ─────────────────────────────────────
+   RIGHT COLUMN wrapper
+───────────────────────────────────── */
+.hn-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* ─────────────────────────────────────
+   PAGINATION
+───────────────────────────────────── */
+.hn-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: 8px;
+}
+
+.hn-pagination__nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hn-font-color, #5A3729);
+  text-decoration: none;
+  border: 1.5px solid var(--hn-font-color, #5A3729);
+  border-radius: 9999px;
+  padding: 9px 20px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  background: transparent;
+}
+
+.hn-pagination__nav-btn:hover {
+  background-color: var(--hn-font-color, #5A3729);
+  color: #FAFAF7;
+}
+
+.hn-pagination__nav-btn:hover svg {
+  stroke: #FAFAF7;
+}
+
+.hn-pagination__nav-btn--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hn-pagination__pages {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hn-pagination__page {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hn-font-color, #5A3729);
+  text-decoration: none;
+  background-color: rgb(90 55 41 / 0.08);
+  transition: background-color 0.18s ease, color 0.18s ease;
+  cursor: pointer;
+}
+
+a.hn-pagination__page:hover {
+  background-color: rgb(90 55 41 / 0.18);
+}
+
+.hn-pagination__page--active {
+  background-color: var(--hn-font-color, #5A3729);
+  color: #FAFAF7;
+  cursor: default;
+}
+
+.hn-pagination__gap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-family: 'gt-ultra', sans-serif;
+  font-size: 13px;
+  color: var(--hn-text-secondary);
+}
+
 /* ── Responsive: Tablet ──────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .section-home-news {
@@ -367,5 +464,17 @@
 
   .hn-card {
     border-radius: 12px;
+  }
+
+  .hn-pagination__nav-btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .hn-pagination__page,
+  .hn-pagination__gap {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
   }
 }

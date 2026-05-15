@@ -108,26 +108,112 @@
       </div>
 
       {%- comment -%}━━ RIGHT: White card list (8) ━━{%- endcomment -%}
-      <ul class="hn-list" role="list">
+      <div class="hn-right-col">
 
         {%- if has_articles -%}
-          {%- for article in source_blog.articles limit: posts_limit -%}
-            <li class="hn-card">
-              <a href="{{ article.url }}" class="hn-card__link">
+          {%- paginate source_blog.articles by posts_limit -%}
 
-                {%- if article.image != blank -%}
-                  <div class="hn-card__thumb-wrap">
-                    {{- article.image
-                      | image_url: width: 240
-                      | image_tag:
-                        loading: 'lazy',
-                        widths: '120, 180, 240',
-                        sizes: '100px',
-                        class: 'hn-card__thumb',
-                        alt: article.image.alt | default: article.title | escape
-                    -}}
-                  </div>
+            <ul class="hn-list" role="list">
+              {%- for article in source_blog.articles -%}
+                <li class="hn-card">
+                  <a href="{{ article.url }}" class="hn-card__link">
+
+                    {%- if article.image != blank -%}
+                      <div class="hn-card__thumb-wrap">
+                        {{- article.image
+                          | image_url: width: 240
+                          | image_tag:
+                            loading: 'lazy',
+                            widths: '120, 180, 240',
+                            sizes: '100px',
+                            class: 'hn-card__thumb',
+                            alt: article.image.alt | default: article.title | escape
+                        -}}
+                      </div>
+                    {%- else -%}
+                      <div class="hn-card__thumb-placeholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                          <circle cx="8.5" cy="8.5" r="1.5"/>
+                          <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                      </div>
+                    {%- endif -%}
+
+                    <div class="hn-card__text">
+                      <h3 class="hn-card__title">{{ article.title | escape }}</h3>
+                      <p class="hn-card__date">Date : {{ article.published_at | date: '%Y.%m.%d' }}</p>
+                    </div>
+
+                    <div class="hn-card__arrow" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"/>
+                      </svg>
+                    </div>
+
+                  </a>
+                </li>
+              {%- endfor -%}
+            </ul>
+
+            {%- if paginate.pages > 1 and section.settings.show_pagination -%}
+              <nav class="hn-pagination" aria-label="Pagination">
+
+                {%- if paginate.previous -%}
+                  <a href="{{ paginate.previous.url }}" class="hn-pagination__nav-btn" aria-label="Previous page">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="10 2 4 8 10 14"/></svg>
+                    Prev
+                  </a>
                 {%- else -%}
+                  <span class="hn-pagination__nav-btn hn-pagination__nav-btn--disabled" aria-disabled="true">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="10 2 4 8 10 14"/></svg>
+                    Prev
+                  </span>
+                {%- endif -%}
+
+                <div class="hn-pagination__pages" role="list">
+                  {%- for part in paginate.parts -%}
+                    {%- if part.is_link -%}
+                      <a href="{{ part.url }}" class="hn-pagination__page" role="listitem" aria-label="Page {{ part.title }}">
+                        {{- part.title -}}
+                      </a>
+                    {%- elsif part.title == '…' -%}
+                      <span class="hn-pagination__gap" role="listitem" aria-hidden="true">&hellip;</span>
+                    {%- else -%}
+                      <span class="hn-pagination__page hn-pagination__page--active" role="listitem" aria-current="page">
+                        {{- part.title -}}
+                      </span>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+
+                {%- if paginate.next -%}
+                  <a href="{{ paginate.next.url }}" class="hn-pagination__nav-btn" aria-label="Next page">
+                    Next
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="6 2 12 8 6 14"/></svg>
+                  </a>
+                {%- else -%}
+                  <span class="hn-pagination__nav-btn hn-pagination__nav-btn--disabled" aria-disabled="true">
+                    Next
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true"><polyline points="6 2 12 8 6 14"/></svg>
+                  </span>
+                {%- endif -%}
+
+              </nav>
+            {%- endif -%}
+
+          {%- endpaginate -%}
+
+        {%- else -%}
+
+          {%- assign ph_titles = 'ゴールデンウィーク休業のお知らせ（2026年）,年末年始休業のお知らせ（2025年）,新商品のご案内：春のフレッシュフード' | split: ',' -%}
+          {%- assign ph_dates  = '2026.04.07,2025.12.01,2025.11.15' | split: ',' -%}
+
+          <ul class="hn-list" role="list">
+            {%- for i in (1..posts_limit) -%}
+              {%- assign idx = forloop.index0 -%}
+              <li class="hn-card">
+                <div class="hn-card__link">
                   <div class="hn-card__thumb-placeholder">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
                       <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -135,55 +221,41 @@
                       <polyline points="21 15 16 10 5 21"/>
                     </svg>
                   </div>
-                {%- endif -%}
-
-                <div class="hn-card__text">
-                  <h3 class="hn-card__title">{{ article.title | escape }}</h3>
-                  <p class="hn-card__date">Date : {{ article.published_at | date: '%Y.%m.%d' }}</p>
+                  <div class="hn-card__text">
+                    <h3 class="hn-card__title">{{ ph_titles[idx] }}</h3>
+                    <p class="hn-card__date">Date : {{ ph_dates[idx] }}</p>
+                  </div>
+                  <div class="hn-card__arrow" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="9 18 15 12 9 6"/>
+                    </svg>
+                  </div>
                 </div>
+              </li>
+            {%- endfor -%}
+          </ul>
 
-                <div class="hn-card__arrow" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"/>
-                  </svg>
-                </div>
-
-              </a>
-            </li>
-          {%- endfor -%}
-
-        {%- else -%}
-
-          {%- assign ph_titles = 'ゴールデンウィーク休業のお知らせ（2026年）,年末年始休業のお知らせ（2025年）,新商品のご案内：春のフレッシュフード' | split: ',' -%}
-          {%- assign ph_dates  = '2026.04.07,2025.12.01,2025.11.15' | split: ',' -%}
-
-          {%- for i in (1..posts_limit) -%}
-            {%- assign idx = forloop.index0 -%}
-            <li class="hn-card">
-              <div class="hn-card__link">
-                <div class="hn-card__thumb-placeholder">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                    <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <polyline points="21 15 16 10 5 21"/>
-                  </svg>
-                </div>
-                <div class="hn-card__text">
-                  <h3 class="hn-card__title">{{ ph_titles[idx] }}</h3>
-                  <p class="hn-card__date">Date : {{ ph_dates[idx] }}</p>
-                </div>
-                <div class="hn-card__arrow" aria-hidden="true">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"/>
-                  </svg>
-                </div>
-              </div>
-            </li>
-          {%- endfor -%}
+          {%- if section.settings.show_pagination -%}
+          {%- comment -%} Static pagination preview in editor ━━ {%- endcomment -%}
+          <nav class="hn-pagination" aria-hidden="true">
+            <span class="hn-pagination__nav-btn hn-pagination__nav-btn--disabled">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><polyline points="10 2 4 8 10 14"/></svg>
+              Prev
+            </span>
+            <div class="hn-pagination__pages">
+              <span class="hn-pagination__page hn-pagination__page--active">1</span>
+              <a href="#" class="hn-pagination__page">2</a>
+            </div>
+            <span class="hn-pagination__nav-btn">
+              Next
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><polyline points="6 2 12 8 6 14"/></svg>
+            </span>
+          </nav>
+          {%- endif -%}
 
         {%- endif -%}
 
-      </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -305,6 +377,12 @@
       "max": 5,
       "step": 1,
       "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "show_pagination",
+      "label": "Show pagination",
+      "default": true
     },
     {
       "type": "header",
