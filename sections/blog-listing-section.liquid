@@ -73,7 +73,7 @@
           {%- paginate source_blog.articles by posts_limit -%}
 
             <ul class="bl-grid bl-animate-container" role="list">
-              {%- for article in paginate.collection -%}
+              {%- for article in source_blog.articles -%}
                 <li class="bl-card bl-animate-card" style="--bl-card-index: {{ forloop.index0 }};">
                   <a href="{{ article.url }}" class="bl-card__link">
 
@@ -118,7 +118,7 @@
 
             {%- comment -%} Pagination — scoped to right column ━━ {%- endcomment -%}
             {%- if paginate.pages > 1 -%}
-              <nav class="bl-pagination" aria-label="{{ 'accessibility.pagination' | t | default: 'Pagination' }}">
+              <nav class="bl-pagination" aria-label="Pagination">
 
                 {%- comment -%} Prev button ━━ {%- endcomment -%}
                 {%- if paginate.previous -%}
