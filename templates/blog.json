@@ -40,7 +40,6 @@
         },
         "static-blog-post-card": {
           "type": "_blog-post-card",
-          "disabled": true,
           "static": true,
           "settings": {
             "alignment": "left"
