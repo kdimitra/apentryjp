@@ -221,33 +221,53 @@
 }
 
 /* ─────────────────────────────────────
-   TABLET  ≤ 1023px
+   TABLET  768px – 1023px
 ───────────────────────────────────────*/
-@media (max-width: 1023px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .cp-header {
     padding-inline: 40px;
     margin-bottom: 40px;
   }
 
-  .cp-block__inner {
-    padding-inline: 40px;
-    gap: 40px;
-    grid-template-columns: 1fr 1fr;
-    min-height: 400px;
-  }
-
-  .cp-block__text {
-    padding-block: 48px;
-    gap: 20px;
-  }
-
-  .cp-heading {
+  .cp-section-heading {
     font-size: clamp(22px, 3.5vw, 34px);
   }
 
+  /* Keep 2-col alternating layout but tighten padding/gap */
+  .cp-block__inner {
+    padding-inline: 40px;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+    min-height: 380px;
+  }
+
+  /* Even blocks keep their column swap */
+  .cp-block--even .cp-block__inner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .cp-block__text {
+    padding-block: 40px;
+    gap: 16px;
+  }
+
+  .cp-heading {
+    font-size: clamp(20px, 2.8vw, 30px);
+  }
+
+  .cp-desc {
+    font-size: 14px;
+    max-width: 100%;
+    line-height: 1.85;
+  }
+
   .cp-block__image {
-    min-height: 320px;
-    max-height: 480px;
+    min-height: 300px;
+    max-height: 460px;
+  }
+
+  .cp-block {
+    margin-bottom: 2.5rem;
   }
 
   .cp-divider {
@@ -262,40 +282,59 @@
 @media (max-width: 767px) {
   .cp-header {
     padding-inline: 20px;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
+    text-align: center;
   }
 
   .cp-section-heading {
-    font-size: clamp(22px, 6vw, 32px);
+    font-size: clamp(20px, 5.5vw, 28px);
   }
 
+  /* Single column — image on top, text below */
   .cp-block__inner {
     grid-template-columns: 1fr;
     padding-inline: 20px;
-    gap: 0;
+    gap: 20px;
     min-height: unset;
   }
 
-  /* All blocks: image on top, text below on mobile */
+  /* Remove the !important even-block column override so 1fr wins cleanly */
+  .cp-block--even .cp-block__inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Image always on top, text always below — reset even-block order swap */
   .cp-block .cp-block__text,
-  .cp-block--even .cp-block__text  { order: 2; padding-block: 32px; }
+  .cp-block--even .cp-block__text {
+    order: 2;
+    padding-block: 0 0;
+    gap: 14px;
+  }
 
   .cp-block .cp-block__image,
   .cp-block--even .cp-block__image {
     order: 1;
-    min-height: 260px;
-    max-height: 320px;
-    border-radius: 16px;
-    margin-top: 0;
+    min-height: 240px;
+    max-height: 280px;
+    border-radius: 14px;
+  }
+
+  .cp-block {
+    margin-bottom: 2rem;
   }
 
   .cp-heading {
-    font-size: clamp(22px, 6vw, 30px);
+    font-size: clamp(20px, 5.5vw, 26px);
   }
 
   .cp-desc {
     font-size: 14px;
+    line-height: 1.85;
     max-width: 100%;
+  }
+
+  .cp-label {
+    font-size: 12px;
   }
 
   .cp-divider {

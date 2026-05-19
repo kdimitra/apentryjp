@@ -1,0 +1,122 @@
+
+{%- comment -%}
+  Blog Article Layout Snippet
+  2 / 8 / 2 column grid — centre column is the content area (no card bg).
+  Title + date at top, large rounded featured image, body content, then pagination.
+  Prev / Back to List / Next navigation walks blog.articles for neighbours.
+{%- endcomment -%}
+
+{{ 'snippet-blog-layout.css' | asset_url | stylesheet_tag }}
+
+{%- comment -%} Neighbour articles for Prev / Next navigation ━━ {%- endcomment -%}
+{%- assign blog_articles = blog.articles -%}
+{%- assign bl_prev_article = nil -%}
+{%- assign bl_next_article = nil -%}
+{%- assign bl_found_current = false -%}
+
+{%- for a in blog_articles limit: 50 -%}
+  {%- if bl_found_current and bl_next_article == nil -%}
+    {%- assign bl_next_article = a -%}
+  {%- endif -%}
+  {%- if a.id == article.id -%}
+    {%- assign bl_found_current = true -%}
+  {%- endif -%}
+  {%- unless bl_found_current -%}
+    {%- assign bl_prev_article = a -%}
+  {%- endunless -%}
+{%- endfor -%}
+
+<div class="bld-page">
+  <div class="bld-container">
+
+    {%- comment -%}━━ 2/8/2 grid ━━{%- endcomment -%}
+    <div class="bld-grid">
+
+      <div class="bld-gutter"></div>
+
+      <article class="bld-content">
+
+        {%- comment -%} Date ━━ {%- endcomment -%}
+        <p class="bld-date">{{ article.published_at | date: '%Y.%m.%d' }}</p>
+
+        {%- comment -%} Title ━━ {%- endcomment -%}
+        <h1 class="bld-title">{{ article.title | escape }}</h1>
+
+        {%- comment -%} Category tag (first tag) ━━ {%- endcomment -%}
+        {%- if article.tags.size > 0 -%}
+          <p class="bld-category">{{ article.tags | first }}</p>
+        {%- endif -%}
+
+        {%- comment -%} Featured image ━━ {%- endcomment -%}
+        {%- if article.image != blank -%}
+          <div class="bld-image-wrap">
+            {{- article.image
+              | image_url: width: 1200
+              | image_tag:
+                loading: 'eager',
+                widths: '600, 900, 1200',
+                sizes: '(max-width: 767px) calc(100vw - 40px), (max-width: 1023px) calc(100vw - 64px), min(840px, 66vw)',
+                class: 'bld-image',
+                alt: article.image.alt | default: article.title | escape
+            -}}
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Body content ━━ {%- endcomment -%}
+        <div class="bld-body rte">
+          {{ article.content }}
+        </div>
+
+      </article>
+
+      <div class="bld-gutter"></div>
+
+    </div>
+
+    {%- comment -%}━━ Pagination — outside the grid, full width ━━{%- endcomment -%}
+    <nav class="bld-pagination" aria-label="Article navigation">
+
+      <div class="bld-pagination__prev">
+        {%- if bl_prev_article -%}
+          <a href="{{ bl_prev_article.url }}" class="bld-pagination__btn" aria-label="Previous article">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+              <polyline points="10 2 4 8 10 14"/>
+            </svg>
+            Prev
+          </a>
+        {%- else -%}
+          <span class="bld-pagination__btn bld-pagination__btn--disabled" aria-disabled="true">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+              <polyline points="10 2 4 8 10 14"/>
+            </svg>
+            Prev
+          </span>
+        {%- endif -%}
+      </div>
+
+      <div class="bld-pagination__center">
+        <a href="{{ blog.url }}" class="bld-pagination__back">Back to List</a>
+      </div>
+
+      <div class="bld-pagination__next">
+        {%- if bl_next_article -%}
+          <a href="{{ bl_next_article.url }}" class="bld-pagination__btn" aria-label="Next article">
+            Next
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+              <polyline points="6 2 12 8 6 14"/>
+            </svg>
+          </a>
+        {%- else -%}
+          <span class="bld-pagination__btn bld-pagination__btn--disabled" aria-disabled="true">
+            Next
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+              <polyline points="6 2 12 8 6 14"/>
+            </svg>
+          </span>
+        {%- endif -%}
+      </div>
+
+    </nav>
+
+  </div>
+</div>

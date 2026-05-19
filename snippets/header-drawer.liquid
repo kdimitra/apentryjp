@@ -576,11 +576,34 @@
               </li>
             {%- endfor -%}
           {% endif %}
+
+          {%- comment -%} My Page — links to account if enabled, otherwise login {%- endcomment -%}
+          <li
+            class="menu-drawer__list-item{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
+            style="--menu-drawer-animation-index: {{ linklist.links.size | plus: 1 }};"
+          >
+            {%- if shop.customer_accounts_enabled -%}
+              {%- if customer -%}
+                {%- assign my_page_url = routes.account_url -%}
+              {%- else -%}
+                {%- assign my_page_url = routes.account_login_url -%}
+              {%- endif -%}
+            {%- else -%}
+              {%- assign my_page_url = '/account' -%}
+            {%- endif -%}
+            <a
+              href="{{ my_page_url }}"
+              class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset"
+            >
+              <span class="menu-drawer__menu-item-text wrap-text">My Page</span>
+            </a>
+          </li>
+
         </ul>
       </nav>
       <div
         class="menu-drawer__utility-links menu-drawer__animated-element"
-        style="--menu-drawer-animation-index: {{ linklist.links.size }};"
+        style="--menu-drawer-animation-index: {{ linklist.links.size | plus: 2 }};"
       >
         {% liquid
           assign show_language = section.settings.show_language
