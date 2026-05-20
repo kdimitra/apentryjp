@@ -12,6 +12,104 @@
     "slideshow_FaEzQF": {
       "type": "slideshow",
       "blocks": {
+        "slide_qD4UHN": {
+          "type": "_slide",
+          "settings": {
+            "media_type_1": "video",
+            "image_1": "shopify://shop_images/5a462482c8eaa5ec5a28d8014a7792ce0ea5327b-2560x1504.png",
+            "video_1": "shopify://files/videos/630094885d4bfa084244358dbee734dbcd62ecc1.mp4",
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-end",
+            "gap": 12,
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-f3aa335b-b4d9-4808-9e12-16a3651fbacd",
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "padding-block-start": 48,
+            "padding-block-end": 48,
+            "padding-inline-start": 48,
+            "padding-inline-end": 48
+          },
+          "blocks": {
+            "text_Fk6hBG": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h4>愛犬の毎日に、フレッシュなおいしさを</h4>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 67,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_rqCBUc": {
+              "type": "text",
+              "settings": {
+                "text": "<p>Real food, made with love.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 3,
+                "padding-block-end": 12,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_yGWEje": {
+              "type": "button",
+              "settings": {
+                "label": "Shop Now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_Fk6hBG",
+            "text_rqCBUc",
+            "button_yGWEje"
+          ]
+        },
         "slide_pqgEbG": {
           "type": "_slide",
           "settings": {
@@ -205,110 +303,12 @@
             "text_mLgxYG",
             "button_3DGXK8"
           ]
-        },
-        "slide_qD4UHN": {
-          "type": "_slide",
-          "settings": {
-            "media_type_1": "video",
-            "image_1": "shopify://shop_images/5a462482c8eaa5ec5a28d8014a7792ce0ea5327b-2560x1504.png",
-            "video_1": "shopify://files/videos/630094885d4bfa084244358dbee734dbcd62ecc1.mp4",
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "flex-end",
-            "gap": 12,
-            "inherit_color_scheme": false,
-            "color_scheme": "scheme-f3aa335b-b4d9-4808-9e12-16a3651fbacd",
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "padding-block-start": 48,
-            "padding-block-end": 48,
-            "padding-inline-start": 48,
-            "padding-inline-end": 48
-          },
-          "blocks": {
-            "text_Fk6hBG": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h4>愛犬の毎日に、フレッシュなおいしさを</h4>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 67,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_rqCBUc": {
-              "type": "text",
-              "settings": {
-                "text": "<p>Real food, made with love.</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 3,
-                "padding-block-end": 12,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_yGWEje": {
-              "type": "button",
-              "settings": {
-                "label": "Shop Now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_Fk6hBG",
-            "text_rqCBUc",
-            "button_yGWEje"
-          ]
         }
       },
       "block_order": [
+        "slide_qD4UHN",
         "slide_pqgEbG",
-        "slide_XRPGKw",
-        "slide_qD4UHN"
+        "slide_XRPGKw"
       ],
       "custom_css": [
         ".slideshow-section .button-secondary {border-radius: 15px;}"
