@@ -575,6 +575,8 @@
       "disabled": true,
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "bigpuptub",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -812,6 +814,8 @@
       "custom_css": [],
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": true,
+        "magic_scroll_speed": 40,
         "collection": "bigpuptub",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -1827,6 +1831,8 @@
       ],
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "lilpuptub",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -2305,6 +2311,8 @@
       ],
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -2719,6 +2727,8 @@
       ],
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "frankenprey",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
