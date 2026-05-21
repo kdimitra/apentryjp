@@ -1138,9 +1138,9 @@
               "name": "t:names.heading",
               "settings": {
                 "text": "<h4>🐾  そのままの素材で、 </h4><h4>そのままの愛を。</h4>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1163,9 +1163,9 @@
               "type": "text",
               "settings": {
                 "text": "<p>余計なものは使わず、使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。</p>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
