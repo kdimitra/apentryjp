@@ -815,7 +815,7 @@
       "name": "t:names.products_carousel",
       "settings": {
         "magic_scroll": true,
-        "magic_scroll_speed": 40,
+        "magic_scroll_speed": 170,
         "collection": "bigpuptub",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
