@@ -1,0 +1,376 @@
+/* ─────────────────────────────────────────
+   Collection Tabs Section  ·  section-collection-tabs.css
+   Left: chip pills  ·  Right: product carousel
+───────────────────────────────────────── */
+
+.ct-section {
+  --ct-font:          'gt-ultra', sans-serif;
+  --ct-text-primary:  #1C1C1A;
+  --ct-text-secondary:#6B6860;
+  --ct-text-accent:   #3D6B4F;
+  --ct-chip-border:   #C8C2B8;
+  --ct-chip-active-bg:   #87CEDC;
+  --ct-chip-active-text: #FFFFFF;
+  --ct-heading-color: #1C1C1A;
+  --ct-paw-color:     #87CEDC;
+  --ct-card-radius:   16px;
+  --ct-slide-w:       240px;
+
+  padding-block: 80px;
+  overflow: hidden;
+}
+
+/* ── Container ─────────────────────────── */
+.ct-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
+/* ── Two-column layout ─────────────────── */
+.ct-layout {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ─────────────────────────────────────
+   LEFT — chip pills
+───────────────────────────────────── */
+.ct-chips {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 100px;
+}
+
+.ct-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ct-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ct-text-primary);
+  background: transparent;
+  border: 1.5px solid var(--ct-chip-border);
+  border-radius: 9999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.ct-chip:hover {
+  border-color: var(--ct-chip-active-bg);
+  color: var(--ct-chip-active-bg);
+}
+
+.ct-chip--active {
+  background-color: var(--ct-chip-active-bg);
+  border-color: var(--ct-chip-active-bg);
+  color: var(--ct-chip-active-text);
+}
+
+.ct-chip--active:hover {
+  color: var(--ct-chip-active-text);
+}
+
+/* ─────────────────────────────────────
+   RIGHT — carousel panels
+───────────────────────────────────── */
+.ct-panels {
+  position: relative;
+  min-height: 200px;
+}
+
+/* Hidden panels */
+.ct-panel {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ct-panel--active {
+  display: flex;
+}
+
+/* ── Panel header: heading + arrows ──── */
+.ct-panel__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.ct-panel__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ct-panel__paw {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--ct-paw-color);
+}
+
+.ct-panel__paw svg,
+.ct-panel__paw img {
+  width: 22px;
+  height: 22px;
+  display: block;
+  color: inherit;
+}
+
+.ct-panel__heading {
+  font-family: var(--ct-font);
+  font-size: clamp(20px, 2vw, 28px);
+  font-weight: 700;
+  color: var(--ct-heading-color);
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Arrow buttons */
+.ct-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.ct-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--ct-chip-border);
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease;
+  color: var(--ct-text-primary);
+}
+
+.ct-arrow:hover:not(:disabled) {
+  background-color: var(--ct-text-primary);
+  border-color: var(--ct-text-primary);
+  color: #FAFAF7;
+}
+
+.ct-arrow:hover:not(:disabled) svg { stroke: #FAFAF7; }
+
+.ct-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* ── Description ────────────────────── */
+.ct-panel__desc {
+  font-family: var(--ct-font);
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--ct-text-secondary);
+  margin: 0;
+  max-width: 600px;
+}
+
+/* ─────────────────────────────────────
+   CAROUSEL TRACK
+───────────────────────────────────── */
+.ct-track-wrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.ct-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-block: 4px;
+  list-style: none;
+  margin: 0;
+  padding-inline: 0;
+}
+
+.ct-track::-webkit-scrollbar { display: none; }
+
+/* ── Slide ──────────────────────────── */
+.ct-slide {
+  flex: 0 0 var(--ct-slide-w);
+  width: var(--ct-slide-w);
+}
+
+/* ── Product card ───────────────────── */
+.ct-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+}
+
+.ct-card--placeholder {
+  pointer-events: none;
+}
+
+.ct-card__image-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--ct-card-radius);
+  overflow: hidden;
+  background-color: #EDE9E1;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.ct-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.ct-card:hover .ct-card__image {
+  transform: scale(1.04);
+}
+
+.ct-placeholder-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0.25;
+}
+
+.ct-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ct-card__title {
+  font-family: var(--ct-font);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--ct-text-primary);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: center;
+}
+
+.ct-card__price {
+  font-family: var(--ct-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ct-text-primary);
+  margin: 0;
+  text-align: center;
+}
+
+.ct-card__compare {
+  font-size: 11px;
+  color: var(--ct-text-secondary);
+  margin-right: 4px;
+  text-decoration: line-through;
+}
+
+/* ── View more CTA ──────────────────── */
+.ct-panel__footer {
+  margin-top: 8px;
+}
+
+.ct-viewall {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--ct-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ct-text-primary);
+  text-decoration: none;
+  border: 1.5px solid var(--ct-text-primary);
+  border-radius: 9999px;
+  padding: 10px 24px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.ct-viewall:hover {
+  background-color: var(--ct-text-primary);
+  color: #FAFAF7;
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE — Tablet (768–1023px)
+───────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ct-section { padding-block: 56px; }
+
+  .ct-container { padding-inline: 32px; }
+
+  .ct-layout {
+    grid-template-columns: 160px 1fr;
+    gap: 32px;
+  }
+
+  .ct-chips { position: static; }
+
+  --ct-slide-w: 200px;
+  .ct-slide { flex: 0 0 200px; width: 200px; }
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE — Mobile (<768px)
+───────────────────────────────────── */
+@media (max-width: 767px) {
+  .ct-section { padding-block: 40px; }
+
+  .ct-container { padding-inline: 20px; }
+
+  .ct-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* Horizontal scrollable chip row on mobile */
+  .ct-chips {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 4px;
+    position: static;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .ct-chips::-webkit-scrollbar { display: none; }
+
+  .ct-chip {
+    flex-shrink: 0;
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  .ct-slide { flex: 0 0 160px; width: 160px; }
+
+  .ct-track { gap: 14px; }
+
+  .ct-panel__heading { font-size: 20px; }
+
+  .ct-arrow { width: 32px; height: 32px; }
+}

@@ -1,0 +1,397 @@
+
+{%- comment -%}
+  Collection Tabs Section
+  Left col: collection chip pills (one per block)
+  Right col: product carousel for the active collection
+  Chip click switches the visible panel; JS handles prev/next arrows.
+{%- endcomment -%}
+
+{{ 'section-collection-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+<section
+  class="ct-section"
+  id="collection-tabs-{{ section.id }}"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="ct-container">
+    <div class="ct-layout">
+
+      {%- comment -%}━━ LEFT: Collection chip pills ━━{%- endcomment -%}
+      <div class="ct-chips" role="tablist" aria-label="Collection tabs">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'collection_tab' -%}
+            <button
+              class="ct-chip{% if forloop.first %} ct-chip--active{% endif %}"
+              role="tab"
+              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              aria-controls="ct-panel-{{ section.id }}-{{ forloop.index0 }}"
+              data-ct-chip="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}
+            >
+              {{- block.settings.label | default: block.settings.collection.title | escape -}}
+            </button>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- comment -%}━━ RIGHT: Collection carousel panels ━━{%- endcomment -%}
+      <div class="ct-panels">
+
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'collection_tab' -%}
+            {%- assign panel_collection = block.settings.collection -%}
+            {%- assign products_limit   = section.settings.products_to_show -%}
+
+            <div
+              class="ct-panel{% if forloop.first %} ct-panel--active{% endif %}"
+              id="ct-panel-{{ section.id }}-{{ forloop.index0 }}"
+              role="tabpanel"
+              aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+            >
+
+              {%- comment -%} Panel header ━━ {%- endcomment -%}
+              <div class="ct-panel__header">
+                <div class="ct-panel__meta">
+                  {%- if section.settings.show_paw_icon -%}
+                    <span class="ct-panel__paw" aria-hidden="true">
+                      {%- if section.settings.paw_icon != blank -%}
+                        {{- section.settings.paw_icon | image_url: width: 32 | image_tag: loading: 'lazy', alt: '' -}}
+                      {%- else -%}
+                        <svg viewBox="0 0 32 32" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                          <ellipse cx="16" cy="22.5" rx="6.5" ry="5.5"/>
+                          <ellipse cx="7.5" cy="15" rx="3" ry="3.8" transform="rotate(-10 7.5 15)"/>
+                          <ellipse cx="24.5" cy="15" rx="3" ry="3.8" transform="rotate(10 24.5 15)"/>
+                          <circle cx="12" cy="10" r="3"/>
+                          <circle cx="20" cy="10" r="3"/>
+                        </svg>
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                  <h2 class="ct-panel__heading">
+                    {{- block.settings.heading | default: block.settings.collection.title | escape -}}
+                  </h2>
+                </div>
+
+                {%- comment -%} Carousel arrows ━━ {%- endcomment -%}
+                <div class="ct-arrows" aria-label="Carousel navigation">
+                  <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+                      <polyline points="10 2 4 8 10 14"/>
+                    </svg>
+                  </button>
+                  <button class="ct-arrow ct-arrow--next" aria-label="Next" data-ct-next>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+                      <polyline points="6 2 12 8 6 14"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              {%- comment -%} Description ━━ {%- endcomment -%}
+              {%- assign desc = block.settings.description | default: panel_collection.description -%}
+              {%- if desc != blank -%}
+                <p class="ct-panel__desc">{{ desc | strip_html | truncate: 120 }}</p>
+              {%- endif -%}
+
+              {%- comment -%} Product carousel track ━━ {%- endcomment -%}
+              <div class="ct-track-wrap">
+                <ul class="ct-track" role="list">
+                  {%- if panel_collection != blank and panel_collection.products_count > 0 -%}
+                    {%- for product in panel_collection.products limit: products_limit -%}
+                      <li class="ct-slide">
+                        <a href="{{ product.url }}" class="ct-card">
+                          <div class="ct-card__image-wrap">
+                            {%- if product.featured_image != blank -%}
+                              {{- product.featured_image
+                                | image_url: width: 600
+                                | image_tag:
+                                  loading: 'lazy',
+                                  widths: '300, 450, 600',
+                                  sizes: '(max-width: 767px) 60vw, 240px',
+                                  class: 'ct-card__image',
+                                  alt: product.featured_image.alt | default: product.title | escape
+                              -}}
+                            {%- else -%}
+                              <div class="ct-card__placeholder">
+                                {{ 'product-1' | placeholder_svg_tag: 'ct-placeholder-svg' }}
+                              </div>
+                            {%- endif -%}
+                          </div>
+                          <div class="ct-card__body">
+                            <p class="ct-card__title">{{ product.title | escape }}</p>
+                            <p class="ct-card__price">
+                              {%- if product.compare_at_price > product.price -%}
+                                <s class="ct-card__compare">{{ product.compare_at_price | money }}</s>
+                              {%- endif -%}
+                              {{ product.price | money }}
+                            </p>
+                          </div>
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  {%- else -%}
+                    {%- for i in (1..products_limit) -%}
+                      <li class="ct-slide">
+                        <div class="ct-card ct-card--placeholder">
+                          <div class="ct-card__image-wrap">
+                            {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'ct-placeholder-svg' }}
+                          </div>
+                          <div class="ct-card__body">
+                            <p class="ct-card__title">Product title</p>
+                            <p class="ct-card__price">¥0,000</p>
+                          </div>
+                        </div>
+                      </li>
+                    {%- endfor -%}
+                  {%- endif -%}
+                </ul>
+              </div>
+
+              {%- comment -%} View more CTA ━━ {%- endcomment -%}
+              {%- assign cta_url   = block.settings.cta_url   | default: panel_collection.url -%}
+              {%- assign cta_label = block.settings.cta_label | default: 'View more' -%}
+              {%- if cta_url != blank -%}
+                <div class="ct-panel__footer">
+                  <a href="{{ cta_url }}" class="ct-viewall">
+                    {{- cta_label -}}
+                    <span aria-hidden="true"> ›</span>
+                  </a>
+                </div>
+              {%- endif -%}
+
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
+      </div>{%- comment -%}.ct-panels{%- endcomment -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+<script>
+(function () {
+  var section = document.getElementById('collection-tabs-{{ section.id }}');
+  if (!section) return;
+
+  /* ── Tab switching ─────────────────────── */
+  var chips  = section.querySelectorAll('[data-ct-chip]');
+  var panels = section.querySelectorAll('.ct-panel');
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var idx = parseInt(chip.dataset.ctChip, 10);
+
+      chips.forEach(function (c) {
+        c.classList.remove('ct-chip--active');
+        c.setAttribute('aria-selected', 'false');
+      });
+      panels.forEach(function (p) {
+        p.classList.remove('ct-panel--active');
+        p.setAttribute('aria-hidden', 'true');
+      });
+
+      chip.classList.add('ct-chip--active');
+      chip.setAttribute('aria-selected', 'true');
+
+      var panel = panels[idx];
+      if (panel) {
+        panel.classList.add('ct-panel--active');
+        panel.setAttribute('aria-hidden', 'false');
+        /* Reset scroll position on tab change */
+        var track = panel.querySelector('.ct-track');
+        if (track) track.scrollLeft = 0;
+      }
+    });
+  });
+
+  /* ── Prev / Next arrows ────────────────── */
+  section.querySelectorAll('.ct-panel').forEach(function (panel) {
+    var track    = panel.querySelector('.ct-track');
+    var btnPrev  = panel.querySelector('[data-ct-prev]');
+    var btnNext  = panel.querySelector('[data-ct-next]');
+    if (!track || !btnPrev || !btnNext) return;
+
+    function slideWidth () {
+      var slide = track.querySelector('.ct-slide');
+      if (!slide) return 0;
+      var style = getComputedStyle(track);
+      var gap   = parseFloat(style.gap) || parseFloat(style.columnGap) || 0;
+      return slide.offsetWidth + gap;
+    }
+
+    function updateArrows () {
+      btnPrev.disabled = track.scrollLeft <= 1;
+      btnNext.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+    }
+
+    btnPrev.addEventListener('click', function () {
+      track.scrollBy({ left: -slideWidth() * 2, behavior: 'smooth' });
+    });
+
+    btnNext.addEventListener('click', function () {
+      track.scrollBy({ left: slideWidth() * 2, behavior: 'smooth' });
+    });
+
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    updateArrows();
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Collection tabs",
+  "class": "section-collection-tabs",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "products_to_show",
+      "label": "Max products per collection",
+      "min": 4,
+      "max": 20,
+      "step": 1,
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "Header icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_paw_icon",
+      "label": "Show paw icon beside heading",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "paw_icon",
+      "label": "Custom paw icon",
+      "info": "Leave blank to use the built-in default paw."
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Section background",
+      "default": "#F5F0E4"
+    },
+    {
+      "type": "color",
+      "id": "chip_active_bg",
+      "label": "Active chip background",
+      "default": "#87CEDC"
+    },
+    {
+      "type": "color",
+      "id": "chip_active_text",
+      "label": "Active chip text",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "chip_border",
+      "label": "Chip border color",
+      "default": "#C8C2B8"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#1C1C1A"
+    },
+    {
+      "type": "color",
+      "id": "paw_color",
+      "label": "Paw icon color",
+      "default": "#87CEDC"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 160,
+      "step": 8,
+      "unit": "px",
+      "default": 80
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection_tab",
+      "name": "Collection tab",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Chip label",
+          "info": "Short label shown on the pill chip. Defaults to collection title."
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Panel heading",
+          "info": "Heading shown above the carousel. Defaults to collection title."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "info": "Short description below the heading. Defaults to collection description."
+        },
+        {
+          "type": "text",
+          "id": "cta_label",
+          "label": "View more label",
+          "default": "View more"
+        },
+        {
+          "type": "url",
+          "id": "cta_url",
+          "label": "View more link",
+          "info": "Defaults to the collection page URL."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection tabs",
+      "blocks": [
+        { "type": "collection_tab", "settings": { "label": "セットフード" } },
+        { "type": "collection_tab", "settings": { "label": "パップタブ（大）" } },
+        { "type": "collection_tab", "settings": { "label": "パップタブ（小）" } }
+      ]
+    }
+  ],
+  "max_blocks": 10
+}
+{% endschema %}
