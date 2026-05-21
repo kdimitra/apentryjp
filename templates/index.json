@@ -2727,8 +2727,8 @@
       ],
       "name": "t:names.products_carousel",
       "settings": {
-        "magic_scroll": false,
-        "magic_scroll_speed": 80,
+        "magic_scroll": true,
+        "magic_scroll_speed": 160,
         "collection": "frankenprey",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
