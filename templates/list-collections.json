@@ -22,6 +22,8 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
             "gap": 12,
             "width": "custom",
             "custom_width": 100,
@@ -118,6 +120,8 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
             "gap": 12,
             "width": "custom",
             "custom_width": 100,
@@ -288,6 +292,8 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
             "gap": 16,
             "width": "fit-content",
             "custom_width": 100,
@@ -653,6 +659,8 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -889,6 +897,8 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -907,6 +917,74 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "collection_tabs_7HNUik": {
+      "type": "collection-tabs",
+      "blocks": {
+        "collection_tab_fcGitU": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "set-food",
+            "label": "セットフード",
+            "heading": "",
+            "description": "",
+            "cta_label": "View more",
+            "cta_url": "shopify://collections/set-food"
+          }
+        },
+        "collection_tab_aBgakj": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "bigpuptub",
+            "label": "パップタブ（大）",
+            "heading": "",
+            "description": "",
+            "cta_label": "View more",
+            "cta_url": "shopify://collections/bigpuptub"
+          }
+        },
+        "collection_tab_9dXPzb": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "lilpuptub",
+            "label": "パップタブ（小）",
+            "heading": "",
+            "description": "",
+            "cta_label": "View more",
+            "cta_url": "shopify://collections/lilpuptub"
+          }
+        },
+        "collection_tab_A8FYUm": {
+          "type": "collection_tab",
+          "settings": {
+            "collection": "frankenprey",
+            "label": "",
+            "heading": "",
+            "description": "",
+            "cta_label": "View more",
+            "cta_url": "shopify://collections/frankenprey"
+          }
+        }
+      },
+      "block_order": [
+        "collection_tab_fcGitU",
+        "collection_tab_aBgakj",
+        "collection_tab_9dXPzb",
+        "collection_tab_A8FYUm"
+      ],
+      "name": "Collection tabs",
+      "settings": {
+        "products_to_show": 10,
+        "show_paw_icon": true,
+        "bg_color": "#F5F0E4",
+        "chip_active_bg": "#87CEDC",
+        "chip_active_text": "#FFFFFF",
+        "chip_border": "#C8C2B8",
+        "heading_color": "#1C1C1A",
+        "paw_color": "#87CEDC",
+        "padding_top": 80,
+        "padding_bottom": 80
+      }
     }
   },
   "order": [
@@ -914,6 +992,7 @@
     "hero_bgVbXE",
     "collection_list_Y66Rtq",
     "product_list_mQ4thT",
-    "product_list_QV6iwf"
+    "product_list_QV6iwf",
+    "collection_tabs_7HNUik"
   ]
 }
