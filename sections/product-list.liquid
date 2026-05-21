@@ -7,6 +7,7 @@
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <div
   data-testid="product-list"
+  {% if section.settings.magic_scroll %}id="magic-scroll-{{ section.id }}"{% endif %}
   class="
     section
     section--{{ section.settings.section_width }}
@@ -80,6 +81,105 @@
   </div>
 </div>
 
+{%- if section.settings.magic_scroll -%}
+<style>
+  #magic-scroll-{{ section.id }} {
+    --ms-cursor-active: none;
+  }
+  #magic-scroll-{{ section.id }} slideshow-slides {
+    cursor: none;
+    scroll-snap-type: none !important;
+  }
+  #magic-scroll-{{ section.id }} .slideshow-control {
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #magic-scroll-{{ section.id }}.ms-idle .slideshow-control {
+    pointer-events: auto;
+    opacity: 1;
+  }
+</style>
+
+<script>
+(function () {
+  var sectionEl = document.getElementById('magic-scroll-{{ section.id }}');
+  if (!sectionEl) return;
+
+  var speed = {{ section.settings.magic_scroll_speed }};
+  var scroller = null;
+  var rafId = null;
+  var lastTime = null;
+  var scrolling = false;
+  var resumeTimer = null;
+
+  function getScroller () {
+    if (!scroller) {
+      scroller = sectionEl.querySelector('slideshow-slides[ref="scroller"]')
+                 || sectionEl.querySelector('.resource-list__carousel slideshow-slides')
+                 || sectionEl.querySelector('[data-scroll-container]');
+    }
+    return scroller;
+  }
+
+  function step (now) {
+    var el = getScroller();
+    if (!el || !scrolling) { lastTime = null; return; }
+
+    if (lastTime === null) { lastTime = now; }
+    var delta = (now - lastTime) / 1000;
+    lastTime = now;
+
+    var max = el.scrollWidth - el.clientWidth;
+    if (max <= 0) { stop(); return; }
+
+    el.scrollLeft += speed * delta;
+
+    /* Seamless loop: when we reach the end, jump back silently */
+    if (el.scrollLeft >= max - 1) {
+      el.scrollLeft = 0;
+    }
+
+    rafId = requestAnimationFrame(step);
+  }
+
+  function start () {
+    if (scrolling) return;
+    scrolling = true;
+    sectionEl.classList.remove('ms-idle');
+    lastTime = null;
+    rafId = requestAnimationFrame(step);
+  }
+
+  function stop () {
+    scrolling = false;
+    lastTime = null;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    /* Brief idle window so arrows are reachable after leaving */
+    clearTimeout(resumeTimer);
+    resumeTimer = setTimeout(function () {
+      sectionEl.classList.add('ms-idle');
+    }, 300);
+  }
+
+  sectionEl.addEventListener('mouseenter', function () {
+    clearTimeout(resumeTimer);
+    sectionEl.classList.remove('ms-idle');
+    start();
+  });
+
+  sectionEl.addEventListener('mouseleave', stop);
+
+  /* Pause when user manually drags / clicks the arrows */
+  sectionEl.addEventListener('pointerdown', function () {
+    stop();
+    clearTimeout(resumeTimer);
+    sectionEl.classList.add('ms-idle');
+  });
+})();
+</script>
+{%- endif -%}
+
 {% schema %}
 {
   "name": "t:names.product_list",
@@ -99,6 +199,29 @@
     "groups": ["header", "footer"]
   },
   "settings": [
+    {
+      "type": "header",
+      "content": "Magic Scroll"
+    },
+    {
+      "type": "checkbox",
+      "id": "magic_scroll",
+      "label": "Magic scroll",
+      "default": false,
+      "info": "When enabled, hovering over the section smoothly auto-scrolls the carousel right to left."
+    },
+    {
+      "type": "range",
+      "id": "magic_scroll_speed",
+      "label": "Scroll speed",
+      "min": 20,
+      "max": 200,
+      "step": 10,
+      "unit": "px/s",
+      "default": 80,
+      "info": "Pixels scrolled per second. Higher = faster.",
+      "visible_if": "{{ section.settings.magic_scroll == true }}"
+    },
     {
       "type": "collection",
       "id": "collection",
