@@ -17,8 +17,8 @@
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
-        "subtitle": "",
-        "description": "Ok Collection hero",
+        "subtitle": "パップタブ(大) -  800g",
+        "description": "愛犬を想う、素材が生きたローフード。",
         "title_font_size": 64,
         "subtitle_font_size": 22,
         "desc_font_size": 14
@@ -226,6 +226,8 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "bigpuptub",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -891,6 +893,8 @@
       },
       "name": "t:names.products_grid",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "grid",
         "carousel_on_mobile": false,
