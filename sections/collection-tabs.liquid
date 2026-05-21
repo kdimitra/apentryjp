@@ -1,9 +1,10 @@
 
 {%- comment -%}
-  Collection Tabs Section
-  Left col: collection chip pills (one per block)
-  Right col: product carousel for the active collection
-  Chip click switches the visible panel; JS handles prev/next arrows.
+  Collection Tabs — Scrollspy layout
+  Left  : sticky chip pills. Clicking smoothly scrolls to the matching
+          collection section on the right. Active chip updates on scroll.
+  Right : all collection sections stacked vertically. Each has a heading,
+          description, product carousel and View more CTA.
 {%- endcomment -%}
 
 {{ 'section-collection-tabs.css' | asset_url | stylesheet_tag }}
@@ -12,20 +13,27 @@
 <section
   class="ct-section"
   id="collection-tabs-{{ section.id }}"
-  style="background-color: {{ section.settings.bg_color }};"
+  style="
+    background-color: {{ section.settings.bg_color }};
+    padding-block-start: {{ section.settings.padding_top }}px;
+    padding-block-end:   {{ section.settings.padding_bottom }}px;
+    --ct-chip-active-bg:   {{ section.settings.chip_active_bg }};
+    --ct-chip-active-text: {{ section.settings.chip_active_text }};
+    --ct-chip-border:      {{ section.settings.chip_border }};
+    --ct-heading-color:    {{ section.settings.heading_color }};
+    --ct-paw-color:        {{ section.settings.paw_color }};
+  "
 >
   <div class="ct-container">
     <div class="ct-layout">
 
-      {%- comment -%}━━ LEFT: Collection chip pills ━━{%- endcomment -%}
-      <div class="ct-chips" role="tablist" aria-label="Collection tabs">
+      {%- comment -%}━━ LEFT: Sticky chip pills ━━{%- endcomment -%}
+      <div class="ct-chips" role="list" aria-label="Collections">
         {%- for block in section.blocks -%}
           {%- if block.type == 'collection_tab' -%}
             <button
               class="ct-chip{% if forloop.first %} ct-chip--active{% endif %}"
-              role="tab"
-              aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-              aria-controls="ct-panel-{{ section.id }}-{{ forloop.index0 }}"
+              role="listitem"
               data-ct-chip="{{ forloop.index0 }}"
               {{ block.shopify_attributes }}
             >
@@ -35,19 +43,22 @@
         {%- endfor -%}
       </div>
 
-      {%- comment -%}━━ RIGHT: Collection carousel panels ━━{%- endcomment -%}
-      <div class="ct-panels">
+      {%- comment -%}━━ RIGHT: Stacked collection sections ━━{%- endcomment -%}
+      <div class="ct-right" data-ct-right>
 
         {%- for block in section.blocks -%}
           {%- if block.type == 'collection_tab' -%}
-            {%- assign panel_collection = block.settings.collection -%}
-            {%- assign products_limit   = section.settings.products_to_show -%}
+            {%- assign col            = block.settings.collection -%}
+            {%- assign products_limit = section.settings.products_to_show -%}
+            {%- assign cta_url        = block.settings.cta_url   | default: col.url -%}
+            {%- assign cta_label      = block.settings.cta_label | default: 'View more' -%}
+            {%- assign panel_desc     = block.settings.description | default: col.description -%}
 
             <div
-              class="ct-panel{% if forloop.first %} ct-panel--active{% endif %}"
+              class="ct-panel"
               id="ct-panel-{{ section.id }}-{{ forloop.index0 }}"
-              role="tabpanel"
-              aria-hidden="{% if forloop.first %}false{% else %}true{% endif %}"
+              data-ct-panel="{{ forloop.index0 }}"
+              {{ block.shopify_attributes }}
             >
 
               {%- comment -%} Panel header ━━ {%- endcomment -%}
@@ -69,12 +80,12 @@
                     </span>
                   {%- endif -%}
                   <h2 class="ct-panel__heading">
-                    {{- block.settings.heading | default: block.settings.collection.title | escape -}}
+                    {{- block.settings.heading | default: col.title | escape -}}
                   </h2>
                 </div>
 
-                {%- comment -%} Carousel arrows ━━ {%- endcomment -%}
-                <div class="ct-arrows" aria-label="Carousel navigation">
+                {%- comment -%} Per-panel carousel arrows ━━ {%- endcomment -%}
+                <div class="ct-arrows">
                   <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
                       <polyline points="10 2 4 8 10 14"/>
@@ -89,16 +100,15 @@
               </div>
 
               {%- comment -%} Description ━━ {%- endcomment -%}
-              {%- assign desc = block.settings.description | default: panel_collection.description -%}
-              {%- if desc != blank -%}
-                <p class="ct-panel__desc">{{ desc | strip_html | truncate: 120 }}</p>
+              {%- if panel_desc != blank -%}
+                <p class="ct-panel__desc">{{ panel_desc | strip_html | truncate: 160 }}</p>
               {%- endif -%}
 
               {%- comment -%} Product carousel track ━━ {%- endcomment -%}
               <div class="ct-track-wrap">
                 <ul class="ct-track" role="list">
-                  {%- if panel_collection != blank and panel_collection.products_count > 0 -%}
-                    {%- for product in panel_collection.products limit: products_limit -%}
+                  {%- if col != blank and col.products_count > 0 -%}
+                    {%- for product in col.products limit: products_limit -%}
                       <li class="ct-slide">
                         <a href="{{ product.url }}" class="ct-card">
                           <div class="ct-card__image-wrap">
@@ -108,7 +118,7 @@
                                 | image_tag:
                                   loading: 'lazy',
                                   widths: '300, 450, 600',
-                                  sizes: '(max-width: 767px) 60vw, 240px',
+                                  sizes: '(max-width: 767px) 60vw, 220px',
                                   class: 'ct-card__image',
                                   alt: product.featured_image.alt | default: product.title | escape
                               -}}
@@ -131,14 +141,14 @@
                       </li>
                     {%- endfor -%}
                   {%- else -%}
-                    {%- for i in (1..products_limit) -%}
+                    {%- for i in (1..6) -%}
                       <li class="ct-slide">
-                        <div class="ct-card ct-card--placeholder">
+                        <div class="ct-card">
                           <div class="ct-card__image-wrap">
-                            {{ 'product-' | append: forloop.index | placeholder_svg_tag: 'ct-placeholder-svg' }}
+                            {{ 'product-1' | placeholder_svg_tag: 'ct-placeholder-svg ct-placeholder-svg--fill' }}
                           </div>
                           <div class="ct-card__body">
-                            <p class="ct-card__title">Product title</p>
+                            <p class="ct-card__title">商品名が入ります</p>
                             <p class="ct-card__price">¥0,000</p>
                           </div>
                         </div>
@@ -149,8 +159,6 @@
               </div>
 
               {%- comment -%} View more CTA ━━ {%- endcomment -%}
-              {%- assign cta_url   = block.settings.cta_url   | default: panel_collection.url -%}
-              {%- assign cta_label = block.settings.cta_label | default: 'View more' -%}
               {%- if cta_url != blank -%}
                 <div class="ct-panel__footer">
                   <a href="{{ cta_url }}" class="ct-viewall">
@@ -164,7 +172,7 @@
           {%- endif -%}
         {%- endfor -%}
 
-      </div>{%- comment -%}.ct-panels{%- endcomment -%}
+      </div>{%- comment -%} .ct-right {%- endcomment -%}
     </div>
   </div>
 </section>
@@ -175,50 +183,41 @@
   var section = document.getElementById('collection-tabs-{{ section.id }}');
   if (!section) return;
 
-  /* ── Tab switching ─────────────────────── */
-  var chips  = section.querySelectorAll('[data-ct-chip]');
-  var panels = section.querySelectorAll('.ct-panel');
+  var chips  = Array.from(section.querySelectorAll('[data-ct-chip]'));
+  var panels = Array.from(section.querySelectorAll('[data-ct-panel]'));
 
+  /* ── Chip click → smooth scroll to panel ─────────────────── */
   chips.forEach(function (chip) {
     chip.addEventListener('click', function () {
-      var idx = parseInt(chip.dataset.ctChip, 10);
-
-      chips.forEach(function (c) {
-        c.classList.remove('ct-chip--active');
-        c.setAttribute('aria-selected', 'false');
-      });
-      panels.forEach(function (p) {
-        p.classList.remove('ct-panel--active');
-        p.setAttribute('aria-hidden', 'true');
-      });
-
-      chip.classList.add('ct-chip--active');
-      chip.setAttribute('aria-selected', 'true');
-
+      var idx   = parseInt(chip.dataset.ctChip, 10);
       var panel = panels[idx];
-      if (panel) {
-        panel.classList.add('ct-panel--active');
-        panel.setAttribute('aria-hidden', 'false');
-        /* Reset scroll position on tab change */
-        var track = panel.querySelector('.ct-track');
-        if (track) track.scrollLeft = 0;
-      }
+      if (!panel) return;
+
+      /* Offset for sticky header (adjust if your header height differs) */
+      var headerH = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '80',
+        10
+      );
+      var extraOffset = 24; /* breathing room above the panel */
+      var top = panel.getBoundingClientRect().top + window.scrollY - headerH - extraOffset;
+
+      window.scrollTo({ top: top, behavior: 'smooth' });
+      setActiveChip(idx);
     });
   });
 
-  /* ── Prev / Next arrows ────────────────── */
-  section.querySelectorAll('.ct-panel').forEach(function (panel) {
-    var track    = panel.querySelector('.ct-track');
-    var btnPrev  = panel.querySelector('[data-ct-prev]');
-    var btnNext  = panel.querySelector('[data-ct-next]');
+  /* ── Per-panel arrow carousel ────────────────────────────── */
+  panels.forEach(function (panel) {
+    var track   = panel.querySelector('.ct-track');
+    var btnPrev = panel.querySelector('[data-ct-prev]');
+    var btnNext = panel.querySelector('[data-ct-next]');
     if (!track || !btnPrev || !btnNext) return;
 
     function slideWidth () {
-      var slide = track.querySelector('.ct-slide');
-      if (!slide) return 0;
-      var style = getComputedStyle(track);
-      var gap   = parseFloat(style.gap) || parseFloat(style.columnGap) || 0;
-      return slide.offsetWidth + gap;
+      var s = track.querySelector('.ct-slide');
+      if (!s) return 0;
+      var gap = parseFloat(getComputedStyle(track).gap) || 20;
+      return s.offsetWidth + gap;
     }
 
     function updateArrows () {
@@ -229,7 +228,6 @@
     btnPrev.addEventListener('click', function () {
       track.scrollBy({ left: -slideWidth() * 2, behavior: 'smooth' });
     });
-
     btnNext.addEventListener('click', function () {
       track.scrollBy({ left: slideWidth() * 2, behavior: 'smooth' });
     });
@@ -237,6 +235,62 @@
     track.addEventListener('scroll', updateArrows, { passive: true });
     updateArrows();
   });
+
+  /* ── Scrollspy — update active chip as user scrolls ──────── */
+  function setActiveChip (idx) {
+    chips.forEach(function (c) { c.classList.remove('ct-chip--active'); });
+    if (chips[idx]) chips[idx].classList.add('ct-chip--active');
+
+    /* Keep active chip visible in the sticky column on mobile */
+    var activeChip = chips[idx];
+    if (activeChip) {
+      activeChip.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+    }
+  }
+
+  var ticking = false;
+  var lastActiveIdx = 0;
+
+  function onScroll () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      ticking = false;
+      var headerH = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '80',
+        10
+      );
+
+      /* If near the bottom of the page, force the last chip active */
+      var scrollBottom = window.scrollY + window.innerHeight;
+      var pageBottom   = document.documentElement.scrollHeight;
+      if (scrollBottom >= pageBottom - 8) {
+        var lastIdx = panels.length - 1;
+        if (lastIdx !== lastActiveIdx) {
+          lastActiveIdx = lastIdx;
+          setActiveChip(lastIdx);
+        }
+        return;
+      }
+
+      var triggerY = window.scrollY + headerH + 40;
+
+      var currentIdx = 0;
+      panels.forEach(function (panel, i) {
+        var rect = panel.getBoundingClientRect();
+        var absTop = rect.top + window.scrollY;
+        if (absTop <= triggerY) currentIdx = i;
+      });
+
+      if (currentIdx !== lastActiveIdx) {
+        lastActiveIdx = currentIdx;
+        setActiveChip(currentIdx);
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 })();
 </script>
 
@@ -247,7 +301,7 @@
   "settings": [
     {
       "type": "header",
-      "content": "Layout"
+      "content": "Products"
     },
     {
       "type": "range",
@@ -342,7 +396,7 @@
   "blocks": [
     {
       "type": "collection_tab",
-      "name": "Collection tab",
+      "name": "Collection",
       "settings": [
         {
           "type": "collection",
@@ -353,19 +407,19 @@
           "type": "text",
           "id": "label",
           "label": "Chip label",
-          "info": "Short label shown on the pill chip. Defaults to collection title."
+          "info": "Short label on the pill. Defaults to collection title."
         },
         {
           "type": "text",
           "id": "heading",
-          "label": "Panel heading",
-          "info": "Heading shown above the carousel. Defaults to collection title."
+          "label": "Section heading",
+          "info": "Defaults to collection title."
         },
         {
           "type": "textarea",
           "id": "description",
           "label": "Description",
-          "info": "Short description below the heading. Defaults to collection description."
+          "info": "Defaults to collection description."
         },
         {
           "type": "text",
@@ -388,7 +442,8 @@
       "blocks": [
         { "type": "collection_tab", "settings": { "label": "セットフード" } },
         { "type": "collection_tab", "settings": { "label": "パップタブ（大）" } },
-        { "type": "collection_tab", "settings": { "label": "パップタブ（小）" } }
+        { "type": "collection_tab", "settings": { "label": "パップタブ（小）" } },
+        { "type": "collection_tab", "settings": { "label": "フランケンソーセージ" } }
       ]
     }
   ],
