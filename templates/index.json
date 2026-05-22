@@ -1615,6 +1615,50 @@
         "padding-block-end": 0
       }
     },
+    "home_rl_hero_FzQHRy": {
+      "type": "home-rl-hero",
+      "name": "Home RL Hero",
+      "settings": {
+        "image": "shopify://shop_images/3e827ffc475c2b13b113b8528c8e0966c3d8249a-5000x3333_jpg.avif",
+        "image_side": "left",
+        "eyebrow": "パップタブ (小)",
+        "show_eyebrow_icon": true,
+        "eyebrow_icon": "shopify://shop_images/svg-foot.svg",
+        "heading": "パップタブ (小)",
+        "description": "余計なものは使わず、使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。",
+        "text_align": "left",
+        "cta_label": "",
+        "cta_url": "",
+        "bg_color": "#F5F0E4",
+        "heading_color": "#1C1C1A",
+        "desc_color": "#6B6860",
+        "icon_color": "#87CEDC",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "home_rl_hero_D8h6fV": {
+      "type": "home-rl-hero",
+      "name": "Home RL Hero",
+      "settings": {
+        "image": "shopify://shop_images/f77d71b53736b17b0cc0665fefab96db06f2b27c-5000x3333_jpg.avif",
+        "image_side": "right",
+        "eyebrow": "パップタブ (小)",
+        "show_eyebrow_icon": true,
+        "eyebrow_icon": "shopify://shop_images/svg-foot.svg",
+        "heading": "パップタブ (小)",
+        "description": "余計なものは使わず、使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。",
+        "text_align": "left",
+        "cta_label": "",
+        "cta_url": "",
+        "bg_color": "#F5F0E4",
+        "heading_color": "#1C1C1A",
+        "desc_color": "#6B6860",
+        "icon_color": "#87CEDC",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "product_list_NK4Axm": {
       "type": "product-list",
       "blocks": {
@@ -4308,6 +4352,8 @@
     "section_ATbjpL",
     "section_dMfBwk",
     "section_Yz3mz7",
+    "home_rl_hero_FzQHRy",
+    "home_rl_hero_D8h6fV",
     "product_list_NK4Axm",
     "section_6kQ7tf",
     "product_list_9LdCYQ",
