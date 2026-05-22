@@ -1,0 +1,221 @@
+/* ─────────────────────────────────────────
+   Home RL Hero  ·  section-home-rl-hero.css
+   Equal two-column: portrait image + text
+───────────────────────────────────────── */
+
+.rlh-section {
+  --rlh-font:          'gt-ultra', sans-serif;
+  --rlh-heading-color: #1C1C1A;
+  --rlh-desc-color:    #6B6860;
+  --rlh-icon-color:    #87CEDC;
+  --rlh-text-align:    left;
+
+  overflow: hidden;
+}
+
+/* ── Two-column grid ───────────────────── */
+.rlh-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;    /* both cols stretch to equal height */
+  min-height: 60vh;
+}
+
+/* Image left (default) */
+.rlh-grid--left  .rlh-col--image { order: 1; }
+.rlh-grid--left  .rlh-col--text  { order: 2; }
+
+/* Image right */
+.rlh-grid--right .rlh-col--image { order: 2; }
+.rlh-grid--right .rlh-col--text  { order: 1; }
+
+/* ── Image column ──────────────────────── */
+.rlh-col--image {
+  position: relative;
+  overflow: hidden;
+  /* Stretch to full grid-row height */
+  align-self: stretch;
+}
+
+.rlh-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.rlh-image-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background-color: #EDE9E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rlh-placeholder-svg {
+  width: 80px;
+  height: 80px;
+  opacity: 0.2;
+}
+
+/* ── Text column ───────────────────────── */
+.rlh-col--text {
+  display: flex;
+  align-items: center;         /* vertical center */
+  justify-content: center;
+  padding: 64px 72px;
+  background-color: inherit;
+}
+
+.rlh-text-inner {
+  width: 100%;
+  max-width: 480px;
+  text-align: var(--rlh-text-align, left);
+}
+
+/* ── Eyebrow ───────────────────────────── */
+.rlh-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--rlh-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rlh-desc-color);
+  margin: 0 0 16px;
+  justify-content: var(--rlh-text-align, left);
+}
+
+.rlh-eyebrow__icon {
+  display: inline-flex;
+  align-items: center;
+  color: var(--rlh-icon-color);
+  flex-shrink: 0;
+}
+
+.rlh-eyebrow__icon svg,
+.rlh-eyebrow__icon img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  color: inherit;
+}
+
+/* ── Heading ───────────────────────────── */
+.rlh-heading {
+  font-family: var(--rlh-font);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--rlh-heading-color);
+  margin: 0 0 24px;
+}
+
+/* ── Description ───────────────────────── */
+.rlh-desc {
+  font-family: var(--rlh-font);
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--rlh-desc-color);
+  margin: 0 0 32px;
+  max-width: 440px;
+}
+
+/* keep prose left-aligned within text-inner even if block is centered */
+.rlh-text-inner[style*="center"] .rlh-desc {
+  margin-inline: auto;
+}
+
+/* ── CTA ────────────────────────────────── */
+.rlh-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--rlh-font);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--rlh-heading-color);
+  text-decoration: none;
+  border: 1.5px solid var(--rlh-heading-color);
+  border-radius: 9999px;
+  padding: 10px 24px;
+  transition: background-color 0.18s ease, color 0.18s ease;
+  white-space: nowrap;
+}
+
+.rlh-cta:hover {
+  background-color: var(--rlh-heading-color);
+  color: #FAFAF7;
+}
+
+/* ── Focus styles ──────────────────────── */
+.rlh-cta:focus-visible {
+  outline: 2px solid var(--rlh-heading-color);
+  outline-offset: 3px;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — Tablet (768–1023px)
+───────────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .rlh-col--text {
+    padding: 48px 40px;
+  }
+
+  .rlh-heading {
+    font-size: clamp(24px, 3vw, 36px);
+  }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE — Mobile (<768px)
+   Stack vertically: image on top, text below
+   Text: horizontally & vertically centered
+───────────────────────────────────────── */
+@media (max-width: 767px) {
+  .rlh-grid {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+
+  /* Always image first on mobile regardless of desktop order */
+  .rlh-col--image { order: 1 !important; }
+  .rlh-col--text  { order: 2 !important; }
+
+  .rlh-col--image {
+    min-height: 55vw;
+  }
+
+  .rlh-col--text {
+    padding: 48px 24px;
+    /* center everything on mobile */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .rlh-text-inner {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .rlh-eyebrow {
+    justify-content: center;
+  }
+
+  .rlh-desc {
+    margin-inline: auto;
+  }
+
+  .rlh-heading {
+    font-size: clamp(26px, 7vw, 36px);
+  }
+
+  .rlh-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
