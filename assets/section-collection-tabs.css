@@ -17,7 +17,7 @@
   --ct-slide-w:       240px;
 
   padding-block: 80px;
-  overflow: hidden;
+  overflow-x: clip; /* clip horizontal overflow without blocking vertical scroll */
 }
 
 /* ── Container ─────────────────────────── */
@@ -37,7 +37,7 @@
 }
 
 /* ─────────────────────────────────────
-   LEFT — chip pills
+   LEFT — chip pills (anchor links)
 ───────────────────────────────────── */
 .ct-chips {
   display: flex;
@@ -45,10 +45,11 @@
   gap: 12px;
   position: sticky;
   top: 100px;
+  align-self: start;
 }
 
 .ct-chip {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--ct-font);
@@ -59,24 +60,24 @@
   border: 1.5px solid var(--ct-chip-border);
   border-radius: 9999px;
   padding: 10px 20px;
-  cursor: pointer;
   text-align: center;
+  text-decoration: none;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   white-space: nowrap;
 }
 
-.ct-chip:hover {
-  border-color: var(--ct-chip-active-bg);
-  color: var(--ct-chip-active-bg);
-}
-
-.ct-chip--active {
+.ct-chip:hover,
+.ct-chip:focus-visible {
   background-color: var(--ct-chip-active-bg);
   border-color: var(--ct-chip-active-bg);
   color: var(--ct-chip-active-text);
+  outline: none;
 }
 
-.ct-chip--active:hover {
+/* Highlight chip when its target panel is in :target state */
+.ct-chip:target-within {
+  background-color: var(--ct-chip-active-bg);
+  border-color: var(--ct-chip-active-bg);
   color: var(--ct-chip-active-text);
 }
 
@@ -321,62 +322,33 @@
 }
 
 /* ─────────────────────────────────────
-   RESPONSIVE — Tablet (768–1023px)
-───────────────────────────────────── */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .ct-section { padding-block: 56px; }
-
-  .ct-container { padding-inline: 32px; }
-
-  .ct-layout {
-    grid-template-columns: 160px 1fr;
-    gap: 32px;
-  }
-
-  .ct-chips { position: static; }
-
-  --ct-slide-w: 200px;
-  .ct-slide { flex: 0 0 200px; width: 200px; }
-}
-
-/* ─────────────────────────────────────
    RESPONSIVE — Mobile (<768px)
 ───────────────────────────────────── */
 @media (max-width: 767px) {
   .ct-section { padding-block: 40px; }
-
   .ct-container { padding-inline: 20px; }
-
-  .ct-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  /* Horizontal scrollable chip row on mobile */
-  .ct-chips {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 8px;
-    padding-bottom: 4px;
-    position: static;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .ct-chips::-webkit-scrollbar { display: none; }
-
-  .ct-chip {
-    flex-shrink: 0;
-    font-size: 12px;
-    padding: 8px 16px;
-  }
-
+  .ct-layout { grid-template-columns: 1fr; gap: 24px; }
   .ct-slide { flex: 0 0 160px; width: 160px; }
-
   .ct-track { gap: 14px; }
-
   .ct-panel__heading { font-size: 20px; }
-
   .ct-arrow { width: 32px; height: 32px; }
+  .ct-panel:last-child { margin-bottom: 10vh; }
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE — Tablet (768–1023px)
+───────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ct-section { padding-block: 56px; }
+  .ct-container { padding-inline: 32px; }
+  .ct-layout { grid-template-columns: 1fr; gap: 32px; }
+  .ct-slide { flex: 0 0 200px; width: 200px; }
+}
+
+@media (max-width:1020px){
+  .ct-chips{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+  }
 }

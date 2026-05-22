@@ -1,8 +1,8 @@
 
 {%- comment -%}
-  Collection Tabs — Scrollspy layout
-  Left  : sticky chip pills. Clicking smoothly scrolls to the matching
-          collection section on the right. Active chip updates on scroll.
+  Collection Tabs — Anchor-link layout
+  Left  : sticky chip pills as <a href="#panel-id"> anchor links.
+          No JS required for scrolling or active state.
   Right : all collection sections stacked vertically. Each has a heading,
           description, product carousel and View more CTA.
 {%- endcomment -%}
@@ -27,24 +27,24 @@
   <div class="ct-container">
     <div class="ct-layout">
 
-      {%- comment -%}━━ LEFT: Sticky chip pills ━━{%- endcomment -%}
-      <div class="ct-chips" role="list" aria-label="Collections">
+      {%- comment -%}━━ LEFT: Sticky chip pills (pure anchor links) ━━{%- endcomment -%}
+      <nav class="ct-chips" aria-label="Collections">
         {%- for block in section.blocks -%}
           {%- if block.type == 'collection_tab' -%}
-            <button
-              class="ct-chip{% if forloop.first %} ct-chip--active{% endif %}"
-              role="listitem"
-              data-ct-chip="{{ forloop.index0 }}"
+            {%- assign chip_label = block.settings.label | default: block.settings.collection.title -%}
+            <a
+              class="ct-chip"
+              href="#ct-panel-{{ section.id }}-{{ forloop.index0 }}"
               {{ block.shopify_attributes }}
             >
-              {{- block.settings.label | default: block.settings.collection.title | escape -}}
-            </button>
+              {{- chip_label | escape -}}
+            </a>
           {%- endif -%}
         {%- endfor -%}
-      </div>
+      </nav>
 
       {%- comment -%}━━ RIGHT: Stacked collection sections ━━{%- endcomment -%}
-      <div class="ct-right" data-ct-right>
+      <div class="ct-right">
 
         {%- for block in section.blocks -%}
           {%- if block.type == 'collection_tab' -%}
@@ -57,7 +57,6 @@
             <div
               class="ct-panel"
               id="ct-panel-{{ section.id }}-{{ forloop.index0 }}"
-              data-ct-panel="{{ forloop.index0 }}"
               {{ block.shopify_attributes }}
             >
 
@@ -183,30 +182,9 @@
   var section = document.getElementById('collection-tabs-{{ section.id }}');
   if (!section) return;
 
-  var chips  = Array.from(section.querySelectorAll('[data-ct-chip]'));
-  var panels = Array.from(section.querySelectorAll('[data-ct-panel]'));
-
-  /* ── Chip click → smooth scroll to panel ─────────────────── */
-  chips.forEach(function (chip) {
-    chip.addEventListener('click', function () {
-      var idx   = parseInt(chip.dataset.ctChip, 10);
-      var panel = panels[idx];
-      if (!panel) return;
-
-      /* Offset for sticky header (adjust if your header height differs) */
-      var headerH = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '80',
-        10
-      );
-      var extraOffset = 24; /* breathing room above the panel */
-      var top = panel.getBoundingClientRect().top + window.scrollY - headerH - extraOffset;
-
-      window.scrollTo({ top: top, behavior: 'smooth' });
-      setActiveChip(idx);
-    });
-  });
-
   /* ── Per-panel arrow carousel ────────────────────────────── */
+  var panels = Array.from(section.querySelectorAll('.ct-panel'));
+
   panels.forEach(function (panel) {
     var track   = panel.querySelector('.ct-track');
     var btnPrev = panel.querySelector('[data-ct-prev]');
@@ -234,63 +212,26 @@
 
     track.addEventListener('scroll', updateArrows, { passive: true });
     updateArrows();
+
+    /* Pass vertical wheel scroll through the horizontal track */
+    track.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
+      }
+    }, { passive: false });
   });
 
-  /* ── Scrollspy — update active chip as user scrolls ──────── */
-  function setActiveChip (idx) {
-    chips.forEach(function (c) { c.classList.remove('ct-chip--active'); });
-    if (chips[idx]) chips[idx].classList.add('ct-chip--active');
-
-    /* Keep active chip visible in the sticky column on mobile */
-    var activeChip = chips[idx];
-    if (activeChip) {
-      activeChip.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-    }
-  }
-
-  var ticking = false;
-  var lastActiveIdx = 0;
-
-  function onScroll () {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function () {
-      ticking = false;
-      var headerH = parseInt(
-        getComputedStyle(document.documentElement).getPropertyValue('--header-height') || '80',
-        10
-      );
-
-      /* If near the bottom of the page, force the last chip active */
-      var scrollBottom = window.scrollY + window.innerHeight;
-      var pageBottom   = document.documentElement.scrollHeight;
-      if (scrollBottom >= pageBottom - 8) {
-        var lastIdx = panels.length - 1;
-        if (lastIdx !== lastActiveIdx) {
-          lastActiveIdx = lastIdx;
-          setActiveChip(lastIdx);
-        }
-        return;
+  /* ── Pass vertical wheel scroll through the chip nav ──────── */
+  var chipNav = section.querySelector('.ct-chips');
+  if (chipNav) {
+    chipNav.addEventListener('wheel', function (e) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
       }
-
-      var triggerY = window.scrollY + headerH + 40;
-
-      var currentIdx = 0;
-      panels.forEach(function (panel, i) {
-        var rect = panel.getBoundingClientRect();
-        var absTop = rect.top + window.scrollY;
-        if (absTop <= triggerY) currentIdx = i;
-      });
-
-      if (currentIdx !== lastActiveIdx) {
-        lastActiveIdx = currentIdx;
-        setActiveChip(currentIdx);
-      }
-    });
+    }, { passive: false });
   }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
 })();
 </script>
 
