@@ -106,12 +106,10 @@
   var sectionEl = document.getElementById('magic-scroll-{{ section.id }}');
   if (!sectionEl) return;
 
-  var speed = {{ section.settings.magic_scroll_speed }};
   var scroller = null;
-  var rafId = null;
-  var lastTime = null;
-  var scrolling = false;
-  var resumeTimer = null;
+  var intervalId = null;
+  var STEP = 85; /* px scrolled right-to-left per tick */
+  var INTERVAL = 600; /* ms between each nudge */
 
   function getScroller () {
     if (!scroller) {
@@ -122,60 +120,25 @@
     return scroller;
   }
 
-  function step (now) {
+  function nudge () {
     var el = getScroller();
-    if (!el || !scrolling) { lastTime = null; return; }
-
-    if (lastTime === null) { lastTime = now; }
-    var delta = (now - lastTime) / 1000;
-    lastTime = now;
-
-    var max = el.scrollWidth - el.clientWidth;
-    if (max <= 0) { stop(); return; }
-
-    el.scrollLeft += speed * delta;
-
-    /* Seamless loop: when we reach the end, jump back silently */
-    if (el.scrollLeft >= max - 1) {
-      el.scrollLeft = 0;
-    }
-
-    rafId = requestAnimationFrame(step);
+    if (!el) return;
+    el.scrollBy({ left: STEP, behavior: 'smooth' });
   }
 
   function start () {
-    if (scrolling) return;
-    scrolling = true;
+    if (intervalId) return;
     sectionEl.classList.remove('ms-idle');
-    lastTime = null;
-    rafId = requestAnimationFrame(step);
+    intervalId = setInterval(nudge, INTERVAL);
   }
 
   function stop () {
-    scrolling = false;
-    lastTime = null;
-    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
-    /* Brief idle window so arrows are reachable after leaving */
-    clearTimeout(resumeTimer);
-    resumeTimer = setTimeout(function () {
-      sectionEl.classList.add('ms-idle');
-    }, 300);
+    if (intervalId) { clearInterval(intervalId); intervalId = null; }
+    sectionEl.classList.add('ms-idle');
   }
 
-  sectionEl.addEventListener('mouseenter', function () {
-    clearTimeout(resumeTimer);
-    sectionEl.classList.remove('ms-idle');
-    start();
-  });
-
+  sectionEl.addEventListener('mouseenter', start);
   sectionEl.addEventListener('mouseleave', stop);
-
-  /* Pause when user manually drags / clicks the arrows */
-  sectionEl.addEventListener('pointerdown', function () {
-    stop();
-    clearTimeout(resumeTimer);
-    sectionEl.classList.add('ms-idle');
-  });
 })();
 </script>
 {%- endif -%}
