@@ -352,7 +352,7 @@
         "subtitle": "",
         "description": "余計なものは使わず、 \n使うのは生の自然食材だけ。からだにやさしいフレッシュフードです。あなたの大切な家族を想って作りました。",
         "button_label": "View all food",
-        "button_url": "shopify://blogs/blog",
+        "button_url": "shopify://blogs/journal",
         "main_image": "shopify://shop_images/Screenshot_2026-04-05_at_2.40.46_PM.png",
         "main_image_alt": "Annie's Pantry dog food"
       }
@@ -3407,7 +3407,7 @@
         "cta_label": "View More",
         "cta_url": "shopify://pages/blogs",
         "decoration_image": "shopify://shop_images/3c77a1c1e5384c41c5e69df75312a78951fd8d87-350x261.avif",
-        "blog": "blog",
+        "blog": "journal",
         "posts_to_show": 3,
         "image_ratio": "portrait",
         "show_date": true,
@@ -3828,7 +3828,7 @@
         "show_paw_icon": true,
         "heading": "ニュース",
         "cta_label": "View All",
-        "cta_url": "shopify://blogs/blog",
+        "cta_url": "shopify://blogs/journal",
         "show_decoration": true,
         "decoration_image": "shopify://shop_images/16_-ItalianGreyhound.png",
         "decoration_margin_top": 32,
