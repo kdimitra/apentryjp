@@ -83,21 +83,8 @@
 
 {%- if section.settings.magic_scroll -%}
 <style>
-  #magic-scroll-{{ section.id }} {
-    --ms-cursor-active: none;
-  }
   #magic-scroll-{{ section.id }} slideshow-slides {
-    cursor: none;
     scroll-snap-type: none !important;
-  }
-  #magic-scroll-{{ section.id }} .slideshow-control {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  #magic-scroll-{{ section.id }}.ms-idle .slideshow-control {
-    pointer-events: auto;
-    opacity: 1;
   }
 </style>
 
@@ -106,10 +93,12 @@
   var sectionEl = document.getElementById('magic-scroll-{{ section.id }}');
   if (!sectionEl) return;
 
+  /* px per second */
+  var SPEED = 400;
   var scroller = null;
-  var intervalId = null;
-  var STEP = 85; /* px scrolled right-to-left per tick */
-  var INTERVAL = 600; /* ms between each nudge */
+  var rafId = null;
+  var lastTime = null;
+  var active = false;
 
   function getScroller () {
     if (!scroller) {
@@ -120,21 +109,49 @@
     return scroller;
   }
 
-  function nudge () {
+  function step (now) {
+    if (!active) return;
     var el = getScroller();
     if (!el) return;
-    el.scrollBy({ left: STEP, behavior: 'smooth' });
+
+    /* Cap delta to 32ms so rapid enter/leave bursts never produce a huge jump */
+    var delta = lastTime === null ? 0 : Math.min((now - lastTime) / 1000, 0.032);
+    lastTime = now;
+
+    if (delta > 0) {
+      var max = el.scrollWidth - el.clientWidth;
+      if (max > 0) {
+        el.scrollLeft = Math.min(el.scrollLeft + SPEED * delta, max);
+      }
+    }
+
+    rafId = requestAnimationFrame(step);
   }
 
   function start () {
-    if (intervalId) return;
-    sectionEl.classList.remove('ms-idle');
-    intervalId = setInterval(nudge, INTERVAL);
+    if (active) return;
+    active = true;
+    lastTime = null; /* reset so first frame produces 0 delta — no spike */
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(step);
   }
 
   function stop () {
-    if (intervalId) { clearInterval(intervalId); intervalId = null; }
-    sectionEl.classList.add('ms-idle');
+    active = false;
+    lastTime = null;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+    /* Full reset: scroll back to start instantly (no smooth) */
+    var el = getScroller();
+    if (el) {
+      el.style.scrollBehavior = 'auto';
+      el.scrollLeft = 0;
+      /* Restore smooth scroll after the jump is painted */
+      requestAnimationFrame(function () {
+        el.style.scrollBehavior = '';
+      });
+    }
+    /* Drop cached scroller ref so next enter re-queries a fresh element */
+    scroller = null;
   }
 
   sectionEl.addEventListener('mouseenter', start);
