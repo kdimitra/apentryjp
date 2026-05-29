@@ -260,10 +260,17 @@
     "annies_natural_blend_AB8rXE": {
       "type": "annies-natural-blend",
       "blocks": {
+        "blend_card_nVqMDd": {
+          "type": "blend_card",
+          "settings": {
+            "title": "新鮮なお肉",
+            "description": "<p>厳選した新鮮な素材だけを使用しています。</p>"
+          }
+        },
         "blend_card_GAqfD9": {
           "type": "blend_card",
           "settings": {
-            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
+            "image": "shopify://shop_images/789e169fe73c5147935f2f93406e4e76574d95d0-1000x1000_png.avif",
             "title": "わかめ",
             "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
           }
@@ -294,6 +301,7 @@
         }
       },
       "block_order": [
+        "blend_card_nVqMDd",
         "blend_card_GAqfD9",
         "blend_card_bNMJY4",
         "blend_card_HFytpt",
@@ -563,6 +571,8 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,

@@ -500,12 +500,12 @@
       "settings": {
         "products_to_show": 10,
         "show_paw_icon": true,
-        "bg_color": "#F5F0E4",
-        "chip_active_bg": "#87CEDC",
-        "chip_active_text": "#FFFFFF",
-        "chip_border": "#C8C2B8",
-        "heading_color": "#1C1C1A",
-        "paw_color": "#87CEDC",
+        "bg_color": "#f5f0e4",
+        "chip_active_bg": "#87cedc",
+        "chip_active_text": "#ffffff",
+        "chip_border": "#c8c2b8",
+        "heading_color": "#1c1c1a",
+        "paw_color": "#87cedc",
         "padding_top": 80,
         "padding_bottom": 80
       }
@@ -524,7 +524,7 @@
         "image_ratio": "landscape",
         "show_date": true,
         "show_category": true,
-        "bg_color": "#F4F1EC"
+        "bg_color": "#f4f1ec"
       }
     }
   },
