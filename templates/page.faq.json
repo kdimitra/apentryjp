@@ -23,6 +23,22 @@
     "faq_section_6D6xz9": {
       "type": "faq-section",
       "blocks": {
+        "faq_item_Jbq4hB": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+          }
+        },
+        "faq_item_49raJ7": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+          }
+        },
         "faq_item_zjyH8F": {
           "type": "faq_item",
           "settings": {
@@ -129,6 +145,8 @@
         }
       },
       "block_order": [
+        "faq_item_Jbq4hB",
+        "faq_item_49raJ7",
         "faq_item_zjyH8F",
         "faq_item_8bckiK",
         "faq_item_crbt6g",
