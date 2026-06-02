@@ -169,15 +169,15 @@
         "padding_top": 72,
         "padding_bottom": 96,
         "bg_color": "#f5f0e4",
-        "brand_heading_color": "#2c1a0e",
-        "tab_active_bg": "#3d2b1f",
+        "brand_heading_color": "#5a3729",
+        "tab_active_bg": "#5a3729",
         "tab_active_text": "#ffffff",
-        "tab_idle_text": "#3d2b1f",
+        "tab_idle_text": "#5a3729",
         "tab_border_color": "#d8d2c8",
-        "heading_color": "#2c1a0e",
+        "heading_color": "#5a3729",
         "icon_color": "#87cedc",
-        "question_color": "#2c1a0e",
-        "answer_color": "#5a4a3a",
+        "question_color": "#5a3729",
+        "answer_color": "#5a3729",
         "item_open_border_color": "#5b9bb0"
       }
     }
