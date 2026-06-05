@@ -366,6 +366,14 @@
             "question": "定期購入のメリットは？",
             "answer": "タブ : 8％OFF、セットフード : 5%％OFF、変更・休止が自由に行えます。"
           }
+        },
+        "faq_item_Ywb4Gd": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "購入方法・ご注文の流れ",
+            "answer": "以下で購入が可能です。\n■オンライン：公式オンラインストア、アマゾン（アマゾンは一部商品のみの取り扱い）\n■店舗：なし\n■購入方法：\n1、定期便（タブ:8%OFF/セットフード:5%OFF、マイページあり、自由に変更・解約可能）\n2、都度購入"
+          }
         }
       },
       "block_order": [
@@ -411,7 +419,8 @@
         "faq_item_FH883F",
         "faq_item_GNaNpN",
         "faq_item_KU8AMq",
-        "faq_item_c6jNM9"
+        "faq_item_c6jNM9",
+        "faq_item_Ywb4Gd"
       ],
       "name": "FAQ",
       "settings": {
