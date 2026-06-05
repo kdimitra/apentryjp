@@ -494,6 +494,14 @@
             "question": "注文のキャンセルや返品はできる？",
             "answer": "■キャンセル：注文確定後のキャンセルはできません。定期便は次回決済日までにご変更ください。\n■返品・返金：原則不可（食品のため）。\n※例外：商品の不良、破損、誤配送など。返品は商品到着後7日以内の連絡が必要です。詳しくは、返品ポリシーをご覧ください。"
           }
+        },
+        "faq_item_QJM8LA": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "利用可能なお支払い方法を教えてください",
+            "answer": "クレジットカード（VISA/Master/AMEX/JCB）、Google Pay、Apple Pay（Safariのみ）"
+          }
         }
       },
       "block_order": [
@@ -555,7 +563,8 @@
         "faq_item_iwzXcY",
         "faq_item_gNrXkJ",
         "faq_item_abk3ke",
-        "faq_item_dzmDx4"
+        "faq_item_dzmDx4",
+        "faq_item_QJM8LA"
       ],
       "name": "FAQ",
       "settings": {
