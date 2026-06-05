@@ -462,6 +462,14 @@
             "question": "メールアドレスを変更・確認したい",
             "answer": "マイページの「会員情報」から変更可能です。"
           }
+        },
+        "faq_item_iwzXcY": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "支払い方法を変更できる？",
+            "answer": "マイページから変更可能です。"
+          }
         }
       },
       "block_order": [
@@ -519,7 +527,8 @@
         "faq_item_UK4dhW",
         "faq_item_39fiLh",
         "faq_item_UcJghL",
-        "faq_item_zz43Wh"
+        "faq_item_zz43Wh",
+        "faq_item_iwzXcY"
       ],
       "name": "FAQ",
       "settings": {
