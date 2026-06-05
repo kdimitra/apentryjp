@@ -414,6 +414,14 @@
             "question": "お届け先住所は変更できる？",
             "answer": "■注文確定後は変更はできません。\n■発送済みの場合、伝票番号を元にご自身で配送会社へ転送を依頼してください（費用はお客様負担）。\n■注文確定前はマイページから変更が可能です（次回決済日まで）。"
           }
+        },
+        "faq_item_TgPUJi": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便のお届け日時は変更できる？",
+            "answer": "決済日にはお届け日時の指定はできません。注文から2〜5営業日程度でお届けいたします。\n商品発送後、ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
+          }
         }
       },
       "block_order": [
@@ -465,7 +473,8 @@
         "faq_item_yaCztQ",
         "faq_item_rq63Yb",
         "faq_item_WAERYw",
-        "faq_item_tNGYBQ"
+        "faq_item_tNGYBQ",
+        "faq_item_TgPUJi"
       ],
       "name": "FAQ",
       "settings": {
