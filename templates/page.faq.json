@@ -422,6 +422,14 @@
             "question": "定期便のお届け日時は変更できる？",
             "answer": "決済日にはお届け日時の指定はできません。注文から2〜5営業日程度でお届けいたします。\n商品発送後、ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
           }
+        },
+        "faq_item_FBGV6A": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便のお届け周期は変更できる？",
+            "answer": "お届け間隔は⁠7日、⁠14日、⁠⁠30日、⁠⁠60日から設定が可能です。マイページから途中変更も可能です。"
+          }
         }
       },
       "block_order": [
@@ -474,7 +482,8 @@
         "faq_item_rq63Yb",
         "faq_item_WAERYw",
         "faq_item_tNGYBQ",
-        "faq_item_TgPUJi"
+        "faq_item_TgPUJi",
+        "faq_item_FBGV6A"
       ],
       "name": "FAQ",
       "settings": {
