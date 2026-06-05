@@ -318,6 +318,14 @@
             "question": "トッピングは必要ですか？",
             "answer": "パップタブ、フランケンソーセージは、バランス良い配合なので不要です。\nピュアシリーズは、トッピングしていただいても構いません。"
           }
+        },
+        "faq_item_fwGj7E": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "解約・休止・スキップはできますか？",
+            "answer": "マイページからいつでも可能です。次回決済日までにお手続きください。次回決済日はマイページからご確認いただけます。"
+          }
         }
       },
       "block_order": [
@@ -357,7 +365,8 @@
         "faq_item_wmTfcB",
         "faq_item_nNLPUr",
         "faq_item_RNGFWL",
-        "faq_item_CqwtfM"
+        "faq_item_CqwtfM",
+        "faq_item_fwGj7E"
       ],
       "name": "FAQ",
       "settings": {
