@@ -222,6 +222,14 @@
             "question": "チキンアレルギーですが食べられますか？",
             "answer": "アニーズパントリーは、人が食べられる高品質な食材のみを使用し、体にやさしい生食スタイルで提供しています。ただし、すべてのワンちゃんに必ずしも安全とは限りません。チキンにアレルギーのある場合は、まずは敏感な子のために厳選された「チキン不使用の製品」からお試しいただくことをおすすめします。"
           }
+        },
+        "faq_item_GeTKc8": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "手作り食やドライフードにトッピングできる？",
+            "answer": "可能です。徐々に量を増やし、最終的には単体で与える方法が推奨されます。"
+          }
         }
       },
       "block_order": [
@@ -249,7 +257,8 @@
         "faq_item_eBwAy7",
         "faq_item_iPiqzE",
         "faq_item_zTVWAj",
-        "faq_item_8qUfyw"
+        "faq_item_8qUfyw",
+        "faq_item_GeTKc8"
       ],
       "name": "FAQ",
       "settings": {
