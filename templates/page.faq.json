@@ -182,6 +182,14 @@
             "question": "マイページとは？",
             "answer": "購入履歴、配送日時や商品変更、支払方法、紹介などが管理できるページです。定期的に購入される場合は、マイページの作成をお勧めします。"
           }
+        },
+        "faq_item_YRJkeV": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "マイページにログインできません",
+            "answer": "ご注文時のメールとパスワードでログインが可能です。\nログインできない場合は、LINE公式アカウント@anniepantryからお問合せください。"
+          }
         }
       },
       "block_order": [
@@ -204,7 +212,8 @@
         "faq_item_GmEnGr",
         "faq_item_bGJApF",
         "faq_item_NRbAjz",
-        "faq_item_aenrcy"
+        "faq_item_aenrcy",
+        "faq_item_YRJkeV"
       ],
       "name": "FAQ",
       "settings": {
