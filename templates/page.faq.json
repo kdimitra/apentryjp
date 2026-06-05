@@ -127,6 +127,14 @@
             "answer": "はい。まずはいつものフードへのトッピングから始める方も多くいらっしゃいます。"
           }
         },
+        "faq_item_w8PEDg": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "子犬・シニア犬にも与えられますか？",
+            "answer": "年齢や体調に応じてご利用いただけます。不安な場合はかかりつけ獣医師へご相談ください。\n\n目安\n子犬・活発な成犬　体重の3〜5%\n成犬・妊娠中・シニア犬　体重の2〜4%\n妊娠後期・授乳中体重の3〜6%"
+          }
+        },
         "faq_item_dwqTVb": {
           "type": "faq_item",
           "settings": {
@@ -150,6 +158,7 @@
         "faq_item_ktFQ8q",
         "faq_item_REXwX6",
         "faq_item_PYKtt3",
+        "faq_item_w8PEDg",
         "faq_item_dwqTVb"
       ],
       "name": "FAQ",
