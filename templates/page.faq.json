@@ -190,6 +190,14 @@
             "question": "マイページにログインできません",
             "answer": "ご注文時のメールとパスワードでログインが可能です。\nログインできない場合は、LINE公式アカウント@anniepantryからお問合せください。"
           }
+        },
+        "faq_item_eBwAy7": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "LINEとアカウントを連携するには？",
+            "answer": "LINEで @anniepantry と検索し、お友達登録すると連携が可能です。"
+          }
         }
       },
       "block_order": [
@@ -213,7 +221,8 @@
         "faq_item_bGJApF",
         "faq_item_NRbAjz",
         "faq_item_aenrcy",
-        "faq_item_YRJkeV"
+        "faq_item_YRJkeV",
+        "faq_item_eBwAy7"
       ],
       "name": "FAQ",
       "settings": {
