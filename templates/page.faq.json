@@ -70,6 +70,14 @@
             "question": "クーポンやポイントのご利用方法を教えてください",
             "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
           }
+        },
+        "faq_item_UXjJNW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "問い合わせの返信がありません",
+            "answer": "公式LINEアカウントにて、平日10～16時に順次対応しております。3営業日経っても返事がない場合は、再度ご連絡ください。\n※公式LINEアカウントID：@anniespantry"
+          }
         }
       },
       "block_order": [
@@ -78,7 +86,8 @@
         "faq_item_TVjBbq",
         "faq_item_CVArUb",
         "faq_item_wG78Dn",
-        "faq_item_ibWQVL"
+        "faq_item_ibWQVL",
+        "faq_item_UXjJNW"
       ],
       "name": "FAQ",
       "settings": {
