@@ -102,6 +102,14 @@
             "question": "お腹がゆるくなることはありますか？",
             "answer": "食事内容や水分量の変化により、一時的に便の状態が変わる場合があります。少量からスタートし、様子を見ながら調整してください。"
           }
+        },
+        "faq_item_ktFQ8q": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "どれくらい与えればいいですか？",
+            "answer": "年齢・体重・活動量によって異なります。\n以下ページ内『生食用 食事量シミュレーター』で目安量を計算することが可能です。\n\n食事目安量を確認する ▶︎ https://www.apantry.jp/about"
+          }
         }
       },
       "block_order": [
@@ -114,7 +122,8 @@
         "faq_item_UXjJNW",
         "faq_item_ytUEM7",
         "faq_item_fgMiEP",
-        "faq_item_CBAg6j"
+        "faq_item_CBAg6j",
+        "faq_item_ktFQ8q"
       ],
       "name": "FAQ",
       "settings": {
