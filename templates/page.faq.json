@@ -166,6 +166,14 @@
             "question": "クーポンやポイントのご利用方法を教えてください",
             "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
           }
+        },
+        "faq_item_NRbAjz": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "オンラインストア以外で購入できますか？",
+            "answer": "Amazonストアでも購入可能です（一部商品のみ販売）"
+          }
         }
       },
       "block_order": [
@@ -186,7 +194,8 @@
         "faq_item_dwqTVb",
         "faq_item_dqNXiJ",
         "faq_item_GmEnGr",
-        "faq_item_bGJApF"
+        "faq_item_bGJApF",
+        "faq_item_NRbAjz"
       ],
       "name": "FAQ",
       "settings": {
