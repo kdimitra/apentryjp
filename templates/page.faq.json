@@ -526,6 +526,14 @@
             "question": "領収書は発行できる？",
             "answer": "領収書は発行しておりません。マイページから明細書をダウンロードいただくか、ご注文完了メールに記載された注文詳細をご利用ください。"
           }
+        },
+        "faq_item_khWj4c": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "海外から購入できる？",
+            "answer": "不可（現在は海外配送非対応。今後対応時にお知らせいたします）"
+          }
         }
       },
       "block_order": [
@@ -591,7 +599,8 @@
         "faq_item_QJM8LA",
         "faq_item_iW4kRH",
         "faq_item_qkKxRE",
-        "faq_item_RpRhdA"
+        "faq_item_RpRhdA",
+        "faq_item_khWj4c"
       ],
       "name": "FAQ",
       "settings": {
