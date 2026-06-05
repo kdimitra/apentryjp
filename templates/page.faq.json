@@ -278,6 +278,14 @@
             "question": "解凍したらどのくらいもちますか？",
             "answer": "解凍後は冷蔵保存し、2日以内に使い切ってください。\n（品質保持のため、できるだけ一度で与えることをおすすめします。）"
           }
+        },
+        "faq_item_wRbygm": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍後の再冷凍はできますか？",
+            "answer": "解凍直後であれば、再冷凍は可能です。\nただし、品質劣化（肉の酸化）の原因となるため、再冷凍の繰り返しはおすすめしていません。\nおすすめの方法は、初回解凍時に小分けして再冷凍し、必要な分だけ再解凍することです。\nなお、再解凍は2回までを目安にしてください。"
+          }
         }
       },
       "block_order": [
@@ -312,7 +320,8 @@
         "faq_item_KGpYii",
         "faq_item_MfBbYy",
         "faq_item_YNBDqW",
-        "faq_item_afQtrf"
+        "faq_item_afQtrf",
+        "faq_item_wRbygm"
       ],
       "name": "FAQ",
       "settings": {
