@@ -270,6 +270,14 @@
             "question": "常温保存はできますか？",
             "answer": "常温保存はできません。必ず冷凍保存（-18℃以下）で保管してください。"
           }
+        },
+        "faq_item_afQtrf": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍したらどのくらいもちますか？",
+            "answer": "解凍後は冷蔵保存し、2日以内に使い切ってください。\n（品質保持のため、できるだけ一度で与えることをおすすめします。）"
+          }
         }
       },
       "block_order": [
@@ -303,7 +311,8 @@
         "faq_item_ypHmbp",
         "faq_item_KGpYii",
         "faq_item_MfBbYy",
-        "faq_item_YNBDqW"
+        "faq_item_YNBDqW",
+        "faq_item_afQtrf"
       ],
       "name": "FAQ",
       "settings": {
