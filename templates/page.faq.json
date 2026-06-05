@@ -358,6 +358,14 @@
             "question": "支払い方法は？",
             "answer": "クレジットカード、Google Payなどに対応しております。"
           }
+        },
+        "faq_item_c6jNM9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入のメリットは？",
+            "answer": "タブ : 8％OFF、セットフード : 5%％OFF、変更・休止が自由に行えます。"
+          }
         }
       },
       "block_order": [
@@ -402,7 +410,8 @@
         "faq_item_Y6qM8m",
         "faq_item_FH883F",
         "faq_item_GNaNpN",
-        "faq_item_KU8AMq"
+        "faq_item_KU8AMq",
+        "faq_item_c6jNM9"
       ],
       "name": "FAQ",
       "settings": {
