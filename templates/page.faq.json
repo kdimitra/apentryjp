@@ -566,6 +566,14 @@
             "question": "どれくらいで届く？",
             "answer": "■注文から2〜5営業日程度でお届けいたします。\n■日時指定はできかねます。指定をご希望の方は、ヤマト運輸公式LINEと連携しご自身でご変更ください。\n■連休や祝日中は配送遅延の可能性あります。あらかじめご了承ください。"
           }
+        },
+        "faq_item_a9BFEN": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "配送状況はどこで確認できる？",
+            "answer": "■出荷完了メールに記載のURL・送り状番号から確認が可能です。\n■ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
+          }
         }
       },
       "block_order": [
@@ -636,7 +644,8 @@
         "faq_item_jaJFyi",
         "faq_item_NLfJdJ",
         "faq_item_hk7rWr",
-        "faq_item_bVqqzy"
+        "faq_item_bVqqzy",
+        "faq_item_a9BFEN"
       ],
       "name": "FAQ",
       "settings": {
