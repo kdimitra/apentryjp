@@ -206,6 +206,14 @@
             "question": "添加物は入っていますか？",
             "answer": "香料・着色料・保存料などは使用しておりません。"
           }
+        },
+        "faq_item_zTVWAj": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "どんなグレードの肉を使用していますか？",
+            "answer": "私たちは、ペットフード用の低品質な原料や機械的に処理された肉は一切使用せず、人が食べられるレストラン品質の厳選食材のみを使っています。"
+          }
         }
       },
       "block_order": [
@@ -231,7 +239,8 @@
         "faq_item_aenrcy",
         "faq_item_YRJkeV",
         "faq_item_eBwAy7",
-        "faq_item_iPiqzE"
+        "faq_item_iPiqzE",
+        "faq_item_zTVWAj"
       ],
       "name": "FAQ",
       "settings": {
