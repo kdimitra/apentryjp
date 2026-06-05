@@ -382,6 +382,14 @@
             "question": "ギフト用の注文はできますか？",
             "answer": "現在、ギフト対応（梱包・配送）は対応しておりません。"
           }
+        },
+        "faq_item_yaCztQ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "電話注文はできますか？",
+            "answer": "電話注文は承っておりません。"
+          }
         }
       },
       "block_order": [
@@ -429,7 +437,8 @@
         "faq_item_KU8AMq",
         "faq_item_c6jNM9",
         "faq_item_Ywb4Gd",
-        "faq_item_HzPiQC"
+        "faq_item_HzPiQC",
+        "faq_item_yaCztQ"
       ],
       "name": "FAQ",
       "settings": {
