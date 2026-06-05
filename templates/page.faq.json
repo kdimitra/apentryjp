@@ -518,6 +518,14 @@
             "question": "決済されるタイミングは？",
             "answer": "■単品/初回定期便/再開後1回目：注文完了時に即時決済\n■定期便2回目以降：初回購入日から一定期間（例：30日）ごとに自動で決済されます。"
           }
+        },
+        "faq_item_RpRhdA": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "領収書は発行できる？",
+            "answer": "領収書は発行しておりません。マイページから明細書をダウンロードいただくか、ご注文完了メールに記載された注文詳細をご利用ください。"
+          }
         }
       },
       "block_order": [
@@ -582,7 +590,8 @@
         "faq_item_dzmDx4",
         "faq_item_QJM8LA",
         "faq_item_iW4kRH",
-        "faq_item_qkKxRE"
+        "faq_item_qkKxRE",
+        "faq_item_RpRhdA"
       ],
       "name": "FAQ",
       "settings": {
