@@ -350,6 +350,14 @@
             "question": "お届け内容・数量を変更したいです",
             "answer": "マイページから次回分のお届け先・キャンセル・再開など変更可能です。こちらからログインしてください。\nしかし、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
           }
+        },
+        "faq_item_KU8AMq": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "支払い方法は？",
+            "answer": "クレジットカード、Google Payなどに対応しております。"
+          }
         }
       },
       "block_order": [
@@ -393,7 +401,8 @@
         "faq_item_fwGj7E",
         "faq_item_Y6qM8m",
         "faq_item_FH883F",
-        "faq_item_GNaNpN"
+        "faq_item_GNaNpN",
+        "faq_item_KU8AMq"
       ],
       "name": "FAQ",
       "settings": {
