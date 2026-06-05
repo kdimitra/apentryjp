@@ -398,6 +398,14 @@
             "question": "オンラインショップ以外ではどこで購入できますか？",
             "answer": "Amazonストアでも購入可能です（一部商品のみ販売）\nhttps://www.amazon.co.jp/stores/アニーズパントリー/page/6AB4081D-9AD2-4D36-85F1-4FEC0D5852A6"
           }
+        },
+        "faq_item_WAERYw": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便の内容変更は何日前まで可能？",
+            "answer": "次回決済日まで変更可能です。"
+          }
         }
       },
       "block_order": [
@@ -447,7 +455,8 @@
         "faq_item_Ywb4Gd",
         "faq_item_HzPiQC",
         "faq_item_yaCztQ",
-        "faq_item_rq63Yb"
+        "faq_item_rq63Yb",
+        "faq_item_WAERYw"
       ],
       "name": "FAQ",
       "settings": {
