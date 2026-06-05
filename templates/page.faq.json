@@ -574,6 +574,14 @@
             "question": "配送状況はどこで確認できる？",
             "answer": "■出荷完了メールに記載のURL・送り状番号から確認が可能です。\n■ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
           }
+        },
+        "faq_item_pK6tGW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "その他",
+            "question": "送料はいくら？",
+            "answer": "送料はお届けエリアによって異なります。\n各エリアの送料はこちらからご確認ください。"
+          }
         }
       },
       "block_order": [
@@ -645,7 +653,8 @@
         "faq_item_NLfJdJ",
         "faq_item_hk7rWr",
         "faq_item_bVqqzy",
-        "faq_item_a9BFEN"
+        "faq_item_a9BFEN",
+        "faq_item_pK6tGW"
       ],
       "name": "FAQ",
       "settings": {
