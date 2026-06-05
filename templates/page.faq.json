@@ -542,6 +542,14 @@
             "question": "クーポンやポイントはどう使う？",
             "answer": "決済時、クーポンコードを入力すると反映されます。"
           }
+        },
+        "faq_item_NLfJdJ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "配送業者は？配送方法は？",
+            "answer": "ヤマト運輸より、クール宅急便でお届けします。"
+          }
         }
       },
       "block_order": [
@@ -609,7 +617,8 @@
         "faq_item_qkKxRE",
         "faq_item_RpRhdA",
         "faq_item_khWj4c",
-        "faq_item_jaJFyi"
+        "faq_item_jaJFyi",
+        "faq_item_NLfJdJ"
       ],
       "name": "FAQ",
       "settings": {
