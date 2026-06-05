@@ -230,6 +230,14 @@
             "question": "手作り食やドライフードにトッピングできる？",
             "answer": "可能です。徐々に量を増やし、最終的には単体で与える方法が推奨されます。"
           }
+        },
+        "faq_item_aN3CHB": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "食べさせ方を教えてください",
+            "answer": "冷蔵庫で一晩解凍させてから、与えてください。\nまた、解凍後すぐであれば再冷凍しても構いません。しかし、肉の過酸化につながる可能性があるため、再解凍は2回までとしてください。"
+          }
         }
       },
       "block_order": [
@@ -258,7 +266,8 @@
         "faq_item_iPiqzE",
         "faq_item_zTVWAj",
         "faq_item_8qUfyw",
-        "faq_item_GeTKc8"
+        "faq_item_GeTKc8",
+        "faq_item_aN3CHB"
       ],
       "name": "FAQ",
       "settings": {
