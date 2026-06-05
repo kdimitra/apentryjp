@@ -510,6 +510,14 @@
             "question": "決済失敗メールがきた場合どうする？",
             "answer": "■マイページで支払い情報更新後、カスタマーサポート（LINE公式アカウントより）に連絡が必要です。（再決済は自動では行われません）\n■解消されない場合、2週間後に注文がキャンセルされます。また、継続意思がないと判断し定期便が停止される可能性がございます。"
           }
+        },
+        "faq_item_qkKxRE": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "決済されるタイミングは？",
+            "answer": "■単品/初回定期便/再開後1回目：注文完了時に即時決済\n■定期便2回目以降：初回購入日から一定期間（例：30日）ごとに自動で決済されます。"
+          }
         }
       },
       "block_order": [
@@ -573,7 +581,8 @@
         "faq_item_abk3ke",
         "faq_item_dzmDx4",
         "faq_item_QJM8LA",
-        "faq_item_iW4kRH"
+        "faq_item_iW4kRH",
+        "faq_item_qkKxRE"
       ],
       "name": "FAQ",
       "settings": {
