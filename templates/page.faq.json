@@ -246,6 +246,14 @@
             "question": "どうやって解凍すればいいですか？",
             "answer": "自然解凍で解凍してください。就寝前に翌日分を冷蔵庫に移し解凍するのがお勧めです。\n自然解凍の目安\nパップタブ、フランケンソーセージ：冷蔵庫で約半日\nミディアムレア：冷蔵庫で24時間"
           }
+        },
+        "faq_item_KGpYii": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍後、全て食べきれません",
+            "answer": "一度解凍し、あげない分は小分け(スプーン1杯)にして再冷凍してください。\n次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。\nまた、解凍してから、2日程度は冷蔵庫での保管が可能です。"
+          }
         }
       },
       "block_order": [
@@ -276,7 +284,8 @@
         "faq_item_8qUfyw",
         "faq_item_GeTKc8",
         "faq_item_aN3CHB",
-        "faq_item_ypHmbp"
+        "faq_item_ypHmbp",
+        "faq_item_KGpYii"
       ],
       "name": "FAQ",
       "settings": {
