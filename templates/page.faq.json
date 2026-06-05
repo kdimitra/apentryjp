@@ -110,6 +110,14 @@
             "question": "どれくらい与えればいいですか？",
             "answer": "年齢・体重・活動量によって異なります。\n以下ページ内『生食用 食事量シミュレーター』で目安量を計算することが可能です。\n\n食事目安量を確認する ▶︎ https://www.apantry.jp/about"
           }
+        },
+        "faq_item_REXwX6": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "保存方法は？",
+            "answer": "冷凍保存してください。解凍後は冷蔵保存し、2日を目安にできるだけ早めに与えてください。"
+          }
         }
       },
       "block_order": [
@@ -123,7 +131,8 @@
         "faq_item_ytUEM7",
         "faq_item_fgMiEP",
         "faq_item_CBAg6j",
-        "faq_item_ktFQ8q"
+        "faq_item_ktFQ8q",
+        "faq_item_REXwX6"
       ],
       "name": "FAQ",
       "settings": {
