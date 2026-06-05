@@ -62,6 +62,14 @@
             "question": "定期便のメニューやパック数は変更できますか？",
             "answer": "マイページからキャンセル・再開が可能ですが、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
           }
+        },
+        "faq_item_ibWQVL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "クーポンやポイントのご利用方法を教えてください",
+            "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
+          }
         }
       },
       "block_order": [
@@ -69,7 +77,8 @@
         "faq_item_fUkLBd",
         "faq_item_TVjBbq",
         "faq_item_CVArUb",
-        "faq_item_wG78Dn"
+        "faq_item_wG78Dn",
+        "faq_item_ibWQVL"
       ],
       "name": "FAQ",
       "settings": {
