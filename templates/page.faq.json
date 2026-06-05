@@ -406,6 +406,14 @@
             "question": "定期便の内容変更は何日前まで可能？",
             "answer": "次回決済日まで変更可能です。"
           }
+        },
+        "faq_item_tNGYBQ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "お届け先住所は変更できる？",
+            "answer": "■注文確定後は変更はできません。\n■発送済みの場合、伝票番号を元にご自身で配送会社へ転送を依頼してください（費用はお客様負担）。\n■注文確定前はマイページから変更が可能です（次回決済日まで）。"
+          }
         }
       },
       "block_order": [
@@ -456,7 +464,8 @@
         "faq_item_HzPiQC",
         "faq_item_yaCztQ",
         "faq_item_rq63Yb",
-        "faq_item_WAERYw"
+        "faq_item_WAERYw",
+        "faq_item_tNGYBQ"
       ],
       "name": "FAQ",
       "settings": {
