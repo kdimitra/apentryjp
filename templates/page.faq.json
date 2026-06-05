@@ -326,6 +326,14 @@
             "question": "解約・休止・スキップはできますか？",
             "answer": "マイページからいつでも可能です。次回決済日までにお手続きください。次回決済日はマイページからご確認いただけます。"
           }
+        },
+        "faq_item_Y6qM8m": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入は毎月届きますか？",
+            "answer": "お届け間隔は⁠7日、⁠14日、⁠⁠30日、⁠⁠60日から設定が可能です。マイページから途中変更も可能です。"
+          }
         }
       },
       "block_order": [
@@ -366,7 +374,8 @@
         "faq_item_nNLPUr",
         "faq_item_RNGFWL",
         "faq_item_CqwtfM",
-        "faq_item_fwGj7E"
+        "faq_item_fwGj7E",
+        "faq_item_Y6qM8m"
       ],
       "name": "FAQ",
       "settings": {
