@@ -78,6 +78,14 @@
             "question": "問い合わせの返信がありません",
             "answer": "公式LINEアカウントにて、平日10～16時に順次対応しております。3営業日経っても返事がない場合は、再度ご連絡ください。\n※公式LINEアカウントID：@anniespantry"
           }
+        },
+        "faq_item_ytUEM7": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "フレッシュフードって何ですか？",
+            "answer": "新鮮なお肉や野菜を使用し、低温調理後または未加熱のまま急速冷凍した犬用フードです。ドライフードより水分量が多く、素材本来の香りやおいしさを楽しめます。"
+          }
         }
       },
       "block_order": [
@@ -87,7 +95,8 @@
         "faq_item_CVArUb",
         "faq_item_wG78Dn",
         "faq_item_ibWQVL",
-        "faq_item_UXjJNW"
+        "faq_item_UXjJNW",
+        "faq_item_ytUEM7"
       ],
       "name": "FAQ",
       "settings": {
