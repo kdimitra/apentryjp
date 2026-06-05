@@ -260,44 +260,89 @@
     "annies_natural_blend_AB8rXE": {
       "type": "annies-natural-blend",
       "blocks": {
+        "blend_card_nVqMDd": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/789e169fe73c5147935f2f93406e4e76574d95d0-1000x1000_png.avif",
+            "title": "わかめ",
+            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+          }
+        },
         "blend_card_GAqfD9": {
           "type": "blend_card",
           "settings": {
-            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
-            "title": "わかめ",
-            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+            "image": "shopify://shop_images/07c605d419cba3f1b13f7ec58a4478db163d73b5-1000x1000_png.avif",
+            "title": "クコの実",
+            "description": "<p>抗酸化力が高く、免疫力アップと目の健康をサポートしてくれます。</p>"
           }
         },
         "blend_card_bNMJY4": {
           "type": "blend_card",
           "settings": {
-            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
-            "title": "わかめ",
-            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+            "image": "shopify://shop_images/0cbe3e8278c2a65b8dfe6a741dce3b489ef36e13-1000x1000_png.avif",
+            "title": "オーツ麦",
+            "description": "<p>やさしい食物繊維源。グルテンフリーで、消化を助けながらエネルギーもしっかりキープ。</p>"
           }
         },
         "blend_card_HFytpt": {
           "type": "blend_card",
           "settings": {
             "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
-            "title": "わかめ",
-            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+            "title": "かぼちゃ",
+            "description": "<p>食物繊維と栄養がたっぷり。お腹の調子を整え、胃腸をやさしくサポート。</p>"
           }
         },
         "blend_card_iYz4YX": {
           "type": "blend_card",
           "settings": {
-            "image": "shopify://shop_images/f2894083fc2a1110db11fe0e9a82b415aa2d7541-1000x1000.avif",
-            "title": "わかめ",
-            "description": "<p>天然のヨウ素を含む海藻。代謝を支え、皮膚や甲状腺の健康にも◎。</p>"
+            "image": "shopify://shop_images/3571ac33ae507fefb4d6372b8adaff3d7b825d57-1000x1000_png.avif",
+            "title": "フラックスシード（亜麻仁）",
+            "description": "<p>オメガ3脂肪酸が豊富で、毛並み・関節・消化の健康をトータルケア。</p>"
+          }
+        },
+        "blend_card_7TaiEa": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/9b9bc6948588e69c3f2cbe0badc14306d0d882c9-1000x1000_png.avif",
+            "title": "ビーツ",
+            "description": "<p>血流を促し、肝臓のデトックスをサポート。毛づややお肌の健康にも◎。</p>"
+          }
+        },
+        "blend_card_wNXKwP": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/546654c613d46d7b1da0e43c1230b03b5b84c07e-1000x1000_png.avif",
+            "title": "にんじん",
+            "description": "<p>目にうれしいβカロテンがたっぷり。カリッとした食感で歯の汚れ対策にも。</p>"
+          }
+        },
+        "blend_card_eGEajM": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/d3006a026677ffd9c7948f94d014eb4389c89d82-1000x1000_png.avif",
+            "title": "ほうれん草",
+            "description": "<p>鉄分と抗酸化成分を含み、免疫力や心臓の健康維持に。</p>"
+          }
+        },
+        "blend_card_3kj3iF": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/8555de0fefa627808ee598f190ead0c46359ef92-1000x1000_png.avif",
+            "title": "セロリ",
+            "description": "<p>低カロリーなのに栄養豊富。ビタミンA・C・Kが関節の健康や口臭ケアに。</p>"
           }
         }
       },
       "block_order": [
+        "blend_card_nVqMDd",
         "blend_card_GAqfD9",
         "blend_card_bNMJY4",
         "blend_card_HFytpt",
-        "blend_card_iYz4YX"
+        "blend_card_iYz4YX",
+        "blend_card_7TaiEa",
+        "blend_card_wNXKwP",
+        "blend_card_eGEajM",
+        "blend_card_3kj3iF"
       ],
       "name": "Annie's Natural Blend",
       "settings": {
@@ -563,6 +608,8 @@
       },
       "name": "t:names.products_carousel",
       "settings": {
+        "magic_scroll": false,
+        "magic_scroll_speed": 80,
         "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
