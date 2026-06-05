@@ -390,6 +390,14 @@
             "question": "電話注文はできますか？",
             "answer": "電話注文は承っておりません。"
           }
+        },
+        "faq_item_rq63Yb": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "オンラインショップ以外ではどこで購入できますか？",
+            "answer": "Amazonストアでも購入可能です（一部商品のみ販売）\nhttps://www.amazon.co.jp/stores/アニーズパントリー/page/6AB4081D-9AD2-4D36-85F1-4FEC0D5852A6"
+          }
         }
       },
       "block_order": [
@@ -438,7 +446,8 @@
         "faq_item_c6jNM9",
         "faq_item_Ywb4Gd",
         "faq_item_HzPiQC",
-        "faq_item_yaCztQ"
+        "faq_item_yaCztQ",
+        "faq_item_rq63Yb"
       ],
       "name": "FAQ",
       "settings": {
