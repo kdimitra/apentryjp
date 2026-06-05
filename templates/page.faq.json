@@ -478,6 +478,14 @@
             "question": "定期便を一時停止したい",
             "answer": "マイページよりお手続きが可能です。\n※次回決済日までお手続き可能です。決済日を過ぎた場合、次々回の注文分から停止できます。"
           }
+        },
+        "faq_item_abk3ke": {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "定期便を解約・退会したい",
+            "answer": "マイページより解約・退会手続きが可能です。\n※次回決済日までお手続き可能です。決済日過ぎた場合、次々回の注文分から停止できます。"
+          }
         }
       },
       "block_order": [
@@ -537,7 +545,8 @@
         "faq_item_UcJghL",
         "faq_item_zz43Wh",
         "faq_item_iwzXcY",
-        "faq_item_gNrXkJ"
+        "faq_item_gNrXkJ",
+        "faq_item_abk3ke"
       ],
       "name": "FAQ",
       "settings": {
