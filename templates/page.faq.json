@@ -430,6 +430,14 @@
             "question": "定期便のお届け周期は変更できる？",
             "answer": "お届け間隔は⁠7日、⁠14日、⁠⁠30日、⁠⁠60日から設定が可能です。マイページから途中変更も可能です。"
           }
+        },
+        "faq_item_UK4dhW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便の数量やメニューは変更できる？",
+            "answer": "マイページからキャンセル・再開が可能ですが、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
+          }
         }
       },
       "block_order": [
@@ -483,7 +491,8 @@
         "faq_item_WAERYw",
         "faq_item_tNGYBQ",
         "faq_item_TgPUJi",
-        "faq_item_FBGV6A"
+        "faq_item_FBGV6A",
+        "faq_item_UK4dhW"
       ],
       "name": "FAQ",
       "settings": {
