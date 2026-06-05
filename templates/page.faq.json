@@ -446,6 +446,14 @@
             "question": "定期便を再開したい",
             "answer": "■一時停止中の場合：マイページから再開可能です。\n■退会済みの場合：新規購入が必要です。"
           }
+        },
+        "faq_item_UcJghL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便をスキップできる？",
+            "answer": "マイページから次回注文をスキップすることができます。（次回決済日までに手続きが必要です）"
+          }
         }
       },
       "block_order": [
@@ -501,7 +509,8 @@
         "faq_item_TgPUJi",
         "faq_item_FBGV6A",
         "faq_item_UK4dhW",
-        "faq_item_39fiLh"
+        "faq_item_39fiLh",
+        "faq_item_UcJghL"
       ],
       "name": "FAQ",
       "settings": {
