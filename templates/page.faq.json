@@ -238,6 +238,14 @@
             "question": "食べさせ方を教えてください",
             "answer": "冷蔵庫で一晩解凍させてから、与えてください。\nまた、解凍後すぐであれば再冷凍しても構いません。しかし、肉の過酸化につながる可能性があるため、再解凍は2回までとしてください。"
           }
+        },
+        "faq_item_ypHmbp": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "どうやって解凍すればいいですか？",
+            "answer": "自然解凍で解凍してください。就寝前に翌日分を冷蔵庫に移し解凍するのがお勧めです。\n自然解凍の目安\nパップタブ、フランケンソーセージ：冷蔵庫で約半日\nミディアムレア：冷蔵庫で24時間"
+          }
         }
       },
       "block_order": [
@@ -267,7 +275,8 @@
         "faq_item_zTVWAj",
         "faq_item_8qUfyw",
         "faq_item_GeTKc8",
-        "faq_item_aN3CHB"
+        "faq_item_aN3CHB",
+        "faq_item_ypHmbp"
       ],
       "name": "FAQ",
       "settings": {
