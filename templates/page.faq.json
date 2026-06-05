@@ -158,6 +158,14 @@
             "question": "解凍後、食べきれません。どうしたらいいですか？",
             "answer": "あげない分は小分け（スプーン1杯）にして再冷凍してください。\n次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。\nまた、解凍してから2日程度は冷蔵庫での保管が可能です。"
           }
+        },
+        "faq_item_bGJApF": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "クーポンやポイントのご利用方法を教えてください",
+            "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
+          }
         }
       },
       "block_order": [
@@ -177,7 +185,8 @@
         "faq_item_w8PEDg",
         "faq_item_dwqTVb",
         "faq_item_dqNXiJ",
-        "faq_item_GmEnGr"
+        "faq_item_GmEnGr",
+        "faq_item_bGJApF"
       ],
       "name": "FAQ",
       "settings": {
