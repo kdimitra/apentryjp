@@ -534,6 +534,14 @@
             "question": "海外から購入できる？",
             "answer": "不可（現在は海外配送非対応。今後対応時にお知らせいたします）"
           }
+        },
+        "faq_item_jaJFyi": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "クーポンやポイントはどう使う？",
+            "answer": "決済時、クーポンコードを入力すると反映されます。"
+          }
         }
       },
       "block_order": [
@@ -600,7 +608,8 @@
         "faq_item_iW4kRH",
         "faq_item_qkKxRE",
         "faq_item_RpRhdA",
-        "faq_item_khWj4c"
+        "faq_item_khWj4c",
+        "faq_item_jaJFyi"
       ],
       "name": "FAQ",
       "settings": {
