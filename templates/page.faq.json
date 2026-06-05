@@ -374,6 +374,14 @@
             "question": "購入方法・ご注文の流れ",
             "answer": "以下で購入が可能です。\n■オンライン：公式オンラインストア、アマゾン（アマゾンは一部商品のみの取り扱い）\n■店舗：なし\n■購入方法：\n1、定期便（タブ:8%OFF/セットフード:5%OFF、マイページあり、自由に変更・解約可能）\n2、都度購入"
           }
+        },
+        "faq_item_HzPiQC": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "ギフト用の注文はできますか？",
+            "answer": "現在、ギフト対応（梱包・配送）は対応しておりません。"
+          }
         }
       },
       "block_order": [
@@ -420,7 +428,8 @@
         "faq_item_GNaNpN",
         "faq_item_KU8AMq",
         "faq_item_c6jNM9",
-        "faq_item_Ywb4Gd"
+        "faq_item_Ywb4Gd",
+        "faq_item_HzPiQC"
       ],
       "name": "FAQ",
       "settings": {
