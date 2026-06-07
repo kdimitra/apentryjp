@@ -211,7 +211,7 @@
           "type": "_slide",
           "settings": {
             "media_type_1": "image",
-            "image_1": "shopify://shop_images/IMGP0791.png",
+            "image_1": "shopify://shop_images/banner_1.avif",
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
@@ -236,7 +236,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h4>素材そのまま、うれしさいっぱい。</h4>",
+                "text": "<h1>自然と、食卓と、愛犬と。</h1>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
