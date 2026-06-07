@@ -502,9 +502,9 @@
         "show_paw_icon": true,
         "bg_color": "#f5f0e4",
         "chip_active_bg": "#87cedc",
-        "chip_active_text": "#ffffff",
+        "chip_active_text": "#5a3729",
         "chip_border": "#c8c2b8",
-        "heading_color": "#1c1c1a",
+        "heading_color": "#5a3729",
         "paw_color": "#87cedc",
         "padding_top": 80,
         "padding_bottom": 80
