@@ -12,7 +12,7 @@
     "collection_hero": {
       "type": "collection-hero",
       "settings": {
-        "bg_image_override": "shopify://shop_images/18a9601d00d6d3ec4f68d430e2e61c134522cd1c-2560x1504.png",
+        "bg_image_override": "shopify://shop_images/20260722_blog01_thumbnail.png",
         "hero_height": 480,
         "text_alignment": "center",
         "overlay_color": "#000000",

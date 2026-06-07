@@ -23,71 +23,638 @@
     "faq_section_6D6xz9": {
       "type": "faq-section",
       "blocks": {
-        "faq_item_zjyH8F": {
-          "type": "faq_item",
-          "settings": {
-            "category": "4thitem",
-            "question": "おすすめのメニューはなんですか？",
-            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。そのため、アニーズパントリーでは、違う種類の製品をローテーションで与えるのをお勧めします。（ただし、アレルギーをもつ食材は避けてください。）"
-          }
-        },
-        "faq_item_8bckiK": {
-          "type": "faq_item",
-          "settings": {
-            "category": "4thitem",
-            "question": "解凍後、食べきれません。どうしたらいいですか？",
-            "answer": "解凍後は冷蔵保存で2〜3日以内にお召し上がりください。それ以上保存する場合は再冷凍をお勧めします。"
-          }
-        },
-        "faq_item_crbt6g": {
-          "type": "faq_item",
-          "settings": {
-            "category": "4thitem",
-            "question": "定期便のお届け日時は変更できますか？",
-            "answer": "はい、マイページよりお届け日時の変更が可能です。変更は次回お届けの3日前までにお手続きください。"
-          }
-        },
-        "faq_item_Lhz73T": {
-          "type": "faq_item",
-          "settings": {
-            "category": "よくある質問",
-            "question": "おすすめのメニューはなんですか？ Modified",
-            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。 \n\n\n様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
-          }
-        },
-        "faq_item_Jbq4hB": {
-          "type": "faq_item",
-          "settings": {
-            "category": "よくある質問",
-            "question": "おすすめのメニューはなんですか？",
-            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。そのため、アニーズパントリーでは、違う種類の製品をローテーションで与えるのをお勧めします。（ただし、アレルギーをもつ食材は避けてください。）"
-          }
-        },
-        "faq_item_49raJ7": {
-          "type": "faq_item",
-          "settings": {
-            "category": "よくある質問",
-            "question": "おすすめのメニューはなんですか？",
-            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
-          }
-        },
         "faq_item_9XaWVN": {
           "type": "faq_item",
           "settings": {
-            "category": "5yh",
-            "question": "おすすめのメニューはなんですか？ dasdf",
-            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。 \n\ndasdf"
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。そのため、アニーズパントリーでは、違う種類の製品をローテーションで与えるのをお勧めします。（ただし、アレルギーをもつ食材は避けてください。）"
+          }
+        },
+        "faq_item_fUkLBd": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "解凍後、食べきれません。どうしたらいいですか？",
+            "answer": "あげない分は小分け（スプーン1杯）にして再冷凍してください。\n次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。\nまた、解凍してから2日程度は冷蔵庫での保管が可能です。"
+          }
+        },
+        "faq_item_TVjBbq": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "ドライフードからどうやって切り替えたらいいですか？",
+            "answer": "すでに他の生肉フードを食べている子であれば、切り替え期間は必要ありません。\n缶詰や加熱調理フード、ドライフード（キブル）などから切り替える場合、「徐々に切り替える」ことを勧めています。\nしかし、子犬でもシニア犬でも、いきなり全て切り替えてもとても上手くいった子がたくさんいます。\n一番よくわかっているのは毎日一緒にいる飼い主さんなので、おなかの調子や食べっぷりを見ながら判断してあげてください。\nはじめ2〜3回の食事でしっかり食べて、うんちも良好なら問題ありません。\nもし食べるのをためらうようであれば、今のフードに少しずつ混ぜて、１週間程度かけて慣らしてあげてください。\n参考）生食の切り替えガイド\nhttps://www.instagram.com/p/DPyNYaHkiLM/"
+          }
+        },
+        "faq_item_CVArUb": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のお届け日時は変更できますか?",
+            "answer": "次回決済日まで、マイページからお届け日の変更が可能です。\n期限を過ぎてからお届け日を変更したい場合、マイページでの変更はできませんのでご了承ください。その場合や発送後の変更は、配送会社へ直接ご連絡ください。"
+          }
+        },
+        "faq_item_wG78Dn": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "定期便のメニューやパック数は変更できますか？",
+            "answer": "マイページからキャンセル・再開が可能ですが、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
+          }
+        },
+        "faq_item_ibWQVL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "クーポンやポイントのご利用方法を教えてください",
+            "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
+          }
+        },
+        "faq_item_UXjJNW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "問い合わせの返信がありません",
+            "answer": "公式LINEアカウントにて、平日10～16時に順次対応しております。3営業日経っても返事がない場合は、再度ご連絡ください。\n※公式LINEアカウントID：@anniespantry"
+          }
+        },
+        "faq_item_ytUEM7": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "フレッシュフードって何ですか？",
+            "answer": "新鮮なお肉や野菜を使用し、低温調理後または未加熱のまま急速冷凍した犬用フードです。ドライフードより水分量が多く、素材本来の香りやおいしさを楽しめます。"
+          }
+        },
+        "faq_item_fgMiEP": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "ドライフードからどうやって切り替えたらいいですか？",
+            "answer": "すでに他の生肉フードを食べている子であれば、切り替え期間は必要ありません。\n缶詰や加熱調理フード、ドライフード（キブル）などから切り替える場合、「徐々に切り替える」ことを勧めています。\nしかし、子犬でもシニア犬でも、いきなり全て切り替えてもとても上手くいった子がたくさんいます。\n一番よくわかっているのは毎日一緒にいる飼い主さんなので、おなかの調子や食べっぷりを見ながら判断してあげてください。\nはじめ2〜3回の食事でしっかり食べて、うんちも良好なら問題ありません。\nもし食べるのをためらうようであれば、今のフードに少しずつ混ぜて、１週間程度かけて慣らしてあげてください。\n参考）生食の切り替えガイド\nhttps://www.instagram.com/p/DPyNYaHkiLM/"
+          }
+        },
+        "faq_item_CBAg6j": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "お腹がゆるくなることはありますか？",
+            "answer": "食事内容や水分量の変化により、一時的に便の状態が変わる場合があります。少量からスタートし、様子を見ながら調整してください。"
+          }
+        },
+        "faq_item_ktFQ8q": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "どれくらい与えればいいですか？",
+            "answer": "年齢・体重・活動量によって異なります。\n以下ページ内『生食用 食事量シミュレーター』で目安量を計算することが可能です。\n\n食事目安量を確認する ▶︎ https://www.apantry.jp/about"
+          }
+        },
+        "faq_item_REXwX6": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "保存方法は？",
+            "answer": "冷凍保存してください。解凍後は冷蔵保存し、2日を目安にできるだけ早めに与えてください。"
+          }
+        },
+        "faq_item_PYKtt3": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "トッピングとして使えますか？",
+            "answer": "はい。まずはいつものフードへのトッピングから始める方も多くいらっしゃいます。"
+          }
+        },
+        "faq_item_w8PEDg": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "子犬・シニア犬にも与えられますか？",
+            "answer": "年齢や体調に応じてご利用いただけます。不安な場合はかかりつけ獣医師へご相談ください。\n\n目安\n子犬・活発な成犬　体重の3〜5%\n成犬・妊娠中・シニア犬　体重の2〜4%\n妊娠後期・授乳中体重の3〜6%"
+          }
+        },
+        "faq_item_dwqTVb": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "なぜ冷凍なのですか？",
+            "answer": "保存料に頼らず、素材そのままのおいしさや品質を保つためです。\nまた、犬の野生本来の食生活を取り入れることで、健康がサポートできると考えているからです。"
+          }
+        },
+        "faq_item_dqNXiJ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "どうやって解凍すればいいですか？",
+            "answer": "自然解凍で解凍してください。就寝前に翌日分を冷蔵庫に移し解凍するのがお勧めです。\n自然解凍の目安\nパップタブ、フランケンソーセージ：冷蔵庫で約半日\nミディアムレア：冷蔵庫で24時間"
+          }
+        },
+        "faq_item_GmEnGr": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "解凍後、食べきれません。どうしたらいいですか？",
+            "answer": "あげない分は小分け（スプーン1杯）にして再冷凍してください。\n次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。\nまた、解凍してから2日程度は冷蔵庫での保管が可能です。"
+          }
+        },
+        "faq_item_bGJApF": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "クーポンやポイントのご利用方法を教えてください",
+            "answer": "決済時「クーポンコードを入力」欄が表示されたら、コードをご入力いただくと反映されます。"
+          }
+        },
+        "faq_item_NRbAjz": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "オンラインストア以外で購入できますか？",
+            "answer": "Amazonストアでも購入可能です（一部商品のみ販売）"
+          }
+        },
+        "faq_item_aenrcy": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "マイページとは？",
+            "answer": "購入履歴、配送日時や商品変更、支払方法、紹介などが管理できるページです。定期的に購入される場合は、マイページの作成をお勧めします。"
+          }
+        },
+        "faq_item_YRJkeV": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "マイページにログインできません",
+            "answer": "ご注文時のメールとパスワードでログインが可能です。\nログインできない場合は、LINE公式アカウント@anniepantryからお問合せください。"
+          }
+        },
+        "faq_item_eBwAy7": {
+          "type": "faq_item",
+          "settings": {
+            "category": "初めての方へ",
+            "question": "LINEとアカウントを連携するには？",
+            "answer": "LINEで @anniepantry と検索し、お友達登録すると連携が可能です。"
+          }
+        },
+        "faq_item_iPiqzE": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "添加物は入っていますか？",
+            "answer": "香料・着色料・保存料などは使用しておりません。"
+          }
+        },
+        "faq_item_zTVWAj": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "どんなグレードの肉を使用していますか？",
+            "answer": "私たちは、ペットフード用の低品質な原料や機械的に処理された肉は一切使用せず、人が食べられるレストラン品質の厳選食材のみを使っています。"
+          }
+        },
+        "faq_item_8qUfyw": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "チキンアレルギーですが食べられますか？",
+            "answer": "アニーズパントリーは、人が食べられる高品質な食材のみを使用し、体にやさしい生食スタイルで提供しています。ただし、すべてのワンちゃんに必ずしも安全とは限りません。チキンにアレルギーのある場合は、まずは敏感な子のために厳選された「チキン不使用の製品」からお試しいただくことをおすすめします。"
+          }
+        },
+        "faq_item_GeTKc8": {
+          "type": "faq_item",
+          "settings": {
+            "category": "製品について",
+            "question": "手作り食やドライフードにトッピングできる？",
+            "answer": "可能です。徐々に量を増やし、最終的には単体で与える方法が推奨されます。"
+          }
+        },
+        "faq_item_aN3CHB": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "食べさせ方を教えてください",
+            "answer": "冷蔵庫で一晩解凍させてから、与えてください。\nまた、解凍後すぐであれば再冷凍しても構いません。しかし、肉の過酸化につながる可能性があるため、再解凍は2回までとしてください。"
+          }
+        },
+        "faq_item_ypHmbp": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "どうやって解凍すればいいですか？",
+            "answer": "自然解凍で解凍してください。就寝前に翌日分を冷蔵庫に移し解凍するのがお勧めです。\n自然解凍の目安\nパップタブ、フランケンソーセージ：冷蔵庫で約半日\nミディアムレア：冷蔵庫で24時間"
+          }
+        },
+        "faq_item_KGpYii": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍後、全て食べきれません",
+            "answer": "一度解凍し、あげない分は小分け(スプーン1杯)にして再冷凍してください。\n次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。\nまた、解凍してから、2日程度は冷蔵庫での保管が可能です。"
+          }
+        },
+        "faq_item_MfBbYy": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "食事は1日何回与えればよいですか？",
+            "answer": "生後12ヶ月までの子犬や、妊娠中・授乳中の母犬には、1日2回以上に分けて与えることをおすすめします。\n健康な成犬の場合は、1日1〜2回が一般的です。\n実際に、1日1回の食事（断続的断食）が細胞の修復を促し、代謝機能をサポートするなど、健康面で良い影響を与えるという研究結果もあります。\nただし、個体差がありますので、年齢や活動量、体調に応じて調整し、不安な場合は獣医師にご相談ください。"
+          }
+        },
+        "faq_item_YNBDqW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "常温保存はできますか？",
+            "answer": "常温保存はできません。必ず冷凍保存（-18℃以下）で保管してください。"
+          }
+        },
+        "faq_item_afQtrf": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍したらどのくらいもちますか？",
+            "answer": "解凍後は冷蔵保存し、2日以内に使い切ってください。\n（品質保持のため、できるだけ一度で与えることをおすすめします。）"
+          }
+        },
+        "faq_item_wRbygm": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "解凍後の再冷凍はできますか？",
+            "answer": "解凍直後であれば、再冷凍は可能です。\nただし、品質劣化（肉の酸化）の原因となるため、再冷凍の繰り返しはおすすめしていません。\nおすすめの方法は、初回解凍時に小分けして再冷凍し、必要な分だけ再解凍することです。\nなお、再解凍は2回までを目安にしてください。"
+          }
+        },
+        "faq_item_wmTfcB": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "開封後はどのくらいもちますか？",
+            "answer": "解凍後は冷蔵保存し、3日以内に使い切ってください。\n（品質保持のため、できるだけ一度で与えることをおすすめします。）\n解凍直後であれば、再冷凍は可能です。\nただし、品質劣化（肉の酸化）の原因となるため、再冷凍の繰り返しはおすすめしていません。\nおすすめの方法は、初回解凍時に小分けして再冷凍し、必要な分だけ再解凍することです。\nなお、再解凍は2回までを目安にしてください。"
+          }
+        },
+        "faq_item_nNLPUr": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "加熱してもいいですか？",
+            "answer": "基本的に、加熱を含む調理は行わないでください。\n調理すると骨が砕け、犬の健康に深刻なリスクをもたらす可能性があります。\n骨は生のまま与えることで柔軟性を保ち、必須栄養素を損なわずに与えることができます。\nただし、ミディアムレアシリーズは加熱が可能です。\n温める場合は、解凍後に500Wの電子レンジで約90秒加熱し、よく混ぜてから温度を確認して与えてください。"
+          }
+        },
+        "faq_item_RNGFWL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "ドライフードからどうやって切り替えたらいいですか？",
+            "answer": "すでに他の生肉フードを食べている子であれば、切り替え期間は必要ありません。\n缶詰や加熱調理フード、ドライフード（キブル）などから切り替える場合、「徐々に切り替える」ことを勧めています。\nしかし、子犬でもシニア犬でも、いきなり全て切り替えてもとても上手くいった子がたくさんいます。\n一番よくわかっているのは毎日一緒にいる飼い主さんなので、おなかの調子や食べっぷりを見ながら判断してあげてください。\nはじめ2〜3回の食事でしっかり食べて、うんちも良好なら問題ありません。\nもし食べるのをためらうようであれば、今のフードに少しずつ混ぜて、１週間程度かけて慣らしてあげてください。\n参考）生食の切り替えガイド\nhttps://www.instagram.com/p/DPyNYaHkiLM/"
+          }
+        },
+        "faq_item_CqwtfM": {
+          "type": "faq_item",
+          "settings": {
+            "category": "保存・与え方について",
+            "question": "トッピングは必要ですか？",
+            "answer": "パップタブ、フランケンソーセージは、バランス良い配合なので不要です。\nピュアシリーズは、トッピングしていただいても構いません。"
+          }
+        },
+        "faq_item_fwGj7E": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "解約・休止・スキップはできますか？",
+            "answer": "マイページからいつでも可能です。次回決済日までにお手続きください。次回決済日はマイページからご確認いただけます。"
+          }
+        },
+        "faq_item_Y6qM8m": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入は毎月届きますか？",
+            "answer": "お届け間隔は⁠7日、⁠14日、⁠⁠30日、⁠⁠60日から設定が可能です。マイページから途中変更も可能です。"
+          }
+        },
+        "faq_item_FH883F": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "次回の発送予定日・内容はどこで確認できますか？",
+            "answer": "マイページで確認・変更可能です。こちらからログインしてください。"
+          }
+        },
+        "faq_item_GNaNpN": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "お届け内容・数量を変更したいです",
+            "answer": "マイページから次回分のお届け先・キャンセル・再開など変更可能です。こちらからログインしてください。\nしかし、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
+          }
+        },
+        "faq_item_KU8AMq": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "支払い方法は？",
+            "answer": "クレジットカード、Google Payなどに対応しております。"
+          }
+        },
+        "faq_item_c6jNM9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "定期購入について",
+            "question": "定期購入のメリットは？",
+            "answer": "タブ : 8％OFF、セットフード : 5%％OFF、変更・休止が自由に行えます。"
+          }
+        },
+        "faq_item_Ywb4Gd": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "購入方法・ご注文の流れ",
+            "answer": "以下で購入が可能です。\n■オンライン：公式オンラインストア、アマゾン（アマゾンは一部商品のみの取り扱い）\n■店舗：なし\n■購入方法：\n1、定期便（タブ:8%OFF/セットフード:5%OFF、マイページあり、自由に変更・解約可能）\n2、都度購入"
+          }
+        },
+        "faq_item_HzPiQC": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "ギフト用の注文はできますか？",
+            "answer": "現在、ギフト対応（梱包・配送）は対応しておりません。"
+          }
+        },
+        "faq_item_yaCztQ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "電話注文はできますか？",
+            "answer": "電話注文は承っておりません。"
+          }
+        },
+        "faq_item_rq63Yb": {
+          "type": "faq_item",
+          "settings": {
+            "category": "購入方法について",
+            "question": "オンラインショップ以外ではどこで購入できますか？",
+            "answer": "Amazonストアでも購入可能です（一部商品のみ販売）\nhttps://www.amazon.co.jp/stores/アニーズパントリー/page/6AB4081D-9AD2-4D36-85F1-4FEC0D5852A6"
+          }
+        },
+        "faq_item_WAERYw": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便の内容変更は何日前まで可能？",
+            "answer": "次回決済日まで変更可能です。"
+          }
+        },
+        "faq_item_tNGYBQ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "お届け先住所は変更できる？",
+            "answer": "■注文確定後は変更はできません。\n■発送済みの場合、伝票番号を元にご自身で配送会社へ転送を依頼してください（費用はお客様負担）。\n■注文確定前はマイページから変更が可能です（次回決済日まで）。"
+          }
+        },
+        "faq_item_TgPUJi": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便のお届け日時は変更できる？",
+            "answer": "決済日にはお届け日時の指定はできません。注文から2〜5営業日程度でお届けいたします。\n商品発送後、ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
+          }
+        },
+        "faq_item_FBGV6A": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便のお届け周期は変更できる？",
+            "answer": "お届け間隔は⁠7日、⁠14日、⁠⁠30日、⁠⁠60日から設定が可能です。マイページから途中変更も可能です。"
+          }
+        },
+        "faq_item_UK4dhW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便の数量やメニューは変更できる？",
+            "answer": "マイページからキャンセル・再開が可能ですが、商品の一部変更（キャンセル・追加・個数変更）は現在対応しておりません。\n一部変更をご希望の場合は、一旦定期便をキャンセルいただき、再度ご希望商品を定期購入手続きいただきますようお願いいたします。"
+          }
+        },
+        "faq_item_39fiLh": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便を再開したい",
+            "answer": "■一時停止中の場合：マイページから再開可能です。\n■退会済みの場合：新規購入が必要です。"
+          }
+        },
+        "faq_item_UcJghL": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "定期便をスキップできる？",
+            "answer": "マイページから次回注文をスキップすることができます。（次回決済日までに手続きが必要です）"
+          }
+        },
+        "faq_item_zz43Wh": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "メールアドレスを変更・確認したい",
+            "answer": "マイページの「会員情報」から変更可能です。"
+          }
+        },
+        "faq_item_iwzXcY": {
+          "type": "faq_item",
+          "settings": {
+            "category": "各種ご変更について",
+            "question": "支払い方法を変更できる？",
+            "answer": "マイページから変更可能です。"
+          }
+        },
+        "faq_item_gNrXkJ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "定期便を一時停止したい",
+            "answer": "マイページよりお手続きが可能です。\n※次回決済日までお手続き可能です。決済日を過ぎた場合、次々回の注文分から停止できます。"
+          }
+        },
+        "faq_item_abk3ke": {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "定期便を解約・退会したい",
+            "answer": "マイページより解約・退会手続きが可能です。\n※次回決済日までお手続き可能です。決済日過ぎた場合、次々回の注文分から停止できます。"
+          }
+        },
+        "faq_item_dzmDx4": {
+          "type": "faq_item",
+          "settings": {
+            "category": "サービス停止・解約",
+            "question": "注文のキャンセルや返品はできる？",
+            "answer": "■キャンセル：注文確定後のキャンセルはできません。定期便は次回決済日までにご変更ください。\n■返品・返金：原則不可（食品のため）。\n※例外：商品の不良、破損、誤配送など。返品は商品到着後7日以内の連絡が必要です。詳しくは、返品ポリシーをご覧ください。"
+          }
+        },
+        "faq_item_QJM8LA": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "利用可能なお支払い方法を教えてください",
+            "answer": "クレジットカード（VISA/Master/AMEX/JCB）、Google Pay、Apple Pay（Safariのみ）"
+          }
+        },
+        "faq_item_iW4kRH": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "決済失敗メールがきた場合どうする？",
+            "answer": "■マイページで支払い情報更新後、カスタマーサポート（LINE公式アカウントより）に連絡が必要です。（再決済は自動では行われません）\n■解消されない場合、2週間後に注文がキャンセルされます。また、継続意思がないと判断し定期便が停止される可能性がございます。"
+          }
+        },
+        "faq_item_qkKxRE": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "決済されるタイミングは？",
+            "answer": "■単品/初回定期便/再開後1回目：注文完了時に即時決済\n■定期便2回目以降：初回購入日から一定期間（例：30日）ごとに自動で決済されます。"
+          }
+        },
+        "faq_item_RpRhdA": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "領収書は発行できる？",
+            "answer": "領収書は発行しておりません。マイページから明細書をダウンロードいただくか、ご注文完了メールに記載された注文詳細をご利用ください。"
+          }
+        },
+        "faq_item_khWj4c": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "海外から購入できる？",
+            "answer": "不可（現在は海外配送非対応。今後対応時にお知らせいたします）"
+          }
+        },
+        "faq_item_jaJFyi": {
+          "type": "faq_item",
+          "settings": {
+            "category": "決済関連",
+            "question": "クーポンやポイントはどう使う？",
+            "answer": "決済時、クーポンコードを入力すると反映されます。"
+          }
+        },
+        "faq_item_NLfJdJ": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "配送業者は？配送方法は？",
+            "answer": "ヤマト運輸より、クール宅急便でお届けします。"
+          }
+        },
+        "faq_item_hk7rWr": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "商品が届かない／注文と違う",
+            "answer": "■注文と異なる：到着から7日以内に、注文番号・商品名・画像を添えてLINEでご連絡ください。\n※7日以上経ってからの交換は受け付けておりません。\n※LINEアカウントの探し方：@anniespantryと入力して公式アカウントをフォローし、お問合せフォームから上記3情報を添えてご連絡ください。もしくは、https://page.line.me/anniespantry をクリックしQRコードを読み取り、フォローしてください。順次ご対応します。\n■注文商品が届かない：\n1、旧住所に届いた場合→ 転送はお客様ご自身でご手配ください。\n2、返品されている場合（長期不在等）→ ヤマト運輸に再発送をご依頼ください。（返金は致しかねます）"
+          }
+        },
+        "faq_item_bVqqzy": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "どれくらいで届く？",
+            "answer": "■注文から2〜5営業日程度でお届けいたします。\n■日時指定はできかねます。指定をご希望の方は、ヤマト運輸公式LINEと連携しご自身でご変更ください。\n■連休や祝日中は配送遅延の可能性あります。あらかじめご了承ください。"
+          }
+        },
+        "faq_item_a9BFEN": {
+          "type": "faq_item",
+          "settings": {
+            "category": "配送関連",
+            "question": "配送状況はどこで確認できる？",
+            "answer": "■出荷完了メールに記載のURL・送り状番号から確認が可能です。\n■ヤマト運輸公式LINEと連携すると、ご自身で日時変更なども可能です。"
+          }
+        },
+        "faq_item_pK6tGW": {
+          "type": "faq_item",
+          "settings": {
+            "category": "その他",
+            "question": "送料はいくら？",
+            "answer": "送料はお届けエリアによって異なります。\n各エリアの送料はこちらからご確認ください。"
           }
         }
       },
       "block_order": [
-        "faq_item_zjyH8F",
-        "faq_item_8bckiK",
-        "faq_item_crbt6g",
-        "faq_item_Lhz73T",
-        "faq_item_Jbq4hB",
-        "faq_item_49raJ7",
-        "faq_item_9XaWVN"
+        "faq_item_9XaWVN",
+        "faq_item_fUkLBd",
+        "faq_item_TVjBbq",
+        "faq_item_CVArUb",
+        "faq_item_wG78Dn",
+        "faq_item_ibWQVL",
+        "faq_item_UXjJNW",
+        "faq_item_ytUEM7",
+        "faq_item_fgMiEP",
+        "faq_item_CBAg6j",
+        "faq_item_ktFQ8q",
+        "faq_item_REXwX6",
+        "faq_item_PYKtt3",
+        "faq_item_w8PEDg",
+        "faq_item_dwqTVb",
+        "faq_item_dqNXiJ",
+        "faq_item_GmEnGr",
+        "faq_item_bGJApF",
+        "faq_item_NRbAjz",
+        "faq_item_aenrcy",
+        "faq_item_YRJkeV",
+        "faq_item_eBwAy7",
+        "faq_item_iPiqzE",
+        "faq_item_zTVWAj",
+        "faq_item_8qUfyw",
+        "faq_item_GeTKc8",
+        "faq_item_aN3CHB",
+        "faq_item_ypHmbp",
+        "faq_item_KGpYii",
+        "faq_item_MfBbYy",
+        "faq_item_YNBDqW",
+        "faq_item_afQtrf",
+        "faq_item_wRbygm",
+        "faq_item_wmTfcB",
+        "faq_item_nNLPUr",
+        "faq_item_RNGFWL",
+        "faq_item_CqwtfM",
+        "faq_item_fwGj7E",
+        "faq_item_Y6qM8m",
+        "faq_item_FH883F",
+        "faq_item_GNaNpN",
+        "faq_item_KU8AMq",
+        "faq_item_c6jNM9",
+        "faq_item_Ywb4Gd",
+        "faq_item_HzPiQC",
+        "faq_item_yaCztQ",
+        "faq_item_rq63Yb",
+        "faq_item_WAERYw",
+        "faq_item_tNGYBQ",
+        "faq_item_TgPUJi",
+        "faq_item_FBGV6A",
+        "faq_item_UK4dhW",
+        "faq_item_39fiLh",
+        "faq_item_UcJghL",
+        "faq_item_zz43Wh",
+        "faq_item_iwzXcY",
+        "faq_item_gNrXkJ",
+        "faq_item_abk3ke",
+        "faq_item_dzmDx4",
+        "faq_item_QJM8LA",
+        "faq_item_iW4kRH",
+        "faq_item_qkKxRE",
+        "faq_item_RpRhdA",
+        "faq_item_khWj4c",
+        "faq_item_jaJFyi",
+        "faq_item_NLfJdJ",
+        "faq_item_hk7rWr",
+        "faq_item_bVqqzy",
+        "faq_item_a9BFEN",
+        "faq_item_pK6tGW"
       ],
       "name": "FAQ",
       "settings": {
