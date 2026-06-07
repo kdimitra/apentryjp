@@ -13,7 +13,7 @@
       "type": "collection-hero",
       "settings": {
         "bg_image_override": "shopify://shop_images/big-poptop.avif",
-        "hero_height": 660,
+        "hero_height": 680,
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 20,
