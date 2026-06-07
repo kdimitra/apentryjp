@@ -13,7 +13,7 @@
       "type": "collection-hero",
       "settings": {
         "bg_image_override": "shopify://shop_images/lil-poptop.avif",
-        "hero_height": 480,
+        "hero_height": 680,
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
