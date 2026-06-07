@@ -500,7 +500,7 @@
       "settings": {
         "products_to_show": 10,
         "show_paw_icon": true,
-        "bg_color": "#f5f0e4",
+        "bg_color": "#faf7e6",
         "chip_active_bg": "#87cedc",
         "chip_active_text": "#5a3729",
         "chip_border": "#c8c2b8",
@@ -524,7 +524,7 @@
         "image_ratio": "landscape",
         "show_date": true,
         "show_category": true,
-        "bg_color": "#f4f1ec"
+        "bg_color": "#faf7e6"
       }
     }
   },
