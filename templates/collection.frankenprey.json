@@ -12,8 +12,8 @@
     "collection_hero": {
       "type": "collection-hero",
       "settings": {
-        "bg_image_override": "shopify://shop_images/20260722_blog01_thumbnail.png",
-        "hero_height": 480,
+        "bg_image_override": "shopify://shop_images/frank.avif",
+        "hero_height": 680,
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
