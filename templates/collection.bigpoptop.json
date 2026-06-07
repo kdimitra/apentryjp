@@ -13,10 +13,10 @@
       "type": "collection-hero",
       "settings": {
         "bg_image_override": "shopify://shop_images/big-poptop.avif",
-        "hero_height": 480,
+        "hero_height": 680,
         "text_alignment": "center",
         "overlay_color": "#000000",
-        "overlay_opacity": 30,
+        "overlay_opacity": 20,
         "subtitle": "パップタブ(大) -  800g",
         "description": "愛犬を想う、素材が生きたローフード。",
         "title_font_size": 64,
