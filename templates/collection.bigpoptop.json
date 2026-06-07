@@ -895,7 +895,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "set-food",
+        "collection": "bigpuptub",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
