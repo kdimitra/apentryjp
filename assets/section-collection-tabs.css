@@ -5,19 +5,20 @@
 
 .ct-section {
   --ct-font:          'gt-ultra', sans-serif;
-  --ct-text-primary:  #1C1C1A;
-  --ct-text-secondary:#6B6860;
+  --ct-text-primary:  #5A3729;
+  --ct-text-secondary:#5A3729;
   --ct-text-accent:   #3D6B4F;
   --ct-chip-border:   #C8C2B8;
   --ct-chip-active-bg:   #87CEDC;
   --ct-chip-active-text: #FFFFFF;
-  --ct-heading-color: #1C1C1A;
+  --ct-heading-color: #5A3729;
   --ct-paw-color:     #87CEDC;
   --ct-card-radius:   16px;
   --ct-slide-w:       240px;
 
+  color: #5A3729;
   padding-block: 80px;
-  overflow-x: clip; /* clip horizontal overflow without blocking vertical scroll */
+  overflow-x: clip;
 }
 
 /* ── Container ─────────────────────────── */
@@ -101,7 +102,6 @@
 .ct-panel:last-child {
   border-bottom: none;
   padding-bottom: 0;
-  margin-bottom: 40vh; /* ensure last panel can scroll into view */
 }
 
 /* ── Panel header: heading + arrows ──── */
@@ -136,7 +136,7 @@
 .ct-panel__heading {
   font-family: var(--ct-font);
   font-size: clamp(20px, 2vw, 28px);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--ct-heading-color);
   margin: 0;
   line-height: 1.2;
@@ -334,7 +334,6 @@
   .ct-track { gap: 14px; }
   .ct-panel__heading { font-size: 20px; }
   .ct-arrow { width: 32px; height: 32px; }
-  .ct-panel:last-child { margin-bottom: 10vh; }
 }
 
 /* ─────────────────────────────────────
