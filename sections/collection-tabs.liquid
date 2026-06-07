@@ -212,26 +212,7 @@
 
     track.addEventListener('scroll', updateArrows, { passive: true });
     updateArrows();
-
-    /* Pass vertical wheel scroll through the horizontal track */
-    track.addEventListener('wheel', function (e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
-      }
-    }, { passive: false });
   });
-
-  /* ── Pass vertical wheel scroll through the chip nav ──────── */
-  var chipNav = section.querySelector('.ct-chips');
-  if (chipNav) {
-    chipNav.addEventListener('wheel', function (e) {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-        e.preventDefault();
-        window.scrollBy({ top: e.deltaY, behavior: 'auto' });
-      }
-    }, { passive: false });
-  }
 })();
 </script>
 
