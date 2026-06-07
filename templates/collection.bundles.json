@@ -228,7 +228,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "lilpuptub",
+        "collection": "set-food",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
@@ -895,7 +895,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "lilpuptub",
+        "collection": "set-food",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
