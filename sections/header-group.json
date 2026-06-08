@@ -11,6 +11,50 @@
   "type": "header",
   "name": "Header",
   "sections": {
+    "header_announcements_jzjzKh": {
+      "type": "header-announcements",
+      "blocks": {
+        "announcement_migBe9": {
+          "type": "_announcement",
+          "settings": {
+            "text": "1万円以上ご購入で送料無料",
+            "link": "shopify://collections/all",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        },
+        "announcement_RmfUKc": {
+          "type": "_announcement",
+          "settings": {
+            "text": "定期購入・セット購入は最大8％OFF",
+            "link": "shopify://collections/all",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "weight": "",
+            "letter_spacing": "normal",
+            "case": "none"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "announcement_migBe9",
+        "announcement_RmfUKc"
+      ],
+      "name": "t:names.announcement_bar",
+      "settings": {
+        "speed": 5,
+        "section_width": "page-width",
+        "color_scheme": "",
+        "divider_width": 0,
+        "padding-block-start": 15,
+        "padding-block-end": 15
+      }
+    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -91,6 +135,7 @@
     }
   },
   "order": [
+    "header_announcements_jzjzKh",
     "header_section"
   ]
 }
