@@ -248,6 +248,8 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
             "gap": 12,
             "width": "custom",
             "custom_width": 89,
@@ -600,9 +602,9 @@
         "eyebrow_icon_right": "shopify://shop_images/svg-foot.svg",
         "page_heading": "透明性の高いごはん",
         "image_position": "left",
-        "main_image": "shopify://shop_images/IMGP0723.jpg",
+        "main_image": "shopify://shop_images/4300a456b74922919ec3cea177de01608c9aa523-898x1048_jpg.avif",
         "show_secondary_image": true,
-        "secondary_image": "shopify://shop_images/IMGP0757.jpg",
+        "secondary_image": "shopify://shop_images/43140638295008c57f2139df97bcf3ffbe74695a-424x424_jpg.avif",
         "subheading": "見える安心で、正直なごはんを。",
         "body_text": "<p>私たちは、信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。</p><p>使のは、高品質な肉と野菜。無添加のフレッシュドッグフードとして、素材の栄養とおいしさを大切にしています。</p><p>大量生産や長期冷凍は行わず、すべて少量ずつ丁寧に調理。愛犬が毎日安心して食べられるごはんを作っています。</p><p>たった一皿のごはんにも、まっすぐ向き合う。</p><p>毎日食べるものだからこそ、何が入っているのかが分かる正直なドッグフードを。余計なものは加えず、必要なものだけを、必要な分だけ届けます。</p>",
         "bg_color": "#f5f0e4",
@@ -620,7 +622,7 @@
         "step_card_qMEzpi": {
           "type": "step_card",
           "settings": {
-            "image": "shopify://shop_images/29be88ee7deb56dd347d830c2524c1ce7ef25ce6-1150x850_png.avif",
+            "image": "shopify://shop_images/38820cd60160327e4e39d12e8dba80bdfea64e41-401x400_jpg_364528f0-23ee-4e24-8579-1906991dc7fa.avif",
             "step_label": "ステップ1",
             "heading": "保存方法",
             "body": "商品が届いたら\nすぐに冷凍庫で保存してください。"
@@ -629,7 +631,7 @@
         "step_card_gL6NL6": {
           "type": "step_card",
           "settings": {
-            "image": "shopify://shop_images/b728e4646c99114b1f3a453d8cb92793fa5d751d-5000x3750_jpg.avif",
+            "image": "shopify://shop_images/960384990f4a569c6b33ebaf773e0c64e90a13f5-401x400_jpg_0d722e88-1d15-4a68-8916-9e1edbfbf72d.avif",
             "step_label": "ステップ2",
             "heading": "解凍方法",
             "body": "食べる前日の夜に冷蔵庫へ移して\n解凍してください。"
@@ -638,7 +640,7 @@
         "step_card_VDxWCD": {
           "type": "step_card",
           "settings": {
-            "image": "shopify://shop_images/3e827ffc475c2b13b113b8528c8e0966c3d8249a-5000x3333_jpg.avif",
+            "image": "shopify://shop_images/6bc30b9c809f39b35156e6f4b0622031d315240e-401x400_jpg_9746ce06-3e06-461a-8fef-80f891b3c136.avif",
             "step_label": "ステップ3",
             "heading": "与え方",
             "body": "加熱せずに\nそのまま与えてください。"
@@ -716,7 +718,7 @@
         "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
         "page_heading": "環境にやさしいパッケージ",
         "heading_alignment": "center",
-        "image": "shopify://shop_images/4460efbc7699f0ffaba8d4c82411501521fcefaf-2560x1504_png.avif",
+        "image": "shopify://shop_images/4b9d00fb53753f9f40fb90d5c1381a24e4688cfa-1090x840_jpg.avif",
         "image_position": "left",
         "image_ratio": "square",
         "image_radius": 16,

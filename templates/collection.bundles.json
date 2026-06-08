@@ -17,8 +17,8 @@
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
-        "subtitle": "Set Food",
-        "description": "人気No.1  5%OFF セットフード",
+        "subtitle": "パップタブ(大)",
+        "description": "愛犬を想う、素材が生きたローフード。",
         "title_font_size": 64,
         "subtitle_font_size": 22,
         "desc_font_size": 14
@@ -572,7 +572,6 @@
         "feature_card_8yDAMJ",
         "feature_card_n6dGbV"
       ],
-      "disabled": true,
       "name": "About Pap Tab",
       "settings": {
         "section_id": "",
@@ -603,15 +602,14 @@
         "point_hWkC8C": {
           "type": "point",
           "settings": {
-            "label": "",
-            "heading": "犬本来の食事。それは生のままの自然食。",
-            "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれる生肉食です。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
-            "image": "shopify://shop_images/20260520_blog.png"
+            "label": "その1",
+            "heading": "セットフードについて",
+            "description": "<p>愛犬に必要な栄養をバランスよく届けるなら、フードのローテーションがおすすめです。<br/>さまざまなタンパク質を取り入れることで食事の偏りを防ぎ、腸内環境にも配慮できます。<br/>さらに、いろいろな味を楽しめるので、愛犬の毎日の食事がもっと楽しくなります。<br/>そんなローテーションを手軽に始められる、生食ドッグフードのお得なセットをご用意しました。</p>",
+            "image": "shopify://shop_images/29be88ee7deb56dd347d830c2524c1ce7ef25ce6-1150x850.png-2.avif"
           }
         },
         "point_6TpAJh": {
           "type": "point",
-          "disabled": true,
           "settings": {
             "label": "その2",
             "heading": "新鮮な素材だけを、そのままに。",
@@ -621,7 +619,6 @@
         },
         "point_EQnPFY": {
           "type": "point",
-          "disabled": true,
           "settings": {
             "label": "その3",
             "heading": "毎日食べるものだから、正直でありたい。",
@@ -638,8 +635,10 @@
       "name": "Collection point",
       "settings": {
         "section_id": "",
-        "eyebrow": "",
-        "section_heading": "",
+        "eyebrow": "Point",
+        "eyebrow_icon_left": "shopify://shop_images/svg-foot.svg",
+        "eyebrow_icon_right": "shopify://shop_images/svg-foot.svg",
+        "section_heading": "ズパントリーなのか。",
         "padding_top": 80,
         "padding_bottom": 80,
         "bg_color": "#f5f0e4",
@@ -651,7 +650,6 @@
     },
     "about_image_card_nYfntW": {
       "type": "about-image-card",
-      "disabled": true,
       "name": "About - Image Card",
       "settings": {
         "section_id": "",

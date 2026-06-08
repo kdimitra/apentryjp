@@ -547,6 +547,7 @@
           "settings": {
             "badge_label": "Feature 1",
             "title": "Raw meat that lets the natural flavor of the ingredients shine through.",
+            "image": "shopify://shop_images/cc416eaf8e2085d481d73c7b5d4c3b44f6d27f33-401x401_png_fc14e946-2d85-4a43-a30c-077dd57fa8ca.avif",
             "description": "<p>Because it's uncooked, it retains the full flavor of the meat. The abundant protein supports healthy body building.</p>"
           }
         },
@@ -555,6 +556,7 @@
           "settings": {
             "badge_label": "Feature 2",
             "title": "Domestic manufacturing for peace of mind and reliability",
+            "image": "shopify://shop_images/0967c21f63cd6f1644b2811211bb190bfece37fa-401x400_png_8eb9d28c-d769-42ca-8c81-d2917b03476d.avif",
             "description": "<p>All products are manufactured and managed at factories in Japan. We deliver peace of mind to your whole family with our reliable quality.</p>"
           }
         },
@@ -563,6 +565,7 @@
           "settings": {
             "badge_label": "Feature 3",
             "title": "Additive-free meals containing only the essentials.",
+            "image": "shopify://shop_images/fe379a7d975b5c429d46bc60dda77971af3a6469-401x400_png_6671a01e-3e4f-4829-a414-4774c09d0138.avif",
             "description": "<p>No artificial flavors, colors, or preservatives are used. We deliver the natural deliciousness and peace of mind of the ingredients as they are.</p>"
           }
         }
@@ -579,7 +582,7 @@
         "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
         "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
         "section_heading": "パップタブについて",
-        "body_image": "shopify://shop_images/20260520_blog.png",
+        "body_image": "shopify://shop_images/91d262e67fc2dd0537f026405735698bd93552e8-1150x850_png.avif",
         "image_position": "left",
         "image_bg_color": "#b8dde6",
         "body_subheading": "そのままの素材で、そのままの愛を。",
@@ -605,7 +608,7 @@
             "label": "その1",
             "heading": "犬本来の食事。それは生のままの自然食。",
             "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれる生肉食です。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
-            "image": "shopify://shop_images/20260520_blog.png"
+            "image": "shopify://shop_images/257f2204c070f93a80d0e45857583636a4ae2938-1442x1048_png.avif"
           }
         },
         "point_6TpAJh": {
@@ -614,7 +617,7 @@
             "label": "その2",
             "heading": "新鮮な素材だけを、そのままに。",
             "description": "<p>アニーズパントリーでは、信頼できる生産者から新鮮な食材だけを仕入れています。余計な加工や添加物を加えず、素材本来の栄養とおいしさをそのままお届けします。</p>",
-            "image": "shopify://shop_images/20260520_blog.png"
+            "image": "shopify://shop_images/108b268426c489a41d7276a500a26b56390c83e6-1442x1048_png.avif"
           }
         },
         "point_EQnPFY": {
@@ -623,7 +626,7 @@
             "label": "その3",
             "heading": "毎日食べるものだから、正直でありたい。",
             "description": "<p>何が入っているかが分かる、透明性の高いフード。愛犬が毎日安心して食べられるごはんを、真摯に作り続けます。</p>",
-            "image": "shopify://shop_images/20260520_blog.png"
+            "image": "shopify://shop_images/762f52b9a7fc016438601e9637e368d7264b8ac3-1442x1048_png.avif"
           }
         }
       },
@@ -653,7 +656,7 @@
       "name": "About - Image Card",
       "settings": {
         "section_id": "",
-        "background_image": "shopify://shop_images/f77d71b53736b17b0cc0665fefab96db06f2b27c-5000x3333_jpg.avif",
+        "background_image": "shopify://shop_images/img-collections-setfood.jpg",
         "background_image_alt": "",
         "show_paw_icon": true,
         "eyebrow": "Set Food",
