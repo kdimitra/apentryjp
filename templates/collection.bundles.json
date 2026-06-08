@@ -603,7 +603,7 @@
         "point_hWkC8C": {
           "type": "point",
           "settings": {
-            "label": "その1",
+            "label": "",
             "heading": "犬本来の食事。それは生のままの自然食。",
             "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれる生肉食です。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
             "image": "shopify://shop_images/20260520_blog.png"
@@ -638,10 +638,8 @@
       "name": "Collection point",
       "settings": {
         "section_id": "",
-        "eyebrow": "Point",
-        "eyebrow_icon_left": "shopify://shop_images/svg-foot.svg",
-        "eyebrow_icon_right": "shopify://shop_images/svg-foot.svg",
-        "section_heading": "ズパントリーなのか。",
+        "eyebrow": "",
+        "section_heading": "",
         "padding_top": 80,
         "padding_bottom": 80,
         "bg_color": "#f5f0e4",
