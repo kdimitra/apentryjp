@@ -544,6 +544,7 @@
       "blocks": {
         "feature_card_fQrV9p": {
           "type": "feature_card",
+          "disabled": true,
           "settings": {
             "badge_label": "Feature 1",
             "title": "Raw meat that lets the natural flavor of the ingredients shine through.",
@@ -552,6 +553,7 @@
         },
         "feature_card_8yDAMJ": {
           "type": "feature_card",
+          "disabled": true,
           "settings": {
             "badge_label": "Feature 2",
             "title": "Domestic manufacturing for peace of mind and reliability",
@@ -560,6 +562,7 @@
         },
         "feature_card_n6dGbV": {
           "type": "feature_card",
+          "disabled": true,
           "settings": {
             "badge_label": "Feature 3",
             "title": "Additive-free meals containing only the essentials.",
@@ -575,15 +578,13 @@
       "name": "About Pap Tab",
       "settings": {
         "section_id": "",
-        "eyebrow": "About",
-        "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
-        "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
-        "section_heading": "パップタブについて",
+        "eyebrow": "",
+        "section_heading": "",
         "body_image": "shopify://shop_images/20260520_blog.png",
         "image_position": "left",
         "image_bg_color": "#b8dde6",
-        "body_subheading": "そのままの素材で、そのままの愛を。",
-        "body_text": "<p>余計なものは加えず、使うのは生の自然素材だけ。</p><p>からだにやさしい生食フレッシュフードです。<br/>あなたの大切な家族を想ってつくりました。</p>",
+        "body_subheading": "セットフードについて",
+        "body_text": "<p>愛犬に必要な栄養をバランスよく届けるなら、フードのローテーションがおすすめです。<br/>さまざまなタンパク質を取り入れることで食事の偏りを防ぎ、腸内環境にも配慮できます。<br/>さらに、いろいろな味を楽しめるので、愛犬の毎日の食事がもっと楽しくなります。<br/>そんなローテーションを手軽に始められる、生食ドッグフードのお得なセットをご用意しました。</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
@@ -632,6 +633,7 @@
         "point_6TpAJh",
         "point_EQnPFY"
       ],
+      "disabled": true,
       "name": "Collection point",
       "settings": {
         "section_id": "",
@@ -650,6 +652,7 @@
     },
     "about_image_card_nYfntW": {
       "type": "about-image-card",
+      "disabled": true,
       "name": "About - Image Card",
       "settings": {
         "section_id": "",
@@ -677,6 +680,7 @@
     },
     "header_ribbon_Yw8rpg": {
       "type": "header-ribbon",
+      "disabled": true,
       "name": "Header ribbon",
       "settings": {
         "section_id": "",
