@@ -166,8 +166,8 @@
       "name": "t:names.footer",
       "settings": {
         "background_color": "#9adbe8",
-        "text_color": "#3d2b1a",
-        "card_background_color": "#f0e8d0",
+        "text_color": "#5a3729",
+        "card_background_color": "#faf7e6",
         "logo": "shopify://shop_images/logo-brown.svg",
         "food_list_heading": "Food list",
         "view_all_text": "View all",
