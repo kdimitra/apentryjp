@@ -209,7 +209,7 @@
         "bg_color": "#f0ebd8",
         "inner_bg_color": "#ede6d8",
         "tab_bg_color": "#8dcad8",
-        "tab_text_color": "#2a4a54",
+        "tab_text_color": "#5a3729",
         "tab_gap": 12
       }
     },
@@ -506,7 +506,7 @@
           "type": "commitment_item",
           "settings": {
             "badge_label": "Commitment 01",
-            "title": "素材の力が生きる 生のお肉",
+            "title": "素材の力が生きる生のお肉",
             "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。<br/>豊富なタンパク質で、からだづくりをサポートします。</p>",
             "image": "shopify://shop_images/IMGP0757.jpg",
             "reverse_layout": false,
@@ -518,7 +518,7 @@
           "type": "commitment_item",
           "settings": {
             "badge_label": "Commitment 02",
-            "title": "安心と信頼の 国内製造",
+            "title": "安心と信頼の国内製造",
             "description": "<p>すべて日本国内の自社工場で製造・管理。<br/>確かな品質で、家族みんなに安心を届けます。</p>",
             "image": "shopify://shop_images/Screenshot_202025-09-04_20at_2017.25.35.jpg",
             "reverse_layout": true,
@@ -530,7 +530,7 @@
           "type": "commitment_item",
           "settings": {
             "badge_label": "Commitment 03",
-            "title": "必要なものだけ 無添加ごはん",
+            "title": "必要なものだけ無添加ごはん",
             "description": "<p>香料・着色料・保存料は一切不使用。素材本来のおいしさと安心をそのまま届けます。</p>",
             "image": "shopify://shop_images/IMGP0728.jpg",
             "reverse_layout": false,
@@ -551,7 +551,7 @@
         "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
         "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
         "section_heading": "アニーズパントリー３つのこだわり",
-        "bg_color": "#5bc8d0",
+        "bg_color": "#9adbe8",
         "card_color": "#faf7e6",
         "badge_color": "#fdde3a"
       }
@@ -607,12 +607,12 @@
         "secondary_image": "shopify://shop_images/43140638295008c57f2139df97bcf3ffbe74695a-424x424_jpg.avif",
         "subheading": "見える安心で、正直なごはんを。",
         "body_text": "<p>私たちは、信頼できる地域の精肉店や生産者から、新鮮な食材だけを仕入れています。</p><p>使のは、高品質な肉と野菜。無添加のフレッシュドッグフードとして、素材の栄養とおいしさを大切にしています。</p><p>大量生産や長期冷凍は行わず、すべて少量ずつ丁寧に調理。愛犬が毎日安心して食べられるごはんを作っています。</p><p>たった一皿のごはんにも、まっすぐ向き合う。</p><p>毎日食べるものだからこそ、何が入っているのかが分かる正直なドッグフードを。余計なものは加えず、必要なものだけを、必要な分だけ届けます。</p>",
-        "bg_color": "#f5f0e4",
-        "main_image_bg_color": "#b8dde6",
+        "bg_color": "#faf7e6",
+        "main_image_bg_color": "#9adbe8",
         "secondary_image_bg_color": "#ffffff",
-        "eyebrow_color": "#5a9baa",
-        "page_heading_color": "#2c2420",
-        "subheading_color": "#2c2420",
+        "eyebrow_color": "#9adbe8",
+        "page_heading_color": "#5a3729",
+        "subheading_color": "#5a3729",
         "body_text_color": "#5a4a3a"
       }
     },
@@ -695,17 +695,17 @@
         "sim_weight_label": "愛犬の体重",
         "sim_stage_label": "愛犬のライフステージ",
         "sim_button_label": "ご飯の量を確認する",
-        "bg_color": "#82c9d5",
-        "card_bg_color": "#fefbec",
+        "bg_color": "#9adbe8",
+        "card_bg_color": "#faf7e6",
         "cell_bg_color": "#f3eedc",
         "step_badge_bg_color": "#87cedc",
-        "step_badge_text_color": "#2c5a64",
-        "dark_badge_bg_color": "#3d2b1f",
-        "heading_color": "#2c2420",
-        "body_color": "#6b5a4e",
-        "eyebrow_color": "#000000",
+        "step_badge_text_color": "#5a3729",
+        "dark_badge_bg_color": "#5a3729",
+        "heading_color": "#5a3729",
+        "body_color": "#5a3729",
+        "eyebrow_color": "#5a3729",
         "eyebrow_icon_color": "#e8d5c7",
-        "button_bg_color": "#d4924a"
+        "button_bg_color": "#fea647"
       }
     },
     "about_design_chV49L": {
@@ -727,12 +727,12 @@
         "text_alignment": "left",
         "padding_top": 72,
         "padding_bottom": 152,
-        "bg_color": "#f5f0e4",
-        "eyebrow_color": "#5a4232",
-        "eyebrow_icon_color": "#87cedc",
-        "page_heading_color": "#2c2420",
-        "subheading_color": "#2c2420",
-        "body_text_color": "#6b6860"
+        "bg_color": "#faf7e6",
+        "eyebrow_color": "#5a3729",
+        "eyebrow_icon_color": "#9adbe8",
+        "page_heading_color": "#5a3729",
+        "subheading_color": "#5a3729",
+        "body_text_color": "#5a3729"
       }
     },
     "canine_nutrition_DRkU37": {
@@ -745,7 +745,7 @@
         "card_radius": 12,
         "overlay_color": "#000000",
         "overlay_opacity": 25,
-        "heading": "生食ドッグフードと犬の栄養学を学ぶ",
+        "heading": "フレッシュフードと犬の栄養学を学ぶ",
         "subtext": "海外のペット栄養学やフレッシュフードの考え方など、愛犬の健康に役立つ情報をブログで発信しています。",
         "text_alignment": "center",
         "button_label": "ブログを読む",
