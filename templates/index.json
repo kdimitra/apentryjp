@@ -139,7 +139,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>そのままの素材で、そのままの愛を。</h3>",
+                "text": "<h4>そのままの素材で、そのままの愛を。</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
