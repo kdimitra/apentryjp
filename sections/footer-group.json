@@ -32,56 +32,56 @@
           "type": "service_link",
           "settings": {
             "label": "Contact Us",
-            "url": ""
+            "url": "shopify://policies/contact-information"
           }
         },
         "service_link_HLaEPY": {
           "type": "service_link",
           "settings": {
             "label": "Privacy Policy",
-            "url": ""
+            "url": "shopify://policies/privacy-policy"
           }
         },
         "service_link_fDtigG": {
           "type": "service_link",
           "settings": {
             "label": "Shipping Policy",
-            "url": ""
+            "url": "shopify://policies/shipping-policy"
           }
         },
         "service_link_LJPBNQ": {
           "type": "service_link",
           "settings": {
             "label": "Terms of service",
-            "url": ""
+            "url": "shopify://policies/terms-of-service"
           }
         },
         "service_link_XF7cDT": {
           "type": "service_link",
           "settings": {
             "label": "Refund Policy",
-            "url": ""
+            "url": "shopify://policies/refund-policy"
           }
         },
         "service_link_iWCJDW": {
           "type": "service_link",
           "settings": {
             "label": "Subscription Policy",
-            "url": ""
+            "url": "shopify://policies/subscription-policy"
           }
         },
         "service_link_D3BThf": {
           "type": "service_link",
           "settings": {
             "label": "Legal Notice",
-            "url": ""
+            "url": "shopify://policies/legal-notice"
           }
         },
         "service_link_XcMw7U": {
           "type": "service_link",
           "settings": {
             "label": "Contact Information",
-            "url": ""
+            "url": "shopify://policies/contact-information"
           }
         },
         "about_link_XnFpUG": {
