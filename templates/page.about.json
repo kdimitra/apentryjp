@@ -610,7 +610,7 @@
         "bg_color": "#faf7e6",
         "main_image_bg_color": "#9adbe8",
         "secondary_image_bg_color": "#ffffff",
-        "eyebrow_color": "#9adbe8",
+        "eyebrow_color": "#5a3729",
         "page_heading_color": "#5a3729",
         "subheading_color": "#5a3729",
         "body_text_color": "#5a4a3a"
@@ -749,7 +749,7 @@
         "subtext": "海外のペット栄養学やフレッシュフードの考え方など、愛犬の健康に役立つ情報をブログで発信しています。",
         "text_alignment": "center",
         "button_label": "ブログを読む",
-        "button_url": "shopify://blogs/journal",
+        "button_url": "shopify://blogs/journal/世界へ広がる生食ブーム-愛犬の健康を考える海外のペット栄養学から学ぶ",
         "padding_top": 24,
         "padding_bottom": 56,
         "margin_bottom": 0,
