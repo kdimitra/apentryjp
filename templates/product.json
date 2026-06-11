@@ -34,7 +34,7 @@
             "zoom": false,
             "video_loop": false,
             "hide_variants": false,
-            "padding-block-start": 0,
+            "padding-block-start": 40,
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
@@ -252,7 +252,7 @@
         "limit_details_width": false,
         "gap": 4,
         "enable_sticky_add_to_cart": true,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -372,21 +372,21 @@
         "btn_url": "",
         "padding_top": 80,
         "padding_bottom": 96,
-        "bg_color": "#ede8d6",
-        "eyebrow_icon_color": "#87cedc",
-        "eyebrow_text_color": "#87cedc",
-        "heading_color": "#2c1a0e",
-        "score_color": "#2c1a0e",
-        "count_color": "#6b6860",
+        "bg_color": "#fff8cf",
+        "eyebrow_icon_color": "#9adbe8",
+        "eyebrow_text_color": "#9adbe8",
+        "heading_color": "#5a3729",
+        "score_color": "#5a3729",
+        "count_color": "#5a3729",
         "star_color": "#e8b84b",
         "star_empty_color": "#d8d2c8",
-        "bar_fill_color": "#3d2b1f",
+        "bar_fill_color": "#5a3729",
         "bar_empty_color": "#d8d2c8",
         "btn_bg_color": "#f5c430",
-        "btn_text_color": "#2c1a0e",
+        "btn_text_color": "#5a3729",
         "card_bg_color": "#ffffff",
-        "card_title_color": "#2c1a0e",
-        "card_body_color": "#5a4a3a",
+        "card_title_color": "#5a3729",
+        "card_body_color": "#5a3729",
         "card_date_color": "#6b6860",
         "card_link_color": "#2c1a0e"
       }
@@ -432,7 +432,7 @@
               "type": "_product-list-text",
               "name": "t:names.collection_title",
               "settings": {
-                "text": "<h2>{{ closest.collection.title }}</h2>",
+                "text": "<h3>おすすめ商品</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -449,7 +449,7 @@
                 "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
-                "padding-inline-start": 0,
+                "padding-inline-start": 13,
                 "padding-inline-end": 0
               },
               "blocks": {}
@@ -463,8 +463,8 @@
                 "style_class": "link",
                 "width": "fit-content",
                 "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
+                "width_mobile": "custom",
+                "custom_width_mobile": 26
               },
               "blocks": {}
             }
@@ -624,7 +624,7 @@
         "section_width": "full-width",
         "horizontal_alignment": "flex-start",
         "gap": 28,
-        "color_scheme": "scheme-1",
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
         "padding-block-start": 48,
         "padding-block-end": 48
       }

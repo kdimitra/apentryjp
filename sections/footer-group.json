@@ -88,28 +88,28 @@
           "type": "about_link",
           "settings": {
             "label": "About",
-            "url": ""
+            "url": "shopify://pages/about"
           }
         },
         "about_link_PAN67J": {
           "type": "about_link",
           "settings": {
             "label": "Blog",
-            "url": ""
+            "url": "shopify://blogs/journal"
           }
         },
         "about_link_bTyQ9i": {
           "type": "about_link",
           "settings": {
             "label": "News",
-            "url": ""
+            "url": "shopify://blogs/news"
           }
         },
         "about_link_YrWggL": {
           "type": "about_link",
           "settings": {
             "label": "FAQs",
-            "url": ""
+            "url": "shopify://pages/faq"
           }
         },
         "food_item_FBJqhg": {
