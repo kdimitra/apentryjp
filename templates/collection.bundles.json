@@ -17,8 +17,8 @@
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 30,
-        "subtitle": "パップタブ(大)",
-        "description": "愛犬を想う、素材が生きたローフード。",
+        "subtitle": "セットフード (ローテーション)",
+        "description": "人気No.1  5%OFF セットフード",
         "title_font_size": 64,
         "subtitle_font_size": 22,
         "desc_font_size": 14
@@ -582,19 +582,19 @@
         "section_heading": "",
         "body_image": "shopify://shop_images/29be88ee7deb56dd347d830c2524c1ce7ef25ce6-1150x850.avif",
         "image_position": "left",
-        "image_bg_color": "#b8dde6",
+        "image_bg_color": "#9adbe8",
         "body_subheading": "セットフードについて",
         "body_text": "<p>愛犬に必要な栄養をバランスよく届けるなら、フードのローテーションがおすすめです。<br/>さまざまなタンパク質を取り入れることで食事の偏りを防ぎ、腸内環境にも配慮できます。<br/>さらに、いろいろな味を楽しめるので、愛犬の毎日の食事がもっと楽しくなります。<br/>そんなローテーションを手軽に始められる、生食ドッグフードのお得なセットをご用意しました。</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
-        "bg_color": "#fbf7e6",
-        "heading_color": "#2c2420",
-        "body_color": "#3a2e28",
-        "eyebrow_color": "#5a4232",
-        "card_bg_color": "#fef8ec",
-        "badge_bg_color": "#87cedc",
-        "badge_text_color": "#2c5a64"
+        "bg_color": "#faf7e6",
+        "heading_color": "#5a3729",
+        "body_color": "#5a3729",
+        "eyebrow_color": "#5a3729",
+        "card_bg_color": "#faf7e6",
+        "badge_bg_color": "#9adbe8",
+        "badge_text_color": "#5a3729"
       }
     },
     "collection_point_YrmerE": {
@@ -932,7 +932,7 @@
         "image_ratio": "landscape",
         "show_date": true,
         "show_category": true,
-        "bg_color": "#f8f3db"
+        "bg_color": "#faf7e6"
       }
     }
   },
