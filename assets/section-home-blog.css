@@ -19,7 +19,7 @@
   /* Typography */
   --hb-font-display: 'gt-ultra', sans-serif;
   --hb-font-body:    'gt-ultra', sans-serif;
-  --hb-font-latin:   'DM Sans', sans-serif;
+  --hb-font-latin:   'gt-ultra', sans-serif;
 
   background-color: var(--hb-bg);
   padding-block: 96px;
@@ -86,7 +86,7 @@
 .hb-heading {
   font-family: var(--hb-font-display);
   font-size: 38px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--hb-text-primary);

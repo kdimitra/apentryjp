@@ -60,9 +60,9 @@
   border-radius: var(--ta-radius-tab);
   padding: 14px 20px;
   text-decoration: none;
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
   cursor: pointer;
   border: 2px solid transparent;

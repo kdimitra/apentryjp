@@ -60,7 +60,7 @@
 .bld-title {
   font-family: var(--bld-font);
   font-size: clamp(24px, 2.8vw, 38px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
   color: var(--bld-text-primary);
@@ -126,7 +126,7 @@
 
 .bld-body h2, .bld-body h3, .bld-body h4 {
   font-family: var(--bld-font);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.3;
   color: var(--bld-text-primary);
   margin: 1.8em 0 0.7em;

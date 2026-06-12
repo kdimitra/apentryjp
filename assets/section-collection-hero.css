@@ -69,7 +69,7 @@
 .ch-title {
   font-family: 'gt-ultra', sans-serif;
   font-size: var(--ch-title-size, 64px);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.01em;
   color: #ffffff;

@@ -136,7 +136,7 @@
 .ct-panel__heading {
   font-family: var(--ct-font);
   font-size: clamp(20px, 2vw, 28px);
-  font-weight: 800;
+  font-weight: 600;
   color: var(--ct-heading-color);
   margin: 0;
   line-height: 1.2;

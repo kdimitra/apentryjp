@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -72,7 +72,7 @@
 .rr-heading {
   font-family: 'gt-ultra', sans-serif;
   font-size: 40px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
   color: var(--rr-heading-color);
@@ -88,9 +88,9 @@
 }
 
 .rr-overall__score {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 56px;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: -0.03em;
   color: var(--rr-score-color);
@@ -110,7 +110,7 @@
 }
 
 .rr-overall__count {
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 11px;
   font-weight: 400;
   color: var(--rr-count-color);
@@ -155,7 +155,7 @@
   display: flex;
   align-items: center;
   gap: 2px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 13px;
   font-weight: 500;
   color: var(--rr-score-color);
@@ -176,7 +176,7 @@
 }
 
 .rr-bar-row__count {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 12px;
   font-weight: 400;
   color: var(--rr-count-color);
@@ -194,9 +194,9 @@
   max-width: 260px;
   background-color: var(--rr-btn-bg);
   color: var(--rr-btn-text);
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.03em;
   text-decoration: none;
   border-radius: 9999px;
@@ -232,7 +232,7 @@
 }
 
 .rr-placeholder__text {
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif;
+  font-family: 'gt-ultra', sans-serif;
   font-size: 14px;
   line-height: 1.9;
   color: var(--rr-card-body-color);
@@ -358,7 +358,7 @@
 .rr-okendo-wrapper [data-oke-review-title] {
   font-family: 'gt-ultra', sans-serif !important;
   font-size: 16px !important;
-  font-weight: 700 !important;
+  font-weight: 600 !important;
   line-height: 1.45 !important;
   color: var(--rr-card-title-color) !important;
   margin: 0 !important;
@@ -370,7 +370,7 @@
 .rr-okendo-wrapper [data-oke-review-body],
 .rr-okendo-wrapper .oke-review-body p,
 .rr-okendo-wrapper .oke-w-review-body p {
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif !important;
+  font-family: 'gt-ultra', sans-serif !important;
   font-size: 13px !important;
   font-weight: 400 !important;
   line-height: 1.85 !important;
@@ -385,7 +385,7 @@
 .rr-okendo-wrapper .oke-w-review-author,
 .rr-okendo-wrapper [data-oke-review-date],
 .rr-okendo-wrapper [data-oke-review-author] {
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: 'gt-ultra', sans-serif !important;
   font-size: 12px !important;
   color: var(--rr-card-date-color) !important;
 }
@@ -395,7 +395,7 @@
 .rr-okendo-wrapper .oke-w-review-helpful,
 .rr-okendo-wrapper .oke-review-helpful a,
 .rr-okendo-wrapper a {
-  font-family: 'Zen Kaku Gothic New', 'Hiragino Sans', sans-serif !important;
+  font-family: 'gt-ultra', sans-serif !important;
   font-size: 13px !important;
   color: var(--rr-card-link-color) !important;
   text-underline-offset: 2px !important;
