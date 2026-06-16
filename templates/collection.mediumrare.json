@@ -228,7 +228,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "mediumrare",
+        "collection": "pure",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,

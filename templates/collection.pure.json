@@ -18,7 +18,7 @@
         "overlay_color": "#000000",
         "overlay_opacity": 20,
         "subtitle": "Pure",
-        "description": "愛犬を想う、素材が生きたローフード。",
+        "description": "ありのままの素材を、ありのままに。",
         "title_font_size": 64,
         "subtitle_font_size": 22,
         "desc_font_size": 14
@@ -228,7 +228,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "bigpuptub",
+        "collection": "pure",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
@@ -546,27 +546,27 @@
           "type": "feature_card",
           "settings": {
             "badge_label": "特徴1",
-            "title": "素材の力が生きる 生のお肉",
+            "title": "自然に限りなく近い食事",
             "image": "shopify://shop_images/cc416eaf8e2085d481d73c7b5d4c3b44f6d27f33-401x401_png_fc14e946-2d85-4a43-a30c-077dd57fa8ca.avif",
-            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。豊富なタンパク質で、からだづくりをサポートします。</p>"
+            "description": "<p>Pureシリーズは、肉・骨・内臓を使用した生食フレッシュフードです。自然本来の食事を大切にし、愛犬のためのシンプルなレシピに仕上げました。</p>"
           }
         },
         "feature_card_8yDAMJ": {
           "type": "feature_card",
           "settings": {
             "badge_label": "特徴2",
-            "title": "安心と信頼の国内製造",
+            "title": "単一タンパクのシンプルレシピ",
             "image": "shopify://shop_images/0967c21f63cd6f1644b2811211bb190bfece37fa-401x400_png_8eb9d28c-d769-42ca-8c81-d2917b03476d.avif",
-            "description": "<p>すべて日本国内の工場で製造・管理。 確かな品質で、家族みんなに 安心を届けます。</p>"
+            "description": "<p>単一たんぱく源を採用し、余計なものを加えない設計。素材本来の魅力を活かした、シンプルでわかりやすい食事です。</p><p>また、すべて日本国内の工場で製造・管理。 確かな品質で、家族みんなに 安心を届けます。</p>"
           }
         },
         "feature_card_n6dGbV": {
           "type": "feature_card",
           "settings": {
             "badge_label": "特徴3",
-            "title": "必要なものだけ無添加ごはん",
+            "title": "愛犬本来の食事に寄り添う",
             "image": "shopify://shop_images/fe379a7d975b5c429d46bc60dda77971af3a6469-401x400_png_6671a01e-3e4f-4829-a414-4774c09d0138.avif",
-            "description": "<p>香料・着色料・保存料は一切不使用。 素材本来のおいしさと安心をそのまま届けます。</p>"
+            "description": "<p>香料・着色料・保存料は一切不使用。 愛犬の食性に着目し、自然に寄り添う食事を追求。素材本来のおいしさを活かした、生食という選択肢を提案します。</p>"
           }
         }
       },
@@ -581,12 +581,12 @@
         "eyebrow": "About",
         "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
         "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
-        "section_heading": "パップタブについて",
+        "section_heading": "ピュアについて",
         "body_image": "shopify://shop_images/e089b5dbfde357fce8008bcc8d8f12c2e9115470-2560x1200_png.avif",
         "image_position": "left",
         "image_bg_color": "#9adbe8",
-        "body_subheading": "そのままの素材で、そのままの愛を。",
-        "body_text": "<p>余計なものは加えず、使うのは生の自然素材だけ。</p><p>からだにやさしい生食フレッシュフードです。<br/>あなたの大切な家族を想ってつくりました。</p>",
+        "body_subheading": "自然本来の食事を、そのままに。",
+        "body_text": "<p>Pureは、単一タンパクの肉・骨・内臓のみで構成された、生食のためのフレッシュフードシリーズです。</p><p>余計なものを加えず、素材そのものの価値を大切にしたシンプルなレシピで、愛犬本来の食事に寄り添います。</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
@@ -898,7 +898,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "bigpuptub",
+        "collection": "pure",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
