@@ -17,8 +17,8 @@
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 20,
-        "subtitle": "BigPupTub - 800g",
-        "description": "愛犬を想う、素材が生きたローフード。",
+        "subtitle": "Medium Rare",
+        "description": "低温調理で素材本来のおいしさと栄養を活かしたフレッシュドッグフード",
         "title_font_size": 64,
         "subtitle_font_size": 22,
         "desc_font_size": 14
@@ -228,7 +228,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "bigpuptub",
+        "collection": "mediumrare",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
@@ -546,9 +546,9 @@
           "type": "feature_card",
           "settings": {
             "badge_label": "特徴1",
-            "title": "素材の力が生きる 生のお肉",
+            "title": "栄養を活かす、やさしい低温調理",
             "image": "shopify://shop_images/cc416eaf8e2085d481d73c7b5d4c3b44f6d27f33-401x401_png_fc14e946-2d85-4a43-a30c-077dd57fa8ca.avif",
-            "description": "<p>無加熱たから、お肉本来のうまみがたっぷり。豊富なタンパク質で、からだづくりをサポートします。</p>"
+            "description": "<p>高温加熱による栄養の損失を抑える低温調理製法を採用。素材本来の栄養と風味を活かし、愛犬においしく健康的な食事を届けます。</p>"
           }
         },
         "feature_card_8yDAMJ": {
@@ -557,16 +557,16 @@
             "badge_label": "特徴2",
             "title": "安心と信頼の国内製造",
             "image": "shopify://shop_images/0967c21f63cd6f1644b2811211bb190bfece37fa-401x400_png_8eb9d28c-d769-42ca-8c81-d2917b03476d.avif",
-            "description": "<p>すべて日本国内の工場で製造・管理。 確かな品質で、家族みんなに 安心を届けます。</p>"
+            "description": "<p>厳選した肉や魚、野菜を使用し、素材本来の品質を大切にしています。すべて日本国内の工場で製造・管理。原材料が見える、安心できるごはんを目指しました。</p>"
           }
         },
         "feature_card_n6dGbV": {
           "type": "feature_card",
           "settings": {
             "badge_label": "特徴3",
-            "title": "必要なものだけ無添加ごはん",
+            "title": "フレッシュフードビギナーも始めやすい",
             "image": "shopify://shop_images/fe379a7d975b5c429d46bc60dda77971af3a6469-401x400_png_6671a01e-3e4f-4829-a414-4774c09d0138.avif",
-            "description": "<p>香料・着色料・保存料は一切不使用。 素材本来のおいしさと安心をそのまま届けます。</p>"
+            "description": "<p>完全生食フードに不安を感じる方へ。Medium Rareは、低温調理によるやさしい仕上がりで、フレッシュフードを気軽に取り入れられる選択肢です。</p>"
           }
         }
       },
@@ -581,12 +581,12 @@
         "eyebrow": "About",
         "eyebrow_icon_left": "shopify://shop_images/star-icon.svg",
         "eyebrow_icon_right": "shopify://shop_images/star-icon.svg",
-        "section_heading": "パップタブについて",
+        "section_heading": "ミディアムレアについて",
         "body_image": "shopify://shop_images/e089b5dbfde357fce8008bcc8d8f12c2e9115470-2560x1200_png.avif",
         "image_position": "left",
         "image_bg_color": "#9adbe8",
-        "body_subheading": "そのままの素材で、そのままの愛を。",
-        "body_text": "<p>余計なものは加えず、使うのは生の自然素材だけ。</p><p>からだにやさしい生食フレッシュフードです。<br/>あなたの大切な家族を想ってつくりました。</p>",
+        "body_subheading": "ミディアムレアという、新しいごはんの選択肢を",
+        "body_text": "<p>約70℃のスチームでやさしく低温調理し、素材の栄養とおいしさをできるだけそのままに。<br/>しっとりとしたセミモイストな質感で、毎日の主食として続けやすい設計です。ヒューマングレードの食材を使用し、愛犬の毎日のコンディションをやさしく支えます。</p><p>素材本来のおいしさと栄養を活かし、愛犬の毎日の食事をより豊かなものにします。</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
@@ -607,7 +607,7 @@
           "settings": {
             "label": "その1",
             "heading": "犬本来の食事。それは生のままの自然食。",
-            "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれる生肉食です。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
+            "description": "<p>野生のオオカミは、生肉をまるごと食べて暮らしてきました。そのルーツから、「犬本来の食事とはなにか？」を見つめ直したのが、「ローフード」と呼ばれるフレッシュフードです。現在、愛犬の健康を気にする欧米の多くの飼い主に支持されています。</p>",
             "image": "shopify://shop_images/257f2204c070f93a80d0e45857583636a4ae2938-1442x1048_png.avif"
           }
         },
@@ -898,7 +898,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "bigpuptub",
+        "collection": "mediumrare",
         "layout_type": "grid",
         "carousel_on_mobile": false,
         "max_products": 8,
