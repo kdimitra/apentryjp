@@ -53,7 +53,7 @@
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
-                "border_radius": 0
+                "border_radius": 12
               },
               "blocks": {}
             },
@@ -98,7 +98,6 @@
             },
             "content": {
               "type": "_blog-post-description",
-              "disabled": true,
               "static": true,
               "settings": {
                 "type_preset": "custom",
