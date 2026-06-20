@@ -83,8 +83,8 @@
                   </h2>
                 </div>
 
-                {%- comment -%} Per-panel carousel arrows ━━ {%- endcomment -%}
-                <div class="ct-arrows">
+                {%- comment -%} Desktop arrows (top-right of header) ━━ {%- endcomment -%}
+                <div class="ct-arrows ct-arrows--header">
                   <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
                     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
                       <polyline points="10 2 4 8 10 14"/>
@@ -157,15 +157,30 @@
                 </ul>
               </div>
 
-              {%- comment -%} View more CTA ━━ {%- endcomment -%}
-              {%- if cta_url != blank -%}
-                <div class="ct-panel__footer">
+              {%- comment -%} Footer: View more + mobile arrows (bottom-right) ━━ {%- endcomment -%}
+              <div class="ct-panel__footer">
+                {%- if cta_url != blank -%}
                   <a href="{{ cta_url }}" class="ct-viewall">
                     {{- cta_label -}}
                     <span aria-hidden="true"> ›</span>
                   </a>
+                {%- else -%}
+                  <span></span>
+                {%- endif -%}
+                {%- comment -%} Mobile arrows (bottom-right, hidden on desktop) ━━ {%- endcomment -%}
+                <div class="ct-arrows ct-arrows--footer">
+                  <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+                      <polyline points="10 2 4 8 10 14"/>
+                    </svg>
+                  </button>
+                  <button class="ct-arrow ct-arrow--next" aria-label="Next" data-ct-next>
+                    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14" aria-hidden="true">
+                      <polyline points="6 2 12 8 6 14"/>
+                    </svg>
+                  </button>
                 </div>
-              {%- endif -%}
+              </div>
 
             </div>
           {%- endif -%}
@@ -186,10 +201,10 @@
   var panels = Array.from(section.querySelectorAll('.ct-panel'));
 
   panels.forEach(function (panel) {
-    var track   = panel.querySelector('.ct-track');
-    var btnPrev = panel.querySelector('[data-ct-prev]');
-    var btnNext = panel.querySelector('[data-ct-next]');
-    if (!track || !btnPrev || !btnNext) return;
+    var track    = panel.querySelector('.ct-track');
+    var btnsPrev = Array.from(panel.querySelectorAll('[data-ct-prev]'));
+    var btnsNext = Array.from(panel.querySelectorAll('[data-ct-next]'));
+    if (!track || !btnsPrev.length || !btnsNext.length) return;
 
     function slideWidth () {
       var s = track.querySelector('.ct-slide');
@@ -199,15 +214,21 @@
     }
 
     function updateArrows () {
-      btnPrev.disabled = track.scrollLeft <= 1;
-      btnNext.disabled = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+      var atStart = track.scrollLeft <= 1;
+      var atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
+      btnsPrev.forEach(function (b) { b.disabled = atStart; });
+      btnsNext.forEach(function (b) { b.disabled = atEnd; });
     }
 
-    btnPrev.addEventListener('click', function () {
-      track.scrollBy({ left: -slideWidth() * 2, behavior: 'smooth' });
+    btnsPrev.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        track.scrollBy({ left: -slideWidth() * 2, behavior: 'smooth' });
+      });
     });
-    btnNext.addEventListener('click', function () {
-      track.scrollBy({ left: slideWidth() * 2, behavior: 'smooth' });
+    btnsNext.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        track.scrollBy({ left: slideWidth() * 2, behavior: 'smooth' });
+      });
     });
 
     track.addEventListener('scroll', updateArrows, { passive: true });

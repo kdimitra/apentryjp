@@ -125,6 +125,11 @@
     height: var(--header-logo-image-height-mobile);
     width: var(--header-logo-image-width-mobile);
 
+    @media screen and (max-width: 749px) {
+      height: calc(var(--header-logo-image-height-mobile) * 1.5) !important;
+      width: calc(var(--header-logo-image-width-mobile) * 1.5) !important;
+    }
+
     @media screen and (min-width: 750px) {
       height: var(--header-logo-image-height);
       width: var(--header-logo-image-width);

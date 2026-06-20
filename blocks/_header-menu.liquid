@@ -384,6 +384,21 @@
       grid-template-columns: 1fr;
     }
   }
+
+  /* ── Food panel inside mobile drawer ──────────────── */
+  .food-mega__panel--drawer {
+    margin: 0;
+    border-radius: 0;
+    padding: 20px 16px 24px;
+  }
+
+  .food-drawer__details[open] .menu-drawer__chevron {
+    transform: rotate(180deg);
+  }
+
+  .food-drawer__details .menu-drawer__chevron {
+    transition: transform 0.2s ease;
+  }
   /* Desktop hover: food grid — clean floating panel, no white backdrop */
   @media screen and (min-width: 750px) {
     .menu-list__list-item:hover > .menu-list__submenu:has(.food-mega__panel) {

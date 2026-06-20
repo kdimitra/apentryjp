@@ -297,10 +297,17 @@
   text-decoration: line-through;
 }
 
-/* ── View more CTA ──────────────────── */
+/* ── View more CTA + footer arrows ─── */
 .ct-panel__footer {
   margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
+
+/* Footer arrows hidden on desktop — only shown on mobile */
+.ct-arrows--footer { display: none; }
 
 .ct-viewall {
   display: inline-flex;
@@ -324,32 +331,40 @@
 }
 
 /* ─────────────────────────────────────
-   RESPONSIVE — Mobile (<768px)
+   RESPONSIVE — Mobile + Tablet (<1024px)
+   The base .ct-track already has:
+     overflow-x: auto; touch-action: pan-x;
+   so swipe works — we just need layout fixes.
 ───────────────────────────────────── */
+@media (max-width: 1023px) {
+  /* Hide left chip nav — single column layout */
+  .ct-chips { display: none; }
+  .ct-layout { grid-template-columns: 1fr; }
+
+  /* Swap arrows: desktop header arrows → mobile footer arrows */
+  .ct-arrows--header { display: none; }
+  .ct-arrows--footer { display: flex; }
+  .ct-panel__footer { justify-content: space-between; }
+
+  /* Snap cards on swipe */
+  .ct-track { scroll-snap-type: x mandatory; }
+  .ct-slide { scroll-snap-align: start; }
+}
+
 @media (max-width: 767px) {
   .ct-section { padding-block: 40px; }
   .ct-container { padding-inline: 20px; }
-  .ct-layout { grid-template-columns: 1fr; gap: 24px; }
-  .ct-slide { flex: 0 0 160px; width: 160px; }
-  .ct-track { gap: 14px; }
+  .ct-layout { gap: 0; }
+  .ct-panel { gap: 12px; padding-bottom: 36px; }
   .ct-panel__heading { font-size: 20px; }
-  .ct-arrow { width: 32px; height: 32px; }
+  .ct-panel__footer { margin-top: 12px; }
+  .ct-slide { flex: 0 0 160px; width: 160px; }
+  .ct-arrow { width: 36px; height: 36px; }
 }
 
-/* ─────────────────────────────────────
-   RESPONSIVE — Tablet (768–1023px)
-───────────────────────────────────── */
 @media (min-width: 768px) and (max-width: 1023px) {
   .ct-section { padding-block: 56px; }
   .ct-container { padding-inline: 32px; }
-  .ct-layout { grid-template-columns: 1fr; gap: 32px; }
+  .ct-layout { gap: 32px; }
   .ct-slide { flex: 0 0 200px; width: 200px; }
-}
-
-@media (max-width:1020px){
-  .ct-chips{
-    display: flex;
-    flex-direction: row;
-    gap: 16px;
-  }
 }

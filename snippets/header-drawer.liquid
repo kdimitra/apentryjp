@@ -107,7 +107,67 @@
                 style="--menu-drawer-animation-index: {{ animation_index }};"
                 class="{%- if block_settings.drawer_accordion -%}menu-drawer__list-item--deep{%- else -%}menu-drawer__list-item--flat{%- endif -%}{% if block_settings.drawer_dividers %} menu-drawer__list-item--divider{% endif %}"
               >
-                {% if block_settings.drawer_accordion and link.links != blank %}
+                {% if block_settings.menu_style == 'food_grid' and link.links != blank %}
+                  {%- comment -%} Food mega panel inside a collapsible toggle in the mobile drawer {%- endcomment -%}
+                  <details id="Details-food-drawer-{{ link.handle }}" class="food-drawer__details">
+                    <summary class="menu-drawer__menu-item menu-drawer__menu-item--mainlist menu-drawer__animated-element focus-inset food-drawer__summary">
+                      <span class="menu-drawer__menu-item-text wrap-text">{{ link.title | escape }}</span>
+                      <span class="svg-wrapper icon-chevron-down menu-drawer__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+                          <polyline points="6 9 12 15 18 9"/>
+                        </svg>
+                      </span>
+                    </summary>
+                    <div
+                      class="food-mega__panel food-mega__panel--drawer"
+                      style="background-color: {{ block_settings.food_mega_bg | default: '#87CEDC' }};"
+                    >
+                      <div class="food-mega__header">
+                        <h3 class="food-mega__title">
+                          {{- block_settings.food_mega_title | default: 'Food List' | escape -}}
+                        </h3>
+                        {%- if block_settings.food_mega_view_all_url != blank -%}
+                          <a href="{{ block_settings.food_mega_view_all_url }}" class="food-mega__view-all">
+                            {{- block_settings.food_mega_view_all_label | default: 'View all' | escape -}}
+                            <span aria-hidden="true"> ›</span>
+                          </a>
+                        {%- endif -%}
+                      </div>
+                      <ul class="food-mega__grid" role="list">
+                        {%- for childlink in link.links -%}
+                          <li class="food-mega__item">
+                            <a
+                              href="{{ childlink.url }}"
+                              class="food-mega__card"
+                              style="background-color: {{ block_settings.food_mega_card_bg | default: '#FEF8EC' }};"
+                              {% if childlink.current %}aria-current="page"{% endif %}
+                            >
+                              <div class="food-mega__card-img-wrap">
+                                {%- if childlink.type == 'collection_link' and childlink.object.featured_image -%}
+                                  {{- childlink.object.featured_image
+                                    | image_url: width: 300
+                                    | image_tag:
+                                      loading: 'lazy',
+                                      widths: '100, 200, 300',
+                                      sizes: '80px',
+                                      class: 'food-mega__card-img',
+                                      alt: childlink.title
+                                  -}}
+                                {%- else -%}
+                                  {{ 'product-1' | placeholder_svg_tag: 'food-mega__card-placeholder' }}
+                                {%- endif -%}
+                              </div>
+                              <span class="food-mega__card-name">{{- childlink.title | escape -}}</span>
+                              <span class="food-mega__card-arrow" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" xmlns="http://www.w3.org/2000/svg" width="13" height="13"><polyline points="9 18 15 12 9 6"/></svg>
+                              </span>
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </div>
+                  </details>
+                {% elsif block_settings.drawer_accordion and link.links != blank %}
                   {%- comment -%}
                     Accordion for links with children, in menus with fewer than 3 levels of links
                   {%- endcomment -%}
