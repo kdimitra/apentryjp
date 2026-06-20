@@ -1405,241 +1405,26 @@
         "padding-block-end": 48
       }
     },
-    "section_6kQ7tf": {
-      "type": "section",
-      "blocks": {
-        "image_XV9Q3m": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2026-04-05_at_2.40.46_PM.png",
-            "link": "",
-            "image_ratio": "portrait",
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fill",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "collection_card_xVCpBP": {
-          "type": "collection-card",
-          "name": "t:names.collection_card",
-          "disabled": true,
-          "settings": {
-            "collection": "",
-            "placement": "below_image",
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "collection_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_MQVBxN": {
-              "type": "collection-title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "static": true,
-              "settings": {
-                "image_ratio": "portrait",
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_MQVBxN"
-          ]
-        },
-        "group_gBaCxf": {
-          "type": "group",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "horizontal_alignment_mobile": "",
-            "vertical_alignment_mobile_override": "",
-            "gap": 0,
-            "width": "custom",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 13,
-            "toggle_overlay": false,
-            "overlay_color": "#fff8d2",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 67,
-            "padding-block-end": 67,
-            "padding-inline-start": 57,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_pQRRnX": {
-              "type": "text",
-              "name": "t:names.heading",
-              "settings": {
-                "text": "<h4>🐾  セットフード</h4>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_7N6yPj": {
-              "type": "text",
-              "settings": {
-                "text": "<p>健康には「ローテーションフード」。<br/>さまざまな種類のパップタブを楽しめる、人気のフレッシュドッグフードセット。<br/><br/>まとめ買いには「バリューセット」。<br/>同じパップタブをまとめた、お得なドッグフードセットです。</p>",
-                "width": "fit-content",
-                "max_width": "narrow",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 15,
-                "padding-block-end": 15,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "button_cnwn8Y": {
-              "type": "button",
-              "disabled": true,
-              "settings": {
-                "label": "SHOP NOW",
-                "link": "shopify://collections/set-food",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_pQRRnX",
-            "text_7N6yPj",
-            "button_cnwn8Y"
-          ]
-        }
-      },
-      "block_order": [
-        "image_XV9Q3m",
-        "collection_card_xVCpBP",
-        "group_gBaCxf"
-      ],
-      "name": "t:names.image_with_text",
+    "home_rl_hero_fUgKhM": {
+      "type": "home-rl-hero",
+      "name": "Home RL Hero",
       "settings": {
-        "content_direction": "row",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 0,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
+        "image": "shopify://shop_images/Screenshot_2026-04-05_at_2.40.46_PM.png",
+        "image_side": "left",
+        "show_eyebrow_icon": true,
+        "eyebrow_icon": "shopify://shop_images/svg-foot.svg",
+        "heading": "セットフード",
+        "description": "健康には「ローテーションフード」。さまざまな種類のパップタブを楽しめる、人気のフレッシュドッグフードセット。まとめ買いには「バリューセット」。同じパップタブをまとめた、お得なドッグフードセットです。",
+        "text_align": "left",
+        "cta_label": "",
+        "cta_url": "",
+        "bg_color": "#F5F0E4",
+        "heading_color": "#1C1C1A",
+        "text_color": "#1C1C1A",
+        "desc_color": "#6B6860",
+        "icon_color": "#87CEDC",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "product_list_9LdCYQ": {
@@ -3854,7 +3639,7 @@
     "product_list_HDkd8W",
     "home_rl_hero_wnEmaQ",
     "product_list_NK4Axm",
-    "section_6kQ7tf",
+    "home_rl_hero_fUgKhM",
     "product_list_9LdCYQ",
     "section_kCNVyk",
     "product_list_3GHtBi",
