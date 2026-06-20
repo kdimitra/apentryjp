@@ -150,6 +150,10 @@
   flex-shrink: 0;
 }
 
+/* Explicit display on each variant so theme CSS can't accidentally hide them */
+.ct-arrows--header { display: flex; }
+.ct-arrows--footer { display: none; }
+
 .ct-arrow {
   display: inline-flex;
   align-items: center;
@@ -200,15 +204,15 @@
   gap: 20px;
   overflow-x: auto;
   overflow-y: hidden;
-  overscroll-behavior: contain;
+  overscroll-behavior-x: contain;
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding-block: 4px;
   list-style: none;
   margin: 0;
   padding-inline: 0;
-  /* Tell browser: only handle horizontal touch on this element */
   touch-action: pan-x;
 }
 
@@ -306,9 +310,6 @@
   gap: 12px;
 }
 
-/* Footer arrows hidden on desktop — only shown on mobile */
-.ct-arrows--footer { display: none; }
-
 .ct-viewall {
   display: inline-flex;
   align-items: center;
@@ -341,9 +342,9 @@
   .ct-chips { display: none; }
   .ct-layout { grid-template-columns: 1fr; }
 
-  /* Swap arrows: desktop header arrows → mobile footer arrows */
-  .ct-arrows--header { display: none; }
-  .ct-arrows--footer { display: flex; }
+  /* Swap arrows: header arrows hidden, footer arrows visible */
+  .ct-arrows--header { display: none !important; }
+  .ct-arrows--footer { display: flex !important; }
   .ct-panel__footer { justify-content: space-between; }
 
   /* Snap cards on swipe */
