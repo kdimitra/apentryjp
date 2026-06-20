@@ -160,6 +160,16 @@
 </script>
 {%- endif -%}
 
+<style>
+@media screen and (max-width: 749px) {
+  .ui-test-product-list .text-block.h3 > *,
+  .ui-test-product-list .text-block.h3 :is(h1, h2, h3, h4, h5, h6) {
+    font-size: var(--font-h4--size) !important;
+    line-height: var(--font-h4--line-height) !important;
+  }
+}
+</style>
+
 {% schema %}
 {
   "name": "t:names.product_list",
