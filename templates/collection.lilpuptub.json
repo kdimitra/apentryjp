@@ -944,6 +944,31 @@
         "padding-block-end": 48
       }
     },
+    "canine_nutrition_CqJPp8": {
+      "type": "canine-nutrition",
+      "name": "Canine nutrition",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/blog_thumbnail_20260420.jpg",
+        "card_height": 300,
+        "card_radius": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "heading": "「パップタブで変わったうちの子の毎日｜実際の愛用者にインタビュー」",
+        "subtext": "パップタブを愛用している飼い主さんの実際の声をお伝えします。",
+        "text_alignment": "center",
+        "button_label": "View more",
+        "button_url": "shopify://blogs/journal/puptab-customer-interview",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_bottom": 0,
+        "bg_color": "#F5F0E4",
+        "heading_color": "#FFFFFF",
+        "subtext_color": "#FFFFFF",
+        "button_bg_color": "#9ADBE8",
+        "button_text_color": "#FFFFFF"
+      }
+    },
     "home_blog_dxrcYB": {
       "type": "home-blog",
       "name": "Home blog",
@@ -972,6 +997,7 @@
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",
+    "canine_nutrition_CqJPp8",
     "home_blog_dxrcYB"
   ]
 }
