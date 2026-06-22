@@ -1419,9 +1419,9 @@
         "cta_label": "",
         "cta_url": "",
         "bg_color": "#f5f0e4",
-        "heading_color": "#5A3729",
-        "text_color": "#5A3729",
-        "desc_color": "#5A3729",
+        "heading_color": "#5a3729",
+        "text_color": "#5a3729",
+        "desc_color": "#5a3729",
         "icon_color": "#87cedc",
         "padding_top": 0,
         "padding_bottom": 0
