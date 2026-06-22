@@ -615,7 +615,7 @@
           "type": "point",
           "settings": {
             "label": "その2",
-            "heading": "日本ではまだ少数派。 でも、確実に 広がっています。",
+            "heading": "日本ではまだ少数派。 でも、確実に広がっています。",
             "description": "<p>日本では、「生肉はちょっと心配…」という声が根強くあります。でも実は最近、添加物を避けたい人や、愛犬の健康を第一に考える飼い主のあいだで、ローフードへの注目が急上昇中。健康の改善をきっかけに、切り替える人も増えてきました。</p>",
             "image": "shopify://shop_images/108b268426c489a41d7276a500a26b56390c83e6-1442x1048_png.avif"
           }
@@ -649,6 +649,33 @@
         "heading_color": "#5a3729",
         "body_color": "#5a3729",
         "divider_color": "#faf7e6"
+      }
+    },
+    "about_image_card_HzEikP": {
+      "type": "about-image-card",
+      "name": "About - Image Card",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/f77d71b53736b17b0cc0665fefab96db06f2b27c-5000x3333_jpg.avif",
+        "background_image_alt": "",
+        "show_paw_icon": true,
+        "eyebrow": "Why PupTub?",
+        "heading_tag": "h2",
+        "heading": "こんな愛犬におすすめ",
+        "body": "<ul><li><strong>生食を始めてみたい</strong><br/>初めての生食でも取り入れやすい総合栄養食。</li><li><strong>好き嫌いがある</strong><br/>豊富なレシピから、愛犬のお気に入りが見つけられる。</li><li><strong>毎日の食事に変化をつけたい</strong><br/>さまざまなタンパク質をローテーションで楽しめる。</li><li><strong>手軽に良い食事を与えたい</strong><br/>解凍してそのまま与えられるから、忙しい日にも便利。</li></ul>",
+        "button_label": "View more",
+        "button_url": "",
+        "button_open_new_tab": false,
+        "card_background_color": "#fefbec",
+        "text_color": "#5e3826",
+        "eyebrow_color": "#9adbe8",
+        "button_background_color": "#9adbe8",
+        "button_text_color": "#5e3826",
+        "section_height": 600,
+        "card_max_width": 600,
+        "content_max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 36
       }
     },
     "about_image_card_nYfntW": {
@@ -941,6 +968,7 @@
     "main",
     "about_pap_tab_yJcK9V",
     "collection_point_YrmerE",
+    "about_image_card_HzEikP",
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",
