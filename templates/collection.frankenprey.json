@@ -586,7 +586,7 @@
         "image_position": "left",
         "image_bg_color": "#9adbe8",
         "body_subheading": "そのままの素材で、そのままの愛を。",
-        "body_text": "<p>自然素材だけで作った手づくりのローフードソーセージ。<br/>お肉・骨・内臓をバランスよく配合し、わかめでオメガ3系脂肪酸やタウリンもプラス。<br/>愛犬の健康をサポートする生食ドッグフードのソーセージタイプで、<br/>トッピングやおやつにも使いやすいフードです。</p>",
+        "body_text": "<p>自然素材だけで作った手づくりのローフードソーセージ。<br/>お肉・骨・内臓をバランスよく配合し、わかめでオメガ3系脂肪酸やタウリンもプラス。<br/>愛犬の健康をサポートする生食ドッグフードのソーセージタイプで、トッピングやおやつにも使いやすいフードです。</p>",
         "show_dog": true,
         "padding_top": 72,
         "padding_bottom": 96,
@@ -649,6 +649,33 @@
         "heading_color": "#5a3729",
         "body_color": "#5a3729",
         "divider_color": "#faf7e6"
+      }
+    },
+    "about_image_card_L6VTCY": {
+      "type": "about-image-card",
+      "name": "About - Image Card",
+      "settings": {
+        "section_id": "",
+        "background_image": "shopify://shop_images/Copy_of_AnniesPantry_4174_FINALExports.jpg",
+        "background_image_alt": "",
+        "show_paw_icon": true,
+        "eyebrow": "Why FrankenPrey?",
+        "heading_tag": "h2",
+        "heading": "こんなときにおすすめ",
+        "body": "<ul><li>日常のごはんのトッピングやおやつとして</li><li>トレーニングやしつけのご褒美として</li><li>特別な日のご馳走として</li></ul>",
+        "button_label": "View more",
+        "button_url": "",
+        "button_open_new_tab": false,
+        "card_background_color": "#fefbec",
+        "text_color": "#5e3826",
+        "eyebrow_color": "#9adbe8",
+        "button_background_color": "#9adbe8",
+        "button_text_color": "#5e3826",
+        "section_height": 600,
+        "card_max_width": 480,
+        "content_max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 32
       }
     },
     "about_image_card_nYfntW": {
@@ -941,6 +968,7 @@
     "main",
     "about_pap_tab_yJcK9V",
     "collection_point_YrmerE",
+    "about_image_card_L6VTCY",
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",
