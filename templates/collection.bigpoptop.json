@@ -663,9 +663,9 @@
         "heading_tag": "h2",
         "heading": "こんな愛犬におすすめ",
         "body": "<ul><li><strong>生食を始めてみたい</strong><br/>初めての生食でも取り入れやすい総合栄養食。</li><li><strong>好き嫌いがある</strong><br/>豊富なレシピから、愛犬のお気に入りが見つけられる。</li><li><strong>毎日の食事に変化をつけたい</strong><br/>さまざまなタンパク質をローテーションで楽しめる。</li><li><strong>手軽に良い食事を与えたい</strong><br/>解凍してそのまま与えられるから、忙しい日にも便利。</li></ul>",
-        "button_label": "View more",
-        "button_url": "",
-        "button_open_new_tab": false,
+        "button_label": "パップタブ選び方ガイド",
+        "button_url": "shopify://blogs/journal/puptab-beginners-guide",
+        "button_open_new_tab": true,
         "card_background_color": "#fefbec",
         "text_color": "#5e3826",
         "eyebrow_color": "#9adbe8",
@@ -944,6 +944,31 @@
         "padding-block-end": 48
       }
     },
+    "canine_nutrition_KQMziD": {
+      "type": "canine-nutrition",
+      "name": "Canine nutrition",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/blog_thumbnail_20260420.jpg",
+        "card_height": 300,
+        "card_radius": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "heading": "「パップタブで変わったうちの子の毎日｜実際の愛用者にインタビュー」",
+        "subtext": "パップタブを愛用している飼い主さんの実際の声をお伝えします。",
+        "text_alignment": "center",
+        "button_label": "View more",
+        "button_url": "shopify://blogs/journal/puptab-customer-interview",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_bottom": 0,
+        "bg_color": "#F5F0E4",
+        "heading_color": "#FFFFFF",
+        "subtext_color": "#FFFFFF",
+        "button_bg_color": "#9ADBE8",
+        "button_text_color": "#FFFFFF"
+      }
+    },
     "home_blog_dxrcYB": {
       "type": "home-blog",
       "name": "Home blog",
@@ -954,7 +979,7 @@
         "cta_label": "View more",
         "cta_url": "",
         "blog": "journal",
-        "posts_to_show": 3,
+        "posts_to_show": 4,
         "image_ratio": "landscape",
         "show_date": true,
         "show_category": true,
@@ -972,6 +997,7 @@
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",
+    "canine_nutrition_KQMziD",
     "home_blog_dxrcYB"
   ]
 }
