@@ -181,6 +181,30 @@
 
 
 {% stylesheet %}
+  /* Gap between nav and product details */
+  .product-information {
+    padding-block-start: 40px !important;
+  }
+
+  /* Default text color override */
+  .product-information {
+    color: #5A3729;
+    --color-foreground: #5A3729;
+    font-family: 'gt-ultra', sans-serif;
+  }
+
+  /* Add to cart button — milky red bg, brown text */
+  .product-information .add-to-cart-button.button {
+    --button-background-color: #F2B6B6;
+    --button-border-color: #F2B6B6;
+    --button-color: #5A3729;
+    --button-color-hover: #5A3729;
+  }
+  .product-information .add-to-cart-button.button:hover:not(:disabled) {
+    --button-background-color: #E8A0A0;
+    --button-border-color: #E8A0A0;
+  }
+
   .sticky-add-to-cart__bar {
     position: fixed;
     bottom: 20px;
