@@ -250,10 +250,10 @@
         "desktop_media_position": "left",
         "equal_columns": true,
         "limit_details_width": false,
-        "gap": 4,
+        "gap": 8,
         "enable_sticky_add_to_cart": true,
         "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
-        "padding-block-start": 0,
+        "padding-block-start": 75,
         "padding-block-end": 0
       }
     },
