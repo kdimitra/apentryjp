@@ -1,0 +1,102 @@
+/* ─────────────────────────────────────────
+   All Food Top Section · section-all-food-top.css
+───────────────────────────────────────── */
+
+.aft-section {
+  --aft-font:        'gt-ultra', sans-serif;
+  --aft-text:        #5A3729;
+  --aft-text-muted:  #7A5C50;
+
+  padding-block: 72px;
+}
+
+/* ── Container ─────────────────────────── */
+.aft-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 60px;
+}
+
+/* ── Two-column grid ────────────────────── */
+.aft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ── Left column — large display heading ── */
+.aft-col--left {
+  display: flex;
+  align-items: center;
+}
+
+.aft-heading-display {
+  font-family: var(--aft-font);
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--aft-text);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ── Right column — heading + paragraph ─── */
+.aft-col--right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.aft-heading-sub {
+  font-family: var(--aft-font);
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--aft-text);
+  margin: 0;
+}
+
+.aft-body {
+  font-family: var(--aft-font);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.9;
+  color: var(--aft-text-muted);
+  margin: 0;
+}
+
+/* ── Responsive ─────────────────────────── */
+@media screen and (max-width: 749px) {
+  .aft-section {
+    padding-block: 48px;
+  }
+
+  .aft-container {
+    padding-inline: 24px;
+  }
+
+  .aft-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .aft-col--left {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .aft-heading-display {
+    font-size: clamp(32px, 10vw, 44px);
+  }
+
+  .aft-col--right {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aft-body {
+    max-width: 480px;
+  }
+}

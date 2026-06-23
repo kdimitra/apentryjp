@@ -1,0 +1,88 @@
+
+{%- comment -%}
+  All Food Top Section
+  Two-column layout: large display heading left, subheading + paragraph right.
+  Mobile: stacked, centered.
+{%- endcomment -%}
+
+{{ 'section-all-food-top.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="aft-section"
+  style="background-color: {{ section.settings.bg_color }};"
+>
+  <div class="aft-container">
+    <div class="aft-grid">
+
+      {%- comment -%} Left: large display heading {%- endcomment -%}
+      <div class="aft-col--left">
+        <h2 class="aft-heading-display">
+          {{- section.settings.left_heading | escape -}}
+        </h2>
+      </div>
+
+      {%- comment -%} Right: subheading + paragraph {%- endcomment -%}
+      <div class="aft-col--right">
+        {%- if section.settings.right_heading != blank -%}
+          <h2 class="aft-heading-sub">
+            {{- section.settings.right_heading | escape -}}
+          </h2>
+        {%- endif -%}
+        {%- if section.settings.right_text != blank -%}
+          <p class="aft-body">{{- section.settings.right_text | escape -}}</p>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "All Food Top",
+  "class": "section-all-food-top",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left column"
+    },
+    {
+      "type": "text",
+      "id": "left_heading",
+      "label": "Display heading",
+      "default": "All Foods"
+    },
+    {
+      "type": "header",
+      "content": "Right column"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "label": "Subheading",
+      "default": "素材そのまま、うれしさいっぱい"
+    },
+    {
+      "type": "textarea",
+      "id": "right_text",
+      "label": "Paragraph text",
+      "default": "添加物は使わず、選んだのは自然そのものの素材だけ。食べるたび、からだにやさしく、心にうれしいごはんです。愛犬の毎日を、健やかに、しあわせに。あなたの家族を想って作りました。"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#F5F0E4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "All Food Top"
+    }
+  ]
+}
+{% endschema %}
