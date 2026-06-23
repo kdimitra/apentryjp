@@ -118,8 +118,8 @@
 /* ── Responsive: Mobile ───────────────── */
 @media (max-width: 767px) {
   .ch-section {
-    height: auto;
-    min-height: 280px;
+    height: 100vh;
+    min-height: unset;
     padding-block: 56px;
   }
 
