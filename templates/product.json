@@ -51,7 +51,7 @@
             "custom_width_mobile": 100,
             "height": "fit",
             "details_position": "flex-start",
-            "gap": 12,
+            "gap": 14,
             "sticky_details_desktop": true,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -62,7 +62,7 @@
             "border_width": 1,
             "border_opacity": 100,
             "border_radius": 0,
-            "padding-block-start": 11,
+            "padding-block-start": 100,
             "padding-block-end": 36,
             "padding-inline-start": 12,
             "padding-inline-end": 12
@@ -253,7 +253,7 @@
         "gap": 8,
         "enable_sticky_add_to_cart": true,
         "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
-        "padding-block-start": 75,
+        "padding-block-start": 0,
         "padding-block-end": 0
       }
     },
