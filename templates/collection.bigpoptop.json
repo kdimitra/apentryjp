@@ -13,13 +13,13 @@
       "type": "collection-hero",
       "settings": {
         "bg_image_override": "shopify://shop_images/big-poptop.avif",
-        "hero_height": 680,
+        "hero_height": 760,
         "text_alignment": "center",
         "overlay_color": "#000000",
         "overlay_opacity": 20,
         "subtitle": "BigPupTub - 800g",
         "description": "愛犬を想う、素材が生きたローフード。",
-        "title_font_size": 64,
+        "title_font_size": 48,
         "subtitle_font_size": 22,
         "desc_font_size": 14
       }
@@ -962,11 +962,11 @@
         "padding_top": 0,
         "padding_bottom": 0,
         "margin_bottom": 0,
-        "bg_color": "#F5F0E4",
-        "heading_color": "#FFFFFF",
-        "subtext_color": "#FFFFFF",
-        "button_bg_color": "#9ADBE8",
-        "button_text_color": "#FFFFFF"
+        "bg_color": "#f5f0e4",
+        "heading_color": "#ffffff",
+        "subtext_color": "#ffffff",
+        "button_bg_color": "#9adbe8",
+        "button_text_color": "#ffffff"
       }
     },
     "home_blog_dxrcYB": {
