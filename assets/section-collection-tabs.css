@@ -142,17 +142,18 @@
   line-height: 1.2;
 }
 
-/* Arrow buttons */
+/* Arrow buttons — hidden by default, shown only when scrolling is enabled */
 .ct-arrows {
-  display: flex;
+  display: none;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
 }
 
-/* Explicit display on each variant so theme CSS can't accidentally hide them */
-.ct-arrows--header { display: flex; }
-.ct-arrows--footer { display: none; }
+/* Scrollable: show header arrows on desktop */
+.ct-section--scrollable .ct-arrows--header { display: flex; }
+/* Footer arrows always hidden on desktop even when scrollable */
+.ct-section--scrollable .ct-arrows--footer { display: none; }
 
 .ct-arrow {
   display: inline-flex;
@@ -201,25 +202,37 @@
 
 .ct-track {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-block: 4px;
+}
+
+/* ── Scrollable track ───────────────── */
+.ct-section--scrollable .ct-track {
+  flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   overscroll-behavior-x: contain;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding-block: 4px;
-  list-style: none;
-  margin: 0;
-  padding-inline: 0;
   touch-action: pan-x;
 }
 
-.ct-track::-webkit-scrollbar { display: none; }
+.ct-section--scrollable .ct-track::-webkit-scrollbar { display: none; }
 
 /* ── Slide ──────────────────────────── */
 .ct-slide {
+  flex: 0 0 var(--ct-slide-w);
+  width: var(--ct-slide-w);
+}
+
+/* Non-scrollable: slides wrap and auto-size */
+.ct-section:not(.ct-section--scrollable) .ct-slide {
   flex: 0 0 var(--ct-slide-w);
   width: var(--ct-slide-w);
 }
@@ -342,14 +355,15 @@
   .ct-chips { display: none; }
   .ct-layout { grid-template-columns: 1fr; }
 
-  /* Swap arrows: header arrows hidden, footer arrows visible */
-  .ct-arrows--header { display: none !important; }
-  .ct-arrows--footer { display: flex !important; }
   .ct-panel__footer { justify-content: space-between; }
 
-  /* Snap cards on swipe */
-  .ct-track { scroll-snap-type: x mandatory; }
-  .ct-slide { scroll-snap-align: start; }
+  /* Scrollable only: swap arrows — hide header, show footer */
+  .ct-section--scrollable .ct-arrows--header { display: none !important; }
+  .ct-section--scrollable .ct-arrows--footer { display: flex !important; }
+
+  /* Snap cards on swipe when scrollable */
+  .ct-section--scrollable .ct-track { scroll-snap-type: x mandatory; }
+  .ct-section--scrollable .ct-slide { scroll-snap-align: start; }
 }
 
 @media (max-width: 767px) {
@@ -359,13 +373,17 @@
   .ct-panel { gap: 12px; padding-bottom: 36px; }
   .ct-panel__heading { font-size: 20px; }
   .ct-panel__footer { margin-top: 12px; }
-  .ct-slide { flex: 0 0 160px; width: 160px; }
   .ct-arrow { width: 36px; height: 36px; }
+
+  /* Fixed slide width only when scrolling is active */
+  .ct-section--scrollable .ct-slide { flex: 0 0 160px; width: 160px; }
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .ct-section { padding-block: 56px; }
   .ct-container { padding-inline: 32px; }
   .ct-layout { gap: 32px; }
-  .ct-slide { flex: 0 0 200px; width: 200px; }
+
+  /* Fixed slide width only when scrolling is active */
+  .ct-section--scrollable .ct-slide { flex: 0 0 200px; width: 200px; }
 }

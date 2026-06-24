@@ -11,7 +11,7 @@
 
 {%- if section.blocks.size > 0 -%}
 <section
-  class="ct-section"
+  class="ct-section{% if section.settings.enable_scroll %} ct-section--scrollable{% endif %}"
   id="collection-tabs-{{ section.id }}"
   style="
     background-color: {{ section.settings.bg_color }};
@@ -83,6 +83,7 @@
                   </h2>
                 </div>
 
+                {%- if section.settings.enable_scroll -%}
                 {%- comment -%} Desktop arrows (top-right of header) ━━ {%- endcomment -%}
                 <div class="ct-arrows ct-arrows--header">
                   <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
@@ -96,6 +97,7 @@
                     </svg>
                   </button>
                 </div>
+                {%- endif -%}
               </div>
 
               {%- comment -%} Description ━━ {%- endcomment -%}
@@ -167,6 +169,7 @@
                 {%- else -%}
                   <span></span>
                 {%- endif -%}
+                {%- if section.settings.enable_scroll -%}
                 {%- comment -%} Mobile arrows (bottom-right, hidden on desktop) ━━ {%- endcomment -%}
                 <div class="ct-arrows ct-arrows--footer">
                   <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
@@ -180,6 +183,7 @@
                     </svg>
                   </button>
                 </div>
+                {%- endif -%}
               </div>
 
             </div>
@@ -195,7 +199,7 @@
 <script>
 (function () {
   var section = document.getElementById('collection-tabs-{{ section.id }}');
-  if (!section) return;
+  if (!section || !section.classList.contains('ct-section--scrollable')) return;
 
   /* ── Per-panel arrow carousel ────────────────────────────── */
   var panels = Array.from(section.querySelectorAll('.ct-panel'));
@@ -242,6 +246,17 @@
   "name": "Collection tabs",
   "class": "section-collection-tabs",
   "settings": [
+    {
+      "type": "header",
+      "content": "Scrolling"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_scroll",
+      "label": "Enable product scrolling",
+      "info": "Shows left/right arrows and enables horizontal scroll on each collection's product list.",
+      "default": true
+    },
     {
       "type": "header",
       "content": "Products"
