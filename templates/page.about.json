@@ -323,7 +323,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2><strong>ストーリー</strong></h2>",
+                "text": "<h2>ストーリー</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -749,7 +749,7 @@
         "subtext": "海外のペット栄養学やフレッシュフードの考え方など、愛犬の健康に役立つ情報をブログで発信しています。",
         "text_alignment": "center",
         "button_label": "ブログを読む",
-        "button_url": "shopify://blogs/journal/世界へ広がる生食ブーム-愛犬の健康を考える海外のペット栄養学から学ぶ",
+        "button_url": "shopify://blogs/journal",
         "padding_top": 24,
         "padding_bottom": 56,
         "margin_bottom": 0,
