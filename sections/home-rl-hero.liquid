@@ -14,8 +14,10 @@
     background-color: {{ section.settings.bg_color }};
     padding-block-start: {{ section.settings.padding_top }}px;
     padding-block-end:   {{ section.settings.padding_bottom }}px;
-    --rlh-text-align:    {{ section.settings.text_align }};
-    --rlh-heading-color: {{ section.settings.heading_color }};
+    --rlh-text-align:         {{ section.settings.text_align }};
+    --rlh-heading-color:      {{ section.settings.heading_color }};
+    --rlh-heading-size:       {{ section.settings.heading_size_desktop }}px;
+    --rlh-heading-size-mobile: {{ section.settings.heading_size_mobile }}px;
     --rlh-text-color:    {{ section.settings.text_color }};
     --rlh-desc-color:    {{ section.settings.desc_color }};
     --rlh-icon-color:    {{ section.settings.icon_color }};
@@ -141,6 +143,26 @@
       "default": "そのままの愛を。"
     },
     {
+      "type": "range",
+      "id": "heading_size_desktop",
+      "label": "Heading font size (desktop)",
+      "min": 24,
+      "max": 80,
+      "step": 2,
+      "unit": "px",
+      "default": 52
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "label": "Heading font size (mobile)",
+      "min": 18,
+      "max": 56,
+      "step": 2,
+      "unit": "px",
+      "default": 32
+    },
+    {
       "type": "textarea",
       "id": "description",
       "label": "Description",
@@ -185,7 +207,7 @@
       "type": "color",
       "id": "heading_color",
       "label": "Heading color",
-      "default": "#1C1C1A"
+      "default": "#5A3729"
     },
     {
       "type": "color",

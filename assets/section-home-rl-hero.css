@@ -5,8 +5,10 @@
 
 .rlh-section {
   --rlh-font:          'gt-ultra', sans-serif;
-  --rlh-heading-color: #1C1C1A;
-  --rlh-text-color:    #1C1C1A;
+  --rlh-heading-color:       #5A3729;
+  --rlh-text-color:          #5A3729;
+  --rlh-heading-size:        52px;
+  --rlh-heading-size-mobile: 32px;
   --rlh-desc-color:    #6B6860;
   --rlh-icon-color:    #87CEDC;
   --rlh-text-align:    left;
@@ -80,7 +82,7 @@
   align-items: center;
   gap: 12px;
   font-family: 'gt-ultra', sans-serif;
-  font-size: clamp(28px, 3.5vw, 52px);
+  font-size: var(--rlh-heading-size, 52px);
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -170,7 +172,7 @@
   }
 
   .rlh-heading {
-    font-size: clamp(24px, 3vw, 36px);
+    font-size: var(--rlh-heading-size, 52px);
   }
 }
 
@@ -205,7 +207,7 @@
   }
 
   .rlh-heading {
-    font-size: clamp(26px, 7vw, 36px);
+    font-size: var(--rlh-heading-size-mobile, 32px);
     justify-content: center;
   }
 
