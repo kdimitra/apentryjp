@@ -24,9 +24,9 @@
 /* ── Container ─────────────────────────── */
 .ct-container {
   width: 100%;
-  max-width: 1280px;
   margin-inline: auto;
-  padding-inline: 40px;
+  padding-inline-start: 70px;
+  padding-inline-end: 11px;
 }
 
 /* ── Two-column layout ─────────────────── */
@@ -89,6 +89,7 @@
   display: flex;
   flex-direction: column;
   gap: 56px;
+  min-width: 0; /* prevent flex child from expanding beyond grid column */
 }
 
 .ct-panel {
@@ -97,6 +98,8 @@
   gap: 16px;
   padding-bottom: 56px;
   border-bottom: 1px solid var(--ct-chip-border);
+  min-width: 0; /* prevent flex child from expanding to fit scrollable content */
+  overflow: hidden; /* clip any accidental x overflow at panel level */
 }
 
 .ct-panel:last-child {
@@ -142,40 +145,57 @@
   line-height: 1.2;
 }
 
-/* Arrow buttons — hidden by default, shown only when scrolling is enabled */
+/* Arrow button groups — hidden by default */
 .ct-arrows {
-  display: none;
+  display: none !important;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
 }
 
-/* Scrollable: show header arrows on desktop */
-.ct-section--scrollable .ct-arrows--header { display: flex; }
-/* Footer arrows always hidden on desktop even when scrollable */
-.ct-section--scrollable .ct-arrows--footer { display: none; }
+/* Scrollable — desktop: show header arrows only */
+.ct-section--scrollable .ct-arrows--header {
+  display: flex !important;
+}
 
+/* Scrollable — footer arrows hidden on desktop */
+.ct-section--scrollable .ct-arrows--footer {
+  display: none !important;
+}
+
+/* Individual arrow button */
 .ct-arrow {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background: transparent;
-  border: 1.5px solid var(--ct-chip-border);
+  border: 1.5px solid #5A3729;
   cursor: pointer;
-  transition: background-color 0.18s ease, border-color 0.18s ease;
-  color: var(--ct-text-primary);
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+  color: #5A3729;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.ct-arrow svg {
+  display: block;
+  stroke: #5A3729;
+  flex-shrink: 0;
 }
 
 .ct-arrow:hover:not(:disabled) {
-  background-color: var(--ct-text-primary);
-  border-color: var(--ct-text-primary);
+  background-color: #5A3729;
+  border-color: #5A3729;
   color: #FAFAF7;
 }
 
-.ct-arrow:hover:not(:disabled) svg { stroke: #FAFAF7; }
+.ct-arrow:hover:not(:disabled) svg {
+  stroke: #FAFAF7;
+}
 
 .ct-arrow:disabled {
   opacity: 0.3;
@@ -196,10 +216,12 @@
    CAROUSEL TRACK
 ───────────────────────────────────── */
 .ct-track-wrap {
-  overflow: hidden;
   position: relative;
+  overflow: hidden; /* clips the track to this box in both modes */
+  min-width: 0;     /* prevent expanding beyond parent width */
 }
 
+/* Default track — wrapped grid layout */
 .ct-track {
   display: flex;
   flex-wrap: wrap;
@@ -221,20 +243,27 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   touch-action: pan-x;
+  cursor: grab;
+  user-select: none;
 }
 
 .ct-section--scrollable .ct-track::-webkit-scrollbar { display: none; }
 
-/* ── Slide ──────────────────────────── */
+.ct-section--scrollable .ct-track.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto; /* disable smooth during drag for responsiveness */
+}
+
+/* ── Slides ─────────────────────────── */
 .ct-slide {
   flex: 0 0 var(--ct-slide-w);
   width: var(--ct-slide-w);
 }
 
-/* Non-scrollable: slides wrap and auto-size */
-.ct-section:not(.ct-section--scrollable) .ct-slide {
-  flex: 0 0 var(--ct-slide-w);
-  width: var(--ct-slide-w);
+/* Scrollable: prevent cards from being dragged as images */
+.ct-section--scrollable .ct-slide {
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* ── Product card ───────────────────── */
@@ -357,9 +386,9 @@
 
   .ct-panel__footer { justify-content: space-between; }
 
-  /* Scrollable only: swap arrows — hide header, show footer */
+  /* Scrollable: swap — hide header arrows, show footer arrows beside "View more" */
   .ct-section--scrollable .ct-arrows--header { display: none !important; }
-  .ct-section--scrollable .ct-arrows--footer { display: flex !important; }
+  .ct-section--scrollable .ct-arrows--footer  { display: flex !important; }
 
   /* Snap cards on swipe when scrollable */
   .ct-section--scrollable .ct-track { scroll-snap-type: x mandatory; }
@@ -368,7 +397,7 @@
 
 @media (max-width: 767px) {
   .ct-section { padding-block: 40px; }
-  .ct-container { padding-inline: 20px; }
+  .ct-container { padding-inline-start: 20px; padding-inline-end: 0; }
   .ct-layout { gap: 0; }
   .ct-panel { gap: 12px; padding-bottom: 36px; }
   .ct-panel__heading { font-size: 20px; }
@@ -381,7 +410,7 @@
 
 @media (min-width: 768px) and (max-width: 1023px) {
   .ct-section { padding-block: 56px; }
-  .ct-container { padding-inline: 32px; }
+  .ct-container { padding-inline-start: 32px; padding-inline-end: 0; }
   .ct-layout { gap: 32px; }
 
   /* Fixed slide width only when scrolling is active */

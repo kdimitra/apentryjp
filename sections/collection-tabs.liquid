@@ -170,6 +170,7 @@
                   <span></span>
                 {%- endif -%}
                 {%- if section.settings.enable_scroll -%}
+                  
                 {%- comment -%} Mobile arrows (bottom-right, hidden on desktop) ━━ {%- endcomment -%}
                 <div class="ct-arrows ct-arrows--footer">
                   <button class="ct-arrow ct-arrow--prev" aria-label="Previous" data-ct-prev>
@@ -201,29 +202,31 @@
   var section = document.getElementById('collection-tabs-{{ section.id }}');
   if (!section || !section.classList.contains('ct-section--scrollable')) return;
 
-  /* ── Per-panel arrow carousel ────────────────────────────── */
   var panels = Array.from(section.querySelectorAll('.ct-panel'));
 
   panels.forEach(function (panel) {
     var track    = panel.querySelector('.ct-track');
     var btnsPrev = Array.from(panel.querySelectorAll('[data-ct-prev]'));
     var btnsNext = Array.from(panel.querySelectorAll('[data-ct-next]'));
-    if (!track || !btnsPrev.length || !btnsNext.length) return;
+    if (!track) return;
 
-    function slideWidth () {
+    /* ── Slide width helper ────────────────────────── */
+    function slideWidth() {
       var s = track.querySelector('.ct-slide');
-      if (!s) return 0;
+      if (!s) return 200;
       var gap = parseFloat(getComputedStyle(track).gap) || 20;
       return s.offsetWidth + gap;
     }
 
-    function updateArrows () {
+    /* ── Arrow state ───────────────────────────────── */
+    function updateArrows() {
       var atStart = track.scrollLeft <= 1;
       var atEnd   = track.scrollLeft >= track.scrollWidth - track.clientWidth - 1;
       btnsPrev.forEach(function (b) { b.disabled = atStart; });
       btnsNext.forEach(function (b) { b.disabled = atEnd; });
     }
 
+    /* ── Arrow click handlers ──────────────────────── */
     btnsPrev.forEach(function (btn) {
       btn.addEventListener('click', function () {
         track.scrollBy({ left: -slideWidth() * 2, behavior: 'smooth' });
@@ -235,6 +238,46 @@
       });
     });
 
+    /* ── Mouse drag / pointer drag scrolling ───────── */
+    var isDragging  = false;
+    var startX      = 0;
+    var startScroll = 0;
+
+    track.addEventListener('pointerdown', function (e) {
+      /* Only primary button (left click), ignore touch (handled by CSS pan-x) */
+      if (e.pointerType === 'touch') return;
+      isDragging  = true;
+      startX      = e.clientX;
+      startScroll = track.scrollLeft;
+      track.classList.add('is-dragging');
+      track.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+
+    track.addEventListener('pointermove', function (e) {
+      if (!isDragging || e.pointerType === 'touch') return;
+      var dx = startX - e.clientX;
+      track.scrollLeft = startScroll + dx;
+    });
+
+    function stopDrag(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      track.classList.remove('is-dragging');
+    }
+
+    track.addEventListener('pointerup',     stopDrag);
+    track.addEventListener('pointercancel', stopDrag);
+
+    /* Prevent clicks firing after a drag */
+    track.addEventListener('click', function (e) {
+      if (Math.abs(track.scrollLeft - startScroll) > 4) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    /* ── Sync arrow state on scroll ────────────────── */
     track.addEventListener('scroll', updateArrows, { passive: true });
     updateArrows();
   });
