@@ -16,7 +16,7 @@
         "left_heading": "All Foods",
         "right_heading": "素材そのまま、うれしさいっぱい",
         "right_text": "添加物は使わず、選んだのは自然そのものの素材だけ。食べるたび、からだにやさしく、心にうれしいごはんです。愛犬の毎日を、健やかに、しあわせに。あなたの家族を想って作りました。",
-        "bg_color": "#F5F0E4"
+        "bg_color": "#f5f0e4"
       }
     },
     "hero_bgVbXE": {
@@ -228,7 +228,7 @@
             "collection": "set-food",
             "label": "セットフード",
             "heading": "",
-            "description": "毎日のごはんだから、まとめて安心。\n生食ドッグフードの人気商品をお得に楽しめるセットをご用意しました。",
+            "description": "毎日のごはんだから、まとめて安心。",
             "cta_label": "View more",
             "cta_url": "shopify://collections/set-food"
           }
@@ -239,7 +239,7 @@
             "collection": "bigpuptub",
             "label": "パップタブ（大）",
             "heading": "",
-            "description": "高品質で新鮮な素材を使った、人気の生食フレッシュドッグフード800g。\nAAFCO基準を満たした、安心・安全のナチュラルミールです。",
+            "description": "ヒューマングレードのフレッシュフード（800g）",
             "cta_label": "View more",
             "cta_url": "shopify://collections/bigpuptub"
           }
@@ -250,7 +250,7 @@
             "collection": "lilpuptub",
             "label": "パップタブ（小）",
             "heading": "",
-            "description": "高品質で新鮮な素材を使った、",
+            "description": "ヒューマングレードのフレッシュフード（310g）",
             "cta_label": "View more",
             "cta_url": "shopify://collections/lilpuptub"
           }
@@ -261,7 +261,7 @@
             "collection": "frankenprey",
             "label": "",
             "heading": "",
-            "description": "高品質で新鮮な素材を使った、",
+            "description": "トッピングやご褒美おやつに手作りソーセージを",
             "cta_label": "View more",
             "cta_url": "shopify://collections/frankenprey"
           }
