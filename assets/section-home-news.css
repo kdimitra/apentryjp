@@ -7,7 +7,7 @@
   /* Design tokens */
   --hn-bg:              #F0EBD8;   /* warm cream section background */
   --hn-card-bg:         #FFFFFF;   /* white cards */
-  --hn-text-primary:    #1C1C1A;
+  --hn-text-primary:    #5A3729;
   --hn-text-secondary:  #6B6860;
   --hn-text-accent:     #3D6B4F;
   --hn-font-color:      #5A3729;   /* overridden per-section via inline style */
