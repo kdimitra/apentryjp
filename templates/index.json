@@ -1662,6 +1662,7 @@
         "image": "shopify://shop_images/Screenshot_2026-04-05_at_2.45.21_PM.png",
         "image_side": "right",
         "show_eyebrow_icon": true,
+        "eyebrow_icon": "shopify://shop_images/svg-foot.svg",
         "heading": "フランケンソーセージ",
         "heading_size_desktop": 32,
         "heading_size_mobile": 32,
