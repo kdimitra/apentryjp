@@ -275,7 +275,7 @@
       ],
       "name": "Collection tabs",
       "settings": {
-        "enable_scroll": false,
+        "enable_scroll": true,
         "products_to_show": 10,
         "show_paw_icon": true,
         "bg_color": "#faf7e6",
