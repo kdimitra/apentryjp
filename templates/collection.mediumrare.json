@@ -11,6 +11,7 @@
   "sections": {
     "collection_hero": {
       "type": "collection-hero",
+      "custom_css": [],
       "settings": {
         "bg_image_override": "shopify://shop_images/big-poptop.avif",
         "hero_height": 680,
@@ -228,7 +229,7 @@
       "settings": {
         "magic_scroll": false,
         "magic_scroll_speed": 80,
-        "collection": "pure",
+        "collection": "mediumrare",
         "layout_type": "carousel",
         "carousel_on_mobile": false,
         "max_products": 6,
