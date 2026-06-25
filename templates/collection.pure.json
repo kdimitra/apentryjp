@@ -651,6 +651,32 @@
         "divider_color": "#faf7e6"
       }
     },
+    "about_image_card_dzDGKV": {
+      "type": "about-image-card",
+      "name": "About - Image Card",
+      "settings": {
+        "section_id": "",
+        "background_image_alt": "",
+        "show_paw_icon": true,
+        "eyebrow": "Why Pure?",
+        "heading_tag": "h2",
+        "heading": "こんな愛犬におすすめ",
+        "body": "<p><strong>・食物アレルギーや食材の相性が気になる</strong><br/>単一タンパク源だから、愛犬に合う食材を見つけやすい。 <br/><strong>・シンプルな食事を選びたい</strong><br/>肉・内臓・骨のみを使用し、植物原料や添加物は不使用。 <br/><strong>・食材にこだわりたい</strong><br/>素材そのもののおいしさを楽しめる、シンプルな生食。<br/><strong>・愛犬に合わせて食事をカスタマイズしたい</strong><br/>トッピングやサプリメントを組み合わせるベース食としても活用できる。</p>",
+        "button_label": "View more",
+        "button_url": "",
+        "button_open_new_tab": false,
+        "card_background_color": "#fefbec",
+        "text_color": "#5e3826",
+        "eyebrow_color": "#9adbe8",
+        "button_background_color": "#9adbe8",
+        "button_text_color": "#5e3826",
+        "section_height": 600,
+        "card_max_width": 460,
+        "content_max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "about_image_card_nYfntW": {
       "type": "about-image-card",
       "name": "About - Image Card",
@@ -941,6 +967,7 @@
     "main",
     "about_pap_tab_yJcK9V",
     "collection_point_YrmerE",
+    "about_image_card_dzDGKV",
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",

@@ -652,6 +652,32 @@
         "divider_color": "#faf7e6"
       }
     },
+    "about_image_card_KRXy8V": {
+      "type": "about-image-card",
+      "name": "About - Image Card",
+      "settings": {
+        "section_id": "",
+        "background_image_alt": "",
+        "show_paw_icon": true,
+        "eyebrow": "Why Medium Rare?",
+        "heading_tag": "h2",
+        "heading": "こんな愛犬におすすめ",
+        "body": "<p><strong>・生食に興味はあるけど不安がある<br/></strong>表面を加熱し中はレアに仕上げたから、ビギナーにも取り入れやすい。<strong><br/>・食いつきにムラがある</strong><br/>香りや旨みをしっかり閉じ込めたレシピで、食事の時間が楽しみに。<br/><strong>・フレッシュとドライフードを両方活用したい</strong><br/>いつもの食事にトッピングするだけで、手軽に食事の質をアップ。<br/><strong>・手軽に新鮮なお肉を与えたい</strong><br/>解凍してそのまま与えられるので、忙しい日でも続けやすい。</p>",
+        "button_label": "View more",
+        "button_url": "",
+        "button_open_new_tab": false,
+        "card_background_color": "#fefbec",
+        "text_color": "#5e3826",
+        "eyebrow_color": "#9adbe8",
+        "button_background_color": "#9adbe8",
+        "button_text_color": "#5e3826",
+        "section_height": 600,
+        "card_max_width": 460,
+        "content_max_width": 1200,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    },
     "about_image_card_nYfntW": {
       "type": "about-image-card",
       "name": "About - Image Card",
@@ -942,6 +968,7 @@
     "main",
     "about_pap_tab_yJcK9V",
     "collection_point_YrmerE",
+    "about_image_card_KRXy8V",
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
     "product_list_jzLraK",
