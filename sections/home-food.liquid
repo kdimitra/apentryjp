@@ -151,7 +151,7 @@
 /* ── Corner decorations ──────────────── */
 .hf-corner {
   position: absolute;
-  z-index: 10;
+  z-index: 3; /* below nav/drawer (--layer-sticky: 8) but above section content */
   pointer-events: none;
 }
 
@@ -354,12 +354,12 @@
   /* Larger corner images on mobile since they're the only visual decoration */
   .hf-corner--top-right {
     width: 110px;
-    z-index: 10;
+    z-index: 3;
   }
 
   .hf-corner--bottom-left {
     width: 80px;
-    z-index: 10;
+    z-index: 3;
   }
 
   .hf-content {
