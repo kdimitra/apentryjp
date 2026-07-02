@@ -1022,6 +1022,21 @@
     overflow: visible;
   }
 
+  /* Mobile: span rightA + rightB so both account and cart icons fit */
+  @media screen and (max-width: 749px) {
+    .header-account-cart-pill {
+      grid-column: rightA-start / rightB-end;
+      grid-row: 1;
+      justify-self: end;
+    }
+
+    /* Hide the | separator between account and cart on mobile — not enough room */
+    .header-account-cart-pill shopify-account::after,
+    .header-account-cart-pill .account-button::after {
+      display: none;
+    }
+  }
+
   .account-button {
     background-color: transparent;
     border: none;
