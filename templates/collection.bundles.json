@@ -592,8 +592,8 @@
         "heading_color": "#5a3729",
         "body_color": "#5a3729",
         "eyebrow_color": "#5a3729",
-        "card_bg_color": "#9ADBE8",
-        "badge_bg_color": "#FAF7E6",
+        "card_bg_color": "#9adbe8",
+        "badge_bg_color": "#faf7e6",
         "badge_text_color": "#5a3729"
       }
     },
@@ -735,6 +735,7 @@
             "product_list_text_VzhMj8": {
               "type": "_product-list-text",
               "name": "t:names.collection_title",
+              "disabled": true,
               "settings": {
                 "text": "<h3>{{ closest.collection.title }}</h3>",
                 "width": "fit-content",
