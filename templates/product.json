@@ -707,6 +707,45 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "review_rating_rUjQad": {
+      "type": "review-rating",
+      "name": "Review rating",
+      "settings": {
+        "section_id": "",
+        "product": "",
+        "review_count_suffix": "件のレビューに基づく",
+        "cards_per_view": 2,
+        "count_5": 1,
+        "count_4": 0,
+        "count_3": 0,
+        "count_2": 0,
+        "count_1": 0,
+        "eyebrow_icon": "🐾",
+        "eyebrow": "Review",
+        "heading": "お客様の声",
+        "btn_label": "レビューを書く",
+        "btn_url": "",
+        "padding_top": 80,
+        "padding_bottom": 96,
+        "bg_color": "#EDE8D6",
+        "eyebrow_icon_color": "#87CEDC",
+        "eyebrow_text_color": "#87CEDC",
+        "heading_color": "#2C1A0E",
+        "score_color": "#2C1A0E",
+        "count_color": "#6B6860",
+        "star_color": "#E8B84B",
+        "star_empty_color": "#D8D2C8",
+        "bar_fill_color": "#3D2B1F",
+        "bar_empty_color": "#D8D2C8",
+        "btn_bg_color": "#F5C430",
+        "btn_text_color": "#2C1A0E",
+        "card_bg_color": "#FFFFFF",
+        "card_title_color": "#2C1A0E",
+        "card_body_color": "#5A4A3A",
+        "card_date_color": "#6B6860",
+        "card_link_color": "#2C1A0E"
+      }
     }
   },
   "order": [
@@ -714,6 +753,7 @@
     "annies_natural_blend_AB8rXE",
     "review_rating_cQ9QXR",
     "product_list_QphnqA",
-    "1783496380d34ccd50"
+    "1783496380d34ccd50",
+    "review_rating_rUjQad"
   ]
 }
