@@ -100,9 +100,9 @@
                 "widget_style": "card",
                 "widget_style_card_selector": "dropdown",
                 "subscription_policy_url": "",
-                "color_text_body": "#5A3729",
+                "color_text_body": "#5a3729",
                 "dividers_color": "rgba(0,0,0,0)",
-                "background_color": "#FAF7E6",
+                "background_color": "#faf7e6",
                 "border_thickness": 0.5,
                 "border_radius": 0,
                 "product": "{{closest.product}}"
@@ -371,7 +371,7 @@
       "type": "review-rating",
       "name": "Review rating",
       "settings": {
-        "section_id": "",
+        "section_id": "RV-2d",
         "product": "",
         "review_count_suffix": "件のレビューに基づく",
         "cards_per_view": 2,
@@ -667,10 +667,10 @@
             "corner_styling": "soft",
             "card_spacing": "medium",
             "header_text_color": "#000000",
-            "star_and_reviewer_name_color": "#F9F9F9",
+            "star_and_reviewer_name_color": "#f9f9f9",
             "drop_shadow_color": "#000000",
             "overlay_and_background_color": "#000000",
-            "content_color": "#F9F9F9",
+            "content_color": "#f9f9f9",
             "header_text": "From our customers",
             "show_average_rating": true,
             "rating_display": "default"
