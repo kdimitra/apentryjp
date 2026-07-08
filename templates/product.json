@@ -68,6 +68,20 @@
             "padding-inline-end": 12
           },
           "blocks": {
+            "subscriptions_app_block_M6fWCD": {
+              "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
+              "settings": {
+                "widget_style": "card",
+                "widget_style_card_selector": "dropdown",
+                "subscription_policy_url": "",
+                "color_text_body": "#6D7175",
+                "dividers_color": "#8F8D8D",
+                "background_color": "#FFFFFF",
+                "border_thickness": 1,
+                "border_radius": 0,
+                "product": "{{closest.product}}"
+              }
+            },
             "text_tefwj7": {
               "type": "text",
               "name": "t:names.title",
@@ -231,6 +245,7 @@
             }
           },
           "block_order": [
+            "subscriptions_app_block_M6fWCD",
             "text_tefwj7",
             "reviews",
             "price_a7krng",
