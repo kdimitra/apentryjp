@@ -201,6 +201,7 @@
   text-decoration: none;
   border-radius: 9999px;
   border: none;
+  cursor: pointer;
   transition: opacity 0.2s ease, transform 0.15s ease;
 }
 

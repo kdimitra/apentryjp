@@ -118,6 +118,57 @@
     });
   }
 
+  /* ── Write Review button handler ───────────────────────────────────
+     Okendo exposes the write-review form via several mechanisms depending
+     on the version / widget variant installed. We try them in order:
+       1. Okendo widget JS API  (okeWidgetApi / okeReviews)
+       2. Click Okendo's own injected write-review button inside the widget
+       3. Hash navigation fallback (#oke-write-review) that Okendo listens for
+  ─────────────────────────────────────────────────────────────────── */
+  function wireWriteReviewButtons() {
+    document.querySelectorAll('.rr-write-btn').forEach(function (btn) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        /* Method 1 — Okendo programmatic API (v2+) */
+        if (window.okeWidgetApi && typeof window.okeWidgetApi.openReviewWidget === 'function') {
+          window.okeWidgetApi.openReviewWidget({ tab: 'write' });
+          return;
+        }
+        if (window.okeReviews && typeof window.okeReviews.triggerWriteReview === 'function') {
+          window.okeReviews.triggerWriteReview();
+          return;
+        }
+
+        /* Method 2 — click Okendo's own injected write-review element */
+        var nativeSelectors = [
+          '.oke-w-reviews-writeReview button',
+          '.oke-w-reviews-writeReview a',
+          '.oke-writeReviewButton',
+          '[data-oke-action="write-review"]',
+          '.oke-w-writeReviewButton',
+          '.oke-reviews-writeReviewButton',
+          'button.oke-w-button[data-oke-write-review]'
+        ];
+        for (var i = 0; i < nativeSelectors.length; i++) {
+          var nativeBtn = document.querySelector(nativeSelectors[i]);
+          if (nativeBtn) {
+            nativeBtn.click();
+            return;
+          }
+        }
+
+        /* Method 3 — hash navigation; force a change even if already on #oke-write-review */
+        var current = window.location.hash;
+        if (current === '#oke-write-review') {
+          /* Clear first so hashchange fires */
+          history.replaceState(null, '', window.location.pathname + window.location.search);
+        }
+        window.location.hash = 'oke-write-review';
+      });
+    });
+  }
+
   function init() {
     document.querySelectorAll('.section-rr').forEach(function (section) {
       if (!section.dataset.rrInit) {
@@ -125,6 +176,7 @@
         initCarousel(section);
       }
     });
+    wireWriteReviewButtons();
   }
 
   if (document.readyState === 'loading') {

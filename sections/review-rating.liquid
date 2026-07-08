@@ -154,22 +154,22 @@
       {%- endcomment -%}
       {%- if section.settings.btn_label != blank -%}
         {%- if section.settings.btn_url != blank -%}
-          {%- assign write_review_href = section.settings.btn_url -%}
-        {%- elsif rr_product != blank -%}
-          {%- assign write_review_href = '#oke-write-review' -%}
+          <a
+            href="{{ section.settings.btn_url }}"
+            class="rr-write-btn"
+          >
+            {{ section.settings.btn_label }}
+          </a>
         {%- else -%}
-          {%- assign write_review_href = '#' -%}
-        {%- endif -%}
-        <a
-          href="{{ write_review_href }}"
-          class="rr-write-btn"
-          {% if rr_product != blank and section.settings.btn_url == blank %}
+          <button
+            type="button"
+            class="rr-write-btn"
             data-oke-reviews-write-review
-            data-oke-reviews-product-id="{{ rr_product.id }}"
-          {% endif %}
-        >
-          {{ section.settings.btn_label }}
-        </a>
+            {% if rr_product != blank %}data-oke-reviews-product-id="{{ rr_product.id }}"{% endif %}
+          >
+            {{ section.settings.btn_label }}
+          </button>
+        {%- endif -%}
       {%- endif -%}
 
     </div>
