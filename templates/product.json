@@ -98,12 +98,12 @@
               "type": "shopify://apps/subscriptions/blocks/app-block/a3bfe9ec-96f8-4508-a003-df608a36d2ad",
               "settings": {
                 "widget_style": "card",
-                "widget_style_card_selector": "dropdown",
+                "widget_style_card_selector": "radio_button",
                 "subscription_policy_url": "",
-                "color_text_body": "#6D7175",
-                "dividers_color": "#8F8D8D",
-                "background_color": "#FFFFFF",
-                "border_thickness": 1,
+                "color_text_body": "#5A3729",
+                "dividers_color": "rgba(0,0,0,0)",
+                "background_color": "#FAF7E6",
+                "border_thickness": 0.5,
                 "border_radius": 0,
                 "product": "{{closest.product}}"
               }
