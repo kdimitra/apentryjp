@@ -224,6 +224,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.products_carousel",
       "settings": {
         "magic_scroll": false,
@@ -964,6 +965,7 @@
   },
   "order": [
     "collection_hero",
+    "product_list_jzLraK",
     "product_list_czNEcA",
     "main",
     "about_pap_tab_yJcK9V",
@@ -971,7 +973,6 @@
     "about_image_card_L6VTCY",
     "about_image_card_nYfntW",
     "header_ribbon_Yw8rpg",
-    "product_list_jzLraK",
     "home_blog_dxrcYB"
   ]
 }
