@@ -359,6 +359,7 @@
         "blend_card_eGEajM",
         "blend_card_3kj3iF"
       ],
+      "disabled": true,
       "name": "Annie's Natural Blend",
       "settings": {
         "section_id": "",
@@ -387,9 +388,9 @@
         "btn_url": "",
         "padding_top": 80,
         "padding_bottom": 96,
-        "bg_color": "#fffbe6",
-        "eyebrow_icon_color": "#9adbe8",
-        "eyebrow_text_color": "#9adbe8",
+        "bg_color": "#9ADBE8",
+        "eyebrow_icon_color": "#FAF7E6",
+        "eyebrow_text_color": "#FAF7E6",
         "heading_color": "#5a3729",
         "score_color": "#5a3729",
         "count_color": "#5a3729",
