@@ -1228,6 +1228,21 @@
     }
   }
 
+  /* ================================
+   * Desktop nav link color — white
+   * Only applies at ≥750px; mobile drawer keeps its own color.
+   * Submenu links stay the theme's foreground color (dark on white bg).
+   * ================================ */
+  @media screen and (min-width: 750px) {
+    #header-component[data-menu-style='menu'] .header-menu .menu-list__link:not(.menu-list__submenu .menu-list__link) {
+      color: #ffffff !important;
+    }
+
+    #header-component[data-menu-style='menu'] .header-menu .menu-list__link:not(.menu-list__submenu .menu-list__link) .icon-caret svg {
+      stroke: #ffffff;
+    }
+  }
+
   /* Dropdown Localization Styles */
   .dropdown-localization__button {
     display: flex;
