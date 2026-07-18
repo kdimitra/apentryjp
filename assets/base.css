@@ -4297,4 +4297,15 @@ a[ref='productTitleLink'] div p[role='heading']{
 main:not([data-template="product"]) div.quantity-selector-wrapper {
   margin: auto !important;
 } */
+video {
+  pointer-events: none;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-moz-media-controls {
+  display: none !important;
+}
 
