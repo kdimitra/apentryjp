@@ -32,7 +32,7 @@
           "type": "service_link",
           "settings": {
             "label": "Contact Us",
-            "url": "shopify://policies/contact-information"
+            "url": "shopify://pages/contact"
           }
         },
         "service_link_HLaEPY": {
