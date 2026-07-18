@@ -12,7 +12,7 @@
     "logo": "shopify://shop_images/Brandlogo_brown.png",
     "logo_inverse": "shopify://shop_images/white-apentry-logo.svg",
     "logo_height": 63,
-    "logo_height_mobile": 28,
+    "logo_height_mobile": 31,
     "type_body_font": "inter_n4",
     "type_subheading_font": "inter_n4",
     "type_heading_font": "inter_n4",
