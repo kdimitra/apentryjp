@@ -455,7 +455,7 @@
         "collection": "bigpuptub",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "max_products": 8,
+        "max_products": 16,
         "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
@@ -1021,7 +1021,7 @@
         "section_id": "",
         "eyebrow_text": "Annie's Natural Blend",
         "section_heading": "栄養豊富な原材料入りタブ",
-        "bg_color": "#FAF7E6"
+        "bg_color": "#faf7e6"
       }
     },
     "header_ribbon_Yw8rpg": {
