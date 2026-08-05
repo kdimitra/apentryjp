@@ -329,6 +329,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
+                    "image": "shopify://shop_images/1-scaled-e1712118654855.jpg",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -347,11 +348,37 @@
                   },
                   "blocks": {}
                 },
+                "text_LWkPLK": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>北海道・東北</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "text_LTmFJ6": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>妥協のない基準</p>",
+                    "text": "<p>Wan Paku Paws</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -377,7 +404,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>熟練の技と丁寧な仕上げ</p>",
+                    "text": "<p>〒061-2282　札幌市南区藤野２条６丁目１－１０</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -402,6 +429,7 @@
               },
               "block_order": [
                 "image_6J8gVz",
+                "text_LWkPLK",
                 "text_LTmFJ6",
                 "text_6U4FdY"
               ]
@@ -438,6 +466,7 @@
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
+                    "image": "shopify://shop_images/logo01-e1594517008904.png",
                     "link": "",
                     "image_ratio": "adapt",
                     "width": "fill",
@@ -449,6 +478,32 @@
                     "border_width": 1,
                     "border_opacity": 100,
                     "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_khVRGe": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>北海道・東北</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
                     "padding-block-start": 0,
                     "padding-block-end": 0,
                     "padding-inline-start": 0,
@@ -511,11 +566,129 @@
               },
               "block_order": [
                 "image_xqAVtq",
+                "text_khVRGe",
                 "text_UYDTCp",
                 "text_pf7nQD"
               ]
-            },
-            "card_Q4P3KX": {
+            }
+          },
+          "block_order": [
+            "card_CHDace",
+            "card_J4qBrm"
+          ]
+        }
+      },
+      "name": "t:names.carousel",
+      "settings": {
+        "columns": 2,
+        "mobile_columns": "1",
+        "section_width": "page-width",
+        "columns_gap": 12,
+        "color_scheme": "",
+        "icons_style": "arrow",
+        "icons_shape": "none",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
+    "carousel_3FEqH8": {
+      "type": "carousel",
+      "blocks": {
+        "static-header": {
+          "type": "group",
+          "name": "t:names.header",
+          "static": true,
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": false,
+            "horizontal_alignment": "space-between",
+            "vertical_alignment": "flex-end",
+            "align_baseline": true,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_kXq84a": {
+              "type": "text",
+              "name": "t:names.header",
+              "disabled": true,
+              "settings": {
+                "text": "<p>全国のアニーズパントリー取り扱い店一覧</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_kXq84a"
+          ]
+        },
+        "static-carousel-content": {
+          "type": "_carousel-content",
+          "name": "t:names.carousel_content",
+          "static": true,
+          "settings": {
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "height": "fit",
+            "position": "top",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "card_E3BjrM": {
               "type": "_card",
               "name": "t:names.card",
               "settings": {
@@ -543,15 +716,16 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "image_QRGjti": {
+                "image_UMMFct": {
                   "type": "image",
                   "name": "t:names.image",
                   "settings": {
+                    "image": "shopify://shop_images/PAYDAY-1.png",
                     "link": "",
                     "image_ratio": "adapt",
-                    "width": "fill",
+                    "width": "fit-content",
                     "custom_width": 100,
-                    "width_mobile": "fill",
+                    "width_mobile": "fit-content",
                     "custom_width_mobile": 100,
                     "height": "fit",
                     "border": "none",
@@ -565,11 +739,37 @@
                   },
                   "blocks": {}
                 },
-                "text_VYE9pY": {
+                "text_feUTzb": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>北海道・東北</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_RRUGcd": {
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<h2>実感できる品質の高さ</h2>",
+                    "text": "<p>Wan Paku Paws</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -591,11 +791,11 @@
                   },
                   "blocks": {}
                 },
-                "text_BUV6cM": {
+                "text_CEqkDE": {
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>妥協のない、本物の素材</p>",
+                    "text": "<p>〒061-2282　札幌市南区藤野２条６丁目１－１０</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -619,22 +819,159 @@
                 }
               },
               "block_order": [
-                "image_QRGjti",
-                "text_VYE9pY",
-                "text_BUV6cM"
+                "image_UMMFct",
+                "text_feUTzb",
+                "text_RRUGcd",
+                "text_CEqkDE"
+              ]
+            },
+            "card_7FAfV3": {
+              "type": "_card",
+              "name": "t:names.card",
+              "settings": {
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "aspect_ratio": "adapt",
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {
+                "image_QragKQ": {
+                  "type": "image",
+                  "name": "t:names.image",
+                  "settings": {
+                    "image": "shopify://shop_images/Screenshot_2026-08-05_at_11.43.15_PM.png",
+                    "link": "",
+                    "image_ratio": "landscape",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100,
+                    "height": "fit",
+                    "border": "none",
+                    "border_width": 1,
+                    "border_opacity": 100,
+                    "border_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_YafMzT": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>北海道・東北</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_Q9nJx6": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<p>長く使えるデザイン</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h5",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "text_mKraer": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>時間とともに、使い込むほどに味が出るアイテム</p>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "image_QragKQ",
+                "text_YafMzT",
+                "text_Q9nJx6",
+                "text_mKraer"
               ]
             }
           },
           "block_order": [
-            "card_CHDace",
-            "card_J4qBrm",
-            "card_Q4P3KX"
+            "card_E3BjrM",
+            "card_7FAfV3"
           ]
         }
       },
       "name": "t:names.carousel",
       "settings": {
-        "columns": 3,
+        "columns": 2,
         "mobile_columns": "1",
         "section_width": "page-width",
         "columns_gap": 12,
@@ -649,6 +986,7 @@
   "order": [
     "main",
     "faq_section_ppYcU3",
-    "carousel_qVxnDE"
+    "carousel_qVxnDE",
+    "carousel_3FEqH8"
   ]
 }
