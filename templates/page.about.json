@@ -708,6 +708,111 @@
         "button_bg_color": "#fea647"
       }
     },
+    "section_tpezxa": {
+      "type": "section",
+      "blocks": {
+        "text_qCrNMm": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h4>冷凍フレッシュフードを初めて取り入れる方へ</h4>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_RyBMER": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>保存・与え方やよくあるご質問をまとめました。</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_c8V7fr": {
+          "type": "button",
+          "name": "t:names.button",
+          "settings": {
+            "label": "保存・与え方ガイドを見る",
+            "link": "https://www.apantry.jp/pages/feeding-guide",
+            "open_in_new_tab": true,
+            "style_class": "button-secondary",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_qCrNMm",
+        "text_RyBMER",
+        "button_c8V7fr"
+      ],
+      "name": "t:names.rich_text_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 25,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
+    },
     "about_design_chV49L": {
       "type": "about-design",
       "name": "About design",
@@ -770,6 +875,7 @@
     "hero_6xjVt8",
     "annies_about_L4K646",
     "how_to_feed_XLrPV8",
+    "section_tpezxa",
     "about_design_chV49L",
     "canine_nutrition_DRkU37"
   ]
