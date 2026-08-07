@@ -33,6 +33,7 @@
         },
         "faq_item_fUkLBd": {
           "type": "faq_item",
+          "name": "解凍後、食べきれません。どうしたらいいですか？",
           "settings": {
             "category": "よくある質問",
             "question": "解凍後、食べきれません。どうしたらいいですか？",
@@ -338,6 +339,14 @@
             "answer": "解凍後は冷蔵保存し、3日以内に使い切ってください。\n（品質保持のため、できるだけ一度で与えることをおすすめします。）\n解凍直後であれば、再冷凍は可能です。\nただし、品質劣化（肉の酸化）の原因となるため、再冷凍の繰り返しはおすすめしていません。\nおすすめの方法は、初回解凍時に小分けして再冷凍し、必要な分だけ再解凍することです。\nなお、再解凍は2回までを目安にしてください。"
           }
         },
+        "faq_item_YMGzp9": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+          }
+        },
         "faq_item_nNLPUr": {
           "type": "faq_item",
           "name": "加熱してもいいですか？",
@@ -457,7 +466,7 @@
         },
         "faq_item_6Yfdip": {
           "type": "faq_item",
-          "name": "便の状態が変わりました。大丈夫ですか？",
+          "name": "生食にすると水を飲む量が減りました。",
           "settings": {
             "category": "保存・与え方について",
             "question": "生食にすると水を飲む量が減りました。",
@@ -777,6 +786,7 @@
         "faq_item_afQtrf",
         "faq_item_wRbygm",
         "faq_item_wmTfcB",
+        "faq_item_YMGzp9",
         "faq_item_nNLPUr",
         "faq_item_XyXyNJ",
         "faq_item_RNGFWL",
