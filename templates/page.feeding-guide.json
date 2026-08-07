@@ -9,6 +9,115 @@
  */
 {
   "sections": {
+    "hero_9qKn8w": {
+      "type": "hero",
+      "blocks": {
+        "text_RKbhW3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>愛犬との毎日の食事を、もっと簡単に。</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground-heading)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_y7aXjT": {
+          "type": "text",
+          "settings": {
+            "text": "<p>冷凍フレッシュフードを初めて取り入れる方へ</p>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 32,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "button_WyMJhr": {
+          "type": "button",
+          "name": "t:names.button",
+          "disabled": true,
+          "settings": {
+            "label": "今すぐ購入",
+            "link": "shopify://collections/all",
+            "open_in_new_tab": false,
+            "style_class": "button",
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_RKbhW3",
+        "text_y7aXjT",
+        "button_WyMJhr"
+      ],
+      "name": "t:names.hero",
+      "settings": {
+        "section_id": "",
+        "media_type_1": "image",
+        "image_1": "shopify://shop_images/Copy_of_AnniesPantry_2354_FINALExports.jpg",
+        "media_type_2": "image",
+        "stack_media_on_mobile": false,
+        "custom_mobile_media": false,
+        "media_type_1_mobile": "image",
+        "media_type_2_mobile": "image",
+        "link": "",
+        "open_in_new_tab": false,
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "large",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-5",
+        "toggle_overlay": true,
+        "overlay_color": "#00000026",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "blurred_reflection": false,
+        "reflection_opacity": 75,
+        "padding-block-start": 40,
+        "padding-block-end": 40
+      }
+    },
     "main": {
       "type": "main-page",
       "blocks": {
@@ -200,10 +309,427 @@
         "answer_color": "#5a4a3a",
         "item_open_border_color": "#5b9bb0"
       }
+    },
+    "why_chooseus_EjBKW9": {
+      "type": "why-chooseus",
+      "blocks": {
+        "reason_card_XY6xjE": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Guide 1",
+            "title": "届いたら、まず冷凍庫へ",
+            "image_alt": "",
+            "subtitle": "冷凍フレッシュフードを新鮮な状態で楽しむために、商品が届いたらすぐに冷凍庫（-18℃以下）で保存してください。",
+            "body": "配送中に少し柔らかくなっていても、冷たい状態が保たれていれば問題ありません。"
+          }
+        },
+        "reason_card_dDYW7n": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Guide 2",
+            "title": "前日に冷蔵庫へ移すだけ",
+            "image_alt": "",
+            "subtitle": "翌日に与える分を、寝る前に冷凍庫から冷蔵庫へ移してください。",
+            "body": "① 就寝前に翌日分を冷蔵庫へ移す ▶︎② 翌日与える ▶︎③ 与えた分の代わりに新しい商品を冷凍庫から冷蔵庫へ移す。\n 毎日このサイクルにすると管理しやすくなります。"
+          }
+        },
+        "reason_card_AqVjyP": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Guide 3",
+            "title": "愛犬に合わせた与え方",
+            "image_alt": "",
+            "subtitle": "初めてフレッシュフードを取り入れる場合は、愛犬の様子を見ながら少しずつ始めることをおすすめします。",
+            "body": "食事量や頻度は、年齢・体重・活動量に合わせて調整してください。\n食事量シュミレーターはこちら▼\nhttps://www.apantry.jp/pages/about"
+          }
+        },
+        "reason_card_b9zccj": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Guide 4",
+            "title": "正しく保存して、いつでも新鮮に",
+            "image_alt": "",
+            "subtitle": "必要な分だけ解凍し、残りは冷凍庫で保存してください。",
+            "body": "一度解凍した食事を小分けして再冷凍する場合は、解凍は2回までを目安にしてください。"
+          }
+        },
+        "reason_card_hhBcWG": {
+          "type": "reason_card",
+          "settings": {
+            "badge_label": "Guide 5",
+            "title": "毎日の食事をもっと豊かに",
+            "image_alt": "",
+            "subtitle": "愛犬との毎日の食事時間をより特別なものにするために",
+            "body": "正しい保存方法と与え方で、フレッシュフードを無理なく日々の食事に取り入れてください。"
+          }
+        }
+      },
+      "block_order": [
+        "reason_card_XY6xjE",
+        "reason_card_dDYW7n",
+        "reason_card_AqVjyP",
+        "reason_card_b9zccj",
+        "reason_card_hhBcWG"
+      ],
+      "name": "Why Choose Us",
+      "settings": {
+        "section_id": "",
+        "eyebrow": "Feeding Guide",
+        "show_eyebrow_stars": true,
+        "heading": "保存・与え方ガイド",
+        "heading_tag": "h2",
+        "background_color": "#9adbe8",
+        "card_background_color": "#fefbec",
+        "heading_color": "#5e3826",
+        "badge_background_color": "#9adbe8",
+        "badge_text_color": "#FFFFFF",
+        "card_subtitle_color": "#5e3826",
+        "card_body_color": "#5e3826",
+        "content_max_width": 1200,
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "show_left_dog": true,
+        "show_right_dog": true
+      }
+    },
+    "annies_natural_blend_VWRnPP": {
+      "type": "annies-natural-blend",
+      "blocks": {
+        "blend_card_AN3wch": {
+          "type": "blend_card",
+          "settings": {
+            "image": "shopify://shop_images/biscotti-lays-in-a-monstera-leaf.jpg",
+            "title": "新鮮なお肉",
+            "description": "<p>厳選した新鮮な素材だけを使用しています。</p>"
+          }
+        },
+        "blend_card_W3Uqym": {
+          "type": "blend_card",
+          "settings": {
+            "title": "国産野菜",
+            "description": "<p>国内産の旬の野菜を丁寧に使っています。</p>"
+          }
+        },
+        "blend_card_Mb7W7U": {
+          "type": "blend_card",
+          "settings": {
+            "title": "無添加製法",
+            "description": "<p>香料・着色料・保存料は一切不使用です。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "blend_card_AN3wch",
+        "blend_card_W3Uqym",
+        "blend_card_Mb7W7U"
+      ],
+      "name": "Annie's Natural Blend",
+      "settings": {
+        "section_id": "",
+        "eyebrow_text": "Annie's Natural Blend",
+        "section_heading": "栄養豊富な原材料入りタブ",
+        "bg_color": "#f5f0e8"
+      }
+    },
+    "section_zNbjzX": {
+      "type": "section",
+      "blocks": {
+        "text_DQmeED": {
+          "type": "text",
+          "name": "t:names.heading",
+          "settings": {
+            "text": "<h2>よくあるご質問</h2>",
+            "width": "fit-content",
+            "max_width": "narrow",
+            "alignment": "left",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "accordion_ecBGb7": {
+          "type": "accordion",
+          "name": "t:names.accordion",
+          "settings": {
+            "icon": "caret",
+            "dividers": true,
+            "type_preset": "h5",
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "accordion_row_U336gT": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "解凍後、食べきれません。どうしたらいいですか？",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_rYwTYJ": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<ul><li>あげない分は小分け（スプーン1杯）にしてして再冷凍してください。</li><li>次回以降は小分けにしたものを、都度必要分だけ解凍して与えてください。</li><li>また、解凍してから2日程度は冷蔵庫での保管が可能です。</li></ul>",
+                    "width": "fit-content",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_rYwTYJ"
+              ]
+            },
+            "accordion_row_bkVEp6": {
+              "type": "_accordion-row",
+              "settings": {
+                "heading": "解凍後の再冷凍はできますか？",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_hXrPzH": {
+                  "type": "text",
+                  "settings": {
+                    "text": "<ul><li>小分けにする目的で解凍した場合は、すぐに再冷凍していただけます。ただし、品質保持のため解凍・再冷凍は2回までを目安にしてください。（品質劣化（肉の酸化）の原因となるため、再冷凍の繰り返しはおすすめしていません。）</li><li>再冷凍する際は、1食分ずつ小分けにしておくと便利です。</li></ul>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_hXrPzH"
+              ]
+            },
+            "accordion_row_C4KmU3": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "開封後はどのくらいもちますか？",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_gVPqVQ": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>解凍後は冷蔵保存し、3日以内に使い切ってください。（品質保持のため、できるだけ一度で与えることをおすすめします。）</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_gVPqVQ"
+              ]
+            },
+            "accordion_row_Fk3BPJ": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "初めて生食を与える場合はどうすればいいですか？",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_dDeiAR": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<ul><li>これまで生食を食べていた場合は、そのまま切り替えていただけます。</li><li>ドライフードや缶詰から切り替える場合は、5〜7日ほどかけて徐々に切り替える方法がおすすめです。</li><li>便の状態や食欲を確認しながら進めてください。</li></ul>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_dDeiAR"
+              ]
+            },
+            "accordion_row_7aAQWL": {
+              "type": "_accordion-row",
+              "name": "t:names.accordion_row",
+              "settings": {
+                "heading": "食べてくれない場合は？",
+                "open_by_default": false,
+                "icon": "none",
+                "width": 20
+              },
+              "blocks": {
+                "text_Px93tm": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>新しい食感や香りに慣れるまで時間がかかる犬もいますので、<br/><br/>① 解凍後、少し常温に戻す<br/>②少量から始める<br/>③今までのフードと混ぜる<br/>④別のタンパク質を試す<br/><br/>などを試してみてください。焦らず続けることで、多くの犬は慣れていきます。</p>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "rte",
+                    "font": "var(--font-body--family)",
+                    "font_size": "",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_Px93tm"
+              ]
+            }
+          },
+          "block_order": [
+            "accordion_row_U336gT",
+            "accordion_row_bkVEp6",
+            "accordion_row_C4KmU3",
+            "accordion_row_Fk3BPJ",
+            "accordion_row_7aAQWL"
+          ]
+        }
+      },
+      "block_order": [
+        "text_DQmeED",
+        "accordion_ecBGb7"
+      ],
+      "name": "t:names.faq_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 32,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1a4968f5-fa89-46b7-b067-3b078999310b",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
+    "hero_9qKn8w",
     "main",
-    "faq_section_ppYcU3"
+    "faq_section_ppYcU3",
+    "why_chooseus_EjBKW9",
+    "annies_natural_blend_VWRnPP",
+    "section_zNbjzX"
   ]
 }
