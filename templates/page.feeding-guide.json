@@ -318,7 +318,8 @@
           "settings": {
             "badge_label": "Guide 1",
             "title": "届いたら、まず冷凍庫へ",
-            "image_alt": "",
+            "image": "shopify://shop_images/38820cd60160327e4e39d12e8dba80bdfea64e41-401x400_jpg_364528f0-23ee-4e24-8579-1906991dc7fa.avif",
+            "image_alt": "アニーズパントリーの生食フレッシュドッグフード",
             "subtitle": "冷凍フレッシュフードを新鮮な状態で楽しむために、商品が届いたらすぐに冷凍庫（-18℃以下）で保存してください。",
             "body": "配送中に少し柔らかくなっていても、冷たい状態が保たれていれば問題ありません。"
           }
@@ -328,7 +329,8 @@
           "settings": {
             "badge_label": "Guide 2",
             "title": "前日に冷蔵庫へ移すだけ",
-            "image_alt": "",
+            "image": "shopify://shop_images/960384990f4a569c6b33ebaf773e0c64e90a13f5-401x400_jpg_0d722e88-1d15-4a68-8916-9e1edbfbf72d.avif",
+            "image_alt": "アニーズパントリーの生食フレッシュドッグフード",
             "subtitle": "翌日に与える分を、寝る前に冷凍庫から冷蔵庫へ移してください。",
             "body": "① 就寝前に翌日分を冷蔵庫へ移す ▶︎② 翌日与える ▶︎③ 与えた分の代わりに新しい商品を冷凍庫から冷蔵庫へ移す。\n 毎日このサイクルにすると管理しやすくなります。"
           }
@@ -338,7 +340,8 @@
           "settings": {
             "badge_label": "Guide 3",
             "title": "愛犬に合わせた与え方",
-            "image_alt": "",
+            "image": "shopify://shop_images/6bc30b9c809f39b35156e6f4b0622031d315240e-401x400_jpg_9746ce06-3e06-461a-8fef-80f891b3c136.avif",
+            "image_alt": "アニーズパントリーの生食フレッシュドッグフードを食べている犬",
             "subtitle": "初めてフレッシュフードを取り入れる場合は、愛犬の様子を見ながら少しずつ始めることをおすすめします。",
             "body": "食事量や頻度は、年齢・体重・活動量に合わせて調整してください。\n食事量シュミレーターはこちら▼\nhttps://www.apantry.jp/pages/about"
           }
@@ -348,7 +351,8 @@
           "settings": {
             "badge_label": "Guide 4",
             "title": "正しく保存して、いつでも新鮮に",
-            "image_alt": "",
+            "image": "shopify://shop_images/108b268426c489a41d7276a500a26b56390c83e6-1442x1048_png.avif",
+            "image_alt": "アニーズパントリーの生食フレッシュドッグフードを盛る",
             "subtitle": "必要な分だけ解凍し、残りは冷凍庫で保存してください。",
             "body": "一度解凍した食事を小分けして再冷凍する場合は、解凍は2回までを目安にしてください。"
           }
@@ -358,7 +362,8 @@
           "settings": {
             "badge_label": "Guide 5",
             "title": "毎日の食事をもっと豊かに",
-            "image_alt": "",
+            "image": "shopify://shop_images/20260812.png",
+            "image_alt": "アニーズパントリーの生食フレッシュドッグフードは、ビーフ（牛）・ラム（羊）・ポーク（豚）・鴨など、さまさざまんタンパク源を使用している",
             "subtitle": "愛犬との毎日の食事時間をより特別なものにするために",
             "body": "正しい保存方法と与え方で、フレッシュフードを無理なく日々の食事に取り入れてください。"
           }
@@ -390,45 +395,6 @@
         "padding_bottom": 80,
         "show_left_dog": true,
         "show_right_dog": true
-      }
-    },
-    "annies_natural_blend_VWRnPP": {
-      "type": "annies-natural-blend",
-      "blocks": {
-        "blend_card_AN3wch": {
-          "type": "blend_card",
-          "settings": {
-            "image": "shopify://shop_images/biscotti-lays-in-a-monstera-leaf.jpg",
-            "title": "新鮮なお肉",
-            "description": "<p>厳選した新鮮な素材だけを使用しています。</p>"
-          }
-        },
-        "blend_card_W3Uqym": {
-          "type": "blend_card",
-          "settings": {
-            "title": "国産野菜",
-            "description": "<p>国内産の旬の野菜を丁寧に使っています。</p>"
-          }
-        },
-        "blend_card_Mb7W7U": {
-          "type": "blend_card",
-          "settings": {
-            "title": "無添加製法",
-            "description": "<p>香料・着色料・保存料は一切不使用です。</p>"
-          }
-        }
-      },
-      "block_order": [
-        "blend_card_AN3wch",
-        "blend_card_W3Uqym",
-        "blend_card_Mb7W7U"
-      ],
-      "name": "Annie's Natural Blend",
-      "settings": {
-        "section_id": "",
-        "eyebrow_text": "Annie's Natural Blend",
-        "section_heading": "栄養豊富な原材料入りタブ",
-        "bg_color": "#f5f0e8"
       }
     },
     "section_zNbjzX": {
@@ -722,6 +688,31 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "canine_nutrition_K66t4W": {
+      "type": "canine-nutrition",
+      "name": "Canine nutrition",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/29be88ee7deb56dd347d830c2524c1ce7ef25ce6-1150x850.avif",
+        "card_height": 300,
+        "card_radius": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "heading": "その他のご質問はこちら",
+        "subtext": "",
+        "text_alignment": "center",
+        "button_label": "FAQを見る",
+        "button_url": "https://www.apantry.jp/pages/faq",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_bottom": 0,
+        "bg_color": "#F5F0E4",
+        "heading_color": "#FFFFFF",
+        "subtext_color": "#FFFFFF",
+        "button_bg_color": "#FFFFFF",
+        "button_text_color": "#2C2420"
+      }
     }
   },
   "order": [
@@ -729,7 +720,7 @@
     "main",
     "faq_section_ppYcU3",
     "why_chooseus_EjBKW9",
-    "annies_natural_blend_VWRnPP",
-    "section_zNbjzX"
+    "section_zNbjzX",
+    "canine_nutrition_K66t4W"
   ]
 }
