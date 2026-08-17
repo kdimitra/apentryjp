@@ -163,6 +163,14 @@
             "question": "請求書の発行はできますか？",
             "answer": "はい、マイページの注文履歴から領収書のダウンロードが可能です。"
           }
+        },
+        "faq_item_F3n9eV": {
+          "type": "faq_item",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+          }
         }
       },
       "block_order": [
@@ -178,7 +186,8 @@
         "faq_item_V6zXXX",
         "faq_item_KpqGLM",
         "faq_item_R7Tapm",
-        "faq_item_tp8PkN"
+        "faq_item_tp8PkN",
+        "faq_item_F3n9eV"
       ],
       "disabled": true,
       "name": "FAQ",
@@ -251,11 +260,11 @@
               "type": "text",
               "name": "t:names.header",
               "settings": {
-                "text": "<p>全国のアニーズパントリー取り扱い店一覧</p>",
+                "text": "<h4>全国のアニーズパントリー取り扱い店一覧<br/><br/>北海道・東北</h4>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "h4",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -378,7 +387,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Wan Paku Paws</p>",
+                    "text": "<p><a href=\"https://www.wan-paku-paws.com/shop\" target=\"_blank\" title=\"https://www.wan-paku-paws.com/shop\">Wan Paku Paws</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -389,7 +398,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "#5A3729",
+                    "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -515,7 +524,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>長く使えるデザイン</p>",
+                    "text": "<p><a href=\"https://stageofdogs.com/\" target=\"_blank\" title=\"https://stageofdogs.com/\">Stage of Dogs</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -526,7 +535,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "#5A3729",
+                    "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -541,7 +550,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>時間とともに、使い込むほどに味が出るアイテム</p>",
+                    "text": "<p>〒963-0201　福島県郡山市大槻町川向19-3</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -589,6 +598,115 @@
         "icons_shape": "none",
         "padding-block-start": 48,
         "padding-block-end": 48
+      }
+    },
+    "section_fHBzBT": {
+      "type": "section",
+      "blocks": {
+        "group_gbaynT": {
+          "type": "group",
+          "name": "t:names.column",
+          "settings": {
+            "content_direction": "column",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "flex-start",
+            "horizontal_alignment_mobile": "",
+            "vertical_alignment_mobile_override": "",
+            "gap": 8,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 10,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "text_BqG4nt": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<h4>近畿</h4>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "text_BqG4nt"
+          ]
+        }
+      },
+      "block_order": [
+        "group_gbaynT"
+      ],
+      "name": "t:names.multicolumn",
+      "settings": {
+        "content_direction": "row",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "flex-start",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 16,
+        "section_width": "page-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 15,
+        "padding-block-end": 15
       }
     },
     "carousel_3FEqH8": {
@@ -743,7 +861,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>北海道・東北</p>",
+                    "text": "<p>近畿</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -769,7 +887,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>Wan Paku Paws</p>",
+                    "text": "<p><a href=\"https://brotherdogs.com\" target=\"_blank\" title=\"https://brotherdogs.com\">brother dogs 2nd base</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -795,7 +913,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>〒061-2282　札幌市南区藤野２条６丁目１－１０</p>",
+                    "text": "<p>〒675-0066　兵庫県加古川市寺家町23-1</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -880,7 +998,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>北海道・東北</p>",
+                    "text": "<p>近畿</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -906,7 +1024,7 @@
                   "type": "text",
                   "name": "t:names.heading",
                   "settings": {
-                    "text": "<p>長く使えるデザイン</p>",
+                    "text": "<p><a href=\"https://enone-store.com\" target=\"_blank\" title=\"https://enone-store.com\">énone</a></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -932,7 +1050,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>時間とともに、使い込むほどに味が出るアイテム</p>",
+                    "text": "<p>〒543-0001　大阪市天王寺区上本町6-1-55 シェラトン都ホテル大阪B1F</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -987,6 +1105,7 @@
     "main",
     "faq_section_ppYcU3",
     "carousel_qVxnDE",
+    "section_fHBzBT",
     "carousel_3FEqH8"
   ]
 }
