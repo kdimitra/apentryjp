@@ -82,14 +82,16 @@
         },
         "faq_item_ytUEM7": {
           "type": "faq_item",
+          "name": "フレッシュフードって何ですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "フレッシュフードって何ですか？",
-            "answer": "新鮮なお肉や野菜を使用し、低温調理後または未加熱のまま急速冷凍した犬用フードです。ドライフードより水分量が多く、素材本来の香りやおいしさを楽しめます。"
+            "answer": "新鮮なお肉や野菜を使用し、低温調理後または未加熱のまま急速冷凍した犬用フードです。ドライフードより水分量が多く、素材本来の香りやおいしさを楽しめます。\n\n▼ 初めての方向け｜保存・与え方ガイド\nhttps://www.apantry.jp/pages/feeding-guide"
           }
         },
         "faq_item_fgMiEP": {
           "type": "faq_item",
+          "name": "ドライフードからどうやって切り替えたらいいですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "ドライフードからどうやって切り替えたらいいですか？",
@@ -98,6 +100,7 @@
         },
         "faq_item_ebVfRd": {
           "type": "faq_item",
+          "name": "おすすめのメニューはなんですか？",
           "settings": {
             "category": "よくある質問",
             "question": "おすすめのメニューはなんですか？",
@@ -106,6 +109,7 @@
         },
         "faq_item_CBAg6j": {
           "type": "faq_item",
+          "name": "お腹がゆるくなることはありますか？",
           "settings": {
             "category": "初めての方へ",
             "question": "お腹がゆるくなることはありますか？",
@@ -114,6 +118,7 @@
         },
         "faq_item_ktFQ8q": {
           "type": "faq_item",
+          "name": "どれくらい与えればいいですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "どれくらい与えればいいですか？",
@@ -122,6 +127,7 @@
         },
         "faq_item_REXwX6": {
           "type": "faq_item",
+          "name": "保存方法は？",
           "settings": {
             "category": "初めての方へ",
             "question": "保存方法は？",
@@ -130,6 +136,7 @@
         },
         "faq_item_PYKtt3": {
           "type": "faq_item",
+          "name": "トッピングとして使えますか？",
           "settings": {
             "category": "初めての方へ",
             "question": "トッピングとして使えますか？",
@@ -138,6 +145,7 @@
         },
         "faq_item_w8PEDg": {
           "type": "faq_item",
+          "name": "子犬・シニア犬にも与えられますか？",
           "settings": {
             "category": "初めての方へ",
             "question": "子犬・シニア犬にも与えられますか？",
@@ -146,6 +154,7 @@
         },
         "faq_item_dwqTVb": {
           "type": "faq_item",
+          "name": "なぜ冷凍なのですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "なぜ冷凍なのですか？",
@@ -154,6 +163,7 @@
         },
         "faq_item_dqNXiJ": {
           "type": "faq_item",
+          "name": "どうやって解凍すればいいですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "どうやって解凍すればいいですか？",
@@ -162,6 +172,7 @@
         },
         "faq_item_GmEnGr": {
           "type": "faq_item",
+          "name": "解凍後、食べきれません。どうしたらいいですか？",
           "settings": {
             "category": "初めての方へ",
             "question": "解凍後、食べきれません。どうしたらいいですか？",
@@ -170,6 +181,7 @@
         },
         "faq_item_bGJApF": {
           "type": "faq_item",
+          "name": "クーポンやポイントのご利用方法を教えてください",
           "settings": {
             "category": "初めての方へ",
             "question": "クーポンやポイントのご利用方法を教えてください",
@@ -186,14 +198,25 @@
         },
         "faq_item_aenrcy": {
           "type": "faq_item",
+          "name": "マイページとは？",
           "settings": {
             "category": "初めての方へ",
             "question": "マイページとは？",
             "answer": "購入履歴、配送日時や商品変更、支払方法、紹介などが管理できるページです。定期的に購入される場合は、マイページの作成をお勧めします。"
           }
         },
+        "faq_item_nMecmX": {
+          "type": "faq_item",
+          "name": "おすすめのメニューはなんですか？",
+          "settings": {
+            "category": "よくある質問",
+            "question": "おすすめのメニューはなんですか？",
+            "answer": "様々な種類のたんぱく源を摂取することが理想です。たんぱく質ごとに異なる特長があり、免疫機能の強化や腸内環境の改善をサポートし、強いからだづくりにつながります。"
+          }
+        },
         "faq_item_YRJkeV": {
           "type": "faq_item",
+          "name": "マイページにログインできません",
           "settings": {
             "category": "初めての方へ",
             "question": "マイページにログインできません",
@@ -202,6 +225,7 @@
         },
         "faq_item_eBwAy7": {
           "type": "faq_item",
+          "name": "LINEとアカウントを連携するには？",
           "settings": {
             "category": "初めての方へ",
             "question": "LINEとアカウントを連携するには？",
@@ -210,6 +234,7 @@
         },
         "faq_item_iPiqzE": {
           "type": "faq_item",
+          "name": "添加物は入っていますか？",
           "settings": {
             "category": "製品について",
             "question": "添加物は入っていますか？",
@@ -341,6 +366,7 @@
         },
         "faq_item_YMGzp9": {
           "type": "faq_item",
+          "name": "おすすめのメニューはなんですか？",
           "settings": {
             "category": "よくある質問",
             "question": "おすすめのメニューはなんですか？",
@@ -769,6 +795,7 @@
         "faq_item_bGJApF",
         "faq_item_NRbAjz",
         "faq_item_aenrcy",
+        "faq_item_nMecmX",
         "faq_item_YRJkeV",
         "faq_item_eBwAy7",
         "faq_item_iPiqzE",
