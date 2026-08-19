@@ -1099,6 +1099,31 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
+    },
+    "canine_nutrition_whVN4e": {
+      "type": "canine-nutrition",
+      "name": "Canine nutrition",
+      "settings": {
+        "section_id": "",
+        "image": "shopify://shop_images/bfd61f0f59592823e6be37a05cf4c364b2cc6e4f-4000x2667_jpg.avif",
+        "card_height": 300,
+        "card_radius": 24,
+        "overlay_color": "#000000",
+        "overlay_opacity": 25,
+        "heading": "お近くに取扱店がない場合は",
+        "subtext": "",
+        "text_alignment": "center",
+        "button_label": "オンラインストアで購入する",
+        "button_url": "shopify://collections",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_bottom": 0,
+        "bg_color": "#FFFFFF",
+        "heading_color": "#FFFFFF",
+        "subtext_color": "#FFFFFF",
+        "button_bg_color": "#9ADBE8",
+        "button_text_color": "#5A3729"
+      }
     }
   },
   "order": [
@@ -1106,6 +1131,7 @@
     "faq_section_ppYcU3",
     "carousel_qVxnDE",
     "section_fHBzBT",
-    "carousel_3FEqH8"
+    "carousel_3FEqH8",
+    "canine_nutrition_whVN4e"
   ]
 }
