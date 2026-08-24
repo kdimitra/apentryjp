@@ -964,7 +964,7 @@
             "transition_speed": 5,
             "header_text": "お客様の声",
             "show_average_rating": true,
-            "rating_display": "default"
+            "rating_display": "show_avg_text"
           }
         }
       },

@@ -968,7 +968,7 @@
             "no_image_fallback": "review_text_only",
             "max_reviews": 20,
             "review_length": "medium",
-            "text_size": "medium",
+            "text_size": "small",
             "image_ratio": "1",
             "reviews_shown": 4,
             "show_reviewer_name": true,
@@ -985,7 +985,7 @@
             "transition_speed": 5,
             "header_text": "お客様の声",
             "show_average_rating": true,
-            "rating_display": "default"
+            "rating_display": "show_avg_text"
           }
         }
       },
