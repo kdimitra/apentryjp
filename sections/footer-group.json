@@ -137,7 +137,7 @@
           "name": "My Page",
           "settings": {
             "label": "My Page",
-            "url": "https://shopify.com/authentication/69552308407/login"
+            "url": "shopify://pages/signup-page"
           }
         },
         "food_item_FBJqhg": {
