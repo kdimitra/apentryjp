@@ -132,6 +132,14 @@
             "url": "shopify://pages/partners"
           }
         },
+        "about_link_7bLkiy": {
+          "type": "about_link",
+          "name": "Ambassadors",
+          "settings": {
+            "label": "Ambassadors",
+            "url": "https://affiliate.apantry.jp"
+          }
+        },
         "about_link_rbwnbn": {
           "type": "about_link",
           "name": "My Page",
@@ -187,6 +195,7 @@
         "about_link_bTyQ9i",
         "about_link_YrWggL",
         "about_link_w3bdet",
+        "about_link_7bLkiy",
         "about_link_rbwnbn",
         "food_item_FBJqhg",
         "food_item_CY7Qcd",
