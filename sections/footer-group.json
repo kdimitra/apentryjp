@@ -124,6 +124,14 @@
             "url": "shopify://pages/faq"
           }
         },
+        "about_link_XMVTzy": {
+          "type": "about_link",
+          "name": "Reviews",
+          "settings": {
+            "label": "Reviews",
+            "url": "shopify://pages/reviews"
+          }
+        },
         "about_link_w3bdet": {
           "type": "about_link",
           "name": "Partners",
@@ -194,6 +202,7 @@
         "about_link_PAN67J",
         "about_link_bTyQ9i",
         "about_link_YrWggL",
+        "about_link_XMVTzy",
         "about_link_w3bdet",
         "about_link_7bLkiy",
         "about_link_rbwnbn",
