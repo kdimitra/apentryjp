@@ -30,6 +30,7 @@
       "blocks": {
         "service_link_WwetJR": {
           "type": "service_link",
+          "name": "Contact Us",
           "settings": {
             "label": "Contact Us",
             "url": "shopify://pages/contact"
@@ -37,6 +38,7 @@
         },
         "service_link_HLaEPY": {
           "type": "service_link",
+          "name": "Privacy Policy",
           "settings": {
             "label": "Privacy Policy",
             "url": "shopify://policies/privacy-policy"
@@ -44,6 +46,7 @@
         },
         "service_link_fDtigG": {
           "type": "service_link",
+          "name": "Shipping Policy",
           "settings": {
             "label": "Shipping Policy",
             "url": "shopify://policies/shipping-policy"
@@ -51,6 +54,7 @@
         },
         "service_link_LJPBNQ": {
           "type": "service_link",
+          "name": "Terms of service",
           "settings": {
             "label": "Terms of service",
             "url": "shopify://policies/terms-of-service"
@@ -58,6 +62,7 @@
         },
         "service_link_XF7cDT": {
           "type": "service_link",
+          "name": "Refund Policy",
           "settings": {
             "label": "Refund Policy",
             "url": "shopify://policies/refund-policy"
@@ -65,6 +70,7 @@
         },
         "service_link_iWCJDW": {
           "type": "service_link",
+          "name": "Subscription Policy",
           "settings": {
             "label": "Subscription Policy",
             "url": "shopify://policies/subscription-policy"
@@ -72,6 +78,7 @@
         },
         "service_link_D3BThf": {
           "type": "service_link",
+          "name": "Legal Notice",
           "settings": {
             "label": "Legal Notice",
             "url": "shopify://policies/legal-notice"
@@ -79,6 +86,7 @@
         },
         "service_link_XcMw7U": {
           "type": "service_link",
+          "name": "Contact Information",
           "settings": {
             "label": "Contact Information",
             "url": "shopify://policies/contact-information"
@@ -86,6 +94,7 @@
         },
         "about_link_XnFpUG": {
           "type": "about_link",
+          "name": "About",
           "settings": {
             "label": "About",
             "url": "shopify://pages/about"
@@ -93,6 +102,7 @@
         },
         "about_link_PAN67J": {
           "type": "about_link",
+          "name": "Blog",
           "settings": {
             "label": "Blog",
             "url": "shopify://blogs/journal"
@@ -100,6 +110,7 @@
         },
         "about_link_bTyQ9i": {
           "type": "about_link",
+          "name": "News",
           "settings": {
             "label": "News",
             "url": "shopify://blogs/news"
@@ -107,9 +118,26 @@
         },
         "about_link_YrWggL": {
           "type": "about_link",
+          "name": "FAQs",
           "settings": {
             "label": "FAQs",
             "url": "shopify://pages/faq"
+          }
+        },
+        "about_link_w3bdet": {
+          "type": "about_link",
+          "name": "Partners",
+          "settings": {
+            "label": "Partners",
+            "url": "shopify://pages/partners"
+          }
+        },
+        "about_link_rbwnbn": {
+          "type": "about_link",
+          "name": "My Page",
+          "settings": {
+            "label": "My Page",
+            "url": "https://shopify.com/authentication/69552308407/login"
           }
         },
         "food_item_FBJqhg": {
@@ -158,6 +186,8 @@
         "about_link_PAN67J",
         "about_link_bTyQ9i",
         "about_link_YrWggL",
+        "about_link_w3bdet",
+        "about_link_rbwnbn",
         "food_item_FBJqhg",
         "food_item_CY7Qcd",
         "food_item_FceN3K",
