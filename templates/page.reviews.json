@@ -204,7 +204,7 @@
     "17883156967bbd1606": {
       "type": "_blocks",
       "blocks": {
-        "judge_me_reviews_reviews_grid_widget_E63ajj": {
+        "judge_me_reviews_reviews_grid_widget_X6awwH": {
           "type": "shopify://apps/judge-me-reviews/blocks/reviews_grid_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {
             "show_sample_reviews": true,
@@ -226,19 +226,55 @@
             "max_width": 1100,
             "corner_styling": "soft",
             "card_spacing": "medium",
-            "header_text_color": "#5A3729",
-            "star_and_reviewer_name_color": "#FFD06E",
-            "drop_shadow_color": "#5A3729",
-            "overlay_and_background_color": "#5A3729",
-            "content_color": "#FAF7E6",
-            "header_text": "From Our Customers",
+            "header_text_color": "#000000",
+            "star_and_reviewer_name_color": "#F9F9F9",
+            "drop_shadow_color": "#000000",
+            "overlay_and_background_color": "#000000",
+            "content_color": "#F9F9F9",
+            "header_text": "From our customers",
+            "show_average_rating": true,
+            "rating_display": "default"
+          }
+        },
+        "judge_me_reviews_cards_carousel_iifKdG": {
+          "type": "shopify://apps/judge-me-reviews/blocks/cards_carousel/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "show_sample_reviews": true,
+            "reviews_selection": "all",
+            "products": [],
+            "filter_pinned": false,
+            "filter_featured": false,
+            "filter_custom_tags": "",
+            "star_rating": "all",
+            "show_review_media": true,
+            "display_order": "media_first",
+            "no_image_fallback": "review_text_only",
+            "max_reviews": 20,
+            "review_length": "medium",
+            "text_size": "medium",
+            "image_ratio": "1",
+            "reviews_shown": 4,
+            "show_reviewer_name": true,
+            "show_product_name": true,
+            "hide_arrows_mobile": true,
+            "arrows_position": "sides",
+            "max_width": 1100,
+            "corner_styling": "soft",
+            "header_text_color": "#000000",
+            "text_color": "#000000",
+            "card_color": "#F9F9F9",
+            "stars_color": "",
+            "arrows_color": "#000000",
+            "transition_speed": 5,
+            "header_text": "Customers are saying",
             "show_average_rating": true,
             "rating_display": "default"
           }
         }
       },
       "block_order": [
-        "judge_me_reviews_reviews_grid_widget_E63ajj"
+        "judge_me_reviews_reviews_grid_widget_X6awwH",
+        "judge_me_reviews_cards_carousel_iifKdG"
       ],
       "name": "Reviews",
       "settings": {
