@@ -3540,7 +3540,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>メールを購読しませんか？</h3>",
+            "text": "<h4>メールを購読しませんか？</h4>",
             "width": "100%",
             "max_width": "normal",
             "alignment": "center",
