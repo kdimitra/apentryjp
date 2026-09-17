@@ -112,6 +112,7 @@
         },
         "slide_pqgEbG": {
           "type": "_slide",
+          "disabled": true,
           "settings": {
             "media_type_1": "image",
             "image_1": "shopify://shop_images/abc.avif",
